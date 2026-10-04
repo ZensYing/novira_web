@@ -3,11 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JUVELOOK — Patented hybrid of Poly-D,L-Lactic Acid (PDLLA) and Non-Crosslinked Hyaluronic Acid (HA). Natural neocollagenesis for tear troughs, neck creases, and deep contouring. Distributed exclusively by NOVIRA.">
+  <meta name="description" content="JUVELOOK — hybrid skin booster and collagen biostimulator combining PDLLA with non-crosslinked hyaluronic acid. Juvelook Volume restores deeper facial structure and volume. Distributed by NOVIRA.">
   <meta name="theme-color" content="#32106f">
-  <title>JUVELOOK — Hybrid PDLLA + HA Collagen Stimulator — NOVIRA</title>
+  <title>JUVELOOK — PDLLA + HA Hybrid Collagen Stimulator — NOVIRA</title>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .dq { --teal:#18909f; --navy:#23356b; --gold:#c9b5ef; }
+    .dq-wrap { width:min(1200px, calc(100% - 48px)); margin:0 auto; }
+    .dq-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); font-weight:600; margin:0 0 14px; }
+    .dq h1, .dq h2, .dq h3 { font-family:var(--serif); font-weight:500; color:var(--ink); margin:0; }
+    .dq-crumb { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:34px; }
+    .dq-crumb a { color:var(--muted); transition:color .2s; }
+    .dq-crumb a:hover { color:var(--purple); }
+    .dq-crumb .cur { color:var(--ink); font-weight:600; }
+
+    /* HERO */
+    .dq-hero { padding:48px 0 90px; background:radial-gradient(900px 500px at 85% 20%, #e6f3f1 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #f6efe2 0%, transparent 60%); }
+    .dq-hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; }
+    .dq-hero h1 { font-size:clamp(54px,8vw,104px); letter-spacing:-2px; line-height:.95; text-transform:uppercase; }
+    .dq-hero h1 small { display:block; font-size:clamp(18px,2vw,26px); letter-spacing:.5px; text-transform:none; color:var(--purple); margin-top:18px; line-height:1.3; }
+    .dq-lead { font-size:15px; line-height:1.85; color:var(--muted); max-width:540px; margin:26px 0 34px; }
+    .dq-lead em { color:var(--ink); font-style:normal; font-weight:600; }
+    .dq-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .dq-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.3px; background:var(--purple); color:#fff; transition:transform .25s, box-shadow .25s, background .25s; }
+    .dq-btn:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(46,8,111,.25); background:var(--purple-dark); }
+    .dq-btn.ghost { background:transparent; color:var(--purple); border:1px solid var(--line); }
+    .dq-btn.ghost:hover { background:#fff; box-shadow:0 12px 26px rgba(46,8,111,.1); }
+    .dq-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:34px; }
+    .dq-chip { font-size:11.5px; padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line-soft); color:var(--ink-soft); display:inline-flex; align-items:center; gap:8px; }
+    .dq-chip i { width:7px; height:7px; border-radius:50%; background:var(--c); display:block; }
+    .dq-hero-visual { position:relative; }
+    .dq-hero-frame { position:relative; aspect-ratio:4/5; border-radius:220px 220px 28px 28px; overflow:hidden; background:#f4f4f6; }
+    .dq-hero-frame img { width:100%; height:100%; object-fit:cover; object-position:50% 86%; transition:transform 1.2s ease; }
+    .dq-hero-visual:hover .dq-hero-frame img { transform:scale(1.04); }
+    .dq-orbit { position:absolute; width:150px; height:150px; border-radius:50%; background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; left:-44px; bottom:60px; }
+    .dq-orbit::before { content:""; position:absolute; inset:7px; border-radius:50%; border:1px dashed var(--teal); }
+    .dq-orbit b { font-family:var(--serif); font-size:34px; font-weight:500; color:var(--purple); line-height:1; }
+    .dq-orbit span { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.4; }
+
+    /* STORY */
+    .dq-story { padding:100px 0 80px; }
+    .dq-story-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(30px,6vw,90px); align-items:start; }
+    .dq-quote { font-size:clamp(28px,3.4vw,46px); line-height:1.18; letter-spacing:-1px; }
+    .dq-quote em { font-style:normal; color:var(--purple); }
+    .dq-story-text p { font-size:14.5px; line-height:1.95; color:var(--muted); margin:0 0 22px; }
+    .dq-story-text p strong { color:var(--ink); font-weight:600; }
+    .dq-story-text .big { font-size:17px; color:var(--ink-soft); line-height:1.8; }
+
+    /* BANNER */
+    .dq-banner { position:relative; height:clamp(320px,38vw,520px); overflow:hidden; }
+    .dq-banner img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+    .dq-banner::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(29,5,72,.78) 0%, rgba(29,5,72,.25) 55%, transparent 100%); }
+    .dq-banner-copy { position:absolute; z-index:2; left:max(24px, calc((100% - 1200px)/2)); top:50%; transform:translateY(-50%); color:#fff; max-width:420px; }
+    .dq-banner-copy p { font-size:11px; letter-spacing:3px; text-transform:uppercase; opacity:.8; margin:0 0 14px; }
+    .dq-banner-copy h2 { color:#fff; font-size:clamp(28px,3.6vw,50px); line-height:1.1; letter-spacing:-1px; }
+
+    /* FEATURES (capsules) */
+    .dq-feat { padding:110px 0 90px; }
+    .dq-head { text-align:center; max-width:680px; margin:0 auto; }
+    .dq-head h2 { font-size:clamp(30px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-head p { color:var(--muted); font-size:14px; line-height:1.8; margin:16px 0 0; }
+    .dq-caps { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:110px; }
+    .dq-cap { position:relative; border-radius:150px 150px 34px 34px; padding:100px 30px 42px; color:#fff; text-align:center; background:linear-gradient(180deg,var(--c) 0%, color-mix(in srgb,var(--c) 78%,#000) 100%); box-shadow:0 26px 46px color-mix(in srgb,var(--c) 28%,transparent); transition:transform .35s, box-shadow .35s; }
+    .dq-cap:hover { transform:translateY(-10px); box-shadow:0 38px 60px color-mix(in srgb,var(--c) 38%,transparent); }
+    .dq-cap-ico { position:absolute; top:-56px; left:50%; width:112px; height:112px; margin-left:-56px; border-radius:50%; background:#fff; color:var(--c); display:grid; place-items:center; box-shadow:0 12px 28px rgba(46,8,111,.14); transition:transform .5s; }
+    .dq-cap-ico::before { content:""; position:absolute; inset:6px; border-radius:50%; border:1px dashed color-mix(in srgb,var(--c) 60%,transparent); }
+    .dq-cap:hover .dq-cap-ico { transform:rotate(8deg) scale(1.05); }
+    .dq-cap-ico svg { width:46px; height:46px; stroke-width:1.6; }
+    .dq-cap-k { font-size:10.5px; letter-spacing:2.6px; text-transform:uppercase; opacity:.78; }
+    .dq-cap h3 { color:#fff; font-size:24px; margin:10px 0 18px; line-height:1.2; }
+    .dq-cap ul { list-style:none; padding:0; margin:0; text-align:left; display:grid; gap:12px; }
+    .dq-cap li { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:13px 16px; font-size:12.5px; line-height:1.6; backdrop-filter:blur(4px); }
+    .dq-cap li b { display:block; font-weight:700; font-size:13px; margin-bottom:2px; }
+    .dq-cap li span { opacity:.92; }
+
+    /* PRODUCTS */
+    .dq-prod { padding:90px 0 100px; background:var(--surface); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+    .dq-prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:60px; }
+    .dq-card { background:#fff; border:1px solid var(--line-soft); border-radius:26px; overflow:hidden; display:flex; flex-direction:column; transition:transform .35s, box-shadow .35s, border-color .35s; }
+    .dq-card:hover { transform:translateY(-8px); box-shadow:0 30px 56px rgba(46,8,111,.12); border-color:color-mix(in srgb,var(--c) 50%,white); }
+    .dq-card-media { position:relative; aspect-ratio:1/1; overflow:hidden; background:#fff; }
+    .dq-card-media img { width:100%; height:100%; object-fit:cover; transition:transform .8s ease; }
+    .dq-card:hover .dq-card-media img { transform:scale(1.06); }
+    .dq-card-tag { position:absolute; left:16px; top:16px; padding:6px 13px; border-radius:999px; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:700; background:var(--c); color:#fff; }
+    .dq-card-body { padding:26px 28px 30px; display:flex; flex-direction:column; flex:1; border-top:4px solid var(--c); }
+    .dq-card h3 { font-size:24px; letter-spacing:-.4px; margin-bottom:6px; }
+    .dq-card-sub { font-size:11.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--c); font-weight:700; margin-bottom:14px; }
+    .dq-card p { font-size:13.5px; line-height:1.8; color:var(--muted); margin:0 0 18px; }
+    .dq-card ul { list-style:none; margin:0 0 24px; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+    .dq-card li { font-size:11.5px; padding:6px 12px; border-radius:999px; background:color-mix(in srgb,var(--c) 10%,white); color:var(--ink-soft); }
+    .dq-card-link { margin-top:auto; display:inline-flex; align-items:center; justify-content:space-between; padding:14px 20px; border-radius:999px; border:1px solid var(--line); font-size:12.5px; font-weight:600; color:var(--purple); transition:background .25s,color .25s,border-color .25s; }
+    .dq-card:hover .dq-card-link { background:var(--c); color:#fff; border-color:var(--c); }
+
+    /* GALLERY */
+    .dq-gal { padding:100px 0; }
+    .dq-gal-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:56px; }
+    .dq-gal-grid figure { margin:0; position:relative; border-radius:24px; overflow:hidden; aspect-ratio:3/4; background:#eee; }
+    .dq-gal-grid figure:nth-child(even) { transform:translateY(34px); }
+    .dq-gal-grid img { width:100%; height:100%; object-fit:cover; object-position:50% 25%; transition:transform .9s ease; }
+    .dq-gal-grid figure:hover img { transform:scale(1.07); }
+
+    .dq-cta { margin:60px 0 100px; border-radius:30px; padding:clamp(34px,5vw,60px); background:linear-gradient(120deg,var(--purple-dark),var(--purple-mid)); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; position:relative; overflow:hidden; }
+    .dq-cta::after { content:""; position:absolute; right:-80px; top:-80px; width:300px; height:300px; border-radius:50%; border:1px dashed rgba(255,255,255,.3); }
+    .dq-cta h2 { color:#fff; font-size:clamp(26px,3vw,38px); letter-spacing:-.8px; }
+    .dq-cta p { color:rgba(255,255,255,.78); font-size:14px; max-width:520px; line-height:1.8; margin:10px 0 0; }
+    .dq-cta .dq-btn { background:#fff; color:var(--purple); position:relative; z-index:1; }
+
+
+    .dq-hero-frame.dark { background:radial-gradient(circle at 50% 38%, #1d6a62 0%, #0f4a45 55%, #0a2f2c 100%); }
+    .dq-hero-frame.dark img { object-fit:contain; object-position:50% 50%; padding:9%; }
+    .dq-orbit::before { border-color:var(--gold); }
+    .dq-vesicle { background:var(--vbg,linear-gradient(120deg,#0a2f2c,#0f4a45 60%,#14625a)); color:#fff; padding:100px 0; position:relative; overflow:hidden; }
+    .dq-vesicle-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,6vw,90px); align-items:center; }
+    .dq-vesicle-img { position:relative; max-width:440px; margin:0 auto; }
+    .dq-vesicle-img::before { content:""; position:absolute; inset:-26px; border-radius:50%; border:1px dashed rgba(201,163,94,.6); animation:dqspin 40s linear infinite; }
+    .dq-vesicle-img img { width:100%; border-radius:50%; box-shadow:0 30px 70px rgba(0,0,0,.4); }
+    @keyframes dqspin { to { transform:rotate(360deg); } }
+    .dq-vesicle h2 { color:#fff; font-size:clamp(28px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-vesicle .dq-eyebrow { color:var(--gold); }
+    .dq-vesicle p.lead { color:rgba(255,255,255,.78); line-height:1.9; font-size:14.5px; margin:20px 0 28px; max-width:520px; }
+    .dq-facts { display:grid; gap:12px; }
+    .dq-fact { display:flex; gap:16px; align-items:center; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:18px; padding:14px 18px; }
+    .dq-fact b { font-family:var(--serif); font-size:20px; color:var(--gold); font-weight:500; min-width:34px; }
+    .dq-fact span { font-size:13px; line-height:1.6; color:rgba(255,255,255,.88); }
+    .dq-set { display:grid; grid-template-columns:1.05fr 1fr; gap:0; background:#fff; border:1px solid var(--line-soft); border-radius:32px; overflow:hidden; margin-top:60px; box-shadow:0 30px 60px rgba(15,74,69,.08); }
+    .dq-set-media { background:radial-gradient(circle at 50% 45%, #f4f1ea 0%, #e8efed 100%); display:grid; place-items:center; padding:40px; }
+    .dq-set-media img { width:min(440px,100%); transition:transform .8s ease; }
+    .dq-set:hover .dq-set-media img { transform:scale(1.05) rotate(-2deg); }
+    .dq-set-body { padding:clamp(28px,4vw,56px); border-top:0; }
+    .dq-set-body h3 { font-size:34px; letter-spacing:-.8px; margin:6px 0 12px; }
+    .dq-set-body > p { color:var(--muted); font-size:14px; line-height:1.85; margin:0 0 24px; }
+    .dq-steps { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px; }
+    .dq-step { border-radius:20px; padding:20px; color:#fff; }
+    .dq-step.s1 { background:linear-gradient(160deg,#d4b06a,#a8803c); }
+    .dq-step.s2 { background:linear-gradient(160deg,#4b6874,#2d424b); }
+    .dq-step b { font-family:var(--serif); font-size:44px; font-weight:500; line-height:1; display:block; }
+    .dq-step strong { display:block; font-size:14px; margin:8px 0 2px; }
+    .dq-step span { font-size:12px; opacity:.88; }
+    @media (max-width:1000px) { .dq-vesicle-grid, .dq-set { grid-template-columns:1fr; } }
+
+    .dq-hero-frame.photo img { object-fit:cover; padding:0; filter:none; }
+    .dq-hero-frame.duo { background:radial-gradient(circle at 50% 40%, #fff 0%, #f1f3ee 100%); display:grid; grid-template-columns:1fr 1fr; align-items:end; padding:0 4% 12%; gap:0; }
+    .dq-hero-frame.duo img { object-fit:contain; height:62%; align-self:end; padding:0; }
+    .dq-hero-frame.duo img:first-child { transform:translateX(8%); }
+    .dq-hero-frame.duo img:last-child { transform:translateX(-4%) scale(1.15); }
+    .dq-card-media img.contain { object-fit:contain; padding:6%; }
+    .dq-card-media.tint { background:radial-gradient(circle at 50% 45%, #fff 0%, var(--tint,#f3f1f7) 100%); }
+    .dq-prod-grid.four { grid-template-columns:repeat(4,1fr); gap:20px; }
+    .dq-prod-grid.two { grid-template-columns:repeat(2,1fr); }
+    .dq-card-art { aspect-ratio:1/1; display:grid; place-items:center; text-align:center; color:#fff; padding:24px; position:relative; overflow:hidden; background:radial-gradient(circle at 30% 25%, #f6a6c0 0%, #d9608a 55%, #a53b66 100%); }
+    .dq-card-art::before { content:""; position:absolute; width:120%; aspect-ratio:1; border-radius:50%; border:1px dashed rgba(255,255,255,.45); }
+    .dq-card-art::after { content:""; position:absolute; width:78%; aspect-ratio:1; border-radius:50%; border:1px solid rgba(255,255,255,.35); }
+    .dq-card-art b { position:relative; z-index:1; font-family:var(--serif); font-size:34px; font-weight:500; line-height:1.05; letter-spacing:-.5px; }
+    .dq-card-art span { position:relative; z-index:1; display:block; font-size:11px; letter-spacing:3px; text-transform:uppercase; margin-top:10px; opacity:.9; }
+    .dq-card-art.mask-art-label { }
+    @media (max-width:1100px) { .dq-prod-grid.four { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:700px) { .dq-prod-grid.four, .dq-prod-grid.two { grid-template-columns:1fr; } }
+    @media (max-width:1000px) {
+      .dq-hero-grid, .dq-story-grid { grid-template-columns:1fr; }
+      .dq-hero-visual { max-width:520px; margin:0 auto; width:100%; }
+      .dq-orbit { left:-10px; }
+      .dq-caps, .dq-prod-grid { grid-template-columns:1fr; max-width:460px; margin-left:auto; margin-right:auto; }
+      .dq-caps { row-gap:100px; }
+      .dq-gal-grid { grid-template-columns:repeat(2,1fr); }
+      .dq-gal-grid figure:nth-child(even) { transform:none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +178,7 @@
   
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -33,8 +195,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem active"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -66,7 +228,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -84,8 +246,8 @@
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
-              <a href="juvelook.html" class="mobile-sublink active"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -107,6 +269,7 @@
         </div>
 
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -120,633 +283,134 @@
     </div>
   </header>
 
-<main id="main">
 
-  <!-- LUXURY HERO SECTION WITH MULTI-IMAGE SHOWROOM -->
-  <section class="danique-hero-luxury">
-    <div class="container">
-      <div class="danique-hero-grid">
-        <!-- Left: Brand Philosophy & Clinical Accreditations -->
-        <div class="danique-hero-left">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="products.html">Our Products</a>
-            <span class="sep">/</span>
-            <a href="injectables.html">1. Injectables</a>
-            <span class="sep">/</span>
-            <span class="current">JUVELOOK</span>
-          </nav>
+<main id="main" class="dq">
 
-          <div class="danique-hero-kicker">
-            <span class="star-pulse">✦</span>
-            <span>BRAND: JUVELOOK · HYBRID COLLAGEN BIOSTIMULATOR · CE &amp; MFDS</span>
-          </div>
-
-          <h1 class="danique-hero-h1">
-            JUVELOOK — The New Era of<br>
-            <em>Natural Biostimulation.</em>
-          </h1>
-
-          <p class="danique-hero-lead">
-            <em>“The delicate union of micro-spherical PDLLA and non-crosslinked Hyaluronic Acid.”</em> JUVELOOK redefines cellular collagen remodeling with patented spherical micro-particles that stimulate autologous fibroblasts safely without forming granulomas or nodules. Engineered for ultra-fine skin rejuvenation, under-eye tear troughs, neck creases, and natural volumetric restoration.
-          </p>
-
-          <div class="danique-hero-badges-grid">
-            <div class="danique-hero-badge-pill">
-              <span>🔬</span> <strong>PDLLA + HA Micro-Hybrid</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>👁️</span> <strong>Ultra-Safe Tear Trough &amp; Neck</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>⏳</span> <strong>18–24 Month Neocollagenesis</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>🛡️</span> <strong>Zero Granuloma / CE &amp; MFDS</strong>
-            </div>
-          </div>
-
-          <div class="danique-hero-actions-row">
-            <a href="#juvelook-catalog" class="danique-hero-btn">
-              <span>Request Clinic Supply</span>
-              <span aria-hidden="true">📋</span>
-            </a>
-            <a href="#juvelook-science" class="danique-hero-btn-outline">
-              <span>Particle Science</span>
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a href="contact.html?inquiry=Juvelook" class="danique-hero-btn-ghost">
-              <span>Doctor Protocol Dossier ↗</span>
-            </a>
-          </div>
-
-          <!-- Trust Metric Bar -->
-          <div class="danique-hero-stats">
-            <div class="danique-stat-card">
-              <strong>18–24mo</strong>
-              <span>Neocollagenesis</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>20–40µm</strong>
-              <span>Particle Diameter</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>&lt;15 Min</strong>
-              <span>Fast Reconstitution</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>0%</strong>
-              <span>Granuloma Risk</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Interactive Multi-Image Product Showroom -->
-        <div class="danique-gallery-wrap">
-          <div class="danique-gallery-stage" id="juvelook-gallery-stage">
-            <img id="juvelook-main-photo" class="danique-gallery-main-img" src="images/juvelook-boxset.jpg" alt="JUVELOOK 50mg Hybrid Collagen Stimulator Packaging Box and Injection Vial">
-            <div class="danique-gallery-overlay"></div>
-            
-            <div class="danique-gallery-top-badge" id="juvelook-gallery-tag">
-              ⭐ 1. JUVELOOK 50mg PRESENTATION SET
-            </div>
-
-            <div class="danique-gallery-arrows">
-              <button class="danique-gallery-arrow" onclick="prevJuvelookHeroImage()" aria-label="Previous product image">‹</button>
-              <button class="danique-gallery-arrow" onclick="nextJuvelookHeroImage()" aria-label="Next product image">›</button>
-            </div>
-
-            <div class="danique-gallery-caption-bar">
-              <div class="gallery-caption-title" id="juvelook-gallery-title">JUVELOOK 50mg (PDLLA 42.5mg + HA 7.5mg)</div>
-              <div class="gallery-caption-sub" id="juvelook-gallery-desc">Superficial &amp; Intradermal Biostimulation · Tear Troughs, Neck Creases &amp; Wrinkles</div>
-            </div>
-          </div>
-
-          <!-- 4-Image Interactive Thumbnails Switcher -->
-          <div class="danique-thumbs-strip" role="tablist" aria-label="JUVELOOK Product Perspectives">
-            <button type="button" class="danique-thumb-item is-active" onclick="switchJuvelookHeroImage(0)" id="jthumb-btn-0" role="tab" aria-selected="true">
-              <div class="danique-thumb-img-box">
-                <img src="images/juvelook-boxset.jpg" alt="JUVELOOK 50mg Box Set">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">1. Presentation</span>
-                <span class="danique-thumb-desc">50mg Box &amp; Vial</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchJuvelookHeroImage(1)" id="jthumb-btn-1" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/juvelook-vial-macro.jpg" alt="JUVELOOK Porous Micro-Particle Vial">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">2. Micro-Particles</span>
-                <span class="danique-thumb-desc">Porous PDLLA Vial</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchJuvelookHeroImage(2)" id="jthumb-btn-2" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/juvelook-lenisna-box.jpg" alt="JUVELOOK Volume Lenisna 200mg">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">3. Lenisna 200mg</span>
-                <span class="danique-thumb-desc">Deep Contouring</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchJuvelookHeroImage(3)" id="jthumb-btn-3" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/juvelook-clinic.jpg" alt="JUVELOOK Clinical Injection">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">4. Clinic Vector</span>
-                <span class="danique-thumb-desc">Doctor Micro-Cannula</span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 1: BREAKTHROUGH MICRO-PARTICLE SCIENCE -->
-  <section id="juvelook-science" class="section container">
-    <div class="section-heading">
+  <section class="dq-hero">
+    <div class="dq-wrap dq-hero-grid">
       <div>
-        <p class="eyebrow">Breakthrough Particle Engineering</p>
-        <h2>Why JUVELOOK is Revolutionizing Aesthetic Biostimulation</h2>
-      </div>
-      <p style="max-width: 480px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-        Traditional biostimulators carry risks of subcutaneous nodules due to irregular, jagged crystal geometries. JUVELOOK solves this through patented round porous micro-particle architecture.
-      </p>
-    </div>
-
-    <div class="danique-split-grid">
-      <!-- Card 1: Porous Round Spherical Architecture -->
-      <div class="danique-philosophy-card">
-        <div class="danique-card-icon-wrap">🔬</div>
-        <h3 class="danique-card-title">Patented Porous Spherical Micro-Particles</h3>
-        <div class="danique-card-quote">
-          “Unlike older PLLA particles with sharp needle-like edges that provoke aggressive foreign body granulomas, JUVELOOK’s PDLLA particles are engineered as <strong>perfect porous micro-spheres</strong>. Macrophages safely penetrate the particle pores, producing gentle, sustained fibroblast recruitment without nodule formation.”
+        <nav class="dq-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="products.html">Our Products</a><span>/</span><a href="injectables.html">1. Injectables</a><span>/</span><span class="cur">JUVELOOK</span></nav>
+        <p class="dq-eyebrow">1. Injectables · Brand</p>
+        <h1>Juvelook<small>Hybrid skin booster &amp; collagen biostimulator.</small></h1>
+        <p class="dq-lead">
+          <em>PDLLA meets hyaluronic acid.</em> Juvelook combines PDLLA (poly-D,L-lactic acid) with non-crosslinked hyaluronic acid (HA) in one hybrid injectable — and Juvelook Volume extends the concept to restore deeper facial structure and volume.
+        </p>
+        <div class="dq-actions">
+          <a class="dq-btn" href="#dq-products">View Products <span aria-hidden="true">↓</span></a>
+          <a class="dq-btn ghost" href="contact.html?inquiry=Juvelook">Request Information <span aria-hidden="true">↗</span></a>
         </div>
-        <ul class="danique-card-bullets">
-          <li><span class="check">✓</span> <span><strong>Safe Under Delicate Skin:</strong> The only biostimulator certified for thin periorbital skin, tear troughs, and neck bands.</span></li>
-          <li><span class="check">✓</span> <span><strong>Rapid Dissolution &amp; Reconstitution:</strong> Reconstitutes completely with saline in under 15 minutes without clumping.</span></li>
-          <li><span class="check">✓</span> <span><strong>Biodegradable Clearance:</strong> Hydrolyzes naturally into harmless H2O and CO2 via Krebs cycle metabolism over 24 months.</span></li>
-        </ul>
-      </div>
-
-      <!-- Card 2: Dual Action Hybrid Synergy -->
-      <div class="danique-philosophy-card">
-        <div class="danique-card-icon-wrap">✨</div>
-        <h3 class="danique-card-title">Dual-Action Hybrid: PDLLA + Hyaluronic Acid</h3>
-        <div class="danique-card-quote">
-          “By combining high-purity non-crosslinked Hyaluronic Acid with Poly-D,L-Lactic Acid, JUVELOOK provides <strong>immediate tissue micro-hydration</strong> upon injection while simultaneously initiating a 2-year cascade of endogenous Type I and Type III collagen synthesis.”
+        <div class="dq-chips">
+          <span class="dq-chip" style="--c:var(--purple)"><i></i>PDLLA + HA Hybrid</span>
+          <span class="dq-chip" style="--c:var(--teal)"><i></i>Juvelook 50mg</span>
+          <span class="dq-chip" style="--c:var(--navy)"><i></i>Juvelook Volume 200mg</span>
         </div>
-        <ul class="danique-card-bullets">
-          <li><span class="check">✓</span> <span><strong>Phase 1 (Day 1–14):</strong> HA carrier instantly plumps fine lines, hydrates dermal ECM, and cushions particle dispersion.</span></li>
-          <li><span class="check">✓</span> <span><strong>Phase 2 (Month 1–24):</strong> Porous PDLLA activates fibroblasts, progressively replacing the resorbable matrix with autologous collagen.</span></li>
-          <li><span class="check">✓</span> <span><strong>Natural Dynamic Expression:</strong> Enhances structural skin quality and dermal elasticity without looking over-filled or stiff.</span></li>
-        </ul>
+      </div>
+      <div class="dq-hero-visual">
+        <div class="dq-hero-frame photo"><img src="images/juvelook-boxset.jpg" alt="JUVELOOK 50mg Hybrid Collagen Stimulator box and vial" style="object-position:62% 60%"></div>
+        <div class="dq-orbit"><b>2</b><span>Hybrid<br>Actives</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: CE & REGULATORY CERTIFICATIONS -->
-  <section class="section" style="padding-top:0;">
-    <div class="container danique-fda-banner">
-      <div class="danique-fda-content">
-        <span class="danique-fda-kicker">INTERNATIONAL CLINICAL ACCREDITATION</span>
-        <h3>CE Mark Class III &amp; Korea MFDS Approved</h3>
-        <p>
-          JUVELOOK is certified as a medical device Class III under European CE Mark (CE 1023) and officially approved by the Korea Ministry of Food and Drug Safety (MFDS). Backed by rigorous international multicenter clinical trials proving long-term safety, zero granuloma incidence, and superior neocollagenesis.
-        </p>
-      </div>
-      <div class="danique-fda-badges">
-        <div class="danique-fda-badge-item">
-          <span class="icon">🇪🇺</span>
-          <strong>CE 1023</strong>
-          <small>Class III Medical Device</small>
-        </div>
-        <div class="danique-fda-badge-item">
-          <span class="icon">🇰🇷</span>
-          <strong>Korea MFDS</strong>
-          <small>Approved Biostimulator</small>
-        </div>
-        <div class="danique-fda-badge-item">
-          <span class="icon">🛡️</span>
-          <strong>ISO 13485</strong>
-          <small>Medical Quality Standard</small>
+  <section class="dq-vesicle" style="--vbg:linear-gradient(120deg,#1b0b3f,#2e086f 60%,#43208e)">
+    <div class="dq-wrap dq-vesicle-grid">
+      <div class="dq-vesicle-img reveal-on-scroll" style="max-width:380px"><img src="images/juvelook.png" alt="JUVELOOK 50mg PDLLA + HA hybrid vial" loading="lazy" style="background:#fff;object-fit:contain;aspect-ratio:1/1"></div>
+      <div class="reveal-on-scroll">
+        <p class="dq-eyebrow">The Hybrid Concept</p>
+        <h2>Two ingredients. One hybrid.</h2>
+        <p class="lead">Juvelook is a hybrid skin booster and collagen biostimulator that combines PDLLA (poly-D,L-lactic acid) with non-crosslinked hyaluronic acid (HA).</p>
+        <div class="dq-facts">
+          <div class="dq-fact"><b>01</b><span><strong>PDLLA</strong> — poly-D,L-lactic acid, the collagen-biostimulating component</span></div>
+          <div class="dq-fact"><b>02</b><span><strong>Non-crosslinked HA</strong> — hyaluronic acid, the skin-booster component</span></div>
+          <div class="dq-fact"><b>03</b><span><strong>Juvelook Volume</strong> — the same hybrid concept, designed for deeper structure and volume</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: PRODUCT CATALOG & LINEUP -->
-  <section id="juvelook-catalog" class="section" style="background: #faf7fc;">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Clinical Formulations</p>
-          <h2>JUVELOOK Product Lineup</h2>
-        </div>
-        <p style="max-width: 480px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-          Calibrated particle sizes for precise anatomical target depths—from superficial dermis and tear troughs to deep subcutaneous contouring.
-        </p>
+  <section class="dq-feat">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">Special Feature of JUVELOOK</p>
+        <h2>Three ideas behind the range.</h2>
+        <p>What it is made of, and what each product is designed for.</p>
       </div>
+      <div class="dq-caps">
+        <article class="dq-cap reveal-on-scroll" style="--c:#5d34a8">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4c4 6 8 9.5 8 14a8 8 0 0 1-16 0c0-4.5 4-8 8-14z"/><path d="M12 19a4 4 0 0 0 4 4"/></svg></span>
+          <span class="dq-cap-k">01</span>
+          <h3>Hybrid Composition</h3>
+          <ul>
+            <li><b>PDLLA</b><span>Poly-D,L-lactic acid</span></li>
+            <li><b>Non-crosslinked HA</b><span>Hyaluronic acid</span></li>
+          </ul>
+        </article>
+        <article class="dq-cap reveal-on-scroll" style="--c:#18909f">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="3"/><circle cx="16" cy="16" r="10"/><path d="M16 3v3M16 26v3M3 16h3M26 16h3"/></svg></span>
+          <span class="dq-cap-k">02</span>
+          <h3>Juvelook</h3>
+          <ul>
+            <li><b>Skin booster</b><span>Hybrid skin booster</span></li>
+            <li><b>Collagen biostimulator</b><span>PDLLA combined with HA</span></li>
+          </ul>
+        </article>
+        <article class="dq-cap reveal-on-scroll" style="--c:#23356b">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="16" r="8"/><circle cx="20" cy="16" r="8"/></svg></span>
+          <span class="dq-cap-k">03</span>
+          <h3>Juvelook Volume</h3>
+          <ul>
+            <li><b>Collagen booster</b><span>Made of PDLLA and non-crosslinked HA</span></li>
+            <li><b>Deeper structure</b><span>Designed to restore deeper facial structure and volume</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <div class="danique-product-grid">
-        
-        <!-- Product 1: Juvelook 50mg -->
-        <article class="danique-item-card" id="card-juvelook-50">
-          <div class="danique-item-media" onclick="openJuvelookModal('juvelook50')">
-            <span class="danique-item-badge">FINE LINES &amp; TEAR TROUGHS</span>
-            <img src="images/juvelook-boxset.jpg" alt="JUVELOOK 50mg Hybrid Collagen Stimulator" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">INTRADERMAL BIOSTIMULATOR · 20–40µm PARTICLES</span>
-            <h3 class="danique-item-title">JUVELOOK 50mg</h3>
-            <p class="danique-item-desc">
-              Formulated with ultra-fine 20-40µm spherical porous particles for superficial subdermal injection. The international gold standard for tear troughs, periorbital lines, neck creases, and acne scar elevation.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Composition:</strong> PDLLA 42.5mg + Non-Crosslinked HA 7.5mg<br>
-              <strong>Indications:</strong> Tear troughs, fine wrinkles, enlarged pores, neck bands
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openJuvelookModal('juvelook50')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addJuvelookToCart('juvelook50')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
+  <section class="dq-prod" id="dq-products">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">JUVELOOK</p>
+        <h2>The Juvelook collection.</h2>
+        <p>Professional injectables, distributed to licensed clinics and medical professionals.</p>
+      </div>
+      <div class="dq-prod-grid two">
+        <article class="dq-card reveal-on-scroll" style="--c:#18909f">
+          <div class="dq-card-media"><span class="dq-card-tag">50mg</span><img src="images/juvelook-boxset.jpg" alt="JUVELOOK 50mg box and vial" loading="lazy" style="object-position:60% 60%"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">Skin booster · Collagen biostimulator</span>
+            <h3>Juvelook</h3>
+            <p>A hybrid skin booster and collagen biostimulator that combines PDLLA (poly-D,L-lactic acid) with non-crosslinked hyaluronic acid (HA).</p>
+            <ul><li>PDLLA</li><li>Non-crosslinked HA</li><li>1 vial · 50mg</li></ul>
+            <a class="dq-card-link" href="contact.html?inquiry=Juvelook"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
           </div>
         </article>
-
-        <!-- Product 2: Juvelook Volume / Lenisna 200mg -->
-        <article class="danique-item-card" id="card-juvelook-volume">
-          <div class="danique-item-media" onclick="openJuvelookModal('lenisna')">
-            <span class="danique-item-badge">DEEP STRUCTURAL VOLUME</span>
-            <img src="images/juvelook-lenisna-box.jpg" alt="JUVELOOK Volume Lenisna 200mg" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">SUB-DERMAL / SUPRAPERIOSTEAL · 40–80µm</span>
-            <h3 class="danique-item-title">JUVELOOK VOLUME / LENISNA (200mg)</h3>
-            <p class="danique-item-desc">
-              Engineered with 40-80µm porous spherical particles for deep dermal, sub-SMAS, and supra-periosteal injection. Restores lost structural volume in sunken temples, hollow cheeks, jawline, and hip/buttock contours.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Composition:</strong> PDLLA 170mg + Non-Crosslinked HA 30mg<br>
-              <strong>Indications:</strong> Temples, midface volume, deep nasolabial folds, jawline contour
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openJuvelookModal('lenisna')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addJuvelookToCart('lenisna')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
+        <article class="dq-card reveal-on-scroll" style="--c:#23356b">
+          <div class="dq-card-media"><span class="dq-card-tag">Volume</span><img src="images/juvelook-lenisna-box.jpg" alt="JUVELOOK Volume LENISNA 200mg box and vial" loading="lazy" style="object-position:55% 60%"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">Lenisna · 200mg</span>
+            <h3>Juvelook Volume</h3>
+            <p>A hybrid collagen booster made of PDLLA (poly-D,L-lactic acid) and non-crosslinked hyaluronic acid, designed to restore deeper facial structure and volume.</p>
+            <ul><li>PDLLA</li><li>Non-crosslinked HA</li><li>200mg</li></ul>
+            <a class="dq-card-link" href="contact.html?inquiry=Juvelook%20Volume"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
           </div>
         </article>
-
-        <!-- Product 3: Clinical Reconstitution Kit -->
-        <article class="danique-item-card" id="card-juvelook-kit">
-          <div class="danique-item-media" onclick="openJuvelookModal('kit')">
-            <span class="danique-item-badge">CLINIC PROTOCOL</span>
-            <img src="images/juvelook-vial-macro.jpg" alt="JUVELOOK Reconstitution & Micro-Cannula Protocol Kit" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">PROCEDURE ACCESSORY · DOCTOR PROTOCOL</span>
-            <h3 class="danique-item-title">Juvelook Doctor Reconstitution Protocol Kit</h3>
-            <p class="danique-item-desc">
-              Clinical accessory set including bacteriostatic saline reconstituting guidance, filter transfer cannulas, and ultra-smooth 25G / 30G blunt tip micro-cannulas for optimal vectoring and zero patient bruising.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> 10 Sterile Cannula Kits + Protocol Manual<br>
-              <strong>Compatibility:</strong> Juvelook 50mg &amp; Juvelook Volume 200mg
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openJuvelookModal('kit')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addJuvelookToCart('kit')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-
       </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: TECHNICAL & CLINICAL SPECIFICATIONS -->
-  <section class="section container">
-    <div class="spec-box">
-      <h3>JUVELOOK Technical &amp; Clinical Summary</h3>
-      <div class="spec-grid">
-        <div class="spec-item"><span class="spec-label">Composition</span><span class="spec-val">PDLLA (Poly-D,L-Lactic Acid) + Non-Crosslinked HA</span></div>
-        <div class="spec-item"><span class="spec-label">Particle Structure</span><span class="spec-val">Porous Round Sphere (Patented Architecture)</span></div>
-        <div class="spec-item"><span class="spec-label">Longevity</span><span class="spec-val">18 to 24 Months Continuous Neocollagenesis</span></div>
-        <div class="spec-item"><span class="spec-label">Reconstitution Time</span><span class="spec-val">&lt; 15 Minutes with Sterile Saline</span></div>
-        <div class="spec-item"><span class="spec-label">Regulatory Certifications</span><span class="spec-val">CE 1023 Class III Medical Device · Korea MFDS</span></div>
-        <div class="spec-item"><span class="spec-label">Approved Indications</span><span class="spec-val">Tear troughs, periorbital lines, neck, acne scars, facial volume</span></div>
-        <div class="spec-item"><span class="spec-label">Recommended Technique</span><span class="spec-val">Blunt Micro-Cannula (25G–30G) or 31G Meso Needle</span></div>
-        <div class="spec-item"><span class="spec-label">Official Distribution</span><span class="spec-val">Authorized Partner: NOVIRA CO., LTD.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: CLINICAL MASTERCLASS INVITATION -->
-  <section class="section container" style="padding-top:0;">
-    <div style="background: linear-gradient(135deg, var(--purple-dark) 0%, #200845 100%); border-radius: 18px; padding: clamp(32px, 4vw, 48px); color: #ffffff; display: flex; flex-direction: column; md:flex-row; gap: 28px; justify-content: space-between; align-items: flex-start; box-shadow: 0 16px 40px rgba(37, 16, 65, 0.2);">
-      <div style="max-width: 650px;">
-        <span style="display:inline-block; font-size: 11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#c796ef; margin-bottom:8px;">PROFESSIONAL MEDICAL EDUCATION</span>
-        <h2 style="font-family: var(--serif); font-size: clamp(26px, 3vw, 36px); margin:0 0 12px; color:#ffffff;">Novira Hands-On Juvelook Masterclasses</h2>
-        <p style="font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,0.85); margin:0;">
-          Master advanced micro-cannula vectoring for tear troughs, perioral rejuvenation, and midface volumization with certified international key opinion leaders (KOLs). Live demonstration cases, reconstitution protocols, and certification.
-        </p>
-      </div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; align-self:center;">
-        <a href="conference.html" class="danique-hero-btn" style="background:#ffffff; color:var(--purple-dark); box-shadow:none;">
-          <span>Explore Conferences</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a href="contact.html?inquiry=JuvelookMasterclass" class="danique-hero-btn-outline" style="background:transparent; border-color:rgba(255,255,255,0.4); color:#ffffff;">
-          <span>Register Clinic Team</span>
-        </a>
+      <div class="dq-cta reveal-on-scroll" style="margin:80px 0 0">
+        <div><h2>Bring Juvelook to your clinic.</h2><p>Speak with our partnership team about supply, samples and clinical guidance.</p></div>
+        <a class="dq-btn" href="contact.html?inquiry=Juvelook">Contact Us <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 
 </main>
 
-  <!-- JUVELOOK QUICK VIEW MODAL -->
-  <div id="juvelook-modal" class="luxury-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="luxury-modal-backdrop" onclick="closeJuvelookModal()"></div>
-    <div class="luxury-modal-container">
-      <button class="luxury-modal-close" onclick="closeJuvelookModal()" aria-label="Close dialog">✕</button>
-      <div class="luxury-modal-grid">
-        <div class="luxury-modal-visual">
-          <img id="jmodal-img" src="images/juvelook-boxset.jpg" alt="JUVELOOK Product Detail">
-          <span class="luxury-card-badge" id="jmodal-badge">CE CERTIFIED</span>
-        </div>
-        <div class="luxury-modal-content">
-          <span class="luxury-modal-kicker" id="jmodal-kicker">1. INJECTABLES · JUVELOOK MEDICAL</span>
-          <h2 class="luxury-modal-title" id="jmodal-title">JUVELOOK 50mg</h2>
-          <p class="luxury-modal-desc" id="jmodal-desc">
-            Formulated with ultra-fine 20-40µm spherical porous particles for superficial subdermal injection. The international gold standard for tear troughs, periorbital lines, neck creases, and acne scar elevation.
-          </p>
-          
-          <div class="luxury-detail-list">
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Active Formulation</span>
-              <span class="luxury-detail-value" id="jmodal-actives">PDLLA 42.5mg + Non-Crosslinked HA 7.5mg</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Packaging / Volume</span>
-              <span class="luxury-detail-value" id="jmodal-format">50mg Sterile Glass Vial</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Clinical Indications</span>
-              <span class="luxury-detail-value" id="jmodal-indications">Tear troughs, under-eye hollowing, neck lines, fine wrinkles</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Regulatory Certs</span>
-              <span class="luxury-detail-value" id="jmodal-certs">CE 1023 Class III Medical Device, Korea MFDS</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Pricing Status</span>
-              <span class="luxury-detail-value" id="jmodal-price" style="font-size:13.5px;font-weight:700;color:var(--purple);"><span class="b2b-badge-tier">B2B TIER</span> Verified Clinics Only</span>
-            </div>
-          </div>
-
-          <div class="luxury-modal-actions" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
-            <button id="jmodal-addcart-btn" class="button primary" style="cursor:pointer;">+ Add to Clinic RFQ 📋</button>
-            <a id="jmodal-enquire-btn" href="contact.html?inquiry=Juvelook" class="button secondary">Request Official Quotation ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
-      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="products.html">Our products</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
-    </div>
-  </footer>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
 
   <script src="nav.js"></script>
-
-  <script>
-    // JUVELOOK 4-IMAGE INTERACTIVE SHOWROOM SYSTEM
-    const JUVELOOK_GALLERY = [
-      {
-        src: "images/juvelook-boxset.jpg",
-        tag: "⭐ 1. JUVELOOK 50mg PRESENTATION SET",
-        title: "JUVELOOK 50mg (PDLLA 42.5mg + HA 7.5mg)",
-        desc: "Superficial & Intradermal Biostimulation · Tear Troughs, Neck Creases & Wrinkles"
-      },
-      {
-        src: "images/juvelook-vial-macro.jpg",
-        tag: "🔬 2. POROUS MICRO-PARTICLE VIAL",
-        title: "Patented Porous Round PDLLA Micro-Spheres (20–40µm)",
-        desc: "Macrophage-friendly architecture delivering uniform neocollagenesis with zero nodule risk"
-      },
-      {
-        src: "images/juvelook-lenisna-box.jpg",
-        tag: "💎 3. JUVELOOK VOLUME / LENISNA (200mg)",
-        title: "JUVELOOK Volume (PDLLA 170mg + HA 30mg)",
-        desc: "Sub-SMAS & Deep Volumetric Contouring · Temples, Cheeks & Jawline"
-      },
-      {
-        src: "images/juvelook-clinic.jpg",
-        tag: "👩‍⚕️ 4. CLINICAL MICRO-CANNULA VECTORING",
-        title: "Physician Precision Delivery & Procedure Protocol",
-        desc: "Smooth glide micro-cannula technique for zero patient downtime & natural results"
-      }
-    ];
-
-    let currentJuvelookIndex = 0;
-
-    function switchJuvelookHeroImage(index) {
-      if (index < 0 || index >= JUVELOOK_GALLERY.length) return;
-      currentJuvelookIndex = index;
-      const item = JUVELOOK_GALLERY[index];
-
-      const mainImg = document.getElementById('juvelook-main-photo');
-      if (mainImg) {
-        mainImg.style.opacity = '0.3';
-        mainImg.style.transform = 'scale(0.98)';
-        setTimeout(() => {
-          mainImg.src = item.src;
-          mainImg.alt = item.title;
-          mainImg.style.opacity = '1';
-          mainImg.style.transform = 'scale(1)';
-        }, 150);
-      }
-
-      const tagEl = document.getElementById('juvelook-gallery-tag');
-      if (tagEl) tagEl.textContent = item.tag;
-
-      const titleEl = document.getElementById('juvelook-gallery-title');
-      if (titleEl) titleEl.textContent = item.title;
-
-      const descEl = document.getElementById('juvelook-gallery-desc');
-      if (descEl) descEl.textContent = item.desc;
-
-      // Update thumbnail active states
-      for (let i = 0; i < JUVELOOK_GALLERY.length; i++) {
-        const btn = document.getElementById('jthumb-btn-' + i);
-        if (btn) {
-          if (i === index) {
-            btn.classList.add('is-active');
-            btn.setAttribute('aria-selected', 'true');
-          } else {
-            btn.classList.remove('is-active');
-            btn.setAttribute('aria-selected', 'false');
-          }
-        }
-      }
-    }
-
-    function prevJuvelookHeroImage() {
-      let prevIndex = currentJuvelookIndex - 1;
-      if (prevIndex < 0) prevIndex = JUVELOOK_GALLERY.length - 1;
-      switchJuvelookHeroImage(prevIndex);
-    }
-
-    function nextJuvelookHeroImage() {
-      let nextIndex = (currentJuvelookIndex + 1) % JUVELOOK_GALLERY.length;
-      switchJuvelookHeroImage(nextIndex);
-    }
-
-    // JUVELOOK DATA SYSTEM
-    const JUVELOOK_DATA = {
-      juvelook50: {
-        id: "juvelook-50",
-        name: "JUVELOOK 50mg Hybrid Collagen Stimulator",
-        badge: "CE Certified",
-        kicker: "1. INJECTABLES · JUVELOOK MEDICAL",
-        title: "JUVELOOK 50mg (PDLLA 42.5mg + HA 7.5mg)",
-        desc: "Specifically formulated with ultra-fine 20-40µm spherical porous particles for superficial intradermal injection. The gold standard for delicate tear trough correction, neck creases, fine periorbital lines, and acne scar elevation.",
-        img: "images/juvelook-boxset.jpg",
-        actives: "PDLLA (Poly-D,L-Lactic Acid) 42.5mg, Non-Crosslinked Sodium Hyaluronate 7.5mg",
-        format: "50mg Sterile Lyophilized Powder in Injection Glass Vial",
-        indications: "Tear troughs, under-eye hollowing, neck lines, crow's feet, skin elasticity, acne scars",
-        certs: "CE 1023 Class III Medical Device Approved, Korea MFDS Certified",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 180
-      },
-      lenisna: {
-        id: "juvelook-volume",
-        name: "JUVELOOK Volume / LENISNA 200mg",
-        badge: "Deep Volume",
-        kicker: "1. INJECTABLES · JUVELOOK MEDICAL",
-        title: "JUVELOOK Volume / LENISNA (200mg)",
-        desc: "Engineered with larger 40-80µm porous micro-particles for deep dermal and sub-SMAS injection. Safely restores facial structural volume in temples, sunken cheeks, jawline, and body contouring with 18-24 month duration.",
-        img: "images/juvelook-lenisna-box.jpg",
-        actives: "PDLLA (Poly-D,L-Lactic Acid) 170mg, Non-Crosslinked Sodium Hyaluronate 30mg",
-        format: "200mg Sterile Lyophilized Powder in Injection Glass Vial",
-        indications: "Temporal hollowing, midface volume loss, deep nasolabial folds, jawline definition",
-        certs: "CE 1023 Class III Medical Device Approved, Korea MFDS Certified",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 240
-      },
-      kit: {
-        id: "juvelook-kit",
-        name: "Juvelook Doctor Reconstitution Protocol Kit",
-        badge: "Clinic Kit",
-        kicker: "1. INJECTABLES · JUVELOOK MEDICAL",
-        title: "Juvelook Doctor Reconstitution Protocol Kit",
-        desc: "Sterile accessory set calibrated for physician practice. Includes precision bacteriostatic saline diluent chart, 18G reconstitution filter needles, and 10 sterile 25G / 30G blunt-tip micro-cannulas.",
-        img: "images/juvelook-vial-macro.jpg",
-        actives: "Clinical accessories, 10 × 25G/30G micro-cannulas, Reconstitution guide",
-        format: "Sterile Box of 10 Complete Procedure Sets",
-        indications: "Physician clinical prep, uniform particle hydration, zero-bruising vectoring",
-        certs: "ISO 13485 Medical Device Standard, CE Approved Cannulas",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 65
-      }
-    };
-
-    let activeJuvelookModalKey = 'juvelook50';
-
-    function openJuvelookModal(key) {
-      const data = JUVELOOK_DATA[key];
-      if (!data) return;
-      activeJuvelookModalKey = key;
-
-      document.getElementById('jmodal-img').src = data.img;
-      document.getElementById('jmodal-img').alt = data.name;
-      document.getElementById('jmodal-badge').textContent = data.badge;
-      document.getElementById('jmodal-kicker').textContent = data.kicker;
-      document.getElementById('jmodal-title').textContent = data.title;
-      document.getElementById('jmodal-desc').textContent = data.desc;
-      document.getElementById('jmodal-actives').textContent = data.actives;
-      document.getElementById('jmodal-format').textContent = data.format;
-      document.getElementById('jmodal-indications').textContent = data.indications;
-      document.getElementById('jmodal-certs').textContent = data.certs;
-              <span class="luxury-detail-value" id="jmodal-price" style="font-size:13.5px;font-weight:700;color:var(--purple);"><span class="b2b-badge-tier">B2B TIER</span> Verified Clinics Only</span>
-
-      document.getElementById('jmodal-enquire-btn').href = "contact.html?inquiry=" + encodeURIComponent(data.name);
-
-      const addBtn = document.getElementById('jmodal-addcart-btn');
-      addBtn.onclick = () => {
-        addJuvelookToCart(key);
-      };
-
-      const modal = document.getElementById('juvelook-modal');
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeJuvelookModal() {
-      const modal = document.getElementById('juvelook-modal');
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    function addJuvelookToCart(key) {
-      const data = JUVELOOK_DATA[key];
-      if (!data || !window.NoviraCart) return;
-      window.NoviraCart.addItem({
-        id: data.id,
-        name: data.name,
-        category: 'Injectables',
-        price: data.rawPrice,
-        img: data.img
-      });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeJuvelookModal();
-    });
-  </script>
 
 </body>
 </html>

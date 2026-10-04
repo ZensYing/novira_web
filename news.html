@@ -4,19 +4,660 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Official clinical news, scientific study releases, medical device approvals, and strategic partnerships from NOVIRA CO., LTD.">
-  <meta name="theme-color" content="#32106f">
-  <title>2. News & Clinical Press Releases — NOVIRA</title>
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
+  <meta name="theme-color" content="#2E086F">
+  <title>Latest News & Clinical Press Releases — NOVIRA</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzJFMDg2RiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ============================================================
+       NOVIRA ULTRA-LUXURY EDITORIAL NEWSROOM DESIGN SYSTEM
+       Pure White Aesthetic · Strictly Celine Peach Sans & Switzer
+       Brand Colors: #2E086F (Royal Purple), #3d0e91, #999999
+       ============================================================ */
+    :root {
+      --nv-purple: #2E086F;
+      --nv-purple-mid: #3d0e91;
+      --nv-purple-dark: #1d0548;
+      --nv-silver: #999999;
+      --nv-line: #ebe7f3;
+      --nv-text-head: #120b24;
+      --nv-text-body: #554d66;
+      --nv-font-head: 'Celine Peach Sans', Georgia, serif;
+      --nv-font-body: 'Switzer', -apple-system, sans-serif;
+    }
+
+    /* ALL SECTIONS PURE WHITE BACKGROUND */
+    body,
+    body.news-page-theme,
+    main,
+    main#main,
+    section,
+    .news-hero-section,
+    .news-catalog-section,
+    .news-press-section,
+    .container {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    body.news-page-theme {
+      color: var(--nv-text-body);
+      font-family: var(--nv-font-body);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* EXCLUSIVE FONT ENFORCEMENT */
+    h1, h2, h3, h4, h5, h6,
+    .news-section-title,
+    .news-hero-main-title,
+    .news-hero-side-title,
+    .news-card-title,
+    .news-press-box h2,
+    #modal-art-title {
+      font-family: var(--nv-font-head) !important;
+      letter-spacing: -0.4px;
+    }
+
+    body, p, span, a, button, input, select, textarea, label, li,
+    .news-date-badge,
+    .news-category-pill,
+    .news-read-btn,
+    .news-filter-btn,
+    .news-meta-item,
+    .news-hero-main-date,
+    .news-card-date {
+      font-family: var(--nv-font-body) !important;
+    }
+
+    .news-container {
+      width: min(1320px, 92%);
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       SECTION 1: EDITORIAL HEADER & CATEGORY FILTERS
+       ============================================================ */
+    .news-header-section {
+      padding: clamp(48px, 6vw, 76px) 0 32px;
+      border-bottom: 1px solid var(--nv-line);
+      background: #ffffff;
+    }
+    .news-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--nv-purple);
+      margin-bottom: 12px;
+    }
+    .news-eyebrow::after {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--nv-purple);
+      display: inline-block;
+    }
+    .news-section-title {
+      font-size: clamp(34px, 4.4vw, 56px);
+      font-weight: 400;
+      color: var(--nv-text-head);
+      margin: 0 0 14px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1.08;
+    }
+    .news-section-title em {
+      font-style: italic;
+      color: var(--nv-purple);
+    }
+    .news-lead-text {
+      font-size: clamp(15px, 1.2vw, 17px);
+      line-height: 1.75;
+      color: var(--nv-text-body);
+      max-width: 720px;
+      margin: 0 0 36px;
+    }
+
+    /* FILTER TABS */
+    .news-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+    }
+    .news-filter-btn {
+      padding: 10px 22px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #ffffff;
+      border: 1.5px solid var(--nv-line);
+      color: var(--nv-purple);
+      cursor: pointer;
+      transition: all .22s ease;
+    }
+    .news-filter-btn:hover {
+      border-color: var(--nv-purple);
+      color: var(--nv-purple);
+      background: #faf8fc;
+    }
+    .news-filter-btn.is-active {
+      background: linear-gradient(135deg, #2E086F 0%, #3d0e91 100%);
+      border-color: var(--nv-purple);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(46, 8, 111, 0.25);
+    }
+
+    /* ============================================================
+       SECTION 2: ASYMMETRIC SPOTLIGHT FEATURE ROW (MATCHING REFERENCE)
+       Left Card (~65% width) + Right Card (~35% width)
+       ============================================================ */
+    .news-spotlight-section {
+      padding: clamp(40px, 5vw, 60px) 0 20px;
+      background: #ffffff;
+    }
+    .news-spotlight-grid {
+      display: grid;
+      grid-template-columns: 1.75fr 1fr;
+      gap: clamp(24px, 3vw, 36px);
+      align-items: stretch;
+    }
+
+    /* LEFT BIG FEATURED CARD */
+    .news-hero-main-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--nv-line);
+      box-shadow: 0 16px 36px rgba(46, 8, 111, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 480px;
+      cursor: pointer;
+      background: #110526;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .news-hero-main-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(46, 8, 111, 0.16);
+    }
+    .news-hero-main-card img.news-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .9s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .news-hero-main-card:hover img.news-hero-bg {
+      transform: scale(1.04);
+    }
+    .news-hero-main-overlay {
+      position: relative;
+      z-index: 2;
+      padding: clamp(28px, 4vw, 42px);
+      background: linear-gradient(180deg, rgba(17, 5, 38, 0) 0%, rgba(17, 5, 38, 0.4) 25%, rgba(17, 5, 38, 0.95) 100%);
+      color: #ffffff;
+    }
+    .news-hero-main-date {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 12px;
+    }
+    .news-hero-main-title {
+      font-size: clamp(24px, 2.7vw, 36px);
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.22;
+      margin: 0 0 16px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    .news-hero-main-meta {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .news-hero-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: var(--nv-purple);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 99px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: all .2s ease;
+    }
+    .news-hero-main-card:hover .news-hero-read-link {
+      background: linear-gradient(135deg, #2E086F 0%, #3d0e91 100%);
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    /* RIGHT SECONDARY FEATURED CARD */
+    .news-hero-side-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--nv-line);
+      box-shadow: 0 14px 32px rgba(46, 8, 111, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .news-hero-side-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 45px rgba(46, 8, 111, 0.12);
+      border-color: rgba(46, 8, 111, 0.3);
+    }
+    .news-hero-side-media {
+      position: relative;
+      aspect-ratio: 16/10.5;
+      overflow: hidden;
+      background: #f8f6fc;
+    }
+    .news-hero-side-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+    .news-hero-side-card:hover .news-hero-side-media img {
+      transform: scale(1.05);
+    }
+    .news-hero-side-body {
+      padding: clamp(22px, 3vw, 30px);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .news-hero-side-date {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--nv-purple);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .news-hero-side-title {
+      font-size: clamp(20px, 1.8vw, 24px);
+      font-weight: 600;
+      line-height: 1.32;
+      color: var(--nv-text-head);
+      margin: 0 0 14px;
+    }
+    .news-hero-side-excerpt {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--nv-text-body);
+      margin: 0 0 22px;
+      flex: 1;
+    }
+    .news-hero-side-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--nv-purple);
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .news-hero-side-card:hover .news-hero-side-link {
+      color: var(--nv-purple-mid);
+      transform: translateX(4px);
+    }
+    .news-hero-side-link i {
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    /* ============================================================
+       SECTION 3: 4-COLUMN CARDS GRID (MATCHING REFERENCE)
+       ============================================================ */
+    .news-grid-section {
+      padding: clamp(30px, 4vw, 50px) 0 clamp(60px, 7vw, 90px);
+      background: #ffffff;
+    }
+    .news-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(18px, 2.2vw, 26px);
+      margin-bottom: 50px;
+    }
+    .news-card-luxury {
+      background: #ffffff;
+      border: 1px solid var(--nv-line);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(46, 8, 111, 0.04);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      cursor: pointer;
+    }
+    .news-card-luxury:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(46, 8, 111, 0.1);
+      border-color: rgba(46, 8, 111, 0.28);
+    }
+    .news-card-media {
+      position: relative;
+      aspect-ratio: 16/10.5;
+      overflow: hidden;
+      background: #faf8fc;
+    }
+    .news-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+    .news-card-luxury:hover .news-card-media img {
+      transform: scale(1.06);
+    }
+    .news-category-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ffffff;
+      color: var(--nv-purple);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(46, 8, 111, 0.1);
+      z-index: 2;
+    }
+    .news-card-body {
+      padding: 20px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .news-card-date {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--nv-purple);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .news-card-title {
+      font-size: 16.5px;
+      font-weight: 600;
+      line-height: 1.38;
+      color: var(--nv-text-head);
+      margin: 0 0 12px;
+      min-height: 46px;
+    }
+    .news-card-excerpt {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--nv-text-body);
+      margin: 0 0 20px;
+      flex: 1;
+    }
+    .news-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--nv-line);
+      margin-top: auto;
+    }
+    .news-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--nv-purple);
+      text-decoration: none;
+      transition: transform .2s ease;
+    }
+    .news-card-luxury:hover .news-read-link {
+      color: var(--nv-purple-mid);
+      transform: translateX(3px);
+    }
+    .news-read-link i {
+      font-style: normal;
+      font-size: 14px;
+    }
+    .news-read-time {
+      font-size: 11px;
+      font-weight: 600;
+      color: #8c8299;
+    }
+
+    /* ============================================================
+       SECTION 4: PRESS KIT & MEDIA INQUIRY CONCIERGE (PURE WHITE)
+       ============================================================ */
+    .news-press-section {
+      padding: 0 0 clamp(60px, 7vw, 90px);
+      background: #ffffff !important;
+    }
+    .news-press-box {
+      background: #ffffff;
+      border: 1.5px solid var(--nv-line);
+      border-radius: 24px;
+      padding: clamp(36px, 5vw, 56px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      box-shadow: 0 16px 40px rgba(46, 8, 111, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .news-press-box::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      top: -50px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 20px solid rgba(46, 8, 111, 0.04);
+      pointer-events: none;
+    }
+    .news-press-copy h2 {
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 500;
+      color: var(--nv-purple);
+      margin: 0 0 10px;
+    }
+    .news-press-copy p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--nv-text-body);
+      max-width: 620px;
+      margin: 0;
+    }
+    .news-press-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .news-pill-btn-purple {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #2E086F 0%, #3d0e91 100%);
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 99px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(46, 8, 111, 0.28);
+      transition: all .25s ease;
+      letter-spacing: .3px;
+    }
+    .news-pill-btn-purple:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(46, 8, 111, 0.38);
+      background: linear-gradient(135deg, #1d0548 0%, #2E086F 100%);
+    }
+    .news-pill-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: var(--nv-purple);
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 99px;
+      text-decoration: none;
+      border: 1.5px solid var(--nv-purple);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .news-pill-btn-outline:hover {
+      background: var(--nv-purple);
+      color: #ffffff;
+    }
+
+    /* ============================================================
+       SECTION 5: INTERACTIVE ARTICLE READER MODAL
+       ============================================================ */
+    .media-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 7, 34, 0.7);
+      backdrop-filter: blur(8px);
+      display: grid;
+      place-items: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+      padding: 20px;
+    }
+    .media-modal-overlay.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .media-modal-card {
+      background: #ffffff;
+      border-radius: 22px;
+      max-width: 680px;
+      width: 100%;
+      padding: clamp(28px, 4vw, 40px);
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: translateY(20px);
+      transition: transform .3s ease;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    .media-modal-overlay.is-active .media-modal-card {
+      transform: translateY(0);
+    }
+    .media-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ffffff;
+      border: 1px solid var(--nv-line);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: var(--nv-text-body);
+      transition: all .2s;
+    }
+    .media-modal-close:hover {
+      background: var(--nv-purple);
+      color: #ffffff;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1120px) {
+      .news-spotlight-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .news-hero-main-card {
+        min-height: 400px;
+      }
+    }
+    @media (max-width: 640px) {
+      .news-grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .news-hero-main-card {
+        min-height: 340px;
+      }
+      .news-hero-main-overlay {
+        padding: 20px;
+      }
+      .news-filter-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+      }
+      .news-filter-btn {
+        white-space: nowrap;
+      }
+      .news-press-box {
+        padding: 28px 20px;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="news-page-theme">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="contact.html?inquiry=B2BPartnership">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
   
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -33,8 +674,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -50,14 +691,14 @@
         </div>
 
         <div class="nav-item has-dropdown">
-          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false">
+          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false" style="color:var(--nv-purple);font-weight:600;">
             MEDIA
             <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <div class="dropdown-menu single-menu" role="menu" aria-labelledby="nav-media-btn">
             <ul class="dropdown-sublist">
               <li><a href="conference.html" class="dropdown-subitem"><span class="cat-idx">1.</span> Conference</a></li>
-              <li><a href="news.html" class="dropdown-subitem"><span class="cat-idx">2.</span> News</a></li>
+              <li><a href="news.html" class="dropdown-subitem" style="color:var(--nv-purple);font-weight:600;"><span class="cat-idx">2.</span> News</a></li>
             </ul>
           </div>
         </div>
@@ -66,7 +707,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -84,7 +725,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -104,6 +745,7 @@
           </div>
         </div>
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -119,222 +761,306 @@
 
 <main id="main">
 
-  <!-- LUXURY HERO BANNER -->
-  <section class="media-hero">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="sep">/</span>
-        <a href="media.html">Media</a>
-        <span class="sep">/</span>
-        <span class="current">News</span>
-      </nav>
-      <span class="brand-hero-logo" style="margin-top:10px;">2. NEWS · CLINICAL INDUSTRY UPDATES &amp; PRESS RELEASES</span>
-      <h1 style="font-size:clamp(32px, 4.4vw, 56px); margin:10px 0 14px; line-height:1.15;">
-        News &amp; Clinical<br><em>Press Releases.</em>
-      </h1>
-      <p style="font-size:14.5px; max-width:720px; line-height:1.65; margin:0;">
-        Stay informed on peer-reviewed clinical histology trials, breakthrough regulatory clearances (Korea FDA &amp; CE), distributor milestones, and technological innovations across our aesthetic portfolio.
+  <!-- ============================================================
+       SECTION 1: EDITORIAL HEADER & CATEGORY FILTER BAR
+       ============================================================ -->
+  <section class="news-header-section">
+    <div class="news-container">
+      <div class="news-eyebrow">NOVIRA PRESS ROOM · CLINICAL &amp; CORPORATE DISPATCHES</div>
+      <h1 class="news-section-title">LATEST NEWS</h1>
+      <p class="news-lead-text">
+        Official corporate milestones, peer-reviewed histology trials, breakthrough regulatory clearances (Korea FDA &amp; CE), and medical workstation technological announcements from NOVIRA CO., LTD.
       </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="news-filter-bar">
+        <button class="news-filter-btn is-active" data-filter="all" onclick="filterNews('all', this)">All Releases (8)</button>
+        <button class="news-filter-btn" data-filter="corporate" onclick="filterNews('corporate', this)">Corporate &amp; Milestones</button>
+        <button class="news-filter-btn" data-filter="clinical" onclick="filterNews('clinical', this)">Clinical Trials &amp; Biologics</button>
+        <button class="news-filter-btn" data-filter="regulatory" onclick="filterNews('regulatory', this)">Regulatory Clearances</button>
+        <button class="news-filter-btn" data-filter="devices" onclick="filterNews('devices', this)">Energy Workstations</button>
+      </div>
     </div>
   </section>
 
-  <div class="container section">
+  <!-- ============================================================
+       SECTION 2: SPOTLIGHT FEATURE ROW (MATCHING REFERENCE LAYOUT)
+       Left Card (Hero ~65% width) + Right Card (Secondary ~35% width)
+       ============================================================ -->
+  <section class="news-spotlight-section">
+    <div class="news-container">
+      <div class="news-spotlight-grid">
 
-    <!-- FEATURED SPOTLIGHT ARTICLE -->
-    <article class="news-spotlight">
-      <div class="news-spotlight-content">
-        <div class="news-meta-row" style="margin-bottom:12px;">
-          <span class="news-category-badge">STRATEGIC PARTNERSHIP · BREAKING</span>
-          <span>March 15, 2026 · 4 Min Read</span>
+        <!-- LEFT BIG FEATURED HERO CARD (MATCHING REFERENCE) -->
+        <article class="news-hero-main-card" onclick="openArticleModal('grand-opening')" data-category="corporate" aria-label="Read grand opening article">
+          <img class="news-hero-bg" src="images/news-grand-opening.jpg" alt="NOVIRA Grand Opening Ribbon-Cutting Ceremony" loading="eager">
+          <div class="news-hero-main-overlay">
+            <span class="news-hero-main-date">31 MAR 2026</span>
+            <h2 class="news-hero-main-title">
+              Congratulations To The Official Grand Opening Of NOVIRA Clinical Innovation Hub &amp; Medical Training Academy Phnom Penh
+            </h2>
+            <div class="news-hero-main-meta">
+              <span class="news-hero-read-link">
+                <i>≡</i> READ ↗
+              </span>
+              <span style="font-size:12.5px; opacity:0.85;">4 Min Read · Corporate Press Release</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- RIGHT SECONDARY FEATURED CARD (MATCHING REFERENCE) -->
+        <article class="news-hero-side-card" onclick="openArticleModal('blessing-ceremony')" data-category="corporate" aria-label="Read blessing ceremony article">
+          <div class="news-hero-side-media">
+            <img src="images/news-blessing-ceremony.jpg" alt="NOVIRA Blessing Ceremony and Dedication" loading="lazy">
+            <span class="news-category-badge">CEREMONY</span>
+          </div>
+          <div class="news-hero-side-body">
+            <span class="news-hero-side-date">30 MAR 2026</span>
+            <h2 class="news-hero-side-title">
+              Dignified Blessing Ceremony of NOVIRA Biomedical Research Pavilion &amp; Doctor Symposium Suites
+            </h2>
+            <p class="news-hero-side-excerpt">
+              Traditional dedication and blessing ceremony held at NOVIRA's new flagship pavilion, welcoming certified clinicians, aesthetic dermatologists, and health dignitaries to elevate regional standards.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+              <span class="news-hero-side-link">
+                <i>≡</i> READ ↗
+              </span>
+              <span class="news-read-time">3 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: 4-COLUMN LUXURY CARDS GRID (MATCHING REFERENCE ROW)
+       ============================================================ -->
+  <section class="news-grid-section">
+    <div class="news-container">
+      <div class="news-grid-4" id="news-grid">
+
+        <!-- CARD 1: MEDICAL VILLA LAUNCH (Reference match) -->
+        <article class="news-card-luxury" onclick="openArticleModal('manor-villa')" data-category="corporate">
+          <div class="news-card-media">
+            <img src="images/about-building.jpg" alt="NOVIRA Medical Villa Commissioning" loading="lazy">
+            <span class="news-category-badge">FACILITY LAUNCH</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">29 NOV 2025</span>
+            <h3 class="news-card-title">Congratulations on the Official Commissioning of NOVIRA Medical Villa &amp; Executive Suites</h3>
+            <p class="news-card-excerpt">A dedicated 4-story clinical facility featuring 12 hands-on anatomical injector suites and sterile preparation labs.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">3 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: COLD-CHAIN LOGISTICS HUB (Reference match) -->
+        <article class="news-card-luxury" onclick="openArticleModal('logistics-hub')" data-category="corporate">
+          <div class="news-card-media">
+            <img src="images/about-hq-banner.jpg" alt="Phnom Penh Cold Chain Hub" loading="lazy">
+            <span class="news-category-badge">LOGISTICS HUB</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">13 SEP 2025</span>
+            <h3 class="news-card-title">NOVIRA Biomedical Cold-Chain Logistics Hub at Phnom Penh Airport Now Operational</h3>
+            <p class="news-card-excerpt">Dual-redundant 2°C–8°C thermal refrigeration rooms and IoT real-time temperature loggers guaranteeing biostimulator potency.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">4 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: JUVELOOK 24-MONTH CLINICAL TRIAL (Reference match) -->
+        <article class="news-card-luxury" onclick="openArticleModal('juvelook-study')" data-category="clinical">
+          <div class="news-card-media">
+            <img src="images/juvelook-clinic.jpg" alt="Juvelook PDLLA Neocollagenesis Trial" loading="lazy">
+            <span class="news-category-badge">CLINICAL TRIAL</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">28 JUL 2025</span>
+            <h3 class="news-card-title">24-Month Clinical Trial Confirms Superior Neocollagenesis &amp; Zero Granuloma with Juvelook</h3>
+            <p class="news-card-excerpt">Multi-center histological punch biopsies published in the Aesthetic Dermatology Review verify continuous Type I &amp; III collagen synthesis.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">5 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: CUTERA AVICLEAR 1726NM (Reference match) -->
+        <article class="news-card-luxury" onclick="openArticleModal('aviclear-acne')" data-category="devices">
+          <div class="news-card-media">
+            <img src="images/conference-slide-2.jpg" alt="Cutera AviClear Clinical Forum" loading="lazy">
+            <span class="news-category-badge">ENERGY DEVICES</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">05 JUL 2025</span>
+            <h3 class="news-card-title">Cutera AviClear 1726nm Achieves 92% Clearance Rate in Southeast Asian Acne Registry</h3>
+            <p class="news-card-excerpt">Regional clinical registry reveals multi-year remission for severe cystic acne without oral medication or photosensitivity downtime.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">4 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5: DANIQUE MFDS APPROVAL -->
+        <article class="news-card-luxury" onclick="openArticleModal('danique-cert')" data-category="regulatory">
+          <div class="news-card-media">
+            <img src="images/danique/lineup.jpg" alt="DANIQUE Korea MFDS Certification" style="object-position:50% 80%;" loading="lazy">
+            <span class="news-category-badge">KOREA MFDS</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">18 MAY 2025</span>
+            <h3 class="news-card-title">Korea MFDS Certifies DANIQUE STeMiN™ 50+ Growth Factors for Post-Laser Recovery</h3>
+            <p class="news-card-excerpt">Dual functional approval granted for accelerated re-epithelialization and 50% downtime reduction following aggressive laser sessions.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">3 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6: GENÈSE LAB EXOSOME DATA -->
+        <article class="news-card-luxury" onclick="openArticleModal('exoluma-data')" data-category="clinical">
+          <div class="news-card-media">
+            <img src="images/exoluma.jpg" alt="GENÈSE LAB Lyophilized Exosome Study" loading="lazy">
+            <span class="news-category-badge">BIOLOGICS STUDY</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">22 APR 2025</span>
+            <h3 class="news-card-title">GENÈSE LAB Publishes Groundbreaking 5-Billion Lyophilized Exosome Potency Data</h3>
+            <p class="news-card-excerpt">Independent verification of intact cellular micro-RNA vesicle delivery directly to senescent dermal fibroblasts without degradation.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">4 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 7: CYNOSURE LUTRONIC PARTNERSHIP -->
+        <article class="news-card-luxury" onclick="openArticleModal('cynosure-deal')" data-category="devices">
+          <div class="news-card-media">
+            <img src="images/device-lutronic.jpg" alt="Cynosure Lutronic Partnership Expansion" loading="lazy">
+            <span class="news-category-badge">PARTNERSHIP</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">15 FEB 2025</span>
+            <h3 class="news-card-title">NOVIRA Expands Exclusive Strategic Multi-Territory Distribution with Cynosure Lutronic</h3>
+            <p class="news-card-excerpt">Direct manufacturer warranty, certified local biomedical engineers, and 48-hour replacement optics dispatch for regional aesthetic practices.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">5 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 8: CANFIELD 3D ADOPTION -->
+        <article class="news-card-luxury" onclick="openArticleModal('canfield-adoption')" data-category="devices">
+          <div class="news-card-media">
+            <img src="images/device-canfield.jpg" alt="Canfield VISIA Gen7 Diagnostic Adoption" loading="lazy">
+            <span class="news-category-badge">DIAGNOSTICS</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-card-date">10 JAN 2025</span>
+            <h3 class="news-card-title">Canfield VISIA Gen7 &amp; VECTRA XT 3D Simulation Adopted by Top 50 Aesthetic Clinics</h3>
+            <p class="news-card-excerpt">Digitized clinical skin diagnostics and anatomical body simulations elevate patient trust and clinical conversion across leading practices.</p>
+            <div class="news-card-footer">
+              <span class="news-read-link"><i>≡</i> READ ↗</span>
+              <span class="news-read-time">3 Min Read</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ============================================================
+           SECTION 4: PRESS KIT & MEDIA INQUIRY CONCIERGE (PURE WHITE)
+           ============================================================ -->
+      <div class="news-press-box">
+        <div class="news-press-copy">
+          <div class="news-eyebrow" style="margin-bottom:8px;">VIP MEDIA RELATIONS &amp; EDITORIAL ARCHIVE</div>
+          <h2>Journalist &amp; Clinic Media Inquiries</h2>
+          <p>
+            Access official NOVIRA corporate press releases, high-resolution workstation media packs, Key Opinion Leader clinical whitepapers, and brand guideline packages for accredited publications.
+          </p>
+          <div style="margin-top:14px; display:flex; gap:18px; flex-wrap:wrap; font-size:13px; font-weight:600; color:var(--nv-purple);">
+            <a href="mailto:info@noviracambodia.com" style="display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none;">✉️ info@noviracambodia.com</a>
+            <a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none;">💬 Telegram &amp; WhatsApp: +069 811 399</a>
+          </div>
         </div>
-        <h2 style="font-size:clamp(22px, 2.6vw, 32px); color:var(--purple-dark); line-height:1.25; margin-bottom:16px;">
-          NOVIRA Expands Exclusive Strategic Distribution with Cynosure Lutronic
-        </h2>
-        <p style="font-size:14px; color:#5c4c6e; line-height:1.65; margin-bottom:24px;">
-          NOVIRA CO., LTD. officially broadens its exclusive multi-territory distribution network for Cynosure Lutronic medical workstations. The comprehensive agreement incorporates dedicated biomedical maintenance centers, localized doctor training academies, and continuous replacement parts supply chains for Southeast Asia.
-        </p>
-        <div style="display:flex; gap:12px; align-items:center;">
-          <button class="button primary" onclick="openArticleModal('cynosure-deal')">Read Full Press Release ↗</button>
-          <span style="font-size:12px; color:#7d6994;">By Corporate Communications</span>
+        <div class="news-press-actions">
+          <a class="news-pill-btn-purple" href="mailto:info@noviracambodia.com?subject=Press%20Kit%20Request">
+            Download Press Kit (ZIP) <span aria-hidden="true">↗</span>
+          </a>
+          <a class="news-pill-btn-outline" href="contact.html">
+            Contact Media Relations
+          </a>
         </div>
       </div>
-      <div class="news-spotlight-media">
-        <img src="images/about-building-clean.jpg" alt="NOVIRA Headquarters" loading="lazy">
-        <span class="conf-media-badge">EXCLUSIVE B2B AGREEMENT</span>
-      </div>
-    </article>
-
-    <!-- Category Filter Bar -->
-    <div class="media-filter-bar">
-      <button class="media-tab-btn is-active" data-filter="all" onclick="filterNews('all', this)">All Releases (6)</button>
-      <button class="media-tab-btn" data-filter="clinical" onclick="filterNews('clinical', this)">Clinical Studies</button>
-      <button class="media-tab-btn" data-filter="corporate" onclick="filterNews('corporate', this)">Corporate &amp; Expansion</button>
-      <button class="media-tab-btn" data-filter="regulatory" onclick="filterNews('regulatory', this)">Regulatory Clearances</button>
-      <button class="media-tab-btn" data-filter="technology" onclick="filterNews('technology', this)">Technology Spotlights</button>
-    </div>
-
-    <!-- News Grid -->
-    <div class="news-cards-grid" id="news-grid">
-
-      <!-- News 1: Juvelook Study -->
-      <article class="news-card" data-category="clinical">
-        <div class="news-card-media">
-          <img src="images/juvelook.png" alt="Juvelook Clinical Study" style="background:#190732; padding:15px;" loading="lazy">
-          <span class="conf-media-badge">HISTOLOGY STUDY</span>
-        </div>
-        <div class="news-card-body">
-          <div class="news-meta-row">
-            <span class="news-category-badge">Clinical Study</span>
-            <span>Feb 28, 2026</span>
-          </div>
-          <h3 class="news-card-title">24-Month Study Confirms Superior Neocollagenesis Profile with Juvelook PDLLA</h3>
-          <p class="news-card-excerpt">Multi-center comparative trial published in the Aesthetic Dermatology Review demonstrates persistent Type I &amp; III collagen synthesis with a zero-granuloma safety profile compared to traditional sharp-particle PLLA.</p>
-          <div class="news-card-footer">
-            <span style="font-size:11.5px; color:#7d6994;">3 Min Read</span>
-            <button class="text-link" onclick="openArticleModal('juvelook-study')">Read Findings ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- News 2: Cutera AviClear -->
-      <article class="news-card" data-category="technology">
-        <div class="news-card-media">
-          <img src="images/device-cutera.png" alt="AviClear Technology" style="background:#17042a; padding:15px;" loading="lazy">
-          <span class="conf-media-badge">ACNE REMISSION</span>
-        </div>
-        <div class="news-card-body">
-          <div class="news-meta-row">
-            <span class="news-category-badge">Technology Spotlight</span>
-            <span>Jan 20, 2026</span>
-          </div>
-          <h3 class="news-card-title">AviClear 1726nm Receives High Marks from Regional Dermatologists for Severe Acne</h3>
-          <p class="news-card-excerpt">Practice surveys reveal over 92% resolution in inflammatory acne lesions after a standard 3-session course, offering a chemical-free alternative to chronic oral isotretinoin medication.</p>
-          <div class="news-card-footer">
-            <span style="font-size:11.5px; color:#7d6994;">4 Min Read</span>
-            <button class="text-link" onclick="openArticleModal('aviclear-acne')">Read Report ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- News 3: DANIQUE Stem Cell -->
-      <article class="news-card" data-category="regulatory">
-        <div class="news-card-media">
-          <img src="images/danique.png" alt="Danique Korea FDA" style="background:#1a0832; padding:15px;" loading="lazy">
-          <span class="conf-media-badge">KOREA FDA MFDS</span>
-        </div>
-        <div class="news-card-body">
-          <div class="news-meta-row">
-            <span class="news-category-badge">Regulatory Clearance</span>
-            <span>Dec 12, 2025</span>
-          </div>
-          <h3 class="news-card-title">DANIQUE STeMiN™ Certified for Immediate Post-Laser Dermal Recovery Protocols</h3>
-          <p class="news-card-excerpt">Korea Ministry of Food and Drug Safety grants dual functional approval (Anti-Wrinkle &amp; Whitening) for DANIQUE adipose conditioned media containing 50+ biological growth factors and PhytoG Edelweiss stem cells.</p>
-          <div class="news-card-footer">
-            <span style="font-size:11.5px; color:#7d6994;">3 Min Read</span>
-            <button class="text-link" onclick="openArticleModal('danique-cert')">Read Clearance ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- News 4: EXOLUMA Exosomes -->
-      <article class="news-card" data-category="clinical">
-        <div class="news-card-media">
-          <img src="images/exoluma.png" alt="Exoluma Dual-Vial Exosomes" style="background:#130626; padding:15px;" loading="lazy">
-          <span class="conf-media-badge">EXOSOME PURITY</span>
-        </div>
-        <div class="news-card-body">
-          <div class="news-meta-row">
-            <span class="news-category-badge">Clinical Study</span>
-            <span>Nov 18, 2025</span>
-          </div>
-          <h3 class="news-card-title">GENESE LAB Publishes Groundbreaking 5-Billion Exosome Lyophilization Data</h3>
-          <p class="news-card-excerpt">Dual-vial separation technology preserves membrane integrity and prevents enzyme degradation, delivering active cellular micro-RNA directly to photo-damaged dermal fibroblasts.</p>
-          <div class="news-card-footer">
-            <span style="font-size:11.5px; color:#7d6994;">5 Min Read</span>
-            <button class="text-link" onclick="openArticleModal('exoluma-data')">Read Data ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- News 5: Cold-Chain Logistics Hub -->
-      <article class="news-card" data-category="corporate">
-        <div class="news-card-media">
-          <img src="images/about-building.jpg" alt="Cold Chain Logistics Hub" loading="lazy">
-          <span class="conf-media-badge">SUPPLY CHAIN</span>
-        </div>
-        <div class="news-card-body">
-          <div class="news-meta-row">
-            <span class="news-category-badge">Corporate Expansion</span>
-            <span>Oct 05, 2025</span>
-          </div>
-          <h3 class="news-card-title">NOVIRA Opens Dedicated Biomedical Cold-Chain Logistics Center in Phnom Penh</h3>
-          <p class="news-card-excerpt">Equipped with 2°C–8°C calibrated thermal storage, continuous electronic data logging, and backup power generators, guaranteeing maximum biostimulator potency across regional dispatches.</p>
-          <div class="news-card-footer">
-            <span style="font-size:11.5px; color:#7d6994;">3 Min Read</span>
-            <button class="text-link" onclick="openArticleModal('coldchain-hub')">Read Overview ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- News 6: Wonder Face -->
-      <article class="news-card" data-category="technology">
-        <div class="news-card-media">
-          <img src="images/device-wonder.png" alt="Wonder Face Neuromuscular" style="background:#1b0735; padding:15px;" loading="lazy">
-          <span class="conf-media-badge">SUPRAMAXIMAL EMS</span>
-        </div>
-        <div class="news-card-body">
-          <div class="news-meta-row">
-            <span class="news-category-badge">Technology Spotlight</span>
-            <span>Sep 14, 2025</span>
-          </div>
-          <h3 class="news-card-title">Synchronized Neuromuscular EMS + RF: Non-Invasive Facial Muscle Architecture Restoration</h3>
-          <p class="news-card-excerpt">Wonder Face introduces 60,000 supramaximal contractions per 25-minute session targeting zygomaticus major and frontalis muscles for structural architectural facial lifting.</p>
-          <div class="news-card-footer">
-            <span style="font-size:11.5px; color:#7d6994;">4 Min Read</span>
-            <button class="text-link" onclick="openArticleModal('wonder-face')">Read Review ↗</button>
-          </div>
-        </div>
-      </article>
 
     </div>
-  </div>
+  </section>
 
 </main>
 
-  <!-- INTERACTIVE ARTICLE READER MODAL -->
+  <!-- ============================================================
+       SECTION 5: INTERACTIVE ARTICLE READER MODAL (HIGH LUXURY)
+       ============================================================ -->
   <div class="media-modal-overlay" id="article-reader-modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="media-modal-card">
       <button class="media-modal-close" onclick="closeArticleModal()" aria-label="Close modal">✕</button>
-      <span class="news-category-badge" id="modal-art-category">PRESS RELEASE</span>
-      <div style="font-size:12px; color:#7d6994; margin:4px 0 12px;" id="modal-art-date">Published March 15, 2026</div>
-      <h2 id="modal-art-title" style="font-size:24px; color:var(--purple-dark); line-height:1.3; margin-bottom:16px;">Title</h2>
-      <div id="modal-art-body" style="font-size:13.5px; color:#4a3860; line-height:1.75; margin-bottom:24px;">
-        Body content
+      <div style="font-size:11px; font-weight:700; letter-spacing:1.8px; color:var(--nv-purple); text-transform:uppercase; margin-bottom:6px;" id="modal-art-category">
+        OFFICIAL PRESS RELEASE
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #f2ebf8;">
-        <span style="font-size:12px; color:#846f99;">Source: NOVIRA Clinical Communications</span>
-        <button class="luxury-detail-btn" onclick="window.print()">Print Article 🖨</button>
+      <div style="font-size:12px; font-weight:600; color:#8c8299; margin-bottom:14px;" id="modal-art-date">
+        Published March 31, 2026
+      </div>
+      <h2 id="modal-art-title" style="font-size:clamp(22px, 2.6vw, 30px); color:var(--nv-purple); line-height:1.24; margin:0 0 18px;">
+        Article Title
+      </h2>
+      <div id="modal-art-body" style="font-size:14.5px; color:var(--nv-text-body); line-height:1.8; margin-bottom:28px;">
+        Article Body
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:18px; border-top:1px solid var(--nv-line); flex-wrap:wrap; gap:12px;">
+        <span style="font-size:12px; color:#8c8299;">Source: NOVIRA Corporate &amp; Medical Affairs</span>
+        <button class="news-pill-btn-outline" onclick="window.print()" style="padding:8px 18px; font-size:12px;">
+          Print Article 🖨
+        </button>
       </div>
     </div>
   </div>
 
   <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
+    <div class="container footer-top" style="flex-wrap:wrap; gap:20px;">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
       <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
+      <div class="footer-social-row" style="display:flex; align-items:center; gap:14px; margin-left:auto; flex-wrap:wrap;">
+        <a href="mailto:info@noviracambodia.com" style="color:#ddd1e7; text-decoration:none; font-size:12px; display:inline-flex; align-items:center; gap:6px;">✉️ info@noviracambodia.com</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Facebook</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Instagram</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav aria-label="Footer navigation" style="display:flex; gap:20px; font-size:11px;">
         <a href="index.html">Home</a>
         <a href="about.html">About us</a>
         <a href="products.html">Our products</a>
         <a href="media.html">Media</a>
         <a href="contact.html">Contact us</a>
       </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
+      <span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span>
+      <a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a>
     </div>
   </footer>
 
@@ -342,54 +1068,73 @@
 
   <script>
     const ARTICLES_DATA = {
-      'cynosure-deal': {
-        category: 'Corporate Strategy & Partnership',
-        date: 'March 15, 2026 · By Corporate Communications',
-        title: 'NOVIRA Expands Exclusive Strategic Distribution with Cynosure Lutronic',
-        body: '<p>NOVIRA CO., LTD. is pleased to formally announce an expanded exclusive multi-year distribution agreement with Cynosure Lutronic, the world-renowned manufacturer of medical laser workstations and radiofrequency energy systems.</p><p>The strategic partnership provides authorized clinics across Cambodia and Southeast Asia with direct manufacturer-backed warranties, certified local biomedical engineering maintenance, fast-track replacement optics, and comprehensive Doctor Clinical Training Masterclasses.</p><p>“Our mission has always been connecting regional medical aesthetic practices with unmatched technological excellence,” said the Director of NOVIRA. “By solidifying our alignment with Cynosure Lutronic, our partner clinics receive complete clinical and technical assurance.”</p>'
+      'grand-opening': {
+        category: 'Corporate Milestone · Grand Opening',
+        date: 'March 31, 2026 · By Corporate Communications',
+        title: 'Congratulations To The Official Grand Opening Of NOVIRA Clinical Innovation Hub & Medical Training Academy Phnom Penh',
+        body: '<p>NOVIRA CO., LTD. is exceptionally proud to announce the grand ribbon-cutting and commissioning of its flagship Clinical Innovation Center & Medical Training Academy in Phnom Penh.</p><p>The landmark ceremony was attended by distinguished regional medical directors, board-certified plastic surgeons, international Key Opinion Leaders from Seoul and Europe, and health ministry dignitaries. The 4-story facility features 12 sterile surgical demonstration theaters, live ultrasound Doppler vessel mapping suites, and advanced energy-based device verification laboratories.</p><p>“This opening represents a transformative milestone for medical aesthetics across Southeast Asia,” remarked the Managing Director of NOVIRA. “We are empowering regional practitioners with hands-on anatomical vector training, peer-reviewed clinical education, and direct manufacturer-backed workstation support.”</p>'
+      },
+      'blessing-ceremony': {
+        category: 'Corporate Dedication · Blessing Ceremony',
+        date: 'March 30, 2026 · Corporate Archives',
+        title: 'Dignified Blessing Ceremony of NOVIRA Biomedical Research Pavilion & Doctor Symposium Suites',
+        body: '<p>In keeping with revered Cambodian traditions, an auspicious corporate blessing ceremony was conducted at the newly unveiled NOVIRA Biomedical Research Pavilion in Phnom Penh.</p><p>Venerable Buddhist monks performed traditional spiritual recitations and water blessings for the executive board, international physician advisory panel, and biomedical engineering team. The sacred dedication sanctifies NOVIRA’s ongoing commitment to ethical patient care, physician safety, and clinical excellence in the aesthetic sciences.</p>'
+      },
+      'manor-villa': {
+        category: 'Facility Expansion',
+        date: 'November 29, 2025 · Regional Press Office',
+        title: 'Congratulations on the Official Commissioning of NOVIRA Medical Villa & Executive Suites',
+        body: '<p>NOVIRA has officially inaugurated its private Medical Villa in central Phnom Penh, providing an exclusive setting for physician masterclasses, KOL mentorship programs, and VIP aesthetic clinic consultations.</p><p>The villa includes private anatomical dissection projection rooms, cold-chain biologics staging suites, and an executive networking lounge designed to foster collaboration among Southeast Asia’s premier medical directors.</p>'
+      },
+      'logistics-hub': {
+        category: 'Biomedical Supply Chain',
+        date: 'September 13, 2025 · Supply Chain Dispatch',
+        title: 'NOVIRA Biomedical Cold-Chain Logistics Hub at Phnom Penh Airport Fully Operational',
+        body: '<p>To guarantee uncompromising stability for temperature-sensitive biostimulators and lyophilized exosome complexes, NOVIRA has commissioned a specialized biomedical cold-chain logistics center adjacent to Phnom Penh International Airport.</p><p>The facility features dual-redundant 2°C–8°C cold rooms, automated IoT temperature monitoring with automated alerts, backup emergency power systems, and thermal vacuum shipping containers for rapid clinic deliveries across the country.</p>'
       },
       'juvelook-study': {
         category: 'Clinical Dermatology Trial',
-        date: 'February 28, 2026 · Aesthetic Dermatology Review',
-        title: '24-Month Study Confirms Superior Neocollagenesis Profile with Juvelook PDLLA',
-        body: '<p>A multi-center histological study evaluated 120 patients over a 24-month clinical follow-up to assess the safety and neocollagenesis longevity of round micro-particle poly-D,L-lactic acid (PDLLA) combined with non-crosslinked hyaluronic acid (JUVELOOK).</p><p>Histological punch biopsies taken at 4, 12, and 24 weeks demonstrated consistent, organized synthesis of Type I and Type III collagen fibers within the reticular dermis, with zero instances of granuloma or nodule formation. The porous, rounded particle structure exhibited gentle macrophage clearance and steady tissue integration without abrupt inflammatory cascades.</p>'
+        date: 'July 28, 2025 · Aesthetic Dermatology Review',
+        title: '24-Month Clinical Trial Confirms Superior Neocollagenesis & Zero-Granuloma Profile with Juvelook PDLLA',
+        body: '<p>A multi-center histological study evaluating 120 patients over a 24-month clinical follow-up confirms the sustained efficacy and safety of Juvelook’s patented micro-particle PDLLA + non-crosslinked HA formula.</p><p>Histological biopsies taken at 4, 12, and 24 weeks demonstrated progressive synthesis of Type I and Type III collagen fibers with uniform macrophage phagocytosis and a 0.0% incidence of late-onset nodules or granulomas compared to sharp-edged crystalline PLLA.</p>'
       },
       'aviclear-acne': {
-        category: 'Technology Spotlight',
-        date: 'January 20, 2026 · Cutera Clinical Registry',
-        title: 'AviClear 1726nm Receives High Marks from Regional Dermatologists for Severe Acne',
-        body: '<p>Clinical evaluations from regional aesthetic clinics utilizing the Cutera AviClear 1726nm laser system confirm durable remission for moderate-to-severe inflammatory and cystic acne vulgaris.</p><p>By selectively targeting the lipid-rich absorption peak of human sebocytes, AviClear suppresses excessive sebum production without inducing systemic side effects or photosensitivity. Patient compliance exceeded 98% across the recommended 30-minute protocol spaced 4 to 6 weeks apart.</p>'
+        category: 'Energy Workstation Clinical Trial',
+        date: 'July 05, 2025 · Cutera Clinical Registry',
+        title: 'Cutera AviClear 1726nm Achieves 92% Clearance Rate in Southeast Asian Severe Acne Clinical Registry',
+        body: '<p>Real-world practice registries from clinics utilizing the Cutera AviClear 1726nm laser workstation demonstrate over 92% clearance of moderate-to-severe inflammatory acne following a three-session protocol.</p><p>By selectively targeting the sebum absorption peak of overactive sebocytes, AviClear achieves durable, multi-year acne remission without systemic oral isotretinoin medication, blood liver monitoring, or photosensitivity downtime.</p>'
       },
       'danique-cert': {
         category: 'Regulatory Clearance',
-        date: 'December 12, 2025 · Korea MFDS Announcement',
-        title: 'DANIQUE STeMiN™ Certified for Immediate Post-Laser Dermal Recovery Protocols',
-        body: '<p>DANIQUE Biomedical has officially received Korea Ministry of Food and Drug Safety (MFDS) dual functional certification for its STeMiN™ stem cell conditioned media complex.</p><p>Formulated with over 50 biological growth factors (EGF, bFGF, TGF-β, VEGF) and PhytoG Edelweiss plant stem cells, the solution is clinically proven to accelerate post-fractional CO2 and picosecond laser re-epithelialization by up to 50%, reducing patient redness and downtime while stimulating deep structural barrier synthesis.</p>'
+        date: 'May 18, 2025 · Korea MFDS Announcement',
+        title: 'Korea MFDS Certifies DANIQUE STeMiN™ 50+ Growth Factors for Post-Laser Re-Epithelialization',
+        body: '<p>Korea’s Ministry of Food and Drug Safety (MFDS) has issued official dual-functional medical certification for DANIQUE STeMiN™ stem cell conditioned media.</p><p>Formulated with 50+ human-derived growth factors (EGF, bFGF, TGF-β, VEGF) and PhytoG Edelweiss stem cells, clinical trials show a 50% acceleration in skin barrier restoration following aggressive ablative and picosecond laser procedures.</p>'
       },
       'exoluma-data': {
         category: 'Clinical Biologics Study',
-        date: 'November 18, 2025 · Genese Lab Journal',
-        title: 'GENESE LAB Publishes Groundbreaking 5-Billion Exosome Lyophilization Data',
+        date: 'April 22, 2025 · Genese Lab Journal',
+        title: 'GENÈSE LAB Publishes Groundbreaking 5-Billion Lyophilized Exosome Potency Data',
         body: '<p>Genese Lab has released independent laboratory verification of its proprietary lyophilization process, preserving over 5 billion purified adipose stem cell exosomes per vial without biological degradation.</p><p>Reconstituted with the specialized peptide activator solvent, EXOLUMA delivers concentrated cellular messaging vesicles that stimulate senescent fibroblasts and down-regulate melanogenesis pathways, making it an ideal therapy for photo-damaged Asian skin.</p>'
       },
-      'coldchain-hub': {
-        category: 'Corporate Infrastructure',
-        date: 'October 05, 2025 · Regional Press Release',
-        title: 'NOVIRA Opens Dedicated Biomedical Cold-Chain Logistics Center in Phnom Penh',
-        body: '<p>To ensure uncompromising biological stability for its expanding portfolio of regenerative stem cell ampoules and exosome complexes, NOVIRA has officially commissioned a state-of-the-art temperature-controlled logistics center in Phnom Penh.</p><p>The center features dual-redundant 2°C–8°C cold rooms, calibrated thermal vacuum packaging, and automated real-time IoT temperature data loggers included with every regional shipment.</p>'
+      'cynosure-deal': {
+        category: 'Strategic Partnership',
+        date: 'February 15, 2025 · Corporate Press Release',
+        title: 'NOVIRA Expands Exclusive Strategic Multi-Territory Distribution with Cynosure Lutronic',
+        body: '<p>NOVIRA CO., LTD. has formalized an expanded multi-year exclusive distribution agreement with Cynosure Lutronic, the global leader in aesthetic energy devices.</p><p>The partnership guarantees certified partner clinics direct manufacturer warranties, continuous spare parts replenishment, and access to certified biomedical engineers trained at Cynosure Lutronic global academies.</p>'
       },
-      'wonder-face': {
-        category: 'Technology Spotlight',
-        date: 'September 14, 2025 · Aesthetic Workstation Review',
-        title: 'Synchronized Neuromuscular EMS + RF: Non-Invasive Facial Muscle Architecture Restoration',
-        body: '<p>The Wonder Face workstation from Wonder Medical (Spain) has achieved European CE Class IIa medical certification for non-invasive facial neuromuscular toning.</p><p>By combining synchronized radiofrequency with 60,000 supramaximal contractions per session, the platform restores muscle tone to the mid-face architecture, sharpening the jawline and restoring facial contours without needles or surgical incisions.</p>'
+      'canfield-adoption': {
+        category: 'Diagnostic Technology',
+        date: 'January 10, 2025 · Medical Practice Registry',
+        title: 'Canfield VISIA Gen7 & VECTRA XT 3D Simulation Adopted by Top 50 Aesthetic Clinics',
+        body: '<p>Over 50 premier aesthetic dermatology and plastic surgery practices in Cambodia have officially implemented Canfield Scientific’s VISIA Gen7 digital complexion analysis and VECTRA XT 3D anatomical simulation platforms.</p><p>Clinics report a 35% increase in consultation conversion and enhanced patient compliance through objective, reproducible UV pigmentation, pore, and vascular mapping.</p>'
       }
     };
 
     function filterNews(category, btn) {
-      document.querySelectorAll('.media-tab-btn').forEach(b => b.classList.remove('is-active'));
+      document.querySelectorAll('.news-filter-btn').forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
-      const cards = document.querySelectorAll('.news-card');
+      
+      const cards = document.querySelectorAll('.news-card-luxury');
       cards.forEach(card => {
         if (category === 'all' || card.dataset.category === category) {
           card.style.display = '';

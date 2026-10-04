@@ -8,6 +8,140 @@
   <title>Clinical Products Portfolio — NOVIRA</title>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .pc { color: var(--ink); }
+    .pc-wrap { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+    .pc h1, .pc h2, .pc h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); margin: 0; }
+    .pc-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--purple); font-weight: 600; margin: 0 0 14px; }
+    .pc-crumb { display: flex; flex-wrap: wrap; gap: 8px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 34px; }
+    .pc-crumb a:hover { color: var(--purple); }
+    .pc-crumb .cur { color: var(--ink); font-weight: 600; }
+    .pc-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .3px; background: var(--purple); color: #fff; border: 1px solid var(--purple); transition: transform .25s, background .25s; }
+    .pc-btn:hover { transform: translateY(-3px); background: var(--purple-dark); }
+    .pc-btn.ghost { background: transparent; color: var(--purple); border-color: var(--line); }
+    .pc-btn.ghost:hover { background: #fff; border-color: var(--purple); }
+
+    /* Hero */
+    .pc-hero { padding: 48px 0 90px; background: radial-gradient(900px 500px at 85% 15%, #efe9f8 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #e9f4f3 0%, transparent 60%); }
+    .pc-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(30px, 5vw, 80px); align-items: center; }
+    .pc-hero h1 { font-size: clamp(54px, 8vw, 104px); letter-spacing: -2px; line-height: .95; text-transform: uppercase; }
+    .pc-hero h1 small { display: block; font-size: clamp(18px, 2vw, 26px); letter-spacing: .5px; text-transform: none; color: var(--purple); margin-top: 18px; line-height: 1.3; }
+    .pc-lead { font-size: 15px; line-height: 1.85; color: var(--muted); max-width: 540px; margin: 26px 0 34px; }
+    .pc-lead em { color: var(--ink); font-style: normal; font-weight: 600; }
+    .pc-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .pc-stats { display: flex; gap: 0; margin-top: 44px; border-top: 1px solid var(--line); max-width: 540px; }
+    .pc-stats div { flex: 1; padding: 20px 20px 0 0; }
+    .pc-stats div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+    .pc-stats b { display: block; font-family: var(--serif); font-weight: 500; font-size: 34px; color: var(--purple); line-height: 1; margin-bottom: 8px; }
+    .pc-stats span { font-size: 12px; color: var(--muted); }
+    .pc-hero-frame { position: relative; aspect-ratio: 4/5; border-radius: 220px 220px 28px 28px; overflow: hidden; background: radial-gradient(circle at 50% 38%, #fff 0%, #f1edf8 70%, #e8e1f4 100%); display: grid; grid-template-columns: 1fr 1fr; align-items: end; padding: 0 6% 12%; }
+    .pc-hero-frame img { width: 100%; height: 80%; object-fit: contain; align-self: end; filter: drop-shadow(0 24px 24px rgba(46,8,111,.16)); transition: transform 1s ease; }
+    .pc-hero-frame img:first-child { transform: translateX(12%) scale(.78); transform-origin: bottom; }
+    .pc-hero-frame img:last-child { height: 96%; }
+    .pc-hero-visual { position: relative; }
+    .pc-hero-visual:hover img:last-child { transform: translateY(-6px); }
+    .pc-orbit { position: absolute; left: -40px; bottom: 70px; width: 148px; height: 148px; border-radius: 50%; background: #fff; border: 1px solid var(--line-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .pc-orbit b { font-family: var(--serif); font-weight: 500; font-size: 30px; color: var(--purple); line-height: 1; }
+    .pc-orbit span { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+
+    /* Categories */
+    .pc-sec { padding: clamp(70px, 8vw, 110px) 0; }
+    .pc-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 48px; }
+    .pc-head h2 { font-size: clamp(32px, 3.6vw, 50px); letter-spacing: -1px; line-height: 1.08; }
+    .pc-head h2 em { font-style: normal; color: var(--purple); }
+    .pc-head p { max-width: 420px; color: var(--muted); font-size: 14px; line-height: 1.85; margin: 0; }
+    .pc-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .pc-cat { position: relative; display: grid; grid-template-columns: 1fr 42%; min-height: 360px; border-radius: 28px; overflow: hidden; background: var(--bg); border: 1px solid var(--line-soft); transition: opacity .8s ease, transform .35s; cursor: pointer; }
+    .pc-cat:hover { transform: translateY(-6px); }
+    .pc-cat-copy { padding: 40px 0 38px 40px; display: flex; flex-direction: column; position: relative; z-index: 1; }
+    .pc-cat-num { font-family: var(--serif); font-size: 13px; letter-spacing: 3px; color: var(--c); }
+    .pc-cat h3 { font-size: clamp(30px, 3vw, 42px); text-transform: uppercase; letter-spacing: -.5px; margin: 14px 0 12px; }
+    .pc-cat p { font-size: 13.5px; line-height: 1.75; color: var(--muted); margin: 0 0 22px; max-width: 320px; }
+    .pc-cat ul { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .pc-cat li a { display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; letter-spacing: .6px; padding: 8px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line-soft); color: var(--ink-soft); transition: border-color .25s, color .25s; }
+    .pc-cat li a::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
+    .pc-cat li a:hover { border-color: var(--c); color: var(--c); }
+    .pc-cat-go { margin-top: auto; display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: var(--c); }
+    .pc-cat-go i { width: 40px; height: 40px; border-radius: 50%; background: var(--c); color: #fff; display: grid; place-items: center; font-style: normal; transition: transform .3s; }
+    .pc-cat:hover .pc-cat-go i { transform: rotate(-45deg); }
+    .pc-cat-media { position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 30px 20px 0 0; }
+    .pc-cat-media::before { content: ""; position: absolute; width: 120%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.65); right: -30%; bottom: -30%; }
+    .pc-cat-media img { position: relative; max-height: 300px; width: 100%; object-fit: contain; object-position: bottom; filter: drop-shadow(0 22px 22px rgba(0,0,0,.12)); transition: transform .8s ease; }
+    .pc-cat:hover .pc-cat-media img { transform: scale(1.05); }
+
+    /* Toolbar */
+    .pc-toolbar { position: sticky; top: var(--header-h, 72px); z-index: 20; background: rgba(255,255,255,.88); backdrop-filter: blur(14px); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+    .pc-toolbar-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 0; }
+    .pc-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pc-tab { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font-size: 12.5px; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: .25s; }
+    .pc-tab small { font-size: 11px; color: var(--muted); font-weight: 500; }
+    .pc-tab:hover { border-color: var(--purple); color: var(--purple); }
+    .pc-tab.is-active { background: var(--purple); border-color: var(--purple); color: #fff; }
+    .pc-tab.is-active small { color: rgba(255,255,255,.7); }
+    .pc-search { display: flex; align-items: center; gap: 10px; min-width: 300px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: #fff; transition: border-color .25s; }
+    .pc-search:focus-within { border-color: var(--purple); }
+    .pc-search svg { width: 16px; height: 16px; color: var(--muted); flex-shrink: 0; }
+    .pc-search input { border: 0; outline: 0; background: none; width: 100%; font-size: 13px; color: var(--ink); }
+
+    /* Catalog grid */
+    .pc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .pc-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-soft); border-radius: 26px; overflow: hidden; cursor: pointer; transition: opacity .8s ease, transform .35s, border-color .35s; outline: none; }
+    .pc-card:hover, .pc-card:focus-visible { transform: translateY(-8px); border-color: color-mix(in srgb, var(--c) 50%, white); }
+    .pc-card-media { position: relative; aspect-ratio: 1/0.86; background: radial-gradient(circle at 50% 45%, #fff 0%, color-mix(in srgb, var(--c) 9%, white) 75%); display: grid; place-items: center; overflow: hidden; }
+    .pc-card-media img { width: 70%; height: 78%; object-fit: contain; filter: drop-shadow(0 20px 22px rgba(0,0,0,.12)); transition: transform .8s ease; }
+    .pc-card:hover .pc-card-media img { transform: scale(1.06) translateY(-4px); }
+    .pc-card-num { position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 50%; background: var(--c); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 15px; }
+    .pc-card-badge { position: absolute; top: 22px; left: 20px; font-size: 10.5px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 7px 12px; border-radius: 999px; background: #fff; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 25%, white); }
+    .pc-card-quick { position: absolute; bottom: 16px; left: 50%; transform: translate(-50%, 12px); opacity: 0; font-size: 11.5px; font-weight: 600; padding: 9px 16px; border-radius: 999px; background: var(--ink); color: #fff; transition: .3s; }
+    .pc-card:hover .pc-card-quick { opacity: 1; transform: translate(-50%, 0); }
+    .pc-card-body { padding: 24px 24px 22px; display: flex; flex-direction: column; flex: 1; }
+    .pc-card-kicker { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 10px; font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+    .pc-card-kicker span { white-space: nowrap; }
+    .pc-card-kicker span:first-child { color: var(--c); font-weight: 600; }
+    .pc-card h3 { font-size: 22px; line-height: 1.2; margin-bottom: 10px; }
+    .pc-card-desc { font-size: 13px; line-height: 1.75; color: var(--muted); margin: 0 0 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .pc-card-chips { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .pc-card-chips li { font-size: 11px; padding: 6px 11px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line-soft); color: var(--ink-soft); }
+    .pc-card-foot { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: default; }
+    .pc-card-cta { font-size: 12.5px; font-weight: 600; color: var(--purple); }
+    .pc-card-cta span, .pc-card-link span { display: inline-block; transition: transform .25s; }
+    .pc-card-cta:hover span { transform: translateX(4px); }
+    .pc-card-link { font-size: 12px; font-weight: 600; color: var(--c); }
+    .pc-card-link:hover span { transform: translate(2px, -2px); }
+    .pc-empty { display: none; text-align: center; padding: 60px 20px; border: 1px dashed var(--line); border-radius: 22px; color: var(--muted); font-size: 14px; }
+    .pc-count { font-size: 13px; color: var(--muted); margin: 0; }
+
+    /* CTA */
+    .pc-cta { display: grid; grid-template-columns: 1.3fr auto; gap: 40px; align-items: center; padding: clamp(36px, 5vw, 64px); border-radius: 28px; background: var(--purple-dark); color: #fff; position: relative; overflow: hidden; }
+    .pc-cta::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -240px; border-radius: 50%; border: 1px solid rgba(255,255,255,.1); box-shadow: 0 0 0 80px rgba(255,255,255,.03); }
+    .pc-cta h2 { color: #fff !important; font-size: clamp(28px, 3vw, 42px); letter-spacing: -.8px; }
+    .pc-cta p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.85; margin: 14px 0 0; max-width: 560px; }
+    .pc-cta .pc-eyebrow { color: #c9b6ec; }
+    .pc-cta .pc-actions { position: relative; }
+    .pc-cta .pc-btn { background: #fff; color: var(--purple); border-color: #fff; }
+    .pc-cta .pc-btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
+
+    @media (max-width: 1080px) {
+      .pc-grid { grid-template-columns: repeat(2, 1fr); }
+      .pc-cats { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .pc-hero-grid, .pc-cta { grid-template-columns: 1fr; }
+      .pc-hero-visual { max-width: 480px; margin: 0 auto; width: 100%; }
+      .pc-orbit { left: 0; }
+      .pc-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .pc-toolbar-in { flex-direction: column; align-items: stretch; }
+      .pc-search { min-width: 0; }
+    }
+    @media (max-width: 640px) {
+      .pc-grid { grid-template-columns: 1fr; }
+      .pc-cat { grid-template-columns: 1fr; }
+      .pc-cat-copy { padding: 32px 26px 0; }
+      .pc-cat-media { padding: 10px 0 0; height: 240px; }
+      .pc-tabs { flex-wrap: nowrap; overflow-x: auto; }
+      .pc-tab { white-space: nowrap; }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +150,7 @@
   
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -33,8 +167,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -66,7 +200,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -86,8 +220,8 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
-              <a href="product-detail.html?product=exoluma" class="mobile-sublink"><span class="dot">•</span> EXOLUMA EXO-PDRN</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
+              <a href="exoluma.html" class="mobile-sublink"><span class="dot">•</span> EXOLUMA EXO-PDRN</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -109,6 +243,7 @@
         </div>
 
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -122,329 +257,304 @@
     </div>
   </header>
 
-  <main id="main">
-    <!-- Luxury Catalog Hero -->
-    <section class="catalog-hero-luxury">
-      <div class="container catalog-hero-inner">
-        <nav class="catalog-breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span>Our Products</span>
-        </nav>
-        <div class="catalog-hero-badge">Clinical Catalog &amp; Portfolio</div>
-        <h1 class="catalog-hero-title">Our Products.<br><em>Injectables &amp; Energy Devices.</em></h1>
-        <p class="catalog-hero-desc">Discover our comprehensive collection of medical-grade aesthetic injectables, biostimulators, advanced skincare formulations, and state-of-the-art energy-based treatment platforms.</p>
+  <main id="main" class="pc">
+
+    <section class="pc-hero">
+      <div class="pc-wrap">
+        <nav class="pc-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span class="cur">Our Products</span></nav>
+        <div class="pc-hero-grid">
+          <div>
+            <p class="pc-eyebrow">Clinical Portfolio</p>
+            <h1>Our Products<small>Injectables &amp; energy-based devices.</small></h1>
+            <p class="pc-lead"><em>Medical-grade solutions, curated for clinics.</em> From stem cell and exosome injectables to world-leading laser platforms — distributed by NOVIRA exclusively to licensed clinics and medical professionals.</p>
+            <div class="pc-actions">
+              <a href="#catalog" class="pc-btn" id="pc-hero-browse">Browse Catalog <span aria-hidden="true">↓</span></a>
+              <a href="contact.html?inquiry=B2BPartnership" class="pc-btn ghost" id="pc-hero-partner">Request Price List</a>
+            </div>
+            <div class="pc-stats">
+              <div><b>02</b><span>Categories</span></div>
+              <div><b>06</b><span>Partner brands</span></div>
+              <div><b>B2B</b><span>Clinics only</span></div>
+            </div>
+          </div>
+          <div class="pc-hero-visual reveal-on-scroll">
+            <div class="pc-hero-frame">
+              <img src="images/juvelook.png" alt="JUVELOOK injectable">
+              <img src="images/device-cutera.png" alt="Cutera AviClear laser platform">
+            </div>
+            <div class="pc-orbit"><b>KFDA</b><span>&amp; FDA-cleared<br>portfolio</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Sticky Category & Search Toolbar -->
-    <nav class="catalog-toolbar-luxury" aria-label="Product categories and filter">
-      <div class="container catalog-toolbar-flex">
-        <div class="catalog-pill-tabs" role="tablist">
-          <button class="catalog-tab-btn is-active" data-filter="all" role="tab" aria-selected="true">All Products <span style="opacity:0.75;">(10)</span></button>
-          <button class="catalog-tab-btn" data-filter="injectables" role="tab" aria-selected="false">Injectables &amp; Biostimulators <span style="opacity:0.75;">(5)</span></button>
-          <button class="catalog-tab-btn" data-filter="devices" role="tab" aria-selected="false">Energy Devices <span style="opacity:0.75;">(5)</span></button>
+    <section class="pc-sec">
+      <div class="pc-wrap">
+        <div class="pc-head">
+          <div>
+            <p class="pc-eyebrow">Shop by Category</p>
+            <h2>Two categories,<br><em>one clinical standard.</em></h2>
+          </div>
+          <p>Explore each category to see the brands we represent and the full product range behind them.</p>
         </div>
+        <div class="pc-cats">
+          <div class="pc-cat reveal-on-scroll" role="link" tabindex="0" onclick="location.href='injectables.html'" onkeydown="if(event.key==='Enter')location.href='injectables.html'" style="--c:#16766d;--bg:linear-gradient(135deg,#f2f8f7 0%,#e4f1ef 100%)" id="pc-cat-injectables">
+            <div class="pc-cat-copy">
+              <span class="pc-cat-num">01 — CATEGORY</span>
+              <h3>Injectables</h3>
+              <p>Stem cell elixirs, PDLLA + HA hybrids and exosome therapies for regeneration and rejuvenation.</p>
+              <ul onclick="event.stopPropagation()">
+                <li><a href="danique.html">DANIQUE</a></li>
+                <li><a href="juvelook.html">JUVELOOK</a></li>
+                <li><a href="denese-lab.html">GENÈSE LABS</a></li>
+                <li><a href="exoluma.html">EXOLUMA</a></li>
+              </ul>
+              <a href="injectables.html" class="pc-cat-go"><i>→</i>Explore Injectables</a>
+            </div>
+            <div class="pc-cat-media"><img src="images/exoluma.png" alt="EXOLUMA exosome injectable"></div>
+          </div>
+          <div class="pc-cat reveal-on-scroll" role="link" tabindex="0" onclick="location.href='devices.html'" onkeydown="if(event.key==='Enter')location.href='devices.html'" style="--c:#2E086F;--bg:linear-gradient(135deg,#f6f3fb 0%,#ebe5f6 100%)" id="pc-cat-devices">
+            <div class="pc-cat-copy">
+              <span class="pc-cat-num">02 — CATEGORY</span>
+              <h3>Devices</h3>
+              <p>Energy-based laser and treatment platforms from globally trusted medical device manufacturers.</p>
+              <ul onclick="event.stopPropagation()">
+                <li><a href="cynosure-lutronic.html">CYNOSURE LUTRONIC</a></li>
+                <li><a href="cutera.html">CUTERA</a></li>
+              </ul>
+              <a href="devices.html" class="pc-cat-go"><i>→</i>Explore Devices</a>
+            </div>
+            <div class="pc-cat-media"><img src="images/device-lutronic.png" alt="Cynosure Lutronic laser workstation"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="catalog-search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <div class="pc-toolbar" id="catalog">
+      <div class="pc-wrap pc-toolbar-in">
+        <div class="pc-tabs" role="tablist" aria-label="Filter by category">
+          <button class="pc-tab is-active" data-filter="all" role="tab" aria-selected="true" id="pc-tab-all">All Products <small>(10)</small></button>
+          <button class="pc-tab" data-filter="injectables" role="tab" aria-selected="false" id="pc-tab-injectables">Injectables <small>(5)</small></button>
+          <button class="pc-tab" data-filter="devices" role="tab" aria-selected="false" id="pc-tab-devices">Devices <small>(5)</small></button>
+        </div>
+        <label class="pc-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
           <input id="live-catalog-search" type="search" placeholder="Search product, brand, indication…" aria-label="Search catalog">
-        </div>
+        </label>
       </div>
-    </nav>
+    </div>
 
-    <!-- Main Products Catalog Grid -->
-    <section class="container section" style="padding-top:40px;">
-      <div class="section-heading" style="margin-bottom:10px;">
-        <div>
-          <p class="eyebrow" id="results-count">Showing 10 Clinical Formulations &amp; Platforms</p>
-          <h2 style="font-size:clamp(26px, 3vw, 38px);">Curated Clinical Portfolio</h2>
+    <section class="pc-sec" style="padding-top:56px">
+      <div class="pc-wrap">
+        <div class="pc-head" style="margin-bottom:36px">
+          <div>
+            <p class="pc-eyebrow">Full Catalog</p>
+            <h2>Curated clinical portfolio.</h2>
+          </div>
+          <p class="pc-count" id="results-count">Showing 10 products</p>
         </div>
-      </div>
-
-      <div class="luxury-catalog-grid" id="luxury-grid">
-        <!-- JUVELOOK -->
-        <article class="luxury-card" data-category="injectables" data-product-id="juvelook">
-          <div class="luxury-card-media" onclick="openProductModal('juvelook')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Hybrid PDLLA</span>
-            
-            <img src="images/juvelook.png" alt="JUVELOOK Hybrid PDLLA + HA" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <div class="pc-grid" id="luxury-grid">
+        <article class="pc-card reveal-on-scroll" data-category="injectables" data-product-id="juvelook" style="--c:#5d34a8" tabindex="0" onclick="openProductModal('juvelook')" onkeydown="if(event.key==='Enter')openProductModal('juvelook')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">01</span>
+            <span class="pc-card-badge">Hybrid PDLLA</span>
+            <img src="images/juvelook.png" alt="JUVELOOK Hybrid PDLLA + HA" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('juvelook')">
-            <div class="luxury-card-kicker">
-              <span>VAIM CO. · KOREA</span>
-              <span>50mg Lyophilized</span>
-            </div>
-            <h3 class="luxury-card-title">JUVELOOK Hybrid PDLLA + HA</h3>
-            
-            <p class="luxury-card-desc">Breakthrough hybrid collagen biostimulator merging micro-particle Poly-D,L-Lactic Acid with non-crosslinked Hyaluronic Acid for zero-nodule natural neocollagenesis.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">Micro-PDLLA 42.5mg</span><span class="luxury-chip">Uncrosslinked HA 7.5mg</span><span class="luxury-chip">Type I Collagen</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>VAIM CO. · KOREA</span><span>50mg Lyophilized</span></p>
+            <h3>JUVELOOK Hybrid PDLLA + HA</h3>
+            <p class="pc-card-desc">Breakthrough hybrid collagen biostimulator merging micro-particle Poly-D,L-Lactic Acid with non-crosslinked Hyaluronic Acid for zero-nodule natural neocollagenesis.</p>
+            <ul class="pc-card-chips"><li>Micro-PDLLA 42.5mg</li><li>Uncrosslinked HA 7.5mg</li><li>Type I Collagen</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
+              <a href="juvelook.html" class="pc-card-link" onclick="event.stopPropagation()">Brand page <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </article>
-        <!-- DANIQUE -->
-        <article class="luxury-card" data-category="injectables" data-product-id="danique">
-          <div class="luxury-card-media" onclick="openProductModal('danique')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Stem Cell Media</span>
-            
-            <img src="images/danique.png" alt="DANIQUE Stem Cell Complex" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="injectables" data-product-id="danique" style="--c:#1fa7b0" tabindex="0" onclick="openProductModal('danique')" onkeydown="if(event.key==='Enter')openProductModal('danique')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">02</span>
+            <span class="pc-card-badge">Stem Cell Media</span>
+            <img src="images/danique.png" alt="DANIQUE Stem Cell Complex" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('danique')">
-            <div class="luxury-card-kicker">
-              <span>DANIQUE · KOREA</span>
-              <span>5ml × 5 Ampoules</span>
-            </div>
-            <h3 class="luxury-card-title">DANIQUE Stem Cell Complex</h3>
-            
-            <p class="luxury-card-desc">Advanced post-procedure cellular restorative serum featuring human umbilical cord blood stem cell conditioned media and PhytoG Edelweiss extracts.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">STeMiN™ 50+ Factors</span><span class="luxury-chip">Edelweiss Stem Cells</span><span class="luxury-chip">Post-Laser Rebound</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>DANIQUE · KOREA</span><span>5ml × 5 Ampoules</span></p>
+            <h3>DANIQUE Stem Cell Complex</h3>
+            <p class="pc-card-desc">Advanced post-procedure cellular restorative serum featuring human umbilical cord blood stem cell conditioned media and PhytoG Edelweiss extracts.</p>
+            <ul class="pc-card-chips"><li>STeMiN™ 50+ Factors</li><li>Edelweiss Stem Cells</li><li>Post-Laser Rebound</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
+              <a href="danique.html" class="pc-card-link" onclick="event.stopPropagation()">Brand page <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </article>
-        <!-- EXOLUMA -->
-        <article class="luxury-card" data-category="injectables" data-product-id="exoluma">
-          <div class="luxury-card-media" onclick="openProductModal('exoluma')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Exosome Therapy</span>
-            
-            <img src="images/exoluma.png" alt="EXOLUMA Dual-Vial Exosomes" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="injectables" data-product-id="exoluma" style="--c:#16766d" tabindex="0" onclick="openProductModal('exoluma')" onkeydown="if(event.key==='Enter')openProductModal('exoluma')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">03</span>
+            <span class="pc-card-badge">Exosome Therapy</span>
+            <img src="images/exoluma.png" alt="EXOLUMA Dual-Vial Exosomes" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('exoluma')">
-            <div class="luxury-card-kicker">
-              <span>GENESE LAB · KOREA</span>
-              <span>Dual-Vial System</span>
-            </div>
-            <h3 class="luxury-card-title">EXOLUMA Dual-Vial Exosomes</h3>
-            
-            <p class="luxury-card-desc">Pure lyophilized exosome powder combined with an active amino peptide diluent. Delivers 5 billion active cellular signaling vesicles directly into the dermal matrix.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">5 Billion Exosomes</span><span class="luxury-chip">Growth Factor Solvent</span><span class="luxury-chip">Fibroblast Activation</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>GENESE LAB · KOREA</span><span>Dual-Vial System</span></p>
+            <h3>EXOLUMA Dual-Vial Exosomes</h3>
+            <p class="pc-card-desc">Pure lyophilized exosome powder combined with an active amino peptide diluent. Delivers 5 billion active cellular signaling vesicles directly into the dermal matrix.</p>
+            <ul class="pc-card-chips"><li>5 Billion Exosomes</li><li>Growth Factor Solvent</li><li>Fibroblast Activation</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
+              <a href="exoluma.html" class="pc-card-link" onclick="event.stopPropagation()">Brand page <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </article>
-        <!-- CITRUS-BOTTLE -->
-        <article class="luxury-card" data-category="injectables" data-product-id="citrus-bottle">
-          <div class="luxury-card-media" onclick="openProductModal('citrus-bottle')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Natural Lipolysis</span>
-            
-            <img src="images/citrus-bottle.png" alt="CITRUS BOTTLE Slim Solution" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="injectables" data-product-id="citrus-bottle" style="--c:#d89a12" tabindex="0" onclick="openProductModal('citrus-bottle')" onkeydown="if(event.key==='Enter')openProductModal('citrus-bottle')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">04</span>
+            <span class="pc-card-badge">Natural Lipolysis</span>
+            <img src="images/citrus-bottle.png" alt="CITRUS BOTTLE Slim Solution" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('citrus-bottle')">
-            <div class="luxury-card-kicker">
-              <span>CITRUS LAB · KOREA</span>
-              <span>10ml × 5 Vials</span>
-            </div>
-            <h3 class="luxury-card-title">CITRUS BOTTLE Slim Solution</h3>
-            
-            <p class="luxury-card-desc">Premium lipolytic solution formulated with concentrated vitamin B2 (riboflavin), lecithin, and botanical bromelain to dissolve localized adipocytes without swelling.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">High-Dose Riboflavin</span><span class="luxury-chip">Bromelain & Lecithin</span><span class="luxury-chip">Face & Body Contouring</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>CITRUS LAB · KOREA</span><span>10ml × 5 Vials</span></p>
+            <h3>CITRUS BOTTLE Slim Solution</h3>
+            <p class="pc-card-desc">Premium lipolytic solution formulated with concentrated vitamin B2 (riboflavin), lecithin, and botanical bromelain to dissolve localized adipocytes without swelling.</p>
+            <ul class="pc-card-chips"><li>High-Dose Riboflavin</li><li>Bromelain & Lecithin</li><li>Face & Body Contouring</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
               
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
             </div>
           </div>
         </article>
-        <!-- PROLUMA -->
-        <article class="luxury-card" data-category="injectables" data-product-id="proluma">
-          <div class="luxury-card-media" onclick="openProductModal('proluma')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">PDRN Regeneration</span>
-            
-            <img src="images/proluma.png" alt="PROLUMA Derma Revitalizer" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="injectables" data-product-id="proluma" style="--c:#d9608a" tabindex="0" onclick="openProductModal('proluma')" onkeydown="if(event.key==='Enter')openProductModal('proluma')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">05</span>
+            <span class="pc-card-badge">PDRN Regeneration</span>
+            <img src="images/proluma.png" alt="PROLUMA Derma Revitalizer" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('proluma')">
-            <div class="luxury-card-kicker">
-              <span>SKIN BOOSTER · KOREA</span>
-              <span>3ml Pre-filled</span>
-            </div>
-            <h3 class="luxury-card-title">PROLUMA Derma Revitalizer</h3>
-            
-            <p class="luxury-card-desc">High-potency clinical skin revitalizer featuring concentrated polydeoxyribonucleotide (PDRN) and collagen peptides to restore dermal resilience and radiance.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">Salmon DNA PDRN</span><span class="luxury-chip">Collagen Peptides</span><span class="luxury-chip">Micro-Line Smoothing</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>SKIN BOOSTER · KOREA</span><span>3ml Pre-filled</span></p>
+            <h3>PROLUMA Derma Revitalizer</h3>
+            <p class="pc-card-desc">High-potency clinical skin revitalizer featuring concentrated polydeoxyribonucleotide (PDRN) and collagen peptides to restore dermal resilience and radiance.</p>
+            <ul class="pc-card-chips"><li>Salmon DNA PDRN</li><li>Collagen Peptides</li><li>Micro-Line Smoothing</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
               
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
             </div>
           </div>
         </article>
-        <!-- HOLLYWOOD-SPECTRA -->
-        <article class="luxury-card" data-category="devices" data-product-id="hollywood-spectra">
-          <div class="luxury-card-media" onclick="openProductModal('hollywood-spectra')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Q-Switched Laser</span>
-            
-            <img src="images/device-lutronic.png" alt="Hollywood Spectra™" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="devices" data-product-id="hollywood-spectra" style="--c:#2E086F" tabindex="0" onclick="openProductModal('hollywood-spectra')" onkeydown="if(event.key==='Enter')openProductModal('hollywood-spectra')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">06</span>
+            <span class="pc-card-badge">Q-Switched Laser</span>
+            <img src="images/device-lutronic.png" alt="Hollywood Spectra™" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('hollywood-spectra')">
-            <div class="luxury-card-kicker">
-              <span>CYNOSURE LUTRONIC</span>
-              <span>1064nm / 532nm</span>
-            </div>
-            <h3 class="luxury-card-title">Hollywood Spectra™</h3>
-            
-            <p class="luxury-card-desc">Industry-leading Q-switched Nd:YAG laser platform delivering the official Hollywood Laser Peel® with unrivaled melasma and pigment clearance.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">Hollywood Laser Peel®</span><span class="luxury-chip">Melasma Gold Standard</span><span class="luxury-chip">Multi-Depth Zoom</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>CYNOSURE LUTRONIC</span><span>1064nm / 532nm</span></p>
+            <h3>Hollywood Spectra™</h3>
+            <p class="pc-card-desc">Industry-leading Q-switched Nd:YAG laser platform delivering the official Hollywood Laser Peel® with unrivaled melasma and pigment clearance.</p>
+            <ul class="pc-card-chips"><li>Hollywood Laser Peel®</li><li>Melasma Gold Standard</li><li>Multi-Depth Zoom</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
+              <a href="cynosure-lutronic.html" class="pc-card-link" onclick="event.stopPropagation()">Brand page <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </article>
-        <!-- CUTERA-AVICLEAR -->
-        <article class="luxury-card" data-category="devices" data-product-id="cutera-aviclear">
-          <div class="luxury-card-media" onclick="openProductModal('cutera-aviclear')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">1726nm Acne Laser</span>
-            
-            <img src="images/device-cutera.png" alt="AviClear™ Acne Laser" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="devices" data-product-id="cutera-aviclear" style="--c:#0e5a82" tabindex="0" onclick="openProductModal('cutera-aviclear')" onkeydown="if(event.key==='Enter')openProductModal('cutera-aviclear')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">07</span>
+            <span class="pc-card-badge">1726nm Acne Laser</span>
+            <img src="images/device-cutera.png" alt="AviClear™ Acne Laser" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('cutera-aviclear')">
-            <div class="luxury-card-kicker">
-              <span>CUTERA · SILICON VALLEY</span>
-              <span>Sapphire Contact Cooling</span>
-            </div>
-            <h3 class="luxury-card-title">AviClear™ Acne Laser</h3>
-            
-            <p class="luxury-card-desc">The first and only FDA-cleared energy device for the treatment of mild, moderate, and severe acne. Suppresses sebaceous glands at the cellular source.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">1726nm Targeted Laser</span><span class="luxury-chip">Drug-Free Treatment</span><span class="luxury-chip">AviCool™ Sapphire</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>CUTERA · SILICON VALLEY</span><span>Sapphire Contact Cooling</span></p>
+            <h3>AviClear™ Acne Laser</h3>
+            <p class="pc-card-desc">The first and only FDA-cleared energy device for the treatment of mild, moderate, and severe acne. Suppresses sebaceous glands at the cellular source.</p>
+            <ul class="pc-card-chips"><li>1726nm Targeted Laser</li><li>Drug-Free Treatment</li><li>AviCool™ Sapphire</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
+              <a href="cutera.html" class="pc-card-link" onclick="event.stopPropagation()">Brand page <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </article>
-        <!-- CANFIELD-VISIA -->
-        <article class="luxury-card" data-category="devices" data-product-id="canfield-visia">
-          <div class="luxury-card-media" onclick="openProductModal('canfield-visia')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">3D Skin Analysis</span>
-            
-            <img src="images/device-canfield.png" alt="VISIA® 7th Gen Booth" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="devices" data-product-id="canfield-visia" style="--c:#4a5b8c" tabindex="0" onclick="openProductModal('canfield-visia')" onkeydown="if(event.key==='Enter')openProductModal('canfield-visia')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">08</span>
+            <span class="pc-card-badge">3D Skin Analysis</span>
+            <img src="images/device-canfield.png" alt="VISIA® 7th Gen Booth" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('canfield-visia')">
-            <div class="luxury-card-kicker">
-              <span>CANFIELD · USA</span>
-              <span>7th Gen IntelliStudio</span>
-            </div>
-            <h3 class="luxury-card-title">VISIA® 7th Gen Booth</h3>
-            
-            <p class="luxury-card-desc">State-of-the-art multi-spectral facial complexion analysis system capturing surface and subsurface skin conditions with patented RBX® polarization technology.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">RBX® Technology</span><span class="luxury-chip">TruSkin Age® Score</span><span class="luxury-chip">3D Surface Rendering</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>CANFIELD · USA</span><span>7th Gen IntelliStudio</span></p>
+            <h3>VISIA® 7th Gen Booth</h3>
+            <p class="pc-card-desc">State-of-the-art multi-spectral facial complexion analysis system capturing surface and subsurface skin conditions with patented RBX® polarization technology.</p>
+            <ul class="pc-card-chips"><li>RBX® Technology</li><li>TruSkin Age® Score</li><li>3D Surface Rendering</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
               
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
             </div>
           </div>
         </article>
-        <!-- WONDER-FACE -->
-        <article class="luxury-card" data-category="devices" data-product-id="wonder-face">
-          <div class="luxury-card-media" onclick="openProductModal('wonder-face')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Neuromuscular EMS</span>
-            
-            <img src="images/device-wonder.png" alt="Wonder Face &amp; Prestige" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="devices" data-product-id="wonder-face" style="--c:#b0567a" tabindex="0" onclick="openProductModal('wonder-face')" onkeydown="if(event.key==='Enter')openProductModal('wonder-face')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">09</span>
+            <span class="pc-card-badge">Neuromuscular EMS</span>
+            <img src="images/device-wonder.png" alt="Wonder Face &amp; Prestige" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('wonder-face')">
-            <div class="luxury-card-kicker">
-              <span>WONDER MEDICAL · SPAIN</span>
-              <span>60,000 Contractions / 25min</span>
-            </div>
-            <h3 class="luxury-card-title">Wonder Face &amp; Prestige</h3>
-            
-            <p class="luxury-card-desc">Synchronized neuromuscular facial and body conditioning workstation delivering supramaximal muscle contractions and targeted bi-polar radiofrequency.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">Zygomaticus Lifting</span><span class="luxury-chip">Simultaneous Radiofrequency</span><span class="luxury-chip">Zero Consumables</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>WONDER MEDICAL · SPAIN</span><span>60,000 Contractions / 25min</span></p>
+            <h3>Wonder Face &amp; Prestige</h3>
+            <p class="pc-card-desc">Synchronized neuromuscular facial and body conditioning workstation delivering supramaximal muscle contractions and targeted bi-polar radiofrequency.</p>
+            <ul class="pc-card-chips"><li>Zygomaticus Lifting</li><li>Simultaneous Radiofrequency</li><li>Zero Consumables</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
               
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
             </div>
           </div>
         </article>
-        <!-- SINCLAIR-COOLTECH -->
-        <article class="luxury-card" data-category="devices" data-product-id="sinclair-cooltech">
-          <div class="luxury-card-media" onclick="openProductModal('sinclair-cooltech')">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Cryo-Lipolysis</span>
-            
-            <img src="images/device-sinclair.png" alt="Cooltech® Cryo Platform" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">Quick View 👁</span>
-            </div>
+        <article class="pc-card reveal-on-scroll" data-category="devices" data-product-id="sinclair-cooltech" style="--c:#2f8fb0" tabindex="0" onclick="openProductModal('sinclair-cooltech')" onkeydown="if(event.key==='Enter')openProductModal('sinclair-cooltech')">
+          <div class="pc-card-media">
+            <span class="pc-card-num">10</span>
+            <span class="pc-card-badge">Cryo-Lipolysis</span>
+            <img src="images/device-sinclair.png" alt="Cooltech® Cryo Platform" loading="lazy">
+            <span class="pc-card-quick">Quick view</span>
           </div>
-          <div class="luxury-card-body" onclick="openProductModal('sinclair-cooltech')">
-            <div class="luxury-card-kicker">
-              <span>SINCLAIR · EUROPE</span>
-              <span>Dual Handpieces to -8°C</span>
-            </div>
-            <h3 class="luxury-card-title">Cooltech® Cryo Platform</h3>
-            
-            <p class="luxury-card-desc">High-performance medical fat freezing system with dual simultaneous applicators reaching controlled -8°C for permanent adipocyte apoptosis and body contouring.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">Dual Applicators</span><span class="luxury-chip">Controlled -8°C Cryo</span><span class="luxury-chip">European CE Medical</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
+          <div class="pc-card-body">
+            <p class="pc-card-kicker"><span>SINCLAIR · EUROPE</span><span>Dual Handpieces to -8°C</span></p>
+            <h3>Cooltech® Cryo Platform</h3>
+            <p class="pc-card-desc">High-performance medical fat freezing system with dual simultaneous applicators reaching controlled -8°C for permanent adipocyte apoptosis and body contouring.</p>
+            <ul class="pc-card-chips"><li>Dual Applicators</li><li>Controlled -8°C Cryo</li><li>European CE Medical</li></ul>
+            <div class="pc-card-foot" onclick="event.stopPropagation()">
+              <a href="contact.html?inquiry=ProductInfo" class="pc-card-cta">Request information <span aria-hidden="true">→</span></a>
               
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
             </div>
           </div>
         </article>
+        </div>
+        <p class="pc-empty" id="pc-empty">No products match your search. Try another keyword or category.</p>
       </div>
     </section>
+
+    <section class="pc-sec" style="padding-top:0">
+      <div class="pc-wrap">
+        <div class="pc-cta reveal-on-scroll">
+          <div>
+            <p class="pc-eyebrow">For Licensed Clinics</p>
+            <h2>Need pricing, samples or a product dossier?</h2>
+            <p>Our partnership team provides clinic quotations, clinical documentation and product training for every brand in our portfolio.</p>
+          </div>
+          <div class="pc-actions">
+            <a href="contact.html?inquiry=B2BPartnership" class="pc-btn" id="pc-cta-quote">Request Quotation <span aria-hidden="true">↗</span></a>
+            <a href="contact.html" class="pc-btn ghost" id="pc-cta-contact">Contact Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ========================================================
@@ -495,7 +605,7 @@
           </table>
 
           <div class="modal-actions">
-            <a id="modal-prod-deep-dive" href="product-detail.html?product=exoluma" class="button secondary" style="border-color:var(--novira-purple);color:var(--novira-purple);padding:12px 22px;text-decoration:none;font-weight:700;">Explore Science &amp; Dossier 🔬</a>
+            <a id="modal-prod-deep-dive" href="exoluma.html" class="button secondary" style="border-color:var(--novira-purple);color:var(--novira-purple);padding:12px 22px;text-decoration:none;font-weight:700;">View Brand Page</a>
             <a id="modal-prod-cta" href="contact.html?inquiry=Product" class="luxury-enquire-btn" style="padding:12px 26px;font-size:13.5px;">Request Clinic Quotation &amp; Sample ↗</a>
             <button onclick="closeProductModal()" class="luxury-detail-btn" style="padding:12px 22px;">Close</button>
           </div>
@@ -506,22 +616,8 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
-      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="products.html">Our products</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
-    </div>
-  </footer>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
 
   <script src="nav.js"></script>
 
@@ -687,12 +783,9 @@
 
       const deepDiveBtn = document.getElementById('modal-prod-deep-dive');
       if (deepDiveBtn) {
-        let mapped = 'exoluma';
-        if (id.includes('juvelook')) mapped = 'juvelook';
-        else if (id.includes('danique')) mapped = 'danique';
-        else if (id.includes('picosure') || id.includes('spectra') || id.includes('lutronic') || id.includes('clarity')) mapped = 'picosure';
-        else if (id.includes('potenza')) mapped = 'potenza';
-        deepDiveBtn.href = `product-detail.html?product=${mapped}`;
+        const pages = { 'juvelook': 'juvelook.html', 'danique': 'danique.html', 'exoluma': 'exoluma.html', 'hollywood-spectra': 'cynosure-lutronic.html', 'cutera-aviclear': 'cutera.html' };
+        if (pages[id]) { deepDiveBtn.href = pages[id]; deepDiveBtn.style.display = ''; }
+        else { deepDiveBtn.style.display = 'none'; }
       }
 
       const modal = document.getElementById('luxury-product-modal');
@@ -727,13 +820,13 @@
     });
 
     // Category Filter Tabs
-    const tabs = document.querySelectorAll('.catalog-tab-btn');
-    const cards = document.querySelectorAll('.luxury-card');
+    const tabs = document.querySelectorAll('.pc-tab');
+    const cards = document.querySelectorAll('.pc-card');
     const resultsCount = document.getElementById('results-count');
     const searchInput = document.getElementById('live-catalog-search');
 
     function applyFilterAndSearch() {
-      const activeTab = document.querySelector('.catalog-tab-btn.is-active');
+      const activeTab = document.querySelector('.pc-tab.is-active');
       const category = activeTab ? activeTab.dataset.filter : 'all';
       const query = (searchInput.value || '').toLowerCase().trim();
 
@@ -751,7 +844,8 @@
         }
       });
 
-      resultsCount.textContent = 'Showing ' + visible + ' Clinical Formulations & Platforms';
+      resultsCount.textContent = 'Showing ' + visible + (visible === 1 ? ' product' : ' products');
+      document.getElementById('pc-empty').style.display = visible ? 'none' : 'block';
     }
 
     tabs.forEach(tab => {

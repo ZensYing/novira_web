@@ -8,6 +8,118 @@
   <title>DANIQUE — Ultimate Stem Cell Solution — NOVIRA</title>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .dq { --teal:#27b9c2; --copper:#b9693f; --jade:#0e8f70; --rose:#ef8fb0; --gold:#c79a63; }
+    .dq-wrap { width:min(1200px, calc(100% - 48px)); margin:0 auto; }
+    .dq-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); font-weight:600; margin:0 0 14px; }
+    .dq h1, .dq h2, .dq h3 { font-family:var(--serif); font-weight:500; color:var(--ink); margin:0; }
+    .dq-crumb { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:34px; }
+    .dq-crumb a { color:var(--muted); transition:color .2s; }
+    .dq-crumb a:hover { color:var(--purple); }
+    .dq-crumb .cur { color:var(--ink); font-weight:600; }
+
+    /* HERO */
+    .dq-hero { padding:48px 0 90px; background:radial-gradient(900px 500px at 85% 20%, #eaf8f9 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #f6eefb 0%, transparent 60%); }
+    .dq-hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; }
+    .dq-hero h1 { font-size:clamp(54px,8vw,104px); letter-spacing:-2px; line-height:.95; text-transform:uppercase; }
+    .dq-hero h1 small { display:block; font-size:clamp(18px,2vw,26px); letter-spacing:.5px; text-transform:none; color:var(--purple); margin-top:18px; line-height:1.3; }
+    .dq-lead { font-size:15px; line-height:1.85; color:var(--muted); max-width:540px; margin:26px 0 34px; }
+    .dq-lead em { color:var(--ink); font-style:normal; font-weight:600; }
+    .dq-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .dq-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.3px; background:var(--purple); color:#fff; transition:transform .25s, box-shadow .25s, background .25s; }
+    .dq-btn:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(46,8,111,.25); background:var(--purple-dark); }
+    .dq-btn.ghost { background:transparent; color:var(--purple); border:1px solid var(--line); }
+    .dq-btn.ghost:hover { background:#fff; box-shadow:0 12px 26px rgba(46,8,111,.1); }
+    .dq-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:34px; }
+    .dq-chip { font-size:11.5px; padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line-soft); color:var(--ink-soft); display:inline-flex; align-items:center; gap:8px; }
+    .dq-chip i { width:7px; height:7px; border-radius:50%; background:var(--c); display:block; }
+    .dq-hero-visual { position:relative; }
+    .dq-hero-frame { position:relative; aspect-ratio:4/5; border-radius:220px 220px 28px 28px; overflow:hidden; background:#f4f4f6; }
+    .dq-hero-frame img { width:100%; height:100%; object-fit:cover; object-position:50% 86%; transition:transform 1.2s ease; }
+    .dq-hero-visual:hover .dq-hero-frame img { transform:scale(1.04); }
+    .dq-orbit { position:absolute; width:150px; height:150px; border-radius:50%; background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; left:-44px; bottom:60px; }
+    .dq-orbit::before { content:""; position:absolute; inset:7px; border-radius:50%; border:1px dashed var(--teal); }
+    .dq-orbit b { font-family:var(--serif); font-size:34px; font-weight:500; color:var(--purple); line-height:1; }
+    .dq-orbit span { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.4; }
+
+    /* STORY */
+    .dq-story { padding:100px 0 80px; }
+    .dq-story-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(30px,6vw,90px); align-items:start; }
+    .dq-quote { font-size:clamp(28px,3.4vw,46px); line-height:1.18; letter-spacing:-1px; }
+    .dq-quote em { font-style:normal; color:var(--purple); }
+    .dq-story-text p { font-size:14.5px; line-height:1.95; color:var(--muted); margin:0 0 22px; }
+    .dq-story-text p strong { color:var(--ink); font-weight:600; }
+    .dq-story-text .big { font-size:17px; color:var(--ink-soft); line-height:1.8; }
+
+    /* BANNER */
+    .dq-banner { position:relative; height:clamp(320px,38vw,520px); overflow:hidden; }
+    .dq-banner img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+    .dq-banner::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(29,5,72,.78) 0%, rgba(29,5,72,.25) 55%, transparent 100%); }
+    .dq-banner-copy { position:absolute; z-index:2; left:max(24px, calc((100% - 1200px)/2)); top:50%; transform:translateY(-50%); color:#fff; max-width:420px; }
+    .dq-banner-copy p { font-size:11px; letter-spacing:3px; text-transform:uppercase; opacity:.8; margin:0 0 14px; }
+    .dq-banner-copy h2 { color:#fff; font-size:clamp(28px,3.6vw,50px); line-height:1.1; letter-spacing:-1px; }
+
+    /* FEATURES (capsules) */
+    .dq-feat { padding:110px 0 90px; }
+    .dq-head { text-align:center; max-width:680px; margin:0 auto; }
+    .dq-head h2 { font-size:clamp(30px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-head p { color:var(--muted); font-size:14px; line-height:1.8; margin:16px 0 0; }
+    .dq-caps { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:110px; }
+    .dq-cap { position:relative; border-radius:150px 150px 34px 34px; padding:100px 30px 42px; color:#fff; text-align:center; background:linear-gradient(180deg,var(--c) 0%, color-mix(in srgb,var(--c) 78%,#000) 100%); box-shadow:0 26px 46px color-mix(in srgb,var(--c) 28%,transparent); transition:transform .35s, box-shadow .35s; }
+    .dq-cap:hover { transform:translateY(-10px); box-shadow:0 38px 60px color-mix(in srgb,var(--c) 38%,transparent); }
+    .dq-cap-ico { position:absolute; top:-56px; left:50%; width:112px; height:112px; margin-left:-56px; border-radius:50%; background:#fff; color:var(--c); display:grid; place-items:center; box-shadow:0 12px 28px rgba(46,8,111,.14); transition:transform .5s; }
+    .dq-cap-ico::before { content:""; position:absolute; inset:6px; border-radius:50%; border:1px dashed color-mix(in srgb,var(--c) 60%,transparent); }
+    .dq-cap:hover .dq-cap-ico { transform:rotate(8deg) scale(1.05); }
+    .dq-cap-ico svg { width:46px; height:46px; stroke-width:1.6; }
+    .dq-cap-k { font-size:10.5px; letter-spacing:2.6px; text-transform:uppercase; opacity:.78; }
+    .dq-cap h3 { color:#fff; font-size:24px; margin:10px 0 18px; line-height:1.2; }
+    .dq-cap ul { list-style:none; padding:0; margin:0; text-align:left; display:grid; gap:12px; }
+    .dq-cap li { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:13px 16px; font-size:12.5px; line-height:1.6; backdrop-filter:blur(4px); }
+    .dq-cap li b { display:block; font-weight:700; font-size:13px; margin-bottom:2px; }
+    .dq-cap li span { opacity:.92; }
+
+    /* PRODUCTS */
+    .dq-prod { padding:90px 0 100px; background:var(--surface); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+    .dq-prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:60px; }
+    .dq-card { background:#fff; border:1px solid var(--line-soft); border-radius:26px; overflow:hidden; display:flex; flex-direction:column; transition:transform .35s, box-shadow .35s, border-color .35s; }
+    .dq-card:hover { transform:translateY(-8px); box-shadow:0 30px 56px rgba(46,8,111,.12); border-color:color-mix(in srgb,var(--c) 50%,white); }
+    .dq-card-media { position:relative; aspect-ratio:1/1; overflow:hidden; background:#fff; }
+    .dq-card-media img { width:100%; height:100%; object-fit:cover; transition:transform .8s ease; }
+    .dq-card:hover .dq-card-media img { transform:scale(1.06); }
+    .dq-card-tag { position:absolute; left:16px; top:16px; padding:6px 13px; border-radius:999px; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:700; background:var(--c); color:#fff; }
+    .dq-card-body { padding:26px 28px 30px; display:flex; flex-direction:column; flex:1; border-top:4px solid var(--c); }
+    .dq-card h3 { font-size:24px; letter-spacing:-.4px; margin-bottom:6px; }
+    .dq-card-sub { font-size:11.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--c); font-weight:700; margin-bottom:14px; }
+    .dq-card p { font-size:13.5px; line-height:1.8; color:var(--muted); margin:0 0 18px; }
+    .dq-card ul { list-style:none; margin:0 0 24px; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+    .dq-card li { font-size:11.5px; padding:6px 12px; border-radius:999px; background:color-mix(in srgb,var(--c) 10%,white); color:var(--ink-soft); }
+    .dq-card-link { margin-top:auto; display:inline-flex; align-items:center; justify-content:space-between; padding:14px 20px; border-radius:999px; border:1px solid var(--line); font-size:12.5px; font-weight:600; color:var(--purple); transition:background .25s,color .25s,border-color .25s; }
+    .dq-card:hover .dq-card-link { background:var(--c); color:#fff; border-color:var(--c); }
+
+    /* GALLERY */
+    .dq-gal { padding:100px 0; }
+    .dq-gal-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:56px; }
+    .dq-gal-grid figure { margin:0; position:relative; border-radius:24px; overflow:hidden; aspect-ratio:3/4; background:#eee; }
+    .dq-gal-grid figure:nth-child(even) { transform:translateY(34px); }
+    .dq-gal-grid img { width:100%; height:100%; object-fit:cover; object-position:50% 25%; transition:transform .9s ease; }
+    .dq-gal-grid figure:hover img { transform:scale(1.07); }
+
+    .dq-cta { margin:60px 0 100px; border-radius:30px; padding:clamp(34px,5vw,60px); background:linear-gradient(120deg,var(--purple-dark),var(--purple-mid)); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; position:relative; overflow:hidden; }
+    .dq-cta::after { content:""; position:absolute; right:-80px; top:-80px; width:300px; height:300px; border-radius:50%; border:1px dashed rgba(255,255,255,.3); }
+    .dq-cta h2 { color:#fff; font-size:clamp(26px,3vw,38px); letter-spacing:-.8px; }
+    .dq-cta p { color:rgba(255,255,255,.78); font-size:14px; max-width:520px; line-height:1.8; margin:10px 0 0; }
+    .dq-cta .dq-btn { background:#fff; color:var(--purple); position:relative; z-index:1; }
+
+    @media (max-width:1000px) {
+      .dq-hero-grid, .dq-story-grid { grid-template-columns:1fr; }
+      .dq-hero-visual { max-width:520px; margin:0 auto; width:100%; }
+      .dq-orbit { left:-10px; }
+      .dq-caps, .dq-prod-grid { grid-template-columns:1fr; max-width:460px; margin-left:auto; margin-right:auto; }
+      .dq-caps { row-gap:100px; }
+      .dq-gal-grid { grid-template-columns:repeat(2,1fr); }
+      .dq-gal-grid figure:nth-child(even) { transform:none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +128,7 @@
   
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -33,8 +145,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem active"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -66,7 +178,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -85,7 +197,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink active"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -107,6 +219,7 @@
         </div>
 
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -120,870 +233,181 @@
     </div>
   </header>
 
-<main id="main">
 
-  <!-- LUXURY HERO SECTION WITH MULTI-IMAGE SHOWROOM -->
-  <section class="danique-hero-luxury">
-    <div class="container">
-      <div class="danique-hero-grid">
-        <!-- Left: Brand Philosophy & Clinical Accreditations -->
-        <div class="danique-hero-left">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="products.html">Our Products</a>
-            <span class="sep">/</span>
-            <a href="injectables.html">1. Injectables</a>
-            <span class="sep">/</span>
-            <span class="current">DANIQUE</span>
-          </nav>
+<main id="main" class="dq">
 
-          <div class="danique-hero-kicker">
-            <span class="star-pulse">✦</span>
-            <span>BRAND: DANIQUE · STEM CELL BIO-INNOVATION · KOREA MFDS</span>
-          </div>
-
-          <h1 class="danique-hero-h1">
-            DANIQUE — The Ultimate<br>
-            <em>Stem Cell Solution.</em>
-          </h1>
-
-          <p class="danique-hero-lead">
-            <em>“Illuminate as a morning star, shining the brightest in the dark.”</em> DANIQUE regenerates skin through purest human adipose stem cell conditioned media (STeMiN™) delivering over 50 active growth factors and alpine PhytoG Edelweiss stem cells for definitive clinical reversal of biological cellular ageing.
-          </p>
-
-          <div class="danique-hero-badges-grid">
-            <div class="danique-hero-badge-pill">
-              <span>🧬</span> <strong>STeMiN™ 50+ Growth Factors</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>🌿</span> <strong>PhytoG Alpine Edelweiss</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>🛡️</span> <strong>11+ Patented Multi-Actives</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>🇰🇷</span> <strong>Korea FDA Dual Approved</strong>
-            </div>
-          </div>
-
-          <div class="danique-hero-actions-row">
-            <a href="#danique-catalog" class="danique-hero-btn">
-              <span>Request Clinic Supply</span>
-              <span aria-hidden="true">📋</span>
-            </a>
-            <a href="#danique-features" class="danique-hero-btn-outline">
-              <span>Dual-Cell Science</span>
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a href="contact.html?inquiry=Danique" class="danique-hero-btn-ghost">
-              <span>Clinic Samples ↗</span>
-            </a>
-          </div>
-
-          <!-- Trust Metric Bar -->
-          <div class="danique-hero-stats">
-            <div class="danique-stat-card">
-              <strong>50+</strong>
-              <span>Growth Factors</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>11+</strong>
-              <span>Patented Actives</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>100%</strong>
-              <span>CGMP / ISO 22716</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>2×</strong>
-              <span>Antioxidant Power</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Interactive Multi-Image Product Showroom -->
-        <div class="danique-gallery-wrap">
-          <div class="danique-gallery-stage" id="danique-gallery-stage">
-            <img id="danique-main-photo" class="danique-gallery-main-img" src="images/danique-boxset.jpg" alt="DANIQUE STeMiN Stem Cell Rejuvenating Ampoule 5-Vial Presentation Box Set">
-            <div class="danique-gallery-overlay"></div>
-            
-            <div class="danique-gallery-top-badge" id="danique-gallery-tag">
-              ⭐ 1. STeMiN™ 5-VIAL BOX SET + DROPPER
-            </div>
-
-            <div class="danique-gallery-arrows">
-              <button class="danique-gallery-arrow" onclick="prevDaniqueHeroImage()" aria-label="Previous product image">‹</button>
-              <button class="danique-gallery-arrow" onclick="nextDaniqueHeroImage()" aria-label="Next product image">›</button>
-            </div>
-
-            <div class="danique-gallery-caption-bar">
-              <div class="gallery-caption-title" id="danique-gallery-title">STeMiN™ Stem Cell Rejuvenating Ampoule (5ml × 5)</div>
-              <div class="gallery-caption-sub" id="danique-gallery-desc">Korea FDA Dual Functional Approved · MTS &amp; Clinical Mesotherapy</div>
-            </div>
-          </div>
-
-          <!-- 4-Image Interactive Thumbnails Switcher -->
-          <div class="danique-thumbs-strip" role="tablist" aria-label="DANIQUE Product Perspectives">
-            <button type="button" class="danique-thumb-item is-active" onclick="switchDaniqueHeroImage(0)" id="thumb-btn-0" role="tab" aria-selected="true">
-              <div class="danique-thumb-img-box">
-                <img src="images/danique-boxset.jpg" alt="DANIQUE Box Set">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">1. Box Set</span>
-                <span class="danique-thumb-desc">5 Vials + Dropper</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchDaniqueHeroImage(1)" id="thumb-btn-1" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/danique-ampoule-dropper.jpg" alt="DANIQUE Dropper Macro">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">2. Active Dropper</span>
-                <span class="danique-thumb-desc">Viscous Serum</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchDaniqueHeroImage(2)" id="thumb-btn-2" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/danique-mask.jpg" alt="DANIQUE Bio-Cellulose Mask">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">3. Bio-Cellulose</span>
-                <span class="danique-thumb-desc">Sheet Mask</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchDaniqueHeroImage(3)" id="thumb-btn-3" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/danique-cream.jpg" alt="DANIQUE Recovery Cream">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">4. Barrier Cream</span>
-                <span class="danique-thumb-desc">Restorative Jar</span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 1: PHILOSOPHY & ANTI-AGEING RESEARCH -->
-  <section class="section container">
-    <div class="section-heading">
+  <!-- HERO -->
+  <section class="dq-hero">
+    <div class="dq-wrap dq-hero-grid">
       <div>
-        <p class="eyebrow">Definitive Formulation Science</p>
-        <h2>Making Good Anti-Ageing Cosmetics with Excellent Materials</h2>
-      </div>
-      <p style="max-width: 480px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-        Our research core is focused on finding lots of great anti-ageing materials and how we approach these when formulated into clinical medical aesthetics.
-      </p>
-    </div>
-
-    <div class="danique-split-grid">
-      <!-- Card 1: Material Selection -->
-      <div class="danique-philosophy-card">
-        <div class="danique-card-icon-wrap">🔍</div>
-        <h3 class="danique-card-title">Relentless Pursuit of Excellent Materials</h3>
-        <div class="danique-card-quote">
-          “What we focused on is finding lots of great anti-ageing materials &amp; how we approach with these when it comes to cosmetics. Finding good materials may be easy, but selecting the proper one and formulating cosmetics with great quality is hard. We focused relentlessly on <strong>making good anti-ageing cosmetics with excellent materials</strong>.”
+        <nav class="dq-crumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span>/</span><a href="products.html">Our Products</a><span>/</span><a href="injectables.html">1. Injectables</a><span>/</span><span class="cur">DANIQUE</span>
+        </nav>
+        <p class="dq-eyebrow">1. Injectables · Brand</p>
+        <h1>Danique<small>The ultimate stem cell solution.</small></h1>
+        <p class="dq-lead">
+          <em>Makes your skin illuminate as a morning star, shining the most in the dark.</em> Regenerating your skin with the purest form of stem cell, and giving the best solution to your skin problem through high performance active ingredients. Experience mysterious, definitive, glow beauty — DANIQUE, the morning star.
+        </p>
+        <div class="dq-actions">
+          <a class="dq-btn" href="#dq-products">View Products <span aria-hidden="true">↓</span></a>
+          <a class="dq-btn ghost" href="contact.html?inquiry=Danique">Request Information <span aria-hidden="true">↗</span></a>
         </div>
-        <ul class="danique-card-bullets">
-          <li><span class="check">✓</span> <span><strong>Ultra-Pure Bio-Active Extraction:</strong> Zero unnecessary fillers or harsh additives, maximizing cellular biocompatibility.</span></li>
-          <li><span class="check">✓</span> <span><strong>Advanced Bio-Fermentation:</strong> Concentrated bioactive peptides engineered for deep trans-epidermal stability.</span></li>
-          <li><span class="check">✓</span> <span><strong>Clinical Synergy:</strong> Rigorously calibrated to work alongside professional aesthetic modalities (microneedling, laser, RF, peeling).</span></li>
-        </ul>
-      </div>
-
-      <!-- Card 2: Stem Cell Technology Indispensable -->
-      <div class="danique-philosophy-card">
-        <div class="danique-card-icon-wrap">🧬</div>
-        <h3 class="danique-card-title">Why Stem Cell Technology is Indispensable</h3>
-        <div class="danique-card-quote">
-          “We can't exclude stem cell technology when we talk about ‘anti-ageing’ — it is the <strong>most powerful measurement for delaying skin ageing and having younger skin</strong>. Using human bio stem cell culture and plant stem cell for ultimate rejuvenation effect, there are more than 50 growth factors in the stem cells that recover damaged skin and rejuvenate aged skin.”
+        <div class="dq-chips">
+          <span class="dq-chip" style="--c:var(--teal)"><i></i>Stem Cell Conditioned Media</span>
+          <span class="dq-chip" style="--c:var(--copper)"><i></i>11+ Patented Ingredients</span>
+          <span class="dq-chip" style="--c:var(--jade)"><i></i>Korea FDA Approved</span>
         </div>
-        <ul class="danique-card-bullets">
-          <li><span class="check">✓</span> <span><strong>Over 50 Active Growth Factors:</strong> Natural human signaling proteins that directly command fibroblast proliferation and collagen synthesis.</span></li>
-          <li><span class="check">✓</span> <span><strong>Deep Dermal Structural Repair:</strong> Recovers damaged skin architecture, rebuilds degraded extracellular matrix (ECM).</span></li>
-          <li><span class="check">✓</span> <span><strong>Multi-Patented Active Shield:</strong> Supported by over 11 patented active ingredients to defend against photo-oxidation and inflammation.</span></li>
-        </ul>
+      </div>
+      <div class="dq-hero-visual">
+        <div class="dq-hero-frame"><img src="images/danique/lineup.jpg" alt="DANIQUE Stem Cell Ultimate Elixir, NK-Cell Elixir and Cellular Exosome Elixir vials"></div>
+        <div class="dq-orbit"><b>50+</b><span>Growth<br>Factors</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: SPECIAL FEATURES OF DANIQUE (DUAL STEM CELL SYNERGY) -->
-  <section id="danique-features" class="section" style="background: #faf7fc; border-top: 1px solid rgba(50, 16, 111, 0.06); border-bottom: 1px solid rgba(50, 16, 111, 0.06);">
-    <div class="container">
-      <div class="section-heading">
+  <!-- STORY -->
+  <section class="dq-story">
+    <div class="dq-wrap dq-story-grid">
+      <div class="reveal-on-scroll">
+        <p class="dq-eyebrow">Our Philosophy</p>
+        <h2 class="dq-quote">Making good anti-ageing cosmetics with <em>excellent materials.</em></h2>
+      </div>
+      <div class="dq-story-text reveal-on-scroll">
+        <p class="big">What we focused on is finding lots of great anti-ageing materials and how we approach them when it comes to cosmetics. Finding good materials may be easy, but selecting the proper one and making it into a cosmetic of great quality is hard.</p>
+        <p>We can’t exclude <strong>stem cell technology</strong> when we talk about “anti-ageing” — it is the most powerful measurement to delay skin ageing and keep younger skin. Using human bio stem cell culture and plant stem cell for the ultimate rejuvenating effect, there are <strong>more than 50 growth factors</strong> in the stem cells that recover damaged skin and rejuvenate aged skin.</p>
+        <p>Not only with stem cells, we are also using lots of great patented ingredients that are helping with anti-ageing.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="dq-banner">
+    <img src="images/danique/shoot-10.jpg" alt="DANIQUE campaign with NK-Cell Elixir and Cellular Exosome Elixir boxes" loading="lazy">
+    <div class="dq-banner-copy">
+      <p>DANIQUE · The Morning Star</p>
+      <h2>Illuminate as a morning star.</h2>
+    </div>
+  </div>
+
+  <!-- SPECIAL FEATURES -->
+  <section class="dq-feat" id="dq-features">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">Special Feature of DANIQUE</p>
+        <h2>Three pillars behind every vial.</h2>
+        <p>From stem cell science to patented actives and regulatory approval.</p>
+      </div>
+      <div class="dq-caps">
+        <article class="dq-cap reveal-on-scroll" style="--c:#0fa3b8">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="3.2"/><circle cx="16" cy="16" r="9"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4"/></svg></span>
+          <span class="dq-cap-k">01</span>
+          <h3>Innovative Solution</h3>
+          <ul>
+            <li><b>Stem Cell Conditioned Media</b><span>Human Bio Stem Cell + Plant Stem Cell</span></li>
+            <li><b>STeMiN™</b><span>Most powerful measurement for skin rejuvenation by adipose stem cell, containing more than 50 growth factors.</span></li>
+            <li><b>PhytoG Stem Cell-Edelweiss</b><span>Powerful skin regenerating ingredient.</span></li>
+          </ul>
+        </article>
+        <article class="dq-cap reveal-on-scroll" style="--c:#b9693f">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5l3.6 7.3 8 1.2-5.8 5.6 1.4 8L16 21.8 8.8 25.6l1.4-8L4.4 12l8-1.2z"/></svg></span>
+          <span class="dq-cap-k">02</span>
+          <h3>High Performance Patented Ingredients</h3>
+          <ul>
+            <li><b>Anti-Wrinkle</b><span>BioDTox™, RedSnow™</span></li>
+            <li><b>Anti-Oxidant</b><span>TriEx™, Vitamin C</span></li>
+            <li><b>Enhancing Elasticity</b><span>Epsema™, Fuligo™</span></li>
+            <li><b>Anti-Inflammation</b><span>Super Centella™, MadeWhite™</span></li>
+            <li><b>Whitening</b><span>WhiteTen™, Niacinamide</span></li>
+          </ul>
+        </article>
+        <article class="dq-cap reveal-on-scroll" style="--c:#0e8f70">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5l10 4v8c0 6.2-4.2 10.6-10 13-5.8-2.4-10-6.8-10-13v-8z"/><path d="M11.5 16l3.4 3.4 6-6.6"/></svg></span>
+          <span class="dq-cap-k">03</span>
+          <h3>Advanced &amp; Safe Technology</h3>
+          <ul>
+            <li><b>Clinically Proven</b><span>More than 11 different patented ingredients are performing for skin.</span></li>
+            <li><b>Korea FDA Approved</b><span>Anti-Wrinkle functional cosmetic</span></li>
+            <li><b>Korea FDA Approved</b><span>Whitening functional cosmetic</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="dq-prod" id="dq-products">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">DANIQUE Laboratories</p>
+        <h2>The DANIQUE elixir collection.</h2>
+        <p>Professional vials distributed exclusively to licensed clinics and medical professionals.</p>
+      </div>
+      <div class="dq-prod-grid">
+        <article class="dq-card reveal-on-scroll" style="--c:#16b0b9">
+          <div class="dq-card-media"><span class="dq-card-tag">Stem Cell</span><img src="images/danique/stemcell.jpg" alt="DANIQUE Stem Cell Ultimate Elixir vials" loading="lazy"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">Stem Cell Conditioned Media</span>
+            <h3>Stem Cell Ultimate Elixir</h3>
+            <p>Built on human bio stem cell culture and plant stem cell, the elixir delivers more than 50 growth factors to recover damaged skin and rejuvenate aged skin.</p>
+            <ul><li>STeMiN™</li><li>PhytoG Edelweiss</li><li>50+ Growth Factors</li></ul>
+            <a class="dq-card-link" href="contact.html?inquiry=DANIQUE%20Stem%20Cell%20Ultimate%20Elixir"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="dq-card reveal-on-scroll" style="--c:#0e8f70">
+          <div class="dq-card-media"><span class="dq-card-tag">NK-Exosome</span><img src="images/danique/nk.jpg" alt="DANIQUE NK-Cell Elixir 01 Lyophilized NK-Exosome and 02 Activating HA Solution" loading="lazy"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">2-step set · 01 + 02</span>
+            <h3>NK-Cell Elixir</h3>
+            <p>A two-vial system: NK-Cell Elixir 01 Lyophilized NK-Exosome, activated by NK-Cell Elixir 02 Activating HA Solution.</p>
+            <ul><li>01 Lyophilized NK-Exosome</li><li>02 Activating HA Solution</li></ul>
+            <a class="dq-card-link" href="contact.html?inquiry=DANIQUE%20NK-Cell%20Elixir"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="dq-card reveal-on-scroll" style="--c:#e9739d">
+          <div class="dq-card-media"><span class="dq-card-tag">Exosome</span><img src="images/danique/exosome.jpg" alt="DANIQUE Cellular Exosome Elixir Rx vials" loading="lazy"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">Exosome · Rx</span>
+            <h3>Cellular Exosome Elixir</h3>
+            <p>A ready-to-use exosome elixir formulated with cell exosome, sodium DNA, peptides and amino acids.</p>
+            <ul><li>Cell Exosome+++</li><li>Sodium DNA</li><li>Peptides</li><li>Amino Acid</li></ul>
+            <a class="dq-card-link" href="contact.html?inquiry=DANIQUE%20Cellular%20Exosome%20Elixir"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="dq-gal">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">The Morning Star Look</p>
+        <h2>DANIQUE, in the spotlight.</h2>
+      </div>
+      <div class="dq-gal-grid">
+        <figure><img src="images/danique/shoot-3.jpg" alt="Model holding a DANIQUE vial" loading="lazy"></figure>
+        <figure><img src="images/danique/shoot-12.jpg" alt="Model with DANIQUE product boxes" loading="lazy"></figure>
+        <figure><img src="images/danique/shoot-4.jpg" alt="Model with DANIQUE NK-Cell Elixir vial" loading="lazy"></figure>
+        <figure><img src="images/danique/shoot-13.jpg" alt="Model with DANIQUE Cellular Exosome Elixir box" loading="lazy"></figure>
+      </div>
+
+      <div class="dq-cta reveal-on-scroll" style="margin-top:100px">
         <div>
-          <p class="eyebrow">Innovative Solution</p>
-          <h2>Special Feature of DANIQUE: Dual Stem Cell Engine</h2>
+          <h2>Bring DANIQUE to your clinic.</h2>
+          <p>Speak with our partnership team about supply, samples and clinical guidance for DANIQUE Laboratories.</p>
         </div>
-        <p style="max-width: 480px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-          Stem Cell Conditioned Media combining <strong>Human Bio Stem Cell</strong> and <strong>Plant Stem Cell</strong> for the definitive rejuvenation standard.
-        </p>
-      </div>
-
-      <div class="danique-dual-grid">
-        <!-- Dual 1: STeMiN -->
-        <div class="danique-dual-card">
-          <span class="danique-dual-kicker">HUMAN BIO STEM CELL CONDITIONED MEDIA</span>
-          <h3 class="danique-dual-title">STeMiN™ Adipose Stem Cell Culture</h3>
-          <p class="danique-dual-lead">Most powerful measurement for skin rejuvenation by adipose stem cell that contains more than 50 growth factors.</p>
-          <p class="danique-dual-desc">
-            STeMiN™ supplies autologous cellular signals directly into fatigued dermal layers. Its diverse library of biologically active growth factors stimulates dormant fibroblasts to synthesize new Type I & III collagen, elastin, and hyaluronic acid.
-          </p>
-          <div style="font-size: 12px; font-weight: 700; color: var(--purple-dark); margin-bottom: 6px;">Key Growth Factors Contained:</div>
-          <div class="danique-factor-chips">
-            <span class="danique-factor-chip">EGF (Epidermal Growth Factor)</span>
-            <span class="danique-factor-chip">bFGF (Basic Fibroblast GF)</span>
-            <span class="danique-factor-chip">TGF-β (Transforming GF)</span>
-            <span class="danique-factor-chip">VEGF (Vascular Endothelial GF)</span>
-            <span class="danique-factor-chip">IGF-1 (Insulin-like GF)</span>
-            <span class="danique-factor-chip">PDGF (Platelet-derived GF)</span>
-          </div>
-        </div>
-
-        <!-- Dual 2: PhytoG Edelweiss -->
-        <div class="danique-dual-card">
-          <span class="danique-dual-kicker">PLANT STEM CELL BIO-REGENERATION</span>
-          <h3 class="danique-dual-title">PhytoG Stem Cell - Edelweiss</h3>
-          <p class="danique-dual-lead">Powerful skin regenerating ingredient with extreme alpine cellular survival endurance.</p>
-          <p class="danique-dual-desc">
-            Cultivated from the rare alpine plant <em>Leontopodium Alpinum</em>, PhytoG Stem Cell-Edelweiss exhibits twice the free-radical neutralizing power of pure Vitamin C. It fortifies cellular membrane resilience, protects the extracellular matrix against UV-induced collagenase enzymes, and delivers intensive barrier restoration.
-          </p>
-          <div style="font-size: 12px; font-weight: 700; color: var(--purple-dark); margin-bottom: 6px;">Core Protective Actions:</div>
-          <div class="danique-factor-chips">
-            <span class="danique-factor-chip">Extreme UV Tolerance</span>
-            <span class="danique-factor-chip">Leontopodic Acid A &amp; B</span>
-            <span class="danique-factor-chip">Anti-Collagenase Activity</span>
-            <span class="danique-factor-chip">Photo-Aging Defense</span>
-            <span class="danique-factor-chip">Cell Longevity Booster</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: 11+ HIGH PERFORMANCE PATENTED INGREDIENTS MATRIX -->
-  <section class="section container">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Multi-Targeted Efficacy</p>
-        <h2>High Performance Patented Ingredients</h2>
-      </div>
-      <p style="max-width: 520px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-        More than 11 different patented active ingredients performing synergistically across five critical aesthetic dimensions.
-      </p>
-    </div>
-
-    <div class="danique-patents-section">
-      <div style="text-align: center; max-width: 640px; margin: 0 auto 30px;">
-        <span style="display:inline-block; padding: 4px 14px; background:#eeddf7; color:var(--purple); border-radius:999px; font-size:11px; font-weight:700; letter-spacing:1px; margin-bottom:10px;">PROVEN PATENTED SCIENCE</span>
-        <h3 style="font-size: 26px; color: var(--purple-dark); margin-bottom: 8px;">Targeted Clinical Mechanisms</h3>
-        <p style="color: #635277; font-size: 13px; line-height: 1.6;">Every formulation is enriched with patented actives engineered to deliver visible, clinically documented outcomes.</p>
-      </div>
-
-      <div class="danique-patents-grid">
-        <!-- 1. Anti-Wrinkle -->
-        <div class="danique-patent-col">
-          <div class="danique-patent-col-header">
-            <div class="danique-patent-icon">⏳</div>
-            <div class="danique-patent-category">
-              Anti-Wrinkle
-              <span>Target: Fine Lines &amp; Creases</span>
-            </div>
-          </div>
-          <div class="danique-patent-list">
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">BioDTox™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">Bioflavonoid citrus, broccoli sulforaphane, and aloe complex activating Nrf2 cellular detoxification to inhibit wrinkle formation.</p>
-            </div>
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">RedSnow™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">Patented Camellia Japonica extract from Jeju Island that shields cells from air pollution and stimulates procollagen Type I synthesis.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Anti-Oxidant -->
-        <div class="danique-patent-col">
-          <div class="danique-patent-col-header">
-            <div class="danique-patent-icon">🛡️</div>
-            <div class="danique-patent-category">
-              Anti-Oxidant
-              <span>Target: ROS &amp; Photo-Damage</span>
-            </div>
-          </div>
-          <div class="danique-patent-list">
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">TriEx™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">Tri-functional antioxidant peptide complex neutralizing reactive oxygen species (ROS) and preventing mitochondrial damage.</p>
-            </div>
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">Vitamin C <span class="danique-patent-tag">Active</span></div>
-              <p class="danique-patent-desc">High-affinity stabilized ascorbic derivative offering clinical radiance enhancement, free-radical capture, and enzymatic collagen support.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Enhancing Elasticity -->
-        <div class="danique-patent-col">
-          <div class="danique-patent-col-header">
-            <div class="danique-patent-icon">💎</div>
-            <div class="danique-patent-category">
-              Enhancing Elasticity
-              <span>Target: Dermal Density &amp; Bounce</span>
-            </div>
-          </div>
-          <div class="danique-patent-list">
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">Epsema™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">Dermal-restructuring active restoring micro-fibril cohesion and tightening sagging dermal contours.</p>
-            </div>
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">Fuligo™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">Marine macro-algae polysaccharide complex reinforcing the dermal-epidermal junction (DEJ) and restoring youthful tensile bounce.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Anti-Inflammation -->
-        <div class="danique-patent-col">
-          <div class="danique-patent-col-header">
-            <div class="danique-patent-icon">🌿</div>
-            <div class="danique-patent-category">
-              Anti-Inflammation
-              <span>Target: Erythema &amp; Post-Care</span>
-            </div>
-          </div>
-          <div class="danique-patent-list">
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">Super Centella™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">4 purified high-titer active fractions (Madecassoside, Asiaticoside, Madecassic Acid, Asiatic Acid) for rapid erythema recovery.</p>
-            </div>
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">MadeWhite™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">Patented madecassoside whitening fraction that suppresses inflammation-induced melanin synthesis to prevent PIH.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Enhancing Radiance & Whitening -->
-        <div class="danique-patent-col">
-          <div class="danique-patent-col-header">
-            <div class="danique-patent-icon">✨</div>
-            <div class="danique-patent-category">
-              Whitening &amp; Radiance
-              <span>Target: Pigment &amp; Translucency</span>
-            </div>
-          </div>
-          <div class="danique-patent-list">
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">WhiteTen™ <span class="danique-patent-tag">Patent</span></div>
-              <p class="danique-patent-desc">Synergistic 10-botanical whitening patent blocking tyrosinase activation and inhibiting melanosome migration.</p>
-            </div>
-            <div class="danique-patent-item">
-              <div class="danique-patent-name">Niacinamide <span class="danique-patent-tag">MFDS Functional</span></div>
-              <p class="danique-patent-desc">Korea FDA certified whitening agent (Vitamin B3) inhibiting melanosome transfer to surface keratinocytes while building ceramide barrier.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- KOREA FDA REGULATORY BANNER -->
-    <div class="danique-fda-banner">
-      <div class="danique-fda-content">
-        <span style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: #d6b8f9;">ADVANCED &amp; SAFE CLINICAL TECHNOLOGY</span>
-        <h3>Clinically Proven &amp; Approved by Korea FDA</h3>
-        <p>
-          DANIQUE products are officially certified by the Korea Ministry of Food and Drug Safety (Korea FDA / MFDS) for dual functional cosmetic efficacy: <strong>Anti-Wrinkle functional cosmetic</strong> and <strong>Whitening functional cosmetic</strong>. Manufactured under strict ISO 22716 and CGMP standards for complete patient peace of mind.
-        </p>
-      </div>
-      <div class="danique-fda-badges">
-        <div class="danique-fda-badge-item">
-          <span class="icon">🏅</span>
-          <strong>Anti-Wrinkle</strong>
-          <small>Korea FDA Approved</small>
-        </div>
-        <div class="danique-fda-badge-item">
-          <span class="icon">✨</span>
-          <strong>Whitening</strong>
-          <small>Korea FDA Approved</small>
-        </div>
-        <div class="danique-fda-badge-item">
-          <span class="icon">🛡️</span>
-          <strong>CGMP / ISO</strong>
-          <small>Certified Facility</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: PRODUCT CATALOG & ADD TO CART -->
-  <section id="danique-catalog" class="section" style="background: #faf7fc;">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Professional Formulations</p>
-          <h2>DANIQUE Clinical Product Portfolio</h2>
-        </div>
-        <p style="max-width: 480px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-          Clinically indicated for in-clinic mesotherapy, microneedling (MTS), and intensive post-procedural homecare regimens. Add directly to your clinic order.
-        </p>
-      </div>
-
-      <div class="danique-product-grid">
-        
-        <!-- Product 1: Stem Cell Ampoule -->
-        <article class="danique-item-card" id="card-danique-ampoule">
-          <div class="danique-item-media" onclick="openDaniqueModal('ampoule')">
-            <span class="danique-item-badge">CORE MESO</span>
-            <img src="images/danique-boxset.jpg" alt="DANIQUE STeMiN Stem Cell Rejuvenating Ampoule Box Set" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">STEM CELL MESOTHERAPY · 50+ GROWTH FACTORS</span>
-            <h3 class="danique-item-title">STeMiN™ Stem Cell Rejuvenating Ampoule</h3>
-            <p class="danique-item-desc">
-              High-concentration human bio stem cell conditioned media (STeMiN™) paired with PhytoG Edelweiss and BioDTox™. Engineered for MTS microneedling and intensive clinic mesotherapy.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> 5ml × 5 Sterile Vials with Dropper<br>
-              <strong>Actives:</strong> STeMiN™ (50+ GFs), PhytoG Edelweiss, BioDTox™
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openDaniqueModal('ampoule')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addDaniqueToCart('ampoule')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 2: Bio-Cellulose Mask -->
-        <article class="danique-item-card" id="card-danique-mask">
-          <div class="danique-item-media" onclick="openDaniqueModal('mask')">
-            <span class="danique-item-badge">POST-CARE</span>
-            <img src="images/danique-mask.jpg" alt="DANIQUE Bio-Cellulose Soothing & Whitening Mask" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">POST-PROCEDURE RECOVERY · DUAL FUNCTIONAL</span>
-            <h3 class="danique-item-title">Bio-Cellulose Soothing &amp; Whitening Mask</h3>
-            <p class="danique-item-desc">
-              Medical grade second-skin biocellulose sheet soaked in Super Centella™, MadeWhite™, and WhiteTen™. Instantly eliminates post-laser erythema while inhibiting rebound hyperpigmentation.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> Box of 5 Sterile Sheets (30g each)<br>
-              <strong>Actives:</strong> Super Centella™, MadeWhite™, WhiteTen™, Niacinamide
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openDaniqueModal('mask')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addDaniqueToCart('mask')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 3: Recovery Cream -->
-        <article class="danique-item-card" id="card-danique-cream">
-          <div class="danique-item-media" onclick="openDaniqueModal('cream')">
-            <span class="danique-item-badge">BARRIER CARE</span>
-            <img src="images/danique-cream.jpg" alt="DANIQUE Intensive Recovery Stem Cell Cream" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">BARRIER RECONSTRUCTION &amp; ELASTICITY</span>
-            <h3 class="danique-item-title">Intensive Recovery Stem Cell Cream</h3>
-            <p class="danique-item-desc">
-              Rich regenerative emulsion powered by STeMiN™, Epsema™, Fuligo™, and RedSnow™. Rebuilds the lipid mantle, boosts skin tensile bounce, and extends clinical rejuvenation results.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> 50ml Airless Vacuum Dispenser<br>
-              <strong>Actives:</strong> STeMiN™, Epsema™, Fuligo™, RedSnow™, Peptides
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openDaniqueModal('cream')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addDaniqueToCart('cream')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 4: Radiance Booster Serum -->
-        <article class="danique-item-card" id="card-danique-serum">
-          <div class="danique-item-media" onclick="openDaniqueModal('serum')">
-            <span class="danique-item-badge">DAILY GLOW</span>
-            <img src="images/danique-ampoule-dropper.jpg" alt="DANIQUE Radiance Booster TriEx Serum" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">ANTIOXIDANT MORNING STAR RADIANCE</span>
-            <h3 class="danique-item-title">Radiance Booster TriEx™ Serum</h3>
-            <p class="danique-item-desc">
-              Daily glow elixir combining TriEx™, pure stabilized Vitamin C, PhytoG Edelweiss, and WhiteTen™. Reverses dullness, clears oxidative fatigue, and delivers luminous morning star radiance.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> 30ml Precision Glass Dropper<br>
-              <strong>Actives:</strong> TriEx™, Pure Vitamin C, WhiteTen™, Edelweiss Callus
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openDaniqueModal('serum')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addDaniqueToCart('serum')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: CLINICAL PROTOCOLS -->
-  <section class="section container">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Aesthetic Protocols</p>
-        <h2>Recommended In-Clinic Application Protocol</h2>
-      </div>
-      <p style="max-width: 460px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-        Standardized clinical synergy protocol for medical clinics, dermatology centers, and aesthetic doctors.
-      </p>
-    </div>
-
-    <div class="danique-protocols-grid">
-      <div class="danique-protocol-step">
-        <div class="danique-step-num">1</div>
-        <h3 class="danique-step-title">Skin Preparation &amp; Cleansing</h3>
-        <p class="danique-step-desc">
-          Perform non-abrasive degreasing and mild enzymatic peeling to eliminate surface sebum. Disinfect the treatment area prior to microneedling or laser treatment.
-        </p>
-      </div>
-
-      <div class="danique-protocol-step">
-        <div class="danique-step-num">2</div>
-        <h3 class="danique-step-title">STeMiN™ Ampoule Infusion</h3>
-        <p class="danique-step-desc">
-          Apply 2.5ml - 5ml of STeMiN™ Stem Cell Rejuvenating Ampoule. Guide penetration using MTS (0.5mm - 1.5mm), Electroporation, or immediately following fractional laser resurfacing.
-        </p>
-      </div>
-
-      <div class="danique-protocol-step">
-        <div class="danique-step-num">3</div>
-        <h3 class="danique-step-title">Calming &amp; Barrier Sealing</h3>
-        <p class="danique-step-desc">
-          Overlay the Bio-Cellulose Soothing &amp; Whitening Mask for 15-20 minutes to rapidly soothe thermal heat and erythema. Finish with Intensive Recovery Stem Cell Cream.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 6: REGULATORY SPECS -->
-  <section class="section container">
-    <div class="spec-box">
-      <h3>DANIQUE Clinical Specifications &amp; Regulatory Compliance</h3>
-      <div class="spec-grid">
-        <div class="spec-item"><span class="spec-label">Brand &amp; Category</span><span class="spec-val">1. Injectables · DANIQUE</span></div>
-        <div class="spec-item"><span class="spec-label">Manufacture Standard</span><span class="spec-val">Korea FDA Approved / ISO 22716 CGMP</span></div>
-        <div class="spec-item"><span class="spec-label">Approved Functional Claims</span><span class="spec-val">Anti-Wrinkle &amp; Whitening Functional Cosmetic</span></div>
-        <div class="spec-item"><span class="spec-label">Country of Origin</span><span class="spec-val">Republic of Korea</span></div>
-        <div class="spec-item"><span class="spec-label">Core Biotechnology</span><span class="spec-val">STeMiN™ (50+ GFs) + PhytoG Edelweiss</span></div>
-        <div class="spec-item"><span class="spec-label">Exclusive Distributor</span><span class="spec-val">NOVIRA CO., LTD.</span></div>
+        <a class="dq-btn" href="contact.html?inquiry=Danique">Contact Us <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 
 </main>
 
-  <!-- DANIQUE QUICK VIEW MODAL -->
-  <div id="danique-modal" class="luxury-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="luxury-modal-backdrop" onclick="closeDaniqueModal()"></div>
-    <div class="luxury-modal-container">
-      <button class="luxury-modal-close" onclick="closeDaniqueModal()" aria-label="Close dialog">✕</button>
-      <div class="luxury-modal-grid">
-        <div class="luxury-modal-visual">
-          <img id="dmodal-img" src="images/danique.png" alt="DANIQUE Product Detail">
-          <span class="luxury-card-badge" id="dmodal-badge">Stem Cell Media</span>
-        </div>
-        <div class="luxury-modal-content">
-          <span class="luxury-modal-kicker" id="dmodal-kicker">1. INJECTABLES · DANIQUE</span>
-          <h2 class="luxury-modal-title" id="dmodal-title">Product Title</h2>
-          <p class="luxury-modal-desc" id="dmodal-desc">Product description goes here.</p>
-          
-          <div class="luxury-detail-list">
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Active Formulation</span>
-              <span class="luxury-detail-value" id="dmodal-actives">STeMiN™ (50+ Growth Factors)</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Packaging / Volume</span>
-              <span class="luxury-detail-value" id="dmodal-format">5ml × 5 Vials</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Clinical Indications</span>
-              <span class="luxury-detail-value" id="dmodal-indications">Skin rejuvenation, fine wrinkles, tone brightening</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Regulatory Certs</span>
-              <span class="luxury-detail-value" id="dmodal-certs">Korea FDA Approved (Anti-Wrinkle &amp; Whitening)</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Pricing Status</span>
-              <span class="luxury-detail-value" id="dmodal-price" style="font-size:13.5px;font-weight:700;color:var(--purple);"><span class="b2b-badge-tier">B2B TIER</span> Verified Clinics Only</span>
-            </div>
-          </div>
-
-          <div class="luxury-modal-actions" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
-            <button id="dmodal-addcart-btn" class="button primary" style="cursor:pointer;">+ Add to Clinic RFQ 📋</button>
-            <a id="dmodal-enquire-btn" href="contact.html?inquiry=Danique" class="button secondary">Request Doctor Sample &amp; Clinical Dossier ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
-      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="products.html">Our products</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
-    </div>
-  </footer>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
 
   <script src="nav.js"></script>
-
-  <script>
-    // DANIQUE MULTI-IMAGE GALLERY SYSTEM
-    const DANIQUE_GALLERY = [
-      {
-        src: "images/danique-boxset.jpg",
-        tag: "⭐ 1. STeMiN™ 5-VIAL BOX SET + DROPPER",
-        title: "STeMiN™ Stem Cell Rejuvenating Ampoule (5ml × 5)",
-        desc: "Korea FDA Dual Functional Approved · MTS & Clinical Mesotherapy"
-      },
-      {
-        src: "images/danique-ampoule-dropper.jpg",
-        tag: "💧 2. PURE STeMiN™ DROPLET MACRO",
-        title: "50+ Active Human Bio Growth Factors & Peptides",
-        desc: "Instant bio-absorption and deep dermal matrix collagen synthesis"
-      },
-      {
-        src: "images/danique-mask.jpg",
-        tag: "🌿 3. BIO-CELLULOSE SOOTHING MASK",
-        title: "Second-Skin Nanofiber Recovery Sheet Mask",
-        desc: "Immediate post-laser erythema relief & MadeWhite™ brightening"
-      },
-      {
-        src: "images/danique-cream.jpg",
-        tag: "🛡️ 4. INTENSIVE RECOVERY BARRIER CREAM",
-        title: "Restorative Epsema™ & Fuligo™ Lipid Cream",
-        desc: "Continuous 24-hour cellular barrier repair & anti-aging elasticity"
-      }
-    ];
-
-    let currentGalleryIndex = 0;
-
-    function switchDaniqueHeroImage(index) {
-      if (index < 0 || index >= DANIQUE_GALLERY.length) return;
-      currentGalleryIndex = index;
-      const item = DANIQUE_GALLERY[index];
-
-      const mainImg = document.getElementById('danique-main-photo');
-      if (mainImg) {
-        mainImg.style.opacity = '0.3';
-        mainImg.style.transform = 'scale(0.98)';
-        setTimeout(() => {
-          mainImg.src = item.src;
-          mainImg.alt = item.title;
-          mainImg.style.opacity = '1';
-          mainImg.style.transform = 'scale(1)';
-        }, 150);
-      }
-
-      const tagEl = document.getElementById('danique-gallery-tag');
-      if (tagEl) tagEl.textContent = item.tag;
-
-      const titleEl = document.getElementById('danique-gallery-title');
-      if (titleEl) titleEl.textContent = item.title;
-
-      const descEl = document.getElementById('danique-gallery-desc');
-      if (descEl) descEl.textContent = item.desc;
-
-      // Update thumbnail active states
-      for (let i = 0; i < DANIQUE_GALLERY.length; i++) {
-        const btn = document.getElementById('thumb-btn-' + i);
-        if (btn) {
-          if (i === index) {
-            btn.classList.add('is-active');
-            btn.setAttribute('aria-selected', 'true');
-          } else {
-            btn.classList.remove('is-active');
-            btn.setAttribute('aria-selected', 'false');
-          }
-        }
-      }
-    }
-
-    function prevDaniqueHeroImage() {
-      let prevIndex = currentGalleryIndex - 1;
-      if (prevIndex < 0) prevIndex = DANIQUE_GALLERY.length - 1;
-      switchDaniqueHeroImage(prevIndex);
-    }
-
-    function nextDaniqueHeroImage() {
-      let nextIndex = (currentGalleryIndex + 1) % DANIQUE_GALLERY.length;
-      switchDaniqueHeroImage(nextIndex);
-    }
-
-    // DANIQUE DATA SYSTEM
-    const DANIQUE_DATA = {
-      ampoule: {
-        id: "danique-ampoule",
-        name: "DANIQUE STeMiN™ Stem Cell Rejuvenating Ampoule",
-        badge: "Core Meso",
-        kicker: "1. INJECTABLES · DANIQUE CLINICAL",
-        title: "STeMiN™ Stem Cell Rejuvenating Ampoule",
-        desc: "High-concentration human bio stem cell conditioned media (STeMiN™) derived from adipose stem cells containing more than 50 biological growth factors, paired with PhytoG Edelweiss plant stem cells and BioDTox™ for maximum dermal rejuvenation.",
-        img: "images/danique-boxset.jpg",
-        actives: "STeMiN™ (50+ Growth Factors: EGF, bFGF, TGF-β, VEGF), PhytoG Edelweiss, BioDTox™, RedSnow™",
-        format: "5ml × 5 Sterile Vials with Precision Dropper Applicator",
-        indications: "Clinical microneedling (MTS), post-laser restoration, deep anti-aging, dermal matrix reconstruction",
-        certs: "Korea FDA Approved (Anti-Wrinkle & Whitening), ISO 22716 CGMP",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 135
-      },
-      mask: {
-        id: "danique-mask",
-        name: "DANIQUE Bio-Cellulose Soothing & Whitening Mask",
-        badge: "Post-Care",
-        kicker: "1. INJECTABLES · DANIQUE CLINICAL",
-        title: "Bio-Cellulose Soothing & Whitening Mask",
-        desc: "Medical-grade nanofiber second-skin biocellulose mask saturated with Super Centella™, MadeWhite™, WhiteTen™, and Niacinamide to instantly eliminate thermal erythema and inhibit post-inflammatory hyperpigmentation.",
-        img: "images/danique-mask.jpg",
-        actives: "Super Centella™ (Madecassoside, Asiaticoside), MadeWhite™, WhiteTen™, Niacinamide",
-        format: "Box of 5 Sterile Sheets (30g each individual pouch)",
-        indications: "Post-laser, post-RF microneedling, intensive soothing, brightening dullness, skin barrier recovery",
-        certs: "Korea FDA Approved (Whitening Functional Cosmetic), Hypoallergenic Tested",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 45
-      },
-      cream: {
-        id: "danique-cream",
-        name: "DANIQUE Intensive Recovery Stem Cell Cream",
-        badge: "Barrier Care",
-        kicker: "1. INJECTABLES · DANIQUE CLINICAL",
-        title: "Intensive Recovery Stem Cell Cream",
-        desc: "Restorative clinical barrier cream featuring STeMiN™ adipose stem cell media, Epsema™, Fuligo™, and RedSnow™ to lock in moisture, reconstruct the lipid bilayer, and boost dermal tensile elasticity.",
-        img: "images/danique-cream.jpg",
-        actives: "STeMiN™ Adipose Media, Epsema™, Fuligo™, RedSnow™, Bio-Ceramides",
-        format: "50ml Airless Vacuum Dispenser",
-        indications: "Daily post-procedure homecare, deep barrier repair, severe dehydration, collagen preservation",
-        certs: "Korea FDA Approved (Anti-Wrinkle & Whitening Functional Cosmetic)",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 85
-      },
-      serum: {
-        id: "danique-serum",
-        name: "DANIQUE Radiance Booster TriEx™ Serum",
-        badge: "Daily Glow",
-        kicker: "1. INJECTABLES · DANIQUE CLINICAL",
-        title: "Radiance Booster TriEx™ Serum",
-        desc: "Ultra-concentrated morning star glow elixir combining TriEx™ antioxidant peptides, pure stabilized Vitamin C, WhiteTen™, and PhytoG Edelweiss to reverse oxidative damage and illuminate complexion.",
-        img: "images/danique-ampoule-dropper.jpg",
-        actives: "TriEx™ Peptide Complex, Stabilized Vitamin C, WhiteTen™, PhytoG Stem Cell-Edelweiss",
-        format: "30ml Precision Glass Dropper Bottle",
-        indications: "Photo-damage prevention, stubborn dullness, melanosome transfer inhibition, free-radical defense",
-        certs: "Korea FDA Dual Functional Cosmetic Approved",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 95
-      }
-    };
-
-    let activeModalKey = 'ampoule';
-
-    function openDaniqueModal(key) {
-      const data = DANIQUE_DATA[key];
-      if (!data) return;
-      activeModalKey = key;
-
-      document.getElementById('dmodal-img').src = data.img;
-      document.getElementById('dmodal-img').alt = data.name;
-      document.getElementById('dmodal-badge').textContent = data.badge;
-      document.getElementById('dmodal-kicker').textContent = data.kicker;
-      document.getElementById('dmodal-title').textContent = data.title;
-      document.getElementById('dmodal-desc').textContent = data.desc;
-      document.getElementById('dmodal-actives').textContent = data.actives;
-      document.getElementById('dmodal-format').textContent = data.format;
-      document.getElementById('dmodal-indications').textContent = data.indications;
-      document.getElementById('dmodal-certs').textContent = data.certs;
-              <span class="luxury-detail-value" id="dmodal-price" style="font-size:13.5px;font-weight:700;color:var(--purple);"><span class="b2b-badge-tier">B2B TIER</span> Verified Clinics Only</span>
-
-      document.getElementById('dmodal-enquire-btn').href = "contact.html?inquiry=" + encodeURIComponent(data.name);
-
-      const addBtn = document.getElementById('dmodal-addcart-btn');
-      addBtn.onclick = () => {
-        addDaniqueToCart(key);
-      };
-
-      const modal = document.getElementById('danique-modal');
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeDaniqueModal() {
-      const modal = document.getElementById('danique-modal');
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    function addDaniqueToCart(key) {
-      const data = DANIQUE_DATA[key];
-      if (!data || !window.NoviraCart) return;
-      window.NoviraCart.addItem({
-        id: data.id,
-        name: data.name,
-        category: 'Injectables',
-        price: data.rawPrice,
-        img: data.img
-      });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDaniqueModal();
-    });
-  </script>
 
 </body>
 </html>

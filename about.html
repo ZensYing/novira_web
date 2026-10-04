@@ -3,11 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About NOVIRA — Dermatology and aesthetic distribution company based in Cambodia. Who We are ?, Our Core Purpose, and Our Core Values.">
-  <meta name="theme-color" content="#32106f">
-  <title>About Us — NOVIRA</title>
+  <meta name="description" content="About NOVIRA CO., LTD. — Cambodia's dermatology and aesthetic distribution company. Learn who we are, our core purpose, and the values behind our medical partnerships.">
+  <meta name="theme-color" content="#2E086F">
+  <title>About Us — NOVIRA CO., LTD. | Dermatology &amp; Aesthetic Distributor</title>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* About page — clean B2B layout */
+    .ab { --c-accent: var(--purple); color: var(--ink); }
+    .ab-wrap { width: min(var(--max), 100% - 64px); margin-inline: auto; }
+    .ab-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--purple); margin: 0 0 18px; }
+    .ab-eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+    .ab-h2 { font-size: clamp(30px, 3.2vw, 44px); letter-spacing: -1.2px; line-height: 1.12; color: var(--ink); margin: 0; }
+    .ab-h2 em { font-style: normal; color: var(--purple); }
+    .ab-sec { padding: clamp(70px, 8vw, 110px) 0; }
+    .ab-sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 52px; }
+    .ab-sec-head p { max-width: 420px; color: var(--muted); font-size: 14px; line-height: 1.85; margin: 0; }
+
+    /* Hero */
+    .ab-hero { padding: 40px 0 0; background: linear-gradient(180deg, var(--surface) 0%, #fff 100%); }
+    .ab-crumb { display: flex; gap: 10px; font-size: 12px; color: var(--muted); margin-bottom: 44px; }
+    .ab-crumb a:hover { color: var(--purple); }
+    .ab-crumb .cur { color: var(--ink); }
+    .ab-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
+    .ab-hero h1 { font-size: clamp(40px, 5vw, 70px); letter-spacing: -2.4px; line-height: 1.04; color: var(--ink); margin: 0; }
+    .ab-hero h1 em { font-style: normal; color: var(--purple); }
+    .ab-hero-lead { color: var(--muted); font-size: 15px; line-height: 1.85; max-width: 520px; margin: 24px 0 0; }
+    .ab-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .ab-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 50px; padding: 0 26px; border-radius: 6px; font-size: 13px; font-weight: 600; letter-spacing: .2px; background: var(--purple); color: #fff; border: 1px solid var(--purple); transition: background .25s, transform .25s, color .25s; }
+    .ab-btn:hover { background: var(--purple-mid); transform: translateY(-2px); }
+    .ab-btn.ghost { background: transparent; color: var(--purple); border-color: var(--line); }
+    .ab-btn.ghost:hover { border-color: var(--purple); background: #fff; }
+    .ab-btn span { transition: transform .25s; }
+    .ab-btn:hover span { transform: translate(2px, -2px); }
+    .ab-hero-media { position: relative; }
+    .ab-hero-media img { width: 100%; aspect-ratio: 5/4; object-fit: cover; border-radius: 14px; display: block; }
+    .ab-badge { position: absolute; left: -28px; bottom: 32px; display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 20px; }
+    .ab-badge i { width: 42px; height: 42px; border-radius: 50%; background: var(--lavender); color: var(--purple); display: grid; place-items: center; font-style: normal; }
+    .ab-badge i svg { width: 20px; height: 20px; }
+    .ab-badge strong { display: block; font-size: 13px; color: var(--ink); }
+    .ab-badge span { font-size: 11.5px; color: var(--muted); }
+
+    .ab-facts { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: clamp(56px, 7vw, 84px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .ab-fact { padding: 30px 28px; border-left: 1px solid var(--line); }
+    .ab-fact:first-child { border-left: 0; padding-left: 0; }
+    .ab-fact b { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); letter-spacing: -1px; color: var(--purple); line-height: 1; margin-bottom: 10px; }
+    .ab-fact span { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+    /* Who we are */
+    .ab-who { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
+    .ab-who-media img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 14px; display: block; }
+    .ab-who-media figcaption { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-top: 14px; }
+    .ab-who-copy p { color: var(--muted); font-size: 14.5px; line-height: 1.9; margin: 22px 0 0; }
+    .ab-serve { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 34px; padding: 0; list-style: none; }
+    .ab-serve li { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--line-soft); border-radius: 10px; font-size: 13.5px; font-weight: 500; color: var(--ink); transition: border-color .25s, background .25s; }
+    .ab-serve li:hover { border-color: var(--purple); background: var(--surface); }
+    .ab-serve svg { width: 18px; height: 18px; color: var(--purple); flex-shrink: 0; }
+
+    /* Purpose */
+    .ab-purpose { background: var(--purple-dark); color: #fff; position: relative; overflow: hidden; }
+    .ab-purpose::before { content: ""; position: absolute; width: 620px; height: 620px; right: -200px; top: -260px; border-radius: 50%; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 0 0 90px rgba(255,255,255,.025), 0 0 0 180px rgba(255,255,255,.02); }
+    .ab-purpose .ab-eyebrow { color: #c9b6ec; }
+    .ab-purpose-lead { position: relative; font-family: var(--serif); font-size: clamp(24px, 2.8vw, 38px); line-height: 1.4; letter-spacing: -.6px; max-width: 980px; margin: 0; color: #fff; }
+    .ab-purpose-lead em { font-style: normal; color: #c9b6ec; }
+    .ab-pillars { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; border-top: 1px solid rgba(255,255,255,.14); }
+    .ab-pillar { padding: 30px 30px 0 0; }
+    .ab-pillar + .ab-pillar { padding-left: 30px; border-left: 1px solid rgba(255,255,255,.14); }
+    .ab-pillar small { font-family: var(--serif); font-size: 13px; letter-spacing: 2px; color: #a58ad6; }
+    .ab-pillar h3 { font-size: 18px; font-weight: 600; margin: 12px 0 8px; color: #fff; font-family: var(--sans); }
+    .ab-pillar p { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,.68); margin: 0; }
+
+    /* Partnership process */
+    .ab-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: st; }
+    .ab-step { position: relative; padding: 30px 26px 32px; border: 1px solid var(--line-soft); border-radius: 14px; background: #fff; transition: border-color .3s, transform .3s; }
+    .ab-step:hover { border-color: var(--purple); transform: translateY(-4px); }
+    .ab-step-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 44px; }
+    .ab-step-ico { width: 48px; height: 48px; border-radius: 12px; background: var(--lavender); color: var(--purple); display: grid; place-items: center; transition: background .3s, color .3s; }
+    .ab-step:hover .ab-step-ico { background: var(--purple); color: #fff; }
+    .ab-step-ico svg { width: 22px; height: 22px; }
+    .ab-step-num { font-family: var(--serif); font-size: 13px; letter-spacing: 2px; color: var(--muted-light); }
+    .ab-step h3 { font-size: 17px; font-weight: 600; font-family: var(--sans); margin: 0 0 10px; color: var(--ink); }
+    .ab-step p { font-size: 13px; line-height: 1.75; color: var(--muted); margin: 0; }
+
+    /* Portfolio */
+    .ab-port { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .ab-port a { display: flex; flex-direction: column; justify-content: space-between; gap: 30px; min-height: 150px; padding: 24px 22px; border-left: 1px solid var(--line); transition: background .25s; }
+    .ab-port a:first-child { border-left: 0; }
+    .ab-port a:hover { background: var(--surface); }
+    .ab-port small { font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+    .ab-port strong { font-family: var(--serif); font-weight: 500; font-size: 20px; letter-spacing: .5px; color: var(--ink); display: flex; justify-content: space-between; align-items: flex-end; gap: 8px; }
+    .ab-port strong span { font-size: 15px; color: var(--purple); opacity: 0; transform: translate(-4px, 4px); transition: .25s; }
+    .ab-port a:hover strong span { opacity: 1; transform: none; }
+
+    /* CTA */
+    .ab-cta { display: grid; grid-template-columns: 1.3fr auto; gap: 40px; align-items: center; padding: clamp(36px, 5vw, 64px); border-radius: 18px; background: var(--lavender); }
+    .ab-cta p { color: var(--muted); font-size: 14px; line-height: 1.85; max-width: 560px; margin: 16px 0 0; }
+    .ab-cta-contact { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+
+    .cv-pills {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin: 56px 0 0;
+      padding: 96px 0 44px;
+    }
+    .cv-pill {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 330px;
+      padding: 88px 18px 46px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--c) 0%, color-mix(in srgb, var(--c) 82%, #000) 100%);
+      color: #fff;
+      box-shadow: 0 22px 40px color-mix(in srgb, var(--c) 28%, transparent);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .cv-pill:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 32px 52px color-mix(in srgb, var(--c) 38%, transparent);
+    }
+    .cv-pill-icon {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      width: 110px;
+      height: 110px;
+      margin-left: -55px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--c);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 26px rgba(46, 8, 111, 0.12);
+      transition: transform 0.5s ease;
+    }
+    .cv-pill-icon::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border-radius: 50%;
+      border: 1px dashed color-mix(in srgb, var(--c) 55%, transparent);
+    }
+    .cv-pill:hover .cv-pill-icon { transform: rotate(8deg) scale(1.05); }
+    .cv-pill-icon svg { width: 44px; height: 44px; stroke-width: 1.7; }
+    .cv-pill-num {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 10px;
+    }
+    .cv-pill h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.2px;
+      color: #fff;
+      margin: 0 0 12px;
+    }
+    .cv-pill p {
+      font-size: 12.5px;
+      line-height: 1.7;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 1100px) {
+      .cv-pills { gap: 12px; }
+      .cv-pill { padding: 84px 12px 40px; }
+      .cv-pill h3 { font-size: 17px; }
+      .cv-pill p { font-size: 11.5px; }
+      .ab-steps { grid-template-columns: repeat(2, 1fr); }
+      .ab-port { grid-template-columns: repeat(3, 1fr); }
+      .ab-port a:nth-child(4) { border-left: 0; }
+      .ab-port a:nth-child(n+4) { border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 900px) {
+      .ab-hero-grid, .ab-who, .ab-cta { grid-template-columns: 1fr; }
+      .ab-badge { left: 16px; bottom: 16px; }
+      .ab-facts { grid-template-columns: repeat(2, 1fr); }
+      .ab-fact:nth-child(3) { border-left: 0; padding-left: 0; }
+      .ab-fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .ab-who-media img { aspect-ratio: 16/11; }
+      .ab-sec-head { flex-direction: column; align-items: flex-start; gap: 18px; }
+      .ab-pillars { grid-template-columns: 1fr; }
+      .ab-pillar, .ab-pillar + .ab-pillar { padding: 24px 0; border-left: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+      .cv-pills { grid-template-columns: repeat(2, 1fr); row-gap: 76px; }
+      .cv-pill { padding: 84px 20px 44px; }
+    }
+    @media (max-width: 640px) {
+      .ab-wrap { width: calc(100% - 40px); }
+      .ab-facts, .ab-serve, .ab-steps { grid-template-columns: 1fr; }
+      .ab-fact, .ab-fact:nth-child(3) { border-left: 0; padding-left: 0; }
+      .ab-fact + .ab-fact { border-top: 1px solid var(--line); }
+      .ab-port { grid-template-columns: repeat(2, 1fr); }
+      .ab-port a { border-left: 1px solid var(--line) !important; border-top: 1px solid var(--line); }
+      .ab-port a:nth-child(odd) { border-left: 0 !important; }
+      .ab-port a:nth-child(-n+2) { border-top: 0; }
+      .cv-pills { grid-template-columns: 1fr; max-width: 100%; }
+      .cv-pill { max-width: 320px; width: 100%; margin: 0 auto; }
+    }
+  </style>
 </head>
 <body>
 
@@ -15,10 +215,10 @@
   <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="contact.html?inquiry=B2BPartnership">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
-        <a href="about.html" class="nav-link active">ABOUT US</a>
+        <a href="about.html" class="nav-link">ABOUT US</a>
         
         <div class="nav-item has-dropdown">
           <a href="products.html" class="nav-link dropdown-toggle" id="nav-products-btn" aria-haspopup="true" aria-expanded="false">
@@ -32,8 +232,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -65,14 +265,14 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
       <div class="mobile-nav-inner">
         <a href="index.html" class="mobile-nav-link">HOME</a>
-        <a href="about.html" class="mobile-nav-link active">ABOUT US</a>
+        <a href="about.html" class="mobile-nav-link">ABOUT US</a>
         
         <div class="mobile-accordion-item">
           <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-products-sub">
@@ -84,7 +284,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -106,6 +306,7 @@
         </div>
 
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -119,388 +320,164 @@
     </div>
   </header>
 
+<main id="main" class="ab">
 
-<main id="main">
-
-  <!-- ========================================================
-       HERO: 3D INTERACTIVE CANVAS & ELEVATED CLEAN TYPOGRAPHY
-       ======================================================== -->
-  <section class="page-hero-3d">
-    <!-- 3D WebGL Particle & Geometric Mesh Canvas -->
-    <div class="canvas-3d-wrap" aria-hidden="true">
-      <canvas id="webgl-canvas"></canvas>
-    </div>
-
-    <div class="container hero-content-3d">
-      <nav class="breadcrumb reveal-on-scroll" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="sep">/</span>
-        <span class="current">About Us</span>
-      </nav>
-
-      <div class="hero-glass-pill reveal-on-scroll stagger-1">
-        <span class="live-pulse-dot"></span>
-        <span>NOVIRA AESTHETICS · PHNOM PENH, CAMBODIA</span>
+  <section class="ab-hero">
+    <div class="ab-wrap">
+      <nav class="ab-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span class="cur">About Us</span></nav>
+      <div class="ab-hero-grid">
+        <div>
+          <p class="ab-eyebrow">About NOVIRA</p>
+          <h1>Advancing skin health through <em>trusted clinical partnership.</em></h1>
+          <p class="ab-hero-lead">NOVIRA is a dermatology and aesthetic distribution company based in Cambodia, importing and distributing high-quality products and technologies for skin health and aesthetic medicine — exclusively for licensed clinics and medical professionals.</p>
+          <div class="ab-actions">
+            <a href="contact.html?inquiry=B2BPartnership" class="ab-btn" id="about-hero-partner">Become a Partner <span aria-hidden="true">↗</span></a>
+            <a href="products.html" class="ab-btn ghost" id="about-hero-products">View Portfolio</a>
+          </div>
+        </div>
+        <div class="ab-hero-media reveal-on-scroll">
+          <img src="images/about-hero-novira.jpg" alt="NOVIRA clinical specialist with aesthetic device and skincare portfolio">
+          <div class="ab-badge"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.6-3.2 7.9-8 9.5C7.2 19.9 4 16.6 4 12V6z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></svg></i><div><strong>Exclusively B2B</strong><span>Licensed clinics &amp; professionals</span></div></div>
+        </div>
       </div>
 
-      <h1 class="hero-title-3d reveal-on-scroll stagger-2">
-        <span class="gradient-text">Delivering Innovative Solutions</span><br>
-        <em>for Skin Health &amp; Aesthetics.</em>
-      </h1>
-
-      <p class="hero-subtitle-3d reveal-on-scroll stagger-3">
-        A trusted partner for dermatologists, aesthetic doctors, clinics, and healthcare providers across Cambodia.
-      </p>
-
-      <div class="hero-cta-group reveal-on-scroll stagger-4">
-        <a href="#who-we-are" class="btn-glass-primary">
-          <span>Explore Who We Are</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-        <a href="#core-values" class="btn-glass-secondary">
-          <span>Our Core Values</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-        </a>
-      </div>
-
-      <!-- 3D Clean Stats Ticker Bar -->
-      <div class="hero-ticker-bar reveal-on-scroll stagger-5">
-        <div class="ticker-item">
-          <div class="ticker-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <div>
-            <span class="ticker-label">Distribution Hub</span>
-            <span class="ticker-val">Phnom Penh &amp; Nationwide Cold-Chain</span>
-          </div>
-        </div>
-
-        <div class="ticker-item">
-          <div class="ticker-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <span class="ticker-label">Standards &amp; Quality</span>
-            <span class="ticker-val">100% Verified Medical Origin</span>
-          </div>
-        </div>
-
-        <div class="ticker-item">
-          <div class="ticker-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24"/></svg>
-          </div>
-          <div>
-            <span class="ticker-label">Physician Enablement</span>
-            <span class="ticker-val">Protocols, Guidance &amp; Workshops</span>
-          </div>
-        </div>
+      <div class="ab-facts">
+        <div class="ab-fact"><b>B2B</b><span>Supplying licensed clinics &amp; medical professionals only</span></div>
+        <div class="ab-fact"><b>02</b><span>Product categories — injectables &amp; energy-based devices</span></div>
+        <div class="ab-fact"><b>06</b><span>International brands in our clinical portfolio</span></div>
+        <div class="ab-fact"><b>KH</b><span>Headquartered in Phnom Penh, Kingdom of Cambodia</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================
-       SECTION 1: WHO WE ARE ? — 3D BENTO GRID ARCHITECTURE
-       ======================================================== -->
-  <section id="who-we-are" class="bento-section">
-    <div class="container">
-      <div class="section-heading reveal-on-scroll">
-        <div>
-          <p class="eyebrow">Company Profile</p>
-          <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,38px);color:var(--purple-dark);margin:0;">Who We are ?</h2>
-        </div>
-        <p style="max-width:480px;font-size:14px;color:var(--muted);line-height:1.7;">
-          Shaping the future of medical aesthetics in Cambodia through certified technological excellence and committed practitioner alliances.
-        </p>
+  <section class="ab-sec">
+    <div class="ab-wrap ab-who">
+      <figure class="ab-who-media reveal-on-scroll" style="margin:0">
+        <img src="images/about-building-clean.jpg" alt="NOVIRA corporate headquarters" loading="lazy">
+        <figcaption><span>NOVIRA CO., LTD.</span><span>Phnom Penh, Cambodia</span></figcaption>
+      </figure>
+      <div class="ab-who-copy reveal-on-scroll">
+        <p class="ab-eyebrow">01 — Who We Are</p>
+        <h2 class="ab-h2">A trusted partner for clinics, <em>built on quality and science.</em></h2>
+        <p>We focus on importing and distributing high-quality products and technologies related to skin health and aesthetic medicine.</p>
+        <p>Our aim is to become a trusted partner for dermatologists, aesthetic doctors, clinics, and healthcare providers by delivering innovative solutions that improve skin health and aesthetic outcomes.</p>
+        <ul class="ab-serve">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.6 2.6L16 9.5"/></svg>Dermatologists</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.6 2.6L16 9.5"/></svg>Aesthetic Doctors</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.6 2.6L16 9.5"/></svg>Aesthetic Clinics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.6 2.6L16 9.5"/></svg>Healthcare Providers</li>
+        </ul>
       </div>
+    </div>
+  </section>
 
-      <div class="bento-grid">
-        <!-- Bento Item 1: Primary Narrative (7 columns) -->
-        <article class="bento-card bento-card-narrative reveal-on-scroll">
-          <div>
-            <div class="bento-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-              <span>Dermatology &amp; Aesthetic Distribution</span>
-            </div>
-            <h3 class="bento-heading">Pioneering Aesthetic Medicine Across Cambodia</h3>
-            <p class="bento-lead-text">
-              <strong>NOVIRA</strong> is a dermatology and aesthetic distribution company based in Cambodia. The company focuses on importing and distributing high-quality products and technologies related to skin health and aesthetic medicine.
-            </p>
-            <p class="bento-sub-text">
-              NOVIRA aims to become a trusted partner for dermatologists, aesthetic doctors, clinics, and healthcare providers by delivering innovative solutions that improve skin health and aesthetic outcomes.
-            </p>
-          </div>
+  <section class="ab-sec ab-purpose">
+    <div class="ab-wrap">
+      <p class="ab-eyebrow">02 — Our Core Purpose</p>
+      <p class="ab-purpose-lead reveal-on-scroll">To introduce innovative dermatology and aesthetic solutions that <em>improve skin health</em> — while supporting medical professionals with <em>high-quality products, clinical knowledge, and long-term partnership.</em></p>
+      <div class="ab-pillars reveal-on-scroll">
+        <div class="ab-pillar"><small>A</small><h3>High-Quality Products</h3><p>Verified and reliable, built to international standards.</p></div>
+        <div class="ab-pillar"><small>B</small><h3>Clinical Knowledge</h3><p>Training and technical guidance alongside every product.</p></div>
+        <div class="ab-pillar"><small>C</small><h3>Long-Term Partnership</h3><p>Support that continues long after the sale is done.</p></div>
+      </div>
+    </div>
+  </section>
 
-          <div class="bento-pills-row">
-            <span class="micro-pill">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              Direct Importer
-            </span>
-            <span class="micro-pill">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              Cold-Chain Certified
-            </span>
-            <span class="micro-pill">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              Clinical Training Hub
-            </span>
-          </div>
+  <section class="ab-sec">
+    <div class="ab-wrap">
+      <div class="ab-sec-head">
+        <div>
+          <p class="ab-eyebrow">03 — Our Core Values</p>
+          <h2 class="ab-h2">The principles behind<br>every product we distribute.</h2>
+        </div>
+        <p>Five commitments that guide how we select brands, support practitioners and grow with our partner clinics.</p>
+      </div>
+      <div class="cv-pills reveal-on-scroll">
+        <article class="cv-pill" style="--c:#14b574;--i:0">
+          <span class="cv-pill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4a8 8 0 0 0-4.5 14.6c.6.5 1 1.2 1 2V22h7v-1.4c0-.8.4-1.5 1-2A8 8 0 0 0 16 4z"/><path d="M13 26h6M14 29h4"/></svg></span>
+          <span class="cv-pill-num">01</span>
+          <h3>Innovation</h3>
+          <p>Bringing advanced dermatology and aesthetic technologies to the Cambodian market.</p>
         </article>
-
-        <!-- Bento Item 2: Visual 3D Showcase (5 columns) -->
-        <div class="bento-card bento-card-visual reveal-on-scroll stagger-2">
-          <img src="images/skincare.png" alt="NOVIRA Medical Aesthetics &amp; Skin Health" class="visual-bg-img">
-          <div class="visual-glass-overlay"></div>
-          <div class="visual-floating-plate">
-            <div class="plate-header">
-              <span class="plate-badge">
-                <span class="live-pulse-dot" style="width:6px;height:6px;"></span>
-                Certified Clinical Standard
-              </span>
-              <span style="font-size:11px;color:var(--muted);font-weight:600;">KH · 2026</span>
-            </div>
-            <div class="plate-title">Excellence in Skin Health</div>
-            <p class="plate-desc">Delivering advanced biostimulators, regenerative injectables, and medical energy-based devices directly to certified aesthetic clinics.</p>
-          </div>
-        </div>
-
-        <!-- Bento Item 3: Mini Feature - Cambodian Logistics (4 columns) -->
-        <div class="bento-card bento-card-mini reveal-on-scroll stagger-1">
-          <div class="bento-icon-3d" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h4 class="bento-mini-title">Based in Cambodia</h4>
-          <p class="bento-mini-desc">Dedicated national distribution network ensuring timely temperature-controlled logistics for sensitive biologicals and injectables nationwide.</p>
-        </div>
-
-        <!-- Bento Item 4: Mini Feature - Medical Partnerships (4 columns) -->
-        <div class="bento-card bento-card-mini reveal-on-scroll stagger-2">
-          <div class="bento-icon-3d" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-          </div>
-          <h4 class="bento-mini-title">Practitioner Partnership</h4>
-          <p class="bento-mini-desc">Fostering deep, long-standing relationships with dermatologists and clinics through clinical masterclasses, hands-on workshops, and advisory support.</p>
-        </div>
-
-        <!-- Bento Item 5: Mini Feature - Technology Curation (4 columns) -->
-        <div class="bento-card bento-card-mini reveal-on-scroll stagger-3">
-          <div class="bento-icon-3d" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <h4 class="bento-mini-title">Global Technology</h4>
-          <p class="bento-mini-desc">Direct partnership with world-renowned aesthetic manufacturers from South Korea and the United States, including Lutronic, Cutera, and Juvelook.</p>
-        </div>
+        <article class="cv-pill" style="--c:#0e5a82;--i:1">
+          <span class="cv-pill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8M14 4v8L6.5 25a2.4 2.4 0 0 0 2.1 3.5h14.8a2.4 2.4 0 0 0 2.1-3.5L18 12V4"/><path d="M10 20h12"/></svg></span>
+          <span class="cv-pill-num">02</span>
+          <h3>Scientific Credibility</h3>
+          <p>Products supported by clinical research and medical standards.</p>
+        </article>
+        <article class="cv-pill" style="--c:#f28a0f;--i:2">
+          <span class="cv-pill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5l10 4v8c0 6.2-4.2 10.6-10 13-5.8-2.4-10-6.8-10-13v-8z"/><path d="M11.5 16l3.4 3.4 6-6.6"/></svg></span>
+          <span class="cv-pill-num">03</span>
+          <h3>Quality &amp; Safety</h3>
+          <p>Ensuring reliable products that meet international quality standards.</p>
+        </article>
+        <article class="cv-pill" style="--c:#ff3d5a;--i:3">
+          <span class="cv-pill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="2.6"/><circle cx="6" cy="8" r="2.2"/><circle cx="26" cy="8" r="2.2"/><circle cx="6" cy="25" r="2.2"/><circle cx="26" cy="25" r="2.2"/><path d="M8 9.5l6 5M24 9.5l-6 5M8 23.5l6-5M24 23.5l-6-5"/></svg></span>
+          <span class="cv-pill-num">04</span>
+          <h3>Professional Partnership</h3>
+          <p>Building strong, long-term relationships with clinics and healthcare providers.</p>
+        </article>
+        <article class="cv-pill" style="--c:#0fa3b8;--i:4">
+          <span class="cv-pill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l13-6 13 6-13 6z"/><path d="M8 15v7c0 1.8 3.6 4 8 4s8-2.2 8-4v-7M29 12v8"/></svg></span>
+          <span class="cv-pill-num">05</span>
+          <h3>Education &amp; Growth</h3>
+          <p>Supporting practitioners with training, knowledge, and clinical guidance.</p>
+        </article>
       </div>
+
     </div>
   </section>
 
-  <!-- ========================================================
-       SECTION 2: OUR CORE PURPOSE — 3D OBSIDIAN GLASS MONOLITH
-       ======================================================== -->
-  <section class="monolith-wrap">
-    <div class="container">
-      <div class="monolith-card reveal-on-scroll" id="purpose-monolith">
-        <div class="monolith-grid-lines" aria-hidden="true"></div>
-        <div class="monolith-inner">
-          <div class="monolith-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-            <span>Mission &amp; Guiding Star</span>
-          </div>
-
-          <div class="monolith-quote-mark" aria-hidden="true">“</div>
-          <h2 class="monolith-title">Our Core Purpose</h2>
-
-          <blockquote class="monolith-statement">
-            To introduce <span class="highlight">innovative dermatology and aesthetic solutions</span> that improve skin health while supporting medical professionals with <span class="highlight">high-quality products</span>, <span class="highlight">clinical knowledge</span>, and <span class="highlight">long-term partnership</span>.
-          </blockquote>
-
-          <div class="monolith-pills">
-            <div class="monolith-pill">
-              <span class="monolith-pill-dot"></span>
-              <span>High-Quality Products</span>
-            </div>
-            <div class="monolith-pill">
-              <span class="monolith-pill-dot"></span>
-              <span>Clinical Knowledge</span>
-            </div>
-            <div class="monolith-pill">
-              <span class="monolith-pill-dot"></span>
-              <span>Long-Term Partnership</span>
-            </div>
-            <div class="monolith-pill">
-              <span class="monolith-pill-dot"></span>
-              <span>Enhanced Aesthetic Outcomes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SECTION 3: OUR CORE VALUES — 3D HOLOGRAPHIC PERSPECTIVE
-       ======================================================== -->
-  <section id="core-values" class="values-section-3d">
-    <div class="container">
-      <div class="section-heading reveal-on-scroll">
+  <section class="ab-sec" style="background:var(--surface)">
+    <div class="ab-wrap">
+      <div class="ab-sec-head">
         <div>
-          <p class="eyebrow">What Drives Us</p>
-          <h2 style="font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);color:var(--purple-dark);margin:0;">Our Core Values</h2>
+          <p class="ab-eyebrow">04 — How We Partner</p>
+          <h2 class="ab-h2">A clear path from<br><em>enquiry to clinic.</em></h2>
         </div>
-        <p style="max-width:440px;font-size:14px;color:var(--muted);line-height:1.7;">
-          Five pillars of excellence that anchor our medical relationships, product standards, and clinical community in Cambodia.
-        </p>
+        <p>Our partnership process is designed for medical professionals — compliant, transparent and supported at every stage.</p>
       </div>
-
-      <div class="values-grid-3d">
-        <!-- 1. Innovation -->
-        <div class="holo-card-3d reveal-on-scroll stagger-1">
-          <div class="holo-card-inner">
-            <div class="holo-glare" aria-hidden="true"></div>
-            <div class="holo-accent-bar" aria-hidden="true"></div>
-            <div>
-              <div class="holo-header">
-                <div class="holo-icon-box" aria-hidden="true">
-                  <!-- Futuristic Spark / Innovation Icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                </div>
-                <span class="holo-num">01</span>
-              </div>
-              <h3 class="holo-title">Innovation</h3>
-              <p class="holo-desc">Bringing advanced dermatology and aesthetic technologies to the Cambodian market.</p>
-            </div>
-            <div class="holo-footer">
-              <span>Next-Gen Technology</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Scientific Credibility -->
-        <div class="holo-card-3d reveal-on-scroll stagger-2">
-          <div class="holo-card-inner">
-            <div class="holo-glare" aria-hidden="true"></div>
-            <div class="holo-accent-bar" aria-hidden="true"></div>
-            <div>
-              <div class="holo-header">
-                <div class="holo-icon-box" aria-hidden="true">
-                  <!-- Double Helix / Molecular Node Icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5-2.5"/><path d="M14 8l-1-1"/><path d="M7 18l2.5 2.5"/><path d="M10 16l1 1"/><circle cx="12" cy="12" r="2.5"/></svg>
-                </div>
-                <span class="holo-num">02</span>
-              </div>
-              <h3 class="holo-title">Scientific Credibility</h3>
-              <p class="holo-desc">Products supported by clinical research and medical standards.</p>
-            </div>
-            <div class="holo-footer">
-              <span>Evidence-Based Curation</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Quality & Safety -->
-        <div class="holo-card-3d reveal-on-scroll stagger-3">
-          <div class="holo-card-inner">
-            <div class="holo-glare" aria-hidden="true"></div>
-            <div class="holo-accent-bar" aria-hidden="true"></div>
-            <div>
-              <div class="holo-header">
-                <div class="holo-icon-box" aria-hidden="true">
-                  <!-- Certified Shield Icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                </div>
-                <span class="holo-num">03</span>
-              </div>
-              <h3 class="holo-title">Quality &amp; Safety</h3>
-              <p class="holo-desc">Ensuring reliable products that meet international quality standards.</p>
-            </div>
-            <div class="holo-footer">
-              <span>International Standards</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Professional Partnership -->
-        <div class="holo-card-3d reveal-on-scroll stagger-4">
-          <div class="holo-card-inner">
-            <div class="holo-glare" aria-hidden="true"></div>
-            <div class="holo-accent-bar" aria-hidden="true"></div>
-            <div>
-              <div class="holo-header">
-                <div class="holo-icon-box" aria-hidden="true">
-                  <!-- Biometric Connected Node Icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <span class="holo-num">04</span>
-              </div>
-              <h3 class="holo-title">Professional Partnership</h3>
-              <p class="holo-desc">Building strong, long-term relationships with clinics and healthcare providers.</p>
-            </div>
-            <div class="holo-footer">
-              <span>Collaborative Trust</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Education & Growth (Spans 2 columns on desktop) -->
-        <div class="holo-card-3d holo-card-span-2 reveal-on-scroll stagger-5">
-          <div class="holo-card-inner">
-            <div class="holo-glare" aria-hidden="true"></div>
-            <div class="holo-accent-bar" aria-hidden="true"></div>
-            <div>
-              <div class="holo-header">
-                <div class="holo-icon-box" aria-hidden="true">
-                  <!-- Academic Radiant Beacon Icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                </div>
-                <span class="holo-num">05</span>
-              </div>
-              <h3 class="holo-title">Education &amp; Growth</h3>
-              <p class="holo-desc" style="max-width:720px;">
-                Supporting practitioners with training, knowledge, and clinical guidance to foster clinical excellence, patient satisfaction, and sustained practice advancement across Cambodia.
-              </p>
-            </div>
-            <div class="holo-footer">
-              <span>Clinician Enablement &amp; Clinical Masterclasses</span>
-              <a href="conference.html" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
-                <span>View Conferences</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="ab-steps">
+        <article class="ab-step reveal-on-scroll"><div class="ab-step-top"><span class="ab-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span class="ab-step-num">01</span></div><h3>Apply</h3><p>Submit a partnership enquiry with your clinic and practitioner details.</p></article>
+        <article class="ab-step reveal-on-scroll"><div class="ab-step-top"><span class="ab-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.5-1.5 7.5 5-2.5 5 2.5-1.5-7.5"/></svg></span><span class="ab-step-num">02</span></div><h3>Verification</h3><p>We confirm your medical licence so products reach qualified hands only.</p></article>
+        <article class="ab-step reveal-on-scroll"><div class="ab-step-top"><span class="ab-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5 12 5l10 4.5L12 14z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg></span><span class="ab-step-num">03</span></div><h3>Training</h3><p>Product education, protocols and clinical guidance for your team.</p></article>
+        <article class="ab-step reveal-on-scroll"><div class="ab-step-top"><span class="ab-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg></span><span class="ab-step-num">04</span></div><h3>Supply &amp; Support</h3><p>Reliable supply and ongoing technical support as your practice grows.</p></article>
       </div>
     </div>
   </section>
 
-
-  <!-- ========================================================
-       SECTION 5: COLLABORATIVE PARTNERSHIP CTA
-       ======================================================== -->
-  <section class="section container">
-    <div class="feature-split reverse" style="background:#fbf9fd;border-radius:24px;border:1px solid #ebe2f3;padding:clamp(32px,5vw,60px);overflow:hidden;">
-      <div class="feature-copy reveal-on-scroll">
-        <p class="eyebrow">Medical Collaboration</p>
-        <h2 style="font-family:var(--serif);font-size:clamp(26px,3.2vw,40px);color:var(--purple-dark);line-height:1.2;margin-bottom:18px;">
-          Empowering Clinics Across Cambodia
-        </h2>
-        <p style="font-size:14.5px;line-height:1.8;color:var(--muted);margin-bottom:28px;">
-          Interested in elevating your clinical practice with authentic injectable solutions, physician training, or premium energy-based aesthetic platforms? Connect with our Phnom Penh team today.
-        </p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="contact.html" class="btn-glass-primary">
-            <span>Connect With Our Team</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
-          <a href="products.html" class="button secondary">
-            <span>Explore Complete Portfolio</span>
-          </a>
+  <section class="ab-sec">
+    <div class="ab-wrap">
+      <div class="ab-sec-head">
+        <div>
+          <p class="ab-eyebrow">05 — Our Portfolio</p>
+          <h2 class="ab-h2">Brands we represent.</h2>
         </div>
+        <a href="products.html" class="ab-btn ghost" id="about-portfolio-all">All Products <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="about-visual-card reveal-on-scroll stagger-2" style="box-shadow:0 15px 40px rgba(50,16,111,0.08);border-radius:18px;">
-        <img src="images/hero.png" alt="NOVIRA Aesthetic Technology Equipment">
+      <div class="ab-port reveal-on-scroll">
+        <a href="danique.html"><small>Injectables</small><strong>DANIQUE<span>↗</span></strong></a>
+        <a href="juvelook.html"><small>Injectables</small><strong>JUVELOOK<span>↗</span></strong></a>
+        <a href="denese-lab.html"><small>Injectables</small><strong>GENÈSE LABS<span>↗</span></strong></a>
+        <a href="exoluma.html"><small>Injectables</small><strong>EXOLUMA<span>↗</span></strong></a>
+        <a href="cynosure-lutronic.html"><small>Devices</small><strong>CYNOSURE LUTRONIC<span>↗</span></strong></a>
+        <a href="cutera.html"><small>Devices</small><strong>CUTERA<span>↗</span></strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ab-sec" style="padding-top:0">
+    <div class="ab-wrap">
+      <div class="ab-cta reveal-on-scroll">
+        <div>
+          <p class="ab-eyebrow">Partnership</p>
+          <h2 class="ab-h2">Let's talk about your clinic.</h2>
+          <p>Whether you are exploring injectables, energy-based devices, or clinical training, our partnership team can guide you through the right options for your practice.</p>
+        </div>
+        <div class="ab-cta-contact">
+          <a href="contact.html?inquiry=GeneralClinicPartnership" class="ab-btn" id="about-cta-partner">Start a Partnership <span aria-hidden="true">↗</span></a>
+          <a href="contact.html" class="ab-btn ghost" id="about-cta-contact">Contact Our Team</a>
+        </div>
       </div>
     </div>
   </section>
@@ -509,176 +486,9 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
-      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="products.html">Our products</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Dermatology &amp; Aesthetic Distribution · Cambodia</span>
-    </div>
-  </footer>
-
-  <!-- Three.js Library for 3D Background Engine -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
   <script src="nav.js"></script>
 
-  <!-- 2D/3D Interactive Canvas & Perspective Physics Script -->
-  <script>
-    (function () {
-      'use strict';
-
-      // 1. THREE.JS 3D HERO CANVAS INITIALIZATION
-      var canvas = document.getElementById('webgl-canvas');
-      if (canvas && typeof THREE !== 'undefined') {
-        var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 24;
-
-        var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        
-        function resize() {
-          var width = canvas.parentElement.clientWidth;
-          var height = canvas.parentElement.clientHeight;
-          renderer.setSize(width, height);
-          camera.aspect = width / height;
-          camera.updateProjectionMatrix();
-        }
-        resize();
-        window.addEventListener('resize', resize);
-
-        // Group to hold 3D objects
-        var mainGroup = new THREE.Group();
-        scene.add(mainGroup);
-
-        // Core 1: Wireframe Icosahedron (Floating Crystal Lattice)
-        var icoGeo = new THREE.IcosahedronGeometry(9, 1);
-        var icoMat = new THREE.MeshBasicMaterial({
-          color: 0x9333ea,
-          wireframe: true,
-          transparent: true,
-          opacity: 0.28
-        });
-        var icoMesh = new THREE.Mesh(icoGeo, icoMat);
-        mainGroup.add(icoMesh);
-
-        // Core 2: Inner Faceted Crystal
-        var innerGeo = new THREE.OctahedronGeometry(5.5, 0);
-        var innerMat = new THREE.MeshBasicMaterial({
-          color: 0xc084fc,
-          wireframe: true,
-          transparent: true,
-          opacity: 0.45
-        });
-        var innerMesh = new THREE.Mesh(innerGeo, innerMat);
-        mainGroup.add(innerMesh);
-
-        // Core 3: Floating Particle Cloud
-        var particleCount = 140;
-        var particleGeo = new THREE.BufferGeometry();
-        var posArray = new Float32Array(particleCount * 3);
-
-        for (var i = 0; i < particleCount * 3; i += 3) {
-          posArray[i] = (Math.random() - 0.5) * 38;
-          posArray[i + 1] = (Math.random() - 0.5) * 24;
-          posArray[i + 2] = (Math.random() - 0.5) * 20;
-        }
-        particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-
-        var particleMat = new THREE.PointsMaterial({
-          size: 0.28,
-          color: 0xe9d5ff,
-          transparent: true,
-          opacity: 0.65
-        });
-        var particleMesh = new THREE.Points(particleGeo, particleMat);
-        mainGroup.add(particleMesh);
-
-        // Mouse Parallax
-        var mouseX = 0;
-        var mouseY = 0;
-        var targetX = 0;
-        var targetY = 0;
-        var windowHalfX = window.innerWidth / 2;
-        var windowHalfY = window.innerHeight / 2;
-
-        window.addEventListener('pointermove', function (e) {
-          mouseX = (e.clientX - windowHalfX) * 0.0008;
-          mouseY = (e.clientY - windowHalfY) * 0.0008;
-        }, { passive: true });
-
-        // Animation Loop
-        var clock = new THREE.Clock();
-        function animate() {
-          requestAnimationFrame(animate);
-          var delta = clock.getDelta();
-
-          targetX += (mouseX - targetX) * 0.05;
-          targetY += (mouseY - targetY) * 0.05;
-
-          icoMesh.rotation.x += 0.002;
-          icoMesh.rotation.y += 0.0035;
-
-          innerMesh.rotation.x -= 0.003;
-          innerMesh.rotation.y -= 0.002;
-
-          particleMesh.rotation.y += 0.0008;
-
-          mainGroup.rotation.y = targetX * 1.5;
-          mainGroup.rotation.x = targetY * 1.5;
-
-          renderer.render(scene, camera);
-        }
-        animate();
-      }
-
-      // 2. 3D PERSPECTIVE TILT & SPECULAR GLARE FOR VALUE CARDS
-      var cards = document.querySelectorAll('.holo-card-inner');
-      cards.forEach(function (card) {
-        var cardBox = card.parentElement;
-
-        cardBox.addEventListener('pointermove', function (e) {
-          var rect = card.getBoundingClientRect();
-          var x = e.clientX - rect.left;
-          var y = e.clientY - rect.top;
-
-          var centerX = rect.width / 2;
-          var centerY = rect.height / 2;
-
-          var rotateX = ((y - centerY) / centerY) * -9; // Max 9 deg
-          var rotateY = ((x - centerX) / centerX) * 9;
-
-          card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) scale3d(1.02, 1.02, 1.02)';
-          card.style.setProperty('--glare-x', x + 'px');
-          card.style.setProperty('--glare-y', y + 'px');
-        });
-
-        cardBox.addEventListener('pointerleave', function () {
-          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-        });
-      });
-
-      // 3. OBSIDIAN MONOLITH MOUSE SPOTLIGHT
-      var monolith = document.getElementById('purpose-monolith');
-      if (monolith) {
-        monolith.addEventListener('pointermove', function (e) {
-          var rect = monolith.getBoundingClientRect();
-          var x = e.clientX - rect.left;
-          var y = e.clientY - rect.top;
-          monolith.style.setProperty('--spot-x', x + 'px');
-          monolith.style.setProperty('--spot-y', y + 'px');
-        }, { passive: true });
-      }
-
-    })();
-  </script>
 </body>
 </html>

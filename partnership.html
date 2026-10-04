@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply for a NOVIRA clinic partnership in four simple steps — wholesale supply of DANIQUE, JUVELOOK, GENÈSE LABS, EXOLUMA and Cynosure Lutronic & Cutera devices for licensed clinics.">
+  <meta name="theme-color" content="#32106f">
+  <title>Clinic Partnership — Apply in 4 Steps — NOVIRA</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dq { --gold:#c9a35e; --err:#cf3f63; }
+    .dq-wrap { width:min(1200px, calc(100% - 48px)); margin:0 auto; }
+    .dq-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); font-weight:600; margin:0 0 14px; }
+    .dq h1, .dq h2, .dq h3 { font-family:var(--serif); font-weight:500; color:var(--ink); margin:0; }
+    .dq-crumb { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:34px; }
+    .dq-crumb a { color:var(--muted); transition:color .2s; }
+    .dq-crumb a:hover { color:var(--purple); }
+    .dq-crumb .cur { color:var(--ink); font-weight:600; }
+
+    /* HERO */
+    .dq-hero { padding:48px 0 90px; background:radial-gradient(900px 500px at 85% 20%, #efe9f8 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #f6efe2 0%, transparent 60%); }
+    .dq-hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; }
+    .dq-hero h1 { font-size:clamp(48px,7vw,92px); letter-spacing:-2px; line-height:.95; text-transform:uppercase; }
+    .dq-hero h1 small { display:block; font-size:clamp(18px,2vw,26px); letter-spacing:.5px; text-transform:none; color:var(--purple); margin-top:18px; line-height:1.3; }
+    .dq-lead { font-size:15px; line-height:1.85; color:var(--muted); max-width:560px; margin:26px 0 34px; }
+    .dq-lead em { color:var(--ink); font-style:normal; font-weight:600; }
+    .dq-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .dq-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.3px; background:var(--purple); color:#fff; border:0; cursor:pointer; font-family:inherit; transition:transform .25s, box-shadow .25s, background .25s, opacity .25s; }
+    .dq-btn:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(46,8,111,.25); background:var(--purple-dark); }
+    .dq-btn.ghost { background:transparent; color:var(--purple); border:1px solid var(--line); }
+    .dq-btn.ghost:hover { background:#fff; box-shadow:0 12px 26px rgba(46,8,111,.1); }
+    .dq-btn[disabled] { opacity:.6; pointer-events:none; }
+    .dq-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:34px; }
+    .dq-chip { font-size:11.5px; padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line-soft); color:var(--ink-soft); display:inline-flex; align-items:center; gap:8px; }
+    .dq-chip i { width:7px; height:7px; border-radius:50%; background:var(--c); display:block; }
+    .dq-hero-visual { position:relative; }
+    .dq-hero-frame { position:relative; aspect-ratio:4/5; border-radius:220px 220px 28px 28px; overflow:hidden; box-shadow:0 40px 80px rgba(46,8,111,.16); background:#f4f4f6; }
+    .dq-hero-frame img { width:100%; height:100%; object-fit:cover; object-position:68% 40%; transition:transform 1.2s ease; }
+    .dq-hero-visual:hover .dq-hero-frame img { transform:scale(1.04); }
+    .dq-orbit { position:absolute; width:150px; height:150px; border-radius:50%; background:#fff; box-shadow:0 18px 40px rgba(46,8,111,.14); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; left:-44px; bottom:60px; }
+    .dq-orbit::before { content:""; position:absolute; inset:7px; border-radius:50%; border:1px dashed var(--gold); animation:dqspin 30s linear infinite; }
+    .dq-orbit b { font-family:var(--serif); font-size:34px; font-weight:500; color:var(--purple); line-height:1; }
+    .dq-orbit span { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.4; }
+    @keyframes dqspin { to { transform:rotate(360deg); } }
+
+    /* PERKS */
+    .pf-perks { padding:90px 0 100px; }
+    .dq-head { text-align:center; max-width:680px; margin:0 auto; }
+    .dq-head h2 { font-size:clamp(30px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-head p { color:var(--muted); font-size:14px; line-height:1.8; margin:16px 0 0; }
+    .pf-perk-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:56px; }
+    .pf-perk { background:#fff; border:1px solid var(--line-soft); border-radius:26px; padding:30px 26px; transition:transform .35s, box-shadow .35s, border-color .35s; }
+    .pf-perk:hover { transform:translateY(-8px); box-shadow:0 30px 56px rgba(46,8,111,.1); border-color:color-mix(in srgb,var(--c) 45%,white); }
+    .pf-perk-ico { position:relative; width:64px; height:64px; border-radius:50%; display:grid; place-items:center; background:color-mix(in srgb,var(--c) 12%,#fff); color:var(--c); margin-bottom:22px; transition:transform .5s; }
+    .pf-perk-ico::before { content:""; position:absolute; inset:-6px; border-radius:50%; border:1px dashed color-mix(in srgb,var(--c) 55%,transparent); }
+    .pf-perk:hover .pf-perk-ico { transform:rotate(10deg) scale(1.05); }
+    .pf-perk-ico svg { width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .pf-perk h3 { font-size:20px; margin-bottom:8px; line-height:1.25; }
+    .pf-perk p { font-size:13.5px; line-height:1.75; color:var(--muted); margin:0; }
+
+    /* APPLICATION */
+    .pf-apply { padding:100px 0 110px; background:var(--surface); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); scroll-margin-top:80px; }
+    .pf-card { margin-top:56px; display:grid; grid-template-columns:330px 1fr; background:#fff; border:1px solid var(--line-soft); border-radius:32px; overflow:hidden; box-shadow:0 30px 60px rgba(46,8,111,.08); scroll-margin-top:100px; }
+    .pf-aside { position:relative; overflow:hidden; background:linear-gradient(160deg,var(--purple-dark) 0%,var(--purple-mid) 100%); color:#fff; padding:44px 34px 36px; display:flex; flex-direction:column; }
+    .pf-aside::after { content:""; position:absolute; right:-120px; bottom:-120px; width:300px; height:300px; border-radius:50%; border:1px dashed rgba(255,255,255,.22); pointer-events:none; }
+    .pf-aside-k { font-size:10.5px; letter-spacing:2.6px; text-transform:uppercase; color:var(--gold); font-weight:600; margin:0 0 10px; }
+    .pf-aside h3 { color:#fff !important; font-size:26px; line-height:1.2; margin-bottom:34px !important; }
+    .pf-nav { list-style:none; margin:0; padding:0; display:grid; gap:6px; position:relative; z-index:1; }
+    .pf-nav li { position:relative; }
+    .pf-nav li:not(:last-child)::after { content:""; position:absolute; left:20px; top:52px; bottom:-6px; width:1px; background:rgba(255,255,255,.18); transition:background .4s; }
+    .pf-nav li.is-done::after { background:var(--gold); }
+    .pf-nav button { display:flex; align-items:center; gap:16px; width:100%; padding:6px 0 18px; background:none; border:0; color:inherit; text-align:left; cursor:pointer; font-family:inherit; opacity:.55; transition:opacity .3s; }
+    .pf-nav button:hover { opacity:.85; }
+    .pf-nav li.is-active button, .pf-nav li.is-done button { opacity:1; }
+    .pf-num { flex-shrink:0; width:41px; height:41px; border-radius:50%; display:grid; place-items:center; border:1px solid rgba(255,255,255,.35); font-family:var(--serif); font-size:17px; transition:all .35s; }
+    .pf-nav li.is-active .pf-num { background:#fff; color:var(--purple); border-color:#fff; box-shadow:0 0 0 6px rgba(255,255,255,.12); }
+    .pf-nav li.is-done .pf-num { background:var(--gold); border-color:var(--gold); color:#fff; font-size:0; }
+    .pf-nav li.is-done .pf-num::before { content:"✓"; font-size:16px; font-family:var(--sans); }
+    .pf-nav b { display:block; font-size:14px; font-weight:600; }
+    .pf-nav em { display:block; font-style:normal; font-size:11.5px; opacity:.7; margin-top:3px; }
+    .pf-help { margin-top:auto; padding-top:30px; border-top:1px solid rgba(255,255,255,.14); position:relative; z-index:1; }
+    .pf-help p { font-size:12.5px; line-height:1.7; color:rgba(255,255,255,.72); margin:0 0 14px; }
+    .pf-help a { display:flex; align-items:center; justify-content:space-between; padding:11px 16px; border-radius:999px; background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.16); font-size:12.5px; color:#fff; margin-top:8px; transition:background .25s, transform .25s; }
+    .pf-help a:hover { background:rgba(255,255,255,.18); transform:translateX(4px); }
+
+    .pf-main { padding:40px clamp(24px,4vw,56px) 36px; display:flex; flex-direction:column; min-height:660px; }
+    .pf-progress { margin-bottom:36px; }
+    .pf-progress-top { display:flex; justify-content:space-between; font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:12px; }
+    .pf-progress-top span:last-child { color:var(--purple); }
+    .pf-track { height:4px; border-radius:99px; background:var(--line-soft); overflow:hidden; }
+    .pf-bar { height:100%; width:25%; border-radius:99px; background:linear-gradient(90deg,var(--purple-mid),var(--gold)); transition:width .6s cubic-bezier(.65,0,.35,1); }
+
+    .pf-panel { animation:pfIn .5s ease both; }
+    .pf-panel[hidden] { display:none; }
+    @keyframes pfIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+    .pf-panel > h3 { font-size:clamp(26px,2.6vw,34px); letter-spacing:-.6px; line-height:1.15; }
+    .pf-panel > p.pf-desc { color:var(--muted); font-size:14px; line-height:1.8; margin:10px 0 30px; max-width:560px; }
+    .pf-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px 18px; }
+    .pf-grid .full { grid-column:1 / -1; }
+    .pf-field { display:flex; flex-direction:column; gap:8px; }
+    .pf-label { font-size:11px; letter-spacing:1.4px; text-transform:uppercase; font-weight:600; color:var(--ink-soft); }
+    .pf-label i { font-style:normal; color:var(--purple); margin-left:2px; }
+    .pf-label small { text-transform:none; letter-spacing:0; font-weight:400; color:var(--muted); margin-left:6px; font-size:11.5px; }
+    .pf-input, .pf-select, .pf-textarea { width:100%; height:52px; padding:0 18px; border-radius:14px; border:1px solid var(--line); background:#fff; font:inherit; font-size:14px; color:var(--ink); transition:border-color .25s, box-shadow .25s; outline:none; }
+    .pf-textarea { height:auto; min-height:120px; padding:15px 18px; resize:vertical; line-height:1.6; }
+    .pf-select { appearance:none; -webkit-appearance:none; cursor:pointer; padding-right:44px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232E086F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 18px center; }
+    .pf-input::placeholder, .pf-textarea::placeholder { color:#aaa2b4; }
+    .pf-input:hover, .pf-select:hover, .pf-textarea:hover { border-color:#cfc4de; }
+    .pf-input:focus, .pf-select:focus, .pf-textarea:focus { border-color:var(--purple); box-shadow:0 0 0 4px rgba(46,8,111,.08); }
+    .pf-err { display:none; font-size:11.5px; color:var(--err); }
+    .is-invalid .pf-err { display:block; animation:pfIn .3s ease; }
+    .is-invalid .pf-input, .is-invalid .pf-select, .is-invalid .pf-textarea { border-color:var(--err); box-shadow:0 0 0 4px rgba(207,63,99,.08); }
+
+    /* option pills */
+    .pf-opts { display:flex; flex-wrap:wrap; gap:10px; }
+    .pf-opt { position:relative; cursor:pointer; }
+    .pf-opt input { position:absolute; opacity:0; pointer-events:none; }
+    .pf-opt span { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:999px; border:1px solid var(--line); background:#fff; font-size:13px; color:var(--ink-soft); transition:all .25s; }
+    .pf-opt span::before { content:""; width:8px; height:8px; border-radius:50%; border:1px solid #c9bfd8; transition:all .25s; }
+    .pf-opt:hover span { border-color:#cfc4de; transform:translateY(-2px); }
+    .pf-opt input:checked + span { background:var(--purple); border-color:var(--purple); color:#fff; box-shadow:0 10px 22px rgba(46,8,111,.18); }
+    .pf-opt input:checked + span::before { background:var(--gold); border-color:var(--gold); }
+    .pf-opt input:focus-visible + span { box-shadow:0 0 0 4px rgba(46,8,111,.15); }
+    .is-invalid .pf-opt span { border-color:color-mix(in srgb,var(--err) 50%,white); }
+
+    /* product cards */
+    .pf-prods { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .pf-prod { position:relative; cursor:pointer; }
+    .pf-prod input { position:absolute; opacity:0; pointer-events:none; }
+    .pf-prod-box { display:flex; align-items:center; gap:14px; padding:12px 14px 12px 12px; border-radius:20px; border:1px solid var(--line-soft); background:#fff; height:100%; transition:all .3s; }
+    .pf-prod-th { width:58px; height:58px; flex-shrink:0; border-radius:16px; display:grid; place-items:center; overflow:hidden; background:radial-gradient(circle at 50% 40%,#fff 0%,color-mix(in srgb,var(--c) 14%,#fff) 100%); }
+    .pf-prod-th img { width:86%; height:86%; object-fit:contain; transition:transform .5s; }
+    .pf-prod b { display:block; font-size:13.5px; color:var(--ink); font-weight:600; line-height:1.3; }
+    .pf-prod em { display:block; font-style:normal; font-size:11px; color:var(--muted); margin-top:2px; }
+    .pf-tick { margin-left:auto; flex-shrink:0; width:22px; height:22px; border-radius:50%; border:1px solid var(--line); display:grid; place-items:center; color:#fff; font-size:12px; transition:all .3s; }
+    .pf-prod:hover .pf-prod-box { border-color:color-mix(in srgb,var(--c) 45%,white); transform:translateY(-3px); box-shadow:0 14px 28px color-mix(in srgb,var(--c) 14%,transparent); }
+    .pf-prod:hover .pf-prod-th img { transform:scale(1.08); }
+    .pf-prod input:checked + .pf-prod-box { border-color:var(--c); background:color-mix(in srgb,var(--c) 5%,#fff); box-shadow:0 14px 28px color-mix(in srgb,var(--c) 16%,transparent); }
+    .pf-prod input:checked + .pf-prod-box .pf-tick { background:var(--c); border-color:var(--c); }
+    .pf-prod input:focus-visible + .pf-prod-box { box-shadow:0 0 0 4px rgba(46,8,111,.15); }
+    .pf-sub { font-size:11px; letter-spacing:1.4px; text-transform:uppercase; font-weight:600; color:var(--ink-soft); margin:0 0 12px; display:flex; justify-content:space-between; gap:10px; }
+    .pf-sub span { text-transform:none; letter-spacing:0; font-weight:400; color:var(--muted); }
+
+    /* switches */
+    .pf-switches { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .pf-switch { display:flex; align-items:center; gap:14px; padding:16px 18px; border-radius:18px; border:1px solid var(--line-soft); background:#fff; cursor:pointer; transition:border-color .25s; }
+    .pf-switch:hover { border-color:#cfc4de; }
+    .pf-switch input { position:absolute; opacity:0; pointer-events:none; }
+    .pf-switch .tg { flex-shrink:0; width:40px; height:24px; border-radius:99px; background:#e4dfeb; position:relative; transition:background .3s; }
+    .pf-switch .tg::after { content:""; position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.15); transition:transform .3s; }
+    .pf-switch input:checked ~ .tg { background:var(--purple); }
+    .pf-switch input:checked ~ .tg::after { transform:translateX(16px); }
+    .pf-switch input:focus-visible ~ .tg { box-shadow:0 0 0 4px rgba(46,8,111,.15); }
+    .pf-switch b { display:block; font-size:13px; color:var(--ink); font-weight:600; }
+    .pf-switch em { display:block; font-style:normal; font-size:11.5px; color:var(--muted); margin-top:2px; }
+
+    /* review */
+    .pf-review { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:24px; }
+    .pf-rv { border:1px solid var(--line-soft); border-radius:20px; padding:18px 20px; background:var(--surface); }
+    .pf-rv-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .pf-rv-head h4 { margin:0; font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--purple); font-weight:700; }
+    .pf-rv-head button { background:none; border:0; font:inherit; font-size:12px; font-weight:600; color:var(--muted); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+    .pf-rv-head button:hover { color:var(--purple); }
+    .pf-rv dl { margin:0; display:grid; gap:7px; }
+    .pf-rv dl div { display:grid; grid-template-columns:110px 1fr; gap:10px; font-size:12.5px; line-height:1.5; }
+    .pf-rv dt { color:var(--muted); }
+    .pf-rv dd { margin:0; color:var(--ink); font-weight:500; word-break:break-word; }
+    .pf-consent { display:flex; gap:12px; align-items:flex-start; margin-top:18px; font-size:12.5px; line-height:1.7; color:var(--ink-soft); cursor:pointer; }
+    .pf-consent input { width:18px; height:18px; margin-top:2px; accent-color:var(--purple); flex-shrink:0; }
+    .pf-consent.is-invalid { color:var(--err); }
+
+    /* footer */
+    .pf-foot { margin-top:auto; padding-top:28px; display:flex; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid var(--line-soft); margin-top:36px; }
+    .pf-foot-note { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+    .pf-foot-note svg { width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.8; }
+    .pf-foot-btns { display:flex; gap:10px; margin-left:auto; }
+    .pf-foot .dq-btn[hidden] { display:none; }
+    .pf-spin { width:15px; height:15px; border-radius:50%; border:2px solid rgba(255,255,255,.4); border-top-color:#fff; animation:dqspin .8s linear infinite; }
+
+    /* success */
+    .pf-done { text-align:center; margin:auto; max-width:480px; padding:30px 0; animation:pfIn .6s ease both; }
+    .pf-done[hidden] { display:none; }
+    .pf-done-ico { position:relative; width:110px; height:110px; margin:0 auto 28px; border-radius:50%; background:linear-gradient(160deg,var(--purple-mid),var(--purple-dark)); display:grid; place-items:center; box-shadow:0 22px 44px rgba(46,8,111,.25); animation:pfPop .7s cubic-bezier(.34,1.56,.64,1) both; }
+    .pf-done-ico::before { content:""; position:absolute; inset:-12px; border-radius:50%; border:1px dashed var(--gold); animation:dqspin 24s linear infinite; }
+    .pf-done-ico svg { width:46px; height:46px; fill:none; stroke:#fff; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:40; stroke-dashoffset:40; animation:pfDraw .6s .35s ease forwards; }
+    @keyframes pfPop { from { transform:scale(.4); opacity:0; } to { transform:none; opacity:1; } }
+    @keyframes pfDraw { to { stroke-dashoffset:0; } }
+    .pf-ref { display:inline-block; padding:7px 16px; border-radius:999px; background:#f6efe2; color:#8a6a2c; font-size:11px; letter-spacing:1.8px; font-weight:700; margin-bottom:16px; }
+    .pf-done h3 { font-size:34px; letter-spacing:-.8px; margin-bottom:12px !important; }
+    .pf-done p { color:var(--muted); font-size:14px; line-height:1.85; margin:0 0 28px; }
+    .pf-done p strong { color:var(--ink); }
+    .pf-done .dq-actions { justify-content:center; }
+
+    /* CTA */
+    .dq-cta { margin:90px 0 100px; border-radius:30px; padding:clamp(34px,5vw,60px); background:linear-gradient(120deg,var(--purple-dark),var(--purple-mid)); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; position:relative; overflow:hidden; }
+    .dq-cta::after { content:""; position:absolute; right:-80px; top:-80px; width:300px; height:300px; border-radius:50%; border:1px dashed rgba(255,255,255,.3); }
+    .dq-cta h2 { color:#fff !important; font-size:clamp(26px,3vw,38px); letter-spacing:-.8px; }
+    .dq-cta p { color:rgba(255,255,255,.78); font-size:14px; max-width:520px; line-height:1.8; margin:10px 0 0; }
+    .dq-cta .dq-btn { background:#fff; color:var(--purple); position:relative; z-index:1; }
+
+    @media (max-width:1100px) { .pf-perk-grid { grid-template-columns:repeat(2,1fr); } .pf-prods { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:1000px) {
+      .dq-hero-grid { grid-template-columns:1fr; }
+      .dq-hero-visual { max-width:520px; margin:0 auto; width:100%; }
+      .dq-orbit { left:-10px; }
+      .pf-card { grid-template-columns:1fr; }
+      .pf-aside { padding:28px 24px; }
+      .pf-aside h3, .pf-aside-k, .pf-help, .pf-nav em { display:none; }
+      .pf-nav { grid-template-columns:repeat(4,1fr); gap:8px; }
+      .pf-nav li:not(:last-child)::after { left:calc(50% + 28px); right:calc(-50% + 28px); top:20px; bottom:auto; width:auto; height:1px; }
+      .pf-nav button { flex-direction:column; gap:10px; padding:0; text-align:center; }
+      .pf-nav b { font-size:11.5px; }
+      .pf-main { min-height:0; }
+    }
+    @media (max-width:640px) {
+      .pf-perk-grid, .pf-grid, .pf-prods, .pf-switches, .pf-review { grid-template-columns:1fr; }
+      .pf-nav b { display:none; }
+      .pf-foot { flex-wrap:wrap; }
+      .pf-foot-note { display:none; }
+      .pf-foot-btns { width:100%; }
+      .pf-foot-btns .dq-btn { flex:1; justify-content:center; }
+      .pf-rv dl div { grid-template-columns:96px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="#apply">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="about.html" class="nav-link">ABOUT US</a>
+
+        <div class="nav-item has-dropdown">
+          <a href="products.html" class="nav-link dropdown-toggle" id="nav-products-btn" aria-haspopup="true" aria-expanded="false">
+            OUR PRODUCTS
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="dropdown-menu mega-menu" role="menu" aria-labelledby="nav-products-btn">
+            <div class="mega-grid">
+              <div class="dropdown-col">
+                <div class="dropdown-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
+                <ul class="dropdown-sublist">
+                  <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
+                  <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-divider-v" aria-hidden="true"></div>
+              <div class="dropdown-col">
+                <div class="dropdown-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
+                <ul class="dropdown-sublist">
+                  <li><a href="cynosure-lutronic.html" class="dropdown-subitem"><span class="dot">•</span> CYNOSURE LUTRONIC</a></li>
+                  <li><a href="cutera.html" class="dropdown-subitem"><span class="dot">•</span> CUTERA</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item has-dropdown">
+          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false">
+            MEDIA
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="dropdown-menu single-menu" role="menu" aria-labelledby="nav-media-btn">
+            <ul class="dropdown-sublist">
+              <li><a href="conference.html" class="dropdown-subitem"><span class="cat-idx">1.</span> Conference</a></li>
+              <li><a href="news.html" class="dropdown-subitem"><span class="cat-idx">2.</span> News</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="contact.html" class="nav-link">CONTACT US</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+        <a href="partnership.html" class="header-contact" aria-current="page">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <div class="mobile-nav-inner">
+        <a href="index.html" class="mobile-nav-link">HOME</a>
+        <a href="about.html" class="mobile-nav-link">ABOUT US</a>
+
+        <div class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-products-sub">
+            <span>OUR PRODUCTS</span>
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="mobile-products-sub" class="mobile-accordion-content" hidden>
+            <div class="mobile-subgroup">
+              <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
+              <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
+              <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
+              <a href="exoluma.html" class="mobile-sublink"><span class="dot">•</span> EXOLUMA EXO-PDRN</a>
+            </div>
+            <div class="mobile-subgroup">
+              <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
+              <a href="cynosure-lutronic.html" class="mobile-sublink"><span class="dot">•</span> CYNOSURE LUTRONIC</a>
+              <a href="cutera.html" class="mobile-sublink"><span class="dot">•</span> CUTERA</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-media-sub">
+            <span>MEDIA</span>
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="mobile-media-sub" class="mobile-accordion-content" hidden>
+            <a href="conference.html" class="mobile-sublink"><span class="cat-idx">1.</span> Conference</a>
+            <a href="news.html" class="mobile-sublink"><span class="cat-idx">2.</span> News</a>
+          </div>
+        </div>
+
+        <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
+      </div>
+    </nav>
+    <div id="search-panel" class="search-panel" hidden>
+      <div class="container">
+        <label for="header-search">Search clinical portfolio</label>
+        <div class="search-input-wrap">
+          <input id="header-search" type="search" placeholder="Search serum, injectables, devices…" autocomplete="off">
+          <button class="text-button" id="search-close">Close ✕</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main id="main" class="dq">
+
+  <!-- HERO -->
+  <section class="dq-hero">
+    <div class="dq-wrap">
+      <nav class="dq-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span class="cur">Partnership</span></nav>
+      <div class="dq-hero-grid">
+        <div class="reveal-on-scroll">
+          <p class="dq-eyebrow">B2B Clinic Partnership</p>
+          <h1>Partner with Novira<small>Premium injectables &amp; devices for licensed clinics.</small></h1>
+          <p class="dq-lead">Become an authorised NOVIRA partner clinic and get <em>direct wholesale supply</em> of DANIQUE, JUVELOOK, GENÈSE LABS and EXOLUMA — plus Cynosure Lutronic &amp; Cutera workstations, clinical training and a dedicated liaison. Applying takes about <em>3 minutes</em>.</p>
+          <div class="dq-actions">
+            <a class="dq-btn" href="#apply" id="hero-apply">Start application <span aria-hidden="true">→</span></a>
+            <a class="dq-btn ghost" href="https://wa.me/85569811399" target="_blank" rel="noopener" id="hero-whatsapp">Talk to our team</a>
+          </div>
+          <div class="dq-chips">
+            <span class="dq-chip" style="--c:#5d34a8"><i></i>Licensed clinics only</span>
+            <span class="dq-chip" style="--c:#1fa7b0"><i></i>2–8°C cold-chain</span>
+            <span class="dq-chip" style="--c:#c9a35e"><i></i>Reply within 24h</span>
+          </div>
+        </div>
+        <div class="dq-hero-visual reveal-on-scroll">
+          <div class="dq-hero-frame"><img src="images/juvelook-clinic.jpg" alt="Physician preparing a JUVELOOK treatment in a NOVIRA partner clinic"></div>
+          <div class="dq-orbit"><b>4</b><span>Simple<br>steps</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERKS -->
+  <section class="pf-perks">
+    <div class="dq-wrap">
+      <div class="dq-head reveal-on-scroll">
+        <p class="dq-eyebrow">Why partner</p>
+        <h2>Everything your clinic needs, from one trusted distributor.</h2>
+      </div>
+      <div class="pf-perk-grid">
+        <article class="pf-perk reveal-on-scroll" style="--c:#5d34a8">
+          <div class="pf-perk-ico"><svg viewBox="0 0 24 24"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3"/><path d="M3 12h18"/></svg></div>
+          <h3>Direct wholesale pricing</h3>
+          <p>Tiered clinic pricing and volume rebates — no third-party markups.</p>
+        </article>
+        <article class="pf-perk reveal-on-scroll" style="--c:#1fa7b0">
+          <div class="pf-perk-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M4.9 6.5l14.2 11M4.9 17.5l14.2-11"/></svg></div>
+          <h3>Certified cold-chain</h3>
+          <p>Temperature-monitored 2–8°C delivery straight to your clinic.</p>
+        </article>
+        <article class="pf-perk reveal-on-scroll" style="--c:#c9a35e">
+          <div class="pf-perk-ico"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div>
+          <h3>Clinical training</h3>
+          <p>Injection masterclasses and device certification for your doctors.</p>
+        </article>
+        <article class="pf-perk reveal-on-scroll" style="--c:#16766d">
+          <div class="pf-perk-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+          <h3>Dedicated liaison</h3>
+          <p>One medical representative for orders, demos and protocol advice.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION -->
+  <section class="pf-apply" id="apply">
+    <div class="dq-wrap">
+      <div class="dq-head reveal-on-scroll">
+        <p class="dq-eyebrow">Application</p>
+        <h2>Apply in four simple steps.</h2>
+        <p>Tell us about your clinic. Our team verifies your licence and contacts you within 24 business hours.</p>
+      </div>
+
+      <div class="pf-card" id="pf-card">
+        <aside class="pf-aside">
+          <p class="pf-aside-k">Partnership form</p>
+          <h3>Your clinic, in four steps.</h3>
+          <ol class="pf-nav" id="pf-nav">
+            <li class="is-active"><button type="button" data-go="0" id="pf-nav-1"><span class="pf-num">1</span><span><b>Clinic</b><em>Practice &amp; licence</em></span></button></li>
+            <li><button type="button" data-go="1" id="pf-nav-2"><span class="pf-num">2</span><span><b>Contact</b><em>Who we should reach</em></span></button></li>
+            <li><button type="button" data-go="2" id="pf-nav-3"><span class="pf-num">3</span><span><b>Interests</b><em>Brands &amp; timeline</em></span></button></li>
+            <li><button type="button" data-go="3" id="pf-nav-4"><span class="pf-num">4</span><span><b>Review</b><em>Confirm &amp; submit</em></span></button></li>
+          </ol>
+          <div class="pf-help">
+            <p>Prefer to talk first? Our partnership team is happy to help.</p>
+            <a href="https://wa.me/85569811399" target="_blank" rel="noopener" id="pf-help-wa">WhatsApp +855 69 811 399 <span aria-hidden="true">↗</span></a>
+            <a href="https://t.me/noviracambodia" target="_blank" rel="noopener" id="pf-help-tg">Telegram @noviracambodia <span aria-hidden="true">↗</span></a>
+            <a href="mailto:info@noviracambodia.com" id="pf-help-mail">info@noviracambodia.com <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
+
+        <div class="pf-main">
+          <form id="pf-form" novalidate>
+            <div class="pf-progress" id="pf-progress">
+              <div class="pf-progress-top"><span id="pf-step-label">Step 1 of 4 · Clinic profile</span><span id="pf-pct">25%</span></div>
+              <div class="pf-track"><div class="pf-bar" id="pf-bar"></div></div>
+            </div>
+
+            <!-- STEP 1 -->
+            <div class="pf-panel" data-step="0">
+              <h3>Tell us about your clinic</h3>
+              <p class="pf-desc">We use these details to verify that your practice is a licensed medical facility.</p>
+              <div class="pf-grid">
+                <div class="pf-field full" data-field>
+                  <label class="pf-label" for="f-clinic">Clinic / hospital name<i>*</i></label>
+                  <input class="pf-input" id="f-clinic" name="clinic" type="text" placeholder="e.g. Lumière Aesthetic Clinic" autocomplete="organization" required>
+                  <span class="pf-err">Please enter your clinic name.</span>
+                </div>
+                <div class="pf-field full" data-field>
+                  <span class="pf-label">Practice type<i>*</i></span>
+                  <div class="pf-opts" role="radiogroup" aria-label="Practice type">
+                    <label class="pf-opt"><input type="radio" name="practice" value="Aesthetic & dermatology clinic" required><span>Aesthetic &amp; dermatology</span></label>
+                    <label class="pf-opt"><input type="radio" name="practice" value="Plastic surgery centre"><span>Plastic surgery</span></label>
+                    <label class="pf-opt"><input type="radio" name="practice" value="Medical spa (physician-led)"><span>Medical spa</span></label>
+                    <label class="pf-opt"><input type="radio" name="practice" value="Hospital aesthetics department"><span>Hospital department</span></label>
+                  </div>
+                  <span class="pf-err">Please choose your practice type.</span>
+                </div>
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-license">Medical licence no.<i>*</i><small>MOH / Medical Council</small></label>
+                  <input class="pf-input" id="f-license" name="license" type="text" placeholder="e.g. MED-882914-KH" required>
+                  <span class="pf-err">Please enter your licence number.</span>
+                </div>
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-doctor">Medical director<i>*</i></label>
+                  <input class="pf-input" id="f-doctor" name="doctor" type="text" placeholder="Dr. Full name" required>
+                  <span class="pf-err">Please enter the physician in charge.</span>
+                </div>
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-country">Country<i>*</i></label>
+                  <select class="pf-select" id="f-country" name="country" required>
+                    <option value="Cambodia" selected>Cambodia</option>
+                    <option>Vietnam</option><option>Thailand</option><option>Laos</option><option>Myanmar</option>
+                    <option>Malaysia</option><option>Singapore</option><option>Philippines</option><option>Indonesia</option>
+                    <option>Other</option>
+                  </select>
+                  <span class="pf-err">Please select a country.</span>
+                </div>
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-city">City / province<i>*</i></label>
+                  <input class="pf-input" id="f-city" name="city" type="text" placeholder="e.g. Phnom Penh" autocomplete="address-level2" required>
+                  <span class="pf-err">Please enter your city.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="pf-panel" data-step="1" hidden>
+              <h3>Who should we contact?</h3>
+              <p class="pf-desc">Your liaison will reach out directly to this person to complete onboarding.</p>
+              <div class="pf-grid">
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-name">Full name<i>*</i></label>
+                  <input class="pf-input" id="f-name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+                  <span class="pf-err">Please enter your name.</span>
+                </div>
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-role">Your role</label>
+                  <select class="pf-select" id="f-role" name="role">
+                    <option>Clinic owner / director</option>
+                    <option>Physician / dermatologist</option>
+                    <option>Procurement / pharmacy</option>
+                    <option>Practice manager / head nurse</option>
+                  </select>
+                </div>
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-email">Email<i>*</i></label>
+                  <input class="pf-input" id="f-email" name="email" type="email" placeholder="name@yourclinic.com" autocomplete="email" required>
+                  <span class="pf-err">Please enter a valid email address.</span>
+                </div>
+                <div class="pf-field" data-field>
+                  <label class="pf-label" for="f-phone">Phone / WhatsApp / Telegram<i>*</i></label>
+                  <input class="pf-input" id="f-phone" name="phone" type="tel" placeholder="+855 12 345 678" autocomplete="tel" pattern="[0-9+()\-\s]{7,}" required>
+                  <span class="pf-err">Please enter a valid phone number.</span>
+                </div>
+                <div class="pf-field full" data-field>
+                  <label class="pf-label" for="f-web">Website or social page<small>Optional</small></label>
+                  <input class="pf-input" id="f-web" name="website" type="text" placeholder="www.yourclinic.com or Facebook / Instagram link">
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="pf-panel" data-step="2" hidden>
+              <h3>What are you interested in?</h3>
+              <p class="pf-desc">Select the brands you'd like to offer. You can choose as many as you like.</p>
+
+              <div data-field data-min-one="interests">
+                <p class="pf-sub">Brands &amp; devices<i style="font-style:normal;color:var(--purple)">*</i><span id="pf-count">0 selected</span></p>
+                <div class="pf-prods">
+                  <label class="pf-prod" style="--c:#1fa7b0"><input type="checkbox" name="interests" value="DANIQUE"><span class="pf-prod-box"><span class="pf-prod-th"><img src="images/danique.png" alt=""></span><span><b>DANIQUE</b><em>Stem cell elixirs</em></span><span class="pf-tick">✓</span></span></label>
+                  <label class="pf-prod" style="--c:#5d34a8"><input type="checkbox" name="interests" value="JUVELOOK"><span class="pf-prod-box"><span class="pf-prod-th"><img src="images/juvelook.png" alt=""></span><span><b>JUVELOOK</b><em>PDLLA + HA</em></span><span class="pf-tick">✓</span></span></label>
+                  <label class="pf-prod" style="--c:#16766d"><input type="checkbox" name="interests" value="GENÈSE LABS"><span class="pf-prod-box"><span class="pf-prod-th"><img src="images/citrus-bottle.png" alt=""></span><span><b>GENÈSE LABS</b><em>Citrus Bottle · Exo MASK</em></span><span class="pf-tick">✓</span></span></label>
+                  <label class="pf-prod" style="--c:#c9a35e"><input type="checkbox" name="interests" value="EXOLUMA"><span class="pf-prod-box"><span class="pf-prod-th"><img src="images/exoluma/set.png" alt=""></span><span><b>EXOLUMA</b><em>Exo-PDRN set</em></span><span class="pf-tick">✓</span></span></label>
+                  <label class="pf-prod" style="--c:#3b5bdb"><input type="checkbox" name="interests" value="Cynosure Lutronic"><span class="pf-prod-box"><span class="pf-prod-th"><img src="images/device-lutronic.png" alt=""></span><span><b>Cynosure Lutronic</b><em>Lasers &amp; RF</em></span><span class="pf-tick">✓</span></span></label>
+                  <label class="pf-prod" style="--c:#d9608a"><input type="checkbox" name="interests" value="Cutera"><span class="pf-prod-box"><span class="pf-prod-th"><img src="images/device-cutera.png" alt=""></span><span><b>Cutera</b><em>Energy workstations</em></span><span class="pf-tick">✓</span></span></label>
+                </div>
+                <span class="pf-err" style="margin-top:10px">Please select at least one brand.</span>
+              </div>
+
+              <div class="pf-field" data-field style="margin-top:28px">
+                <span class="pf-label">When would you like to start?<i>*</i></span>
+                <div class="pf-opts" role="radiogroup" aria-label="Start timeline">
+                  <label class="pf-opt"><input type="radio" name="timeline" value="Within 30 days" required><span>Within 30 days</span></label>
+                  <label class="pf-opt"><input type="radio" name="timeline" value="1–3 months"><span>1–3 months</span></label>
+                  <label class="pf-opt"><input type="radio" name="timeline" value="3–6 months"><span>3–6 months</span></label>
+                  <label class="pf-opt"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label>
+                </div>
+                <span class="pf-err">Please choose a timeline.</span>
+              </div>
+
+              <div class="pf-switches" style="margin-top:26px">
+                <label class="pf-switch"><input type="checkbox" name="demo" id="f-demo"><span class="tg" aria-hidden="true"></span><span><b>Request a device demo</b><em>In-clinic or at our showroom</em></span></label>
+                <label class="pf-switch"><input type="checkbox" name="training" id="f-training"><span class="tg" aria-hidden="true"></span><span><b>Join clinical training</b><em>Upcoming masterclasses</em></span></label>
+              </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="pf-panel" data-step="3" hidden>
+              <h3>Review &amp; submit</h3>
+              <p class="pf-desc">Check your details below. You can edit any section before submitting.</p>
+              <div class="pf-review" id="pf-review"></div>
+              <div class="pf-field" data-field>
+                <label class="pf-label" for="f-notes">Anything else?<small>Optional</small></label>
+                <textarea class="pf-textarea" id="f-notes" name="notes" placeholder="Current treatments, device models you're considering, sample requests…"></textarea>
+              </div>
+              <label class="pf-consent" data-field>
+                <input type="checkbox" name="consent" id="f-consent" required>
+                <span>I confirm this clinic is a licensed medical facility and agree to be contacted by NOVIRA about this partnership. Pricing is shared only with verified practitioners.</span>
+              </label>
+            </div>
+
+            <div class="pf-foot" id="pf-foot">
+              <span class="pf-foot-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Your details are kept confidential.</span>
+              <div class="pf-foot-btns">
+                <button type="button" class="dq-btn ghost" id="pf-back" hidden><span aria-hidden="true">←</span> Back</button>
+                <button type="button" class="dq-btn" id="pf-next">Continue <span aria-hidden="true">→</span></button>
+                <button type="submit" class="dq-btn" id="pf-submit" hidden>Submit application <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+          </form>
+
+          <!-- SUCCESS -->
+          <div class="pf-done" id="pf-done" hidden aria-live="polite">
+            <div class="pf-done-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <span class="pf-ref" id="pf-ref">REF NOV-2026-00000</span>
+            <h3>Application received</h3>
+            <p>Thank you, <strong id="pf-done-name">—</strong>. Your partnership application for <strong id="pf-done-clinic">—</strong> is in. A NOVIRA liaison will contact you at <strong id="pf-done-email">—</strong> within 24 business hours.</p>
+            <div class="dq-actions">
+              <a class="dq-btn" href="products.html" id="pf-done-products">Explore products <span aria-hidden="true">→</span></a>
+              <a class="dq-btn ghost" href="https://t.me/noviracambodia" target="_blank" rel="noopener" id="pf-done-tg">Message us on Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="dq-wrap">
+      <div class="dq-cta reveal-on-scroll">
+        <div><h2>Questions before you apply?</h2><p>Speak with our partnership team about supply, samples, demos and clinical guidance.</p></div>
+        <a class="dq-btn" href="contact.html?inquiry=B2BPartnership" id="cta-contact">Contact Us <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +855 69 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
+
+  <script src="nav.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('pf-form');
+      if (!form) return;
+
+      const panels = Array.from(document.querySelectorAll('.pf-panel'));
+      const navItems = Array.from(document.querySelectorAll('#pf-nav li'));
+      const btnBack = document.getElementById('pf-back');
+      const btnNext = document.getElementById('pf-next');
+      const btnSubmit = document.getElementById('pf-submit');
+      const bar = document.getElementById('pf-bar');
+      const stepLabel = document.getElementById('pf-step-label');
+      const pctLabel = document.getElementById('pf-pct');
+      const doneBox = document.getElementById('pf-done');
+      const reviewBox = document.getElementById('pf-review');
+      const interestCount = document.getElementById('pf-count');
+      const card = document.getElementById('pf-card');
+
+      const stepTitles = [
+        'Step 1 of 4 · Clinic profile',
+        'Step 2 of 4 · Contact details',
+        'Step 3 of 4 · Portfolio & timeline',
+        'Step 4 of 4 · Review & submit'
+      ];
+
+      let currentStep = 0;
+      const totalSteps = panels.length;
+
+      // Update interest counter
+      const interestCheckboxes = form.querySelectorAll('input[name="interests"]');
+      function updateInterestCounter() {
+        const checked = form.querySelectorAll('input[name="interests"]:checked').length;
+        if (interestCount) {
+          interestCount.textContent = checked === 1 ? '1 selected' : `${checked} selected`;
+        }
+      }
+      interestCheckboxes.forEach(cb => cb.addEventListener('change', updateInterestCounter));
+
+      // Clear validation error on change
+      form.addEventListener('input', (e) => {
+        const field = e.target.closest('[data-field]');
+        if (field) field.classList.remove('is-invalid');
+      });
+      form.addEventListener('change', (e) => {
+        const field = e.target.closest('[data-field]');
+        if (field) field.classList.remove('is-invalid');
+      });
+
+      function validateStep(stepIndex) {
+        const panel = panels[stepIndex];
+        let isValid = true;
+        let firstInvalid = null;
+
+        // Check required standard inputs within this panel
+        const inputs = panel.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+          const field = input.closest('[data-field]');
+          if (!field) return;
+
+          // Radio groups
+          if (input.type === 'radio' && input.required) {
+            const name = input.name;
+            const anyChecked = panel.querySelector(`input[name="${name}"]:checked`);
+            if (!anyChecked) {
+              field.classList.add('is-invalid');
+              isValid = false;
+              if (!firstInvalid) firstInvalid = input;
+            }
+          }
+          // Email validation
+          else if (input.type === 'email' && input.required) {
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRe.test(input.value.trim())) {
+              field.classList.add('is-invalid');
+              isValid = false;
+              if (!firstInvalid) firstInvalid = input;
+            }
+          }
+          // Phone validation
+          else if (input.type === 'tel' && input.required) {
+            if (input.value.trim().length < 6) {
+              field.classList.add('is-invalid');
+              isValid = false;
+              if (!firstInvalid) firstInvalid = input;
+            }
+          }
+          // Regular text / select
+          else if (input.required && !input.value.trim()) {
+            field.classList.add('is-invalid');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = input;
+          }
+        });
+
+        // Step 3: at least one interest must be checked
+        if (stepIndex === 2) {
+          const minField = panel.querySelector('[data-min-one="interests"]');
+          const checked = panel.querySelectorAll('input[name="interests"]:checked');
+          if (minField && checked.length === 0) {
+            minField.classList.add('is-invalid');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = panel.querySelector('input[name="interests"]');
+          }
+        }
+
+        if (firstInvalid) {
+          firstInvalid.focus();
+        }
+
+        return isValid;
+      }
+
+      function populateReview() {
+        const getVal = (name) => {
+          const el = form.elements[name];
+          if (!el) return '—';
+          if (el.value) return el.value.trim();
+          return '—';
+        };
+
+        const getRadio = (name) => {
+          const checked = form.querySelector(`input[name="${name}"]:checked`);
+          return checked ? checked.value : '—';
+        };
+
+        const getInterests = () => {
+          const checked = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
+          return checked.length ? checked.join(', ') : 'None selected';
+        };
+
+        const getAddons = () => {
+          const items = [];
+          if (form.elements['demo'] && form.elements['demo'].checked) items.push('Device demo');
+          if (form.elements['training'] && form.elements['training'].checked) items.push('Clinical training');
+          return items.length ? items.join(' · ') : 'Standard inquiry';
+        };
+
+        reviewBox.innerHTML = `
+          <div class="pf-rv">
+            <div class="pf-rv-head">
+              <h4>Clinic Details</h4>
+              <button type="button" data-edit="0">Edit</button>
+            </div>
+            <dl>
+              <div><dt>Clinic</dt><dd>${escapeHtml(getVal('clinic'))}</dd></div>
+              <div><dt>Type</dt><dd>${escapeHtml(getRadio('practice'))}</dd></div>
+              <div><dt>Licence</dt><dd>${escapeHtml(getVal('license'))}</dd></div>
+              <div><dt>Director</dt><dd>${escapeHtml(getVal('doctor'))}</dd></div>
+              <div><dt>Location</dt><dd>${escapeHtml(getVal('city'))}, ${escapeHtml(getVal('country'))}</dd></div>
+            </dl>
+          </div>
+
+          <div class="pf-rv">
+            <div class="pf-rv-head">
+              <h4>Contact</h4>
+              <button type="button" data-edit="1">Edit</button>
+            </div>
+            <dl>
+              <div><dt>Name</dt><dd>${escapeHtml(getVal('name'))} (${escapeHtml(getVal('role'))})</dd></div>
+              <div><dt>Email</dt><dd>${escapeHtml(getVal('email'))}</dd></div>
+              <div><dt>Phone</dt><dd>${escapeHtml(getVal('phone'))}</dd></div>
+              <div><dt>Website</dt><dd>${escapeHtml(getVal('website'))}</dd></div>
+            </dl>
+          </div>
+
+          <div class="pf-rv" style="grid-column:1 / -1">
+            <div class="pf-rv-head">
+              <h4>Clinical Interest &amp; Timeline</h4>
+              <button type="button" data-edit="2">Edit</button>
+            </div>
+            <dl>
+              <div><dt>Brands</dt><dd>${escapeHtml(getInterests())}</dd></div>
+              <div><dt>Timeline</dt><dd>${escapeHtml(getRadio('timeline'))}</dd></div>
+              <div><dt>Preferences</dt><dd>${escapeHtml(getAddons())}</dd></div>
+            </dl>
+          </div>
+        `;
+
+        // Wire edit buttons
+        reviewBox.querySelectorAll('[data-edit]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const targetStep = parseInt(btn.getAttribute('data-edit'), 10);
+            goToStep(targetStep);
+          });
+        });
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '—';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function goToStep(stepIndex) {
+        if (stepIndex < 0 || stepIndex >= totalSteps) return;
+
+        // If stepping forward past current step, validate current
+        if (stepIndex > currentStep) {
+          if (!validateStep(currentStep)) return;
+        }
+
+        currentStep = stepIndex;
+
+        // Update panels
+        panels.forEach((p, idx) => {
+          p.hidden = idx !== currentStep;
+        });
+
+        // Update progress bar & label
+        const pct = Math.round(((currentStep + 1) / totalSteps) * 100);
+        if (bar) bar.style.width = `${pct}%`;
+        if (pctLabel) pctLabel.textContent = `${pct}%`;
+        if (stepLabel) stepLabel.textContent = stepTitles[currentStep];
+
+        // Update nav sidebar
+        navItems.forEach((li, idx) => {
+          li.classList.toggle('is-active', idx === currentStep);
+          li.classList.toggle('is-done', idx < currentStep);
+        });
+
+        // Update buttons
+        if (btnBack) btnBack.hidden = currentStep === 0;
+        if (btnNext) btnNext.hidden = currentStep === totalSteps - 1;
+        if (btnSubmit) btnSubmit.hidden = currentStep !== totalSteps - 1;
+
+        // If arriving at step 4 (review), build review content
+        if (currentStep === 3) {
+          populateReview();
+        }
+
+        // Scroll smoothly to form container if needed
+        if (card) {
+          const rect = card.getBoundingClientRect();
+          if (rect.top < 60 || rect.top > window.innerHeight * 0.7) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+
+      // Next / Back button clicks
+      btnNext.addEventListener('click', () => {
+        if (validateStep(currentStep)) {
+          goToStep(currentStep + 1);
+        }
+      });
+
+      btnBack.addEventListener('click', () => {
+        goToStep(currentStep - 1);
+      });
+
+      // Nav sidebar clicks
+      navItems.forEach((li, idx) => {
+        const btn = li.querySelector('button');
+        if (btn) {
+          btn.addEventListener('click', () => {
+            // Can go to any previous step, or next step if valid
+            if (idx <= currentStep || validateStep(currentStep)) {
+              goToStep(idx);
+            }
+          });
+        }
+      });
+
+      // Form submission
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Check consent checkbox on Step 4
+        const consent = document.getElementById('f-consent');
+        const consentWrap = consent ? consent.closest('.pf-consent') : null;
+        if (consent && !consent.checked) {
+          if (consentWrap) consentWrap.classList.add('is-invalid');
+          consent.focus();
+          return;
+        }
+
+        // Check all previous steps one more time
+        for (let i = 0; i < totalSteps; i++) {
+          if (!validateStep(i)) {
+            goToStep(i);
+            return;
+          }
+        }
+
+        // Show loading state
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = `<span class="pf-spin"></span> Submitting…`;
+
+        setTimeout(() => {
+          const clinic = form.elements['clinic'].value.trim();
+          const name = form.elements['name'].value.trim();
+          const email = form.elements['email'].value.trim();
+          const randomId = Math.floor(10000 + Math.random() * 90000);
+          const ref = `NOV-${new Date().getFullYear()}-${randomId}`;
+
+          document.getElementById('pf-done-name').textContent = name || 'Doctor';
+          document.getElementById('pf-done-clinic').textContent = clinic || 'your clinic';
+          document.getElementById('pf-done-email').textContent = email || 'your email';
+          document.getElementById('pf-ref').textContent = `REF ${ref}`;
+
+          // Mark all sidebar steps as completed
+          navItems.forEach(li => {
+            li.classList.remove('is-active');
+            li.classList.add('is-done');
+          });
+
+          // Hide form, show success state
+          form.hidden = true;
+          doneBox.hidden = false;
+
+          // Scroll up to success box
+          if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 600);
+      });
+
+      // Initialize
+      goToStep(0);
+    })();
+  </script>
+
+</body>
+</html>

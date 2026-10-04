@@ -3,19 +3,496 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact NOVIRA CO., LTD. — Cambodia's leading B2B medical aesthetics distributor. Enquire about clinic partnerships, injectable wholesale, device demonstrations, and certified training programs.">
+  <meta name="description" content="Contact NOVIRA CO., LTD. — Cambodia's premier medical aesthetics distributor. Email: info@noviracambodia.com | Telegram & WhatsApp: +069 811 399. HVXG+FHG Building No. 3160, Street. 2030, Phnom Penh 120803.">
   <meta name="theme-color" content="#2E086F">
   <title>Contact Us — NOVIRA CO., LTD. | Medical Aesthetics Distributor</title>
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzJFMDg2RiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ============================================================
+       NOVIRA CLEAN MINIMALIST CONTACT DESIGN SYSTEM
+       Strict Pure White Aesthetic · Celine Peach Sans & Switzer
+       Inspired by Clean Modern Cards & Google Map Layout
+       Brand Color: #2E086F (Royal Purple)
+       ============================================================ */
+    :root {
+      --ct-purple: #2E086F;
+      --ct-purple-mid: #3d0e91;
+      --ct-purple-light: #5218b8;
+      --ct-purple-subtle: #f5f0fc;
+      --ct-line: #2E086F;
+      --ct-line-subtle: #ebe7f3;
+      --ct-text-head: #111111;
+      --ct-text-body: #4a4458;
+      --ct-font-head: 'Celine Peach Sans', Georgia, serif;
+      --ct-font-body: 'Switzer', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* ALL SECTIONS STRICTLY PURE WHITE BACKGROUND */
+    body,
+    body.contact-theme,
+    main,
+    main#main,
+    section,
+    .ct-cards-section,
+    .ct-bottom-section,
+    .ct-card {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    body.contact-theme {
+      color: var(--ct-text-body);
+      font-family: var(--ct-font-body);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* STRICT FONT ENFORCEMENT */
+    h1, h2, h3, h4, h5, h6,
+    .ct-title,
+    .ct-card-title,
+    .ct-section-title {
+      font-family: var(--ct-font-head) !important;
+      letter-spacing: -0.3px;
+    }
+
+    body, p, span, a, button, input, select, textarea, label, li,
+    .ct-crumb,
+    .ct-lead,
+    .ct-btn,
+    .ct-card-text {
+      font-family: var(--ct-font-body) !important;
+    }
+
+    .ct-wrapper {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    /* BREADCRUMB */
+    .ct-crumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8c8299;
+      margin-bottom: 24px;
+      padding-top: 36px;
+    }
+    .ct-crumb a {
+      color: #8c8299;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .ct-crumb a:hover {
+      color: var(--ct-purple);
+    }
+    .ct-crumb .sep {
+      color: #d1c7dd;
+    }
+    .ct-crumb .cur {
+      color: var(--ct-purple);
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       TOP 3 FLOATING-BADGE CARDS (EXACT REFERENCE CONCEPT)
+       ============================================================ */
+    .ct-cards-section {
+      padding: 24px 0 64px;
+      background: #ffffff;
+    }
+
+    .ct-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      padding-top: 30px; /* Space for protruding top icon badges */
+    }
+
+    .ct-card {
+      position: relative;
+      background: #ffffff;
+      border: 1.8px solid var(--ct-purple);
+      border-radius: 18px;
+      padding: 44px 24px 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 4px 16px rgba(46, 8, 111, 0.04);
+    }
+
+    .ct-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(46, 8, 111, 0.12);
+    }
+
+    /* Floating badge at the top-center breaking the card's top border */
+    .ct-card-badge {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 56px;
+      background: #ffffff;
+      border: 1.8px solid var(--ct-purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ct-purple);
+      box-shadow: 0 4px 12px rgba(46, 8, 111, 0.08);
+      z-index: 2;
+    }
+
+    .ct-card-badge svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--ct-purple);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ct-card-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111111;
+      margin: 0 0 14px;
+      line-height: 1.2;
+    }
+
+    .ct-card-text {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--ct-text-body);
+      margin: 0;
+      max-width: 320px;
+    }
+
+    .ct-card-text a {
+      color: var(--ct-text-body);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .ct-card-text a:hover {
+      color: var(--ct-purple);
+      text-decoration: underline;
+    }
+
+    .ct-card-sublinks {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ct-sublink-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--ct-purple);
+      text-decoration: none;
+      padding: 5px 14px;
+      border-radius: 99px;
+      background: var(--ct-purple-subtle);
+      transition: all .2s ease;
+    }
+
+    .ct-sublink-btn:hover {
+      background: var(--ct-purple);
+      color: #ffffff;
+    }
+
+    /* ============================================================
+       BOTTOM TWO-COLUMN: FORM (LEFT) & GOOGLE MAP (RIGHT)
+       ============================================================ */
+    .ct-bottom-section {
+      padding: 10px 0 90px;
+      background: #ffffff;
+    }
+
+    .ct-two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(36px, 5vw, 64px);
+      align-items: stretch;
+    }
+
+    /* LEFT FORM COLUMN */
+    .ct-form-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ct-section-title {
+      font-size: clamp(32px, 3.8vw, 46px);
+      font-weight: 700;
+      color: #111111;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .ct-section-title span {
+      color: var(--ct-purple);
+    }
+
+    .ct-intro-text {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #554d66;
+      margin: 0 0 10px;
+    }
+
+    .ct-subtitle-accent {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ct-purple);
+      margin: 0 0 26px;
+    }
+
+    .ct-clean-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .ct-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ct-input-group label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #111111;
+    }
+
+    .ct-clean-input,
+    .ct-clean-textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1.8px solid var(--ct-purple);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-size: 14px;
+      color: #111111;
+      background: #ffffff;
+      outline: none;
+      font-family: var(--ct-font-body);
+      transition: box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .ct-clean-input:focus,
+    .ct-clean-textarea:focus {
+      border-color: var(--ct-purple-light);
+      box-shadow: 0 0 0 4px rgba(46, 8, 111, 0.12);
+    }
+
+    .ct-clean-input::placeholder,
+    .ct-clean-textarea::placeholder {
+      color: #999999;
+    }
+
+    .ct-clean-textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .ct-submit-wrap {
+      margin-top: 6px;
+    }
+
+    .ct-send-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--ct-purple);
+      color: #ffffff;
+      border: none;
+      padding: 14px 36px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(46, 8, 111, 0.25);
+      transition: all .25s ease;
+      letter-spacing: .3px;
+    }
+
+    .ct-send-btn:hover {
+      background: var(--ct-purple-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(46, 8, 111, 0.35);
+    }
+
+    /* RIGHT MAP COLUMN */
+    .ct-map-col {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .ct-map-wrapper {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      min-height: 480px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid var(--ct-line-subtle);
+      box-shadow: 0 10px 30px rgba(46, 8, 111, 0.05);
+      background: #eef2f5;
+    }
+
+    .ct-map-canvas {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      display: flex;
+    }
+
+    .ct-map-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Google Maps Info Card Overlay (Matching reference image) */
+    .ct-map-info-card {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      max-width: 250px;
+      z-index: 5;
+      font-family: Roboto, Arial, sans-serif;
+    }
+
+    .ct-map-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .ct-map-card-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #202124;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .ct-map-card-sub {
+      font-size: 12px;
+      color: #5f6368;
+      margin: 4px 0 6px;
+      line-height: 1.35;
+    }
+
+    .ct-map-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #e37400;
+      font-weight: 600;
+    }
+
+    .ct-map-rating span {
+      color: #5f6368;
+      font-weight: 400;
+    }
+
+    .ct-map-directions-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #1a73e8;
+      color: #ffffff;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .ct-map-directions-link svg {
+      width: 16px;
+      height: 16px;
+      fill: #ffffff;
+    }
+
+    .ct-map-caption {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #777085;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ct-map-caption strong {
+      color: var(--ct-purple);
+      font-weight: 700;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 960px) {
+      .ct-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+      .ct-two-col-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .ct-map-wrapper {
+        min-height: 380px;
+      }
+      .ct-map-wrapper iframe {
+        min-height: 380px;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="contact-theme">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="contact.html?inquiry=B2BPartnership">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
+  
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -32,8 +509,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -61,11 +538,11 @@
           </div>
         </div>
 
-        <a href="contact.html" class="nav-link">CONTACT US</a>
+        <a href="contact.html" class="nav-link" style="color:var(--ct-purple);font-weight:600;">CONTACT US</a>
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -73,7 +550,6 @@
       <div class="mobile-nav-inner">
         <a href="index.html" class="mobile-nav-link">HOME</a>
         <a href="about.html" class="mobile-nav-link">ABOUT US</a>
-        
         <div class="mobile-accordion-item">
           <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-products-sub">
             <span>OUR PRODUCTS</span>
@@ -84,7 +560,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -93,7 +569,6 @@
             </div>
           </div>
         </div>
-
         <div class="mobile-accordion-item">
           <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-media-sub">
             <span>MEDIA</span>
@@ -104,8 +579,8 @@
             <a href="news.html" class="mobile-sublink"><span class="cat-idx">2.</span> News</a>
           </div>
         </div>
-
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -121,104 +596,181 @@
 
 <main id="main">
 
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
+  <!-- ============================================================
+       TOP 3 FLOATING-BADGE CARDS (EXACT PATTERN FROM REFERENCE)
+       ============================================================ -->
+  <section class="ct-cards-section">
+    <div class="ct-wrapper">
+      
+      <nav class="ct-crumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
         <span class="sep">/</span>
-        <span class="current">Contact Us</span>
+        <span class="cur">Contact Us</span>
       </nav>
-      <div class="cert-strip"><span class="cert-dot"></span>AUTHORIZED DISTRIBUTOR — CAMBODIA &amp; SOUTHEAST ASIA</div>
-      <h1>Partner with NOVIRA.<br><em>Elevate your clinic.</em></h1>
-      <p class="page-hero-desc">Connect with our dedicated medical partnership team to discuss clinic onboarding, product demonstrations, exclusive wholesale access, and certified clinical training programs tailored to your practice.</p>
+
+      <div class="ct-cards-grid">
+
+        <!-- CARD 1: ADDRESS -->
+        <div class="ct-card">
+          <div class="ct-card-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <h3 class="ct-card-title">Address</h3>
+          <p class="ct-card-text">
+            HVXG+FHG Building No. 3160, Street. 2030, Phnom Penh 120803
+          </p>
+        </div>
+
+        <!-- CARD 2: PHONE -->
+        <div class="ct-card">
+          <div class="ct-card-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3 class="ct-card-title">Phone</h3>
+          <p class="ct-card-text">
+            <a href="tel:+85569811399">+069 811 399</a>
+          </p>
+          <div class="ct-card-sublinks">
+            <a class="ct-sublink-btn" href="https://wa.me/85569811399" target="_blank" rel="noopener">WhatsApp ↗</a>
+            <a class="ct-sublink-btn" href="https://t.me/+85569811399" target="_blank" rel="noopener">Telegram ↗</a>
+          </div>
+        </div>
+
+        <!-- CARD 3: EMAIL -->
+        <div class="ct-card">
+          <div class="ct-card-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3 class="ct-card-title">Email</h3>
+          <p class="ct-card-text">
+            <a href="mailto:info@noviracambodia.com">info@noviracambodia.com</a>
+          </p>
+          <div class="ct-card-sublinks">
+            <a class="ct-sublink-btn" href="mailto:info@noviracambodia.com">Send Message ↗</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section class="section container">
-    <div class="contact-grid">
-      <div class="contact-copy">
-        <p class="eyebrow">Direct Office Channels</p>
-        <h2>Connect with our clinical team.</h2>
-        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;margin-top:14px;">Choosing the right medical aesthetics products and energy workstations starts with an informed conversation. Our clinical partnership team is dedicated to your practice's objectives, equipment needs, and long-term growth.</p>
+  <!-- ============================================================
+       BOTTOM TWO-COLUMN: LETS GET IN TOUCH FORM & GOOGLE MAP
+       ============================================================ -->
+  <section class="ct-bottom-section">
+    <div class="ct-wrapper">
+      <div class="ct-two-col-grid">
 
-        <div style="margin-top:35px;display:flex;flex-direction:column;gap:20px;">
-          <div style="border-bottom:1px solid var(--line);padding-bottom:14px;">
-            <strong style="display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:4px;">Corporate Headquarters</strong>
-            <span style="font-size:13.5px;color:var(--ink);">NOVIRA CO., LTD.<br>Phnom Penh, Kingdom of Cambodia</span>
+        <!-- LEFT COLUMN: LETS GET IN TOUCH -->
+        <div class="ct-form-col">
+          <h2 class="ct-section-title">Lets Get in <span>Touch!</span></h2>
+          <p class="ct-intro-text">
+            Have a question or need assistance? Reach out to us via email, phone, or the contact form below. We're eager to assist you.
+          </p>
+          <div class="ct-subtitle-accent">Nice hearing from you!</div>
+
+          <form class="ct-clean-form" id="contact-inquiry-form" onsubmit="handleInquirySubmit(event)">
+            <div class="ct-input-group">
+              <label for="fullName">Full Name:</label>
+              <input type="text" id="fullName" name="fullName" class="ct-clean-input" placeholder="Your full name" required>
+            </div>
+
+            <div class="ct-input-group">
+              <label for="emailAddress">Email:</label>
+              <input type="email" id="emailAddress" name="emailAddress" class="ct-clean-input" placeholder="Your email address" required>
+            </div>
+
+            <div class="ct-input-group">
+              <label for="phoneNumber">Phone:</label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" class="ct-clean-input" placeholder="Your phone number" required>
+            </div>
+
+            <div class="ct-input-group">
+              <label for="messageContent">Message:</label>
+              <textarea id="messageContent" name="messageContent" class="ct-clean-textarea" placeholder="How can our clinical team assist your practice?" rows="5" required></textarea>
+            </div>
+
+            <div class="ct-submit-wrap">
+              <button type="submit" class="ct-send-btn">
+                Send Message <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT COLUMN: GOOGLE MAP -->
+        <div class="ct-map-col">
+          <div class="ct-map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4620.804447477664!2d104.87388207574622!3d11.598682288604532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109531cd9310c8b%3A0x3fd8f6b0c4ab8258!2sMIRA%20Clinic!5e1!3m2!1sen!2skh!4v1791021975130!5m2!1sen!2skh" 
+              width="100%" 
+              height="100%" 
+              style="border:0; min-height:480px; display:block;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="NOVIRA Location - Building No. 3160, Street. 2030, Phnom Penh">
+            </iframe>
           </div>
 
-          <div style="border-bottom:1px solid var(--line);padding-bottom:14px;">
-            <strong style="display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:4px;">Medical Device Inquiries</strong>
-            <span style="font-size:13.5px;color:var(--ink);">devices@novira-aesthetic.com</span>
-          </div>
-
-          <div style="border-bottom:1px solid var(--line);padding-bottom:14px;">
-            <strong style="display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:4px;">Injectables & Biostimulators</strong>
-            <span style="font-size:13.5px;color:var(--ink);">injectables@novira-aesthetic.com</span>
-          </div>
-
-          <div style="border-bottom:1px solid var(--line);padding-bottom:14px;">
-            <strong style="display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:4px;">Clinical Training & Workshops</strong>
-            <span style="font-size:13.5px;color:var(--ink);">education@novira-aesthetic.com</span>
+          <div class="ct-map-caption">
+            <span><strong>Location:</strong> HVXG+FHG Building No. 3160, Street. 2030, Phnom Penh 120803</span>
+            <a href="https://maps.google.com/?q=HVXG%2BFHG+Building+No.+3160,+Street.+2030,+Phnom+Penh+120803" target="_blank" rel="noopener" style="color:var(--ct-purple); font-weight:700; text-decoration:none;">Open in Google Maps ↗</a>
           </div>
         </div>
 
-        <div class="contact-footnote">
-          <span aria-hidden="true">↗</span>
-          <p>This preview prepares a downloadable enquiry file.<br>Your details are processed locally and securely.</p>
-        </div>
       </div>
-
-      <form id="enquiry-form" class="enquiry-form" style="background:#faf7fc;padding:35px;border-radius:10px;border:1px solid var(--line);">
-        <h3 style="font-size:24px;margin-bottom:20px;color:var(--purple-dark);">Send an Enquiry</h3>
-        <div class="form-row">
-          <label>Your Name <input name="name" autocomplete="name" placeholder="Full name" maxlength="100" required></label>
-          <label>Email Address <input name="email" type="email" autocomplete="email" placeholder="doctor@clinic.com" maxlength="200" required></label>
-        </div>
-        <div class="form-row">
-          <label>Phone Number <span class="optional">(optional)</span><input name="phone" type="tel" autocomplete="tel" placeholder="+855" maxlength="40"></label>
-          <label>I am interested in
-            <select id="enquiry-interest" name="interest">
-              <option>1. Injectables — DANIQUE</option>
-              <option>1. Injectables — JUVELOOK</option>
-              <option>1. Injectables — DENESE LAB</option>
-              <option>2. Devices — CYNOSURE LUTRONIC</option>
-              <option>2. Devices — CUTERA</option>
-              <option>Conference & Workshop Registration</option>
-              <option>General Clinic Partnership</option>
-            </select>
-          </label>
-        </div>
-        <label>Your Message
-          <textarea name="message" id="enquiry-message" rows="4" placeholder="Tell us about your practice or specific equipment / product requirements..." maxlength="2000" required></textarea>
-        </label>
-        <button class="button primary" type="submit" style="width:100%;margin-top:10px;">Download My Enquiry File <span aria-hidden="true">↗</span></button>
-        <p class="form-status" id="form-status" role="status"></p>
-      </form>
     </div>
   </section>
 
 </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
+    <div class="container footer-top" style="flex-wrap:wrap; gap:20px;">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
       <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
+      <div class="footer-social-row" style="display:flex; align-items:center; gap:14px; margin-left:auto; flex-wrap:wrap;">
+        <a href="mailto:info@noviracambodia.com" style="color:#ddd1e7; text-decoration:none; font-size:12px; display:inline-flex; align-items:center; gap:6px;">✉️ info@noviracambodia.com</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Facebook</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Instagram</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav aria-label="Footer navigation" style="display:flex; gap:20px; font-size:11px;">
         <a href="index.html">Home</a>
         <a href="about.html">About us</a>
         <a href="products.html">Our products</a>
         <a href="media.html">Media</a>
         <a href="contact.html">Contact us</a>
       </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
+      <span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span>
+      <a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a>
     </div>
   </footer>
+
   <script src="nav.js"></script>
+
+  <script>
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value;
+      alert(`Thank you, ${name}! Your message has been received. Our team will contact you shortly.`);
+      e.target.reset();
+    }
+  </script>
 
 </body>
 </html>

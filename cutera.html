@@ -8,6 +8,76 @@
   <title>CUTERA Systems — NOVIRA</title>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .dq { --teal:#16766d; --gold:#c9a35e; --rose:#d9608a; }
+    .dq-wrap { width:min(1200px, calc(100% - 48px)); margin:0 auto; }
+    .dq-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); font-weight:600; margin:0 0 14px; }
+    .dq h1, .dq h2, .dq h3 { font-family:var(--serif); font-weight:500; color:var(--ink); margin:0; }
+    .dq-crumb { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:34px; }
+    .dq-crumb a { color:var(--muted); transition:color .2s; } .dq-crumb a:hover { color:var(--purple); }
+    .dq-crumb .cur { color:var(--ink); font-weight:600; }
+    .dq-hero { padding:48px 0 90px; background:radial-gradient(900px 500px at 85% 20%, #ede8f6 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #e9f4f3 0%, transparent 60%); }
+    .dq-hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; }
+    .dq-hero h1 { font-size:clamp(54px,8vw,104px); letter-spacing:-2px; line-height:.95; text-transform:uppercase; }
+    .dq-hero h1 small { display:block; font-size:clamp(18px,2vw,26px); letter-spacing:.5px; text-transform:none; color:var(--purple); margin-top:18px; line-height:1.3; }
+    .dq-lead { font-size:15px; line-height:1.85; color:var(--muted); max-width:540px; margin:26px 0 34px; }
+    .dq-lead em { color:var(--ink); font-style:normal; font-weight:600; }
+    .dq-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .dq-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.3px; background:var(--purple); color:#fff; transition:transform .25s, box-shadow .25s, background .25s; }
+    .dq-btn:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(46,8,111,.25); background:var(--purple-dark); }
+    .dq-btn.ghost { background:transparent; color:var(--purple); border:1px solid var(--line); }
+    .dq-btn.ghost:hover { background:#fff; box-shadow:0 12px 26px rgba(46,8,111,.1); }
+    .dq-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:34px; }
+    .dq-chip { font-size:11.5px; padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line-soft); color:var(--ink-soft); display:inline-flex; align-items:center; gap:8px; }
+    .dq-chip i { width:7px; height:7px; border-radius:50%; background:var(--c); display:block; }
+    .dq-hero-visual { position:relative; }
+    .dq-hero-frame { position:relative; aspect-ratio:4/5; border-radius:220px 220px 28px 28px; overflow:hidden; background:radial-gradient(circle at 50% 38%, #fff 0%, #f1edf8 70%, #e8e1f4 100%); display:grid; place-items:center; }
+    .dq-hero-frame img { width:80%; height:80%; object-fit:contain; filter:drop-shadow(0 30px 40px rgba(0,0,0,.18)); transition:transform 1.2s ease; }
+    .dq-hero-visual:hover .dq-hero-frame img { transform:scale(1.04); }
+    .dq-orbit { position:absolute; width:150px; height:150px; border-radius:50%; background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; left:-44px; bottom:60px; }
+    .dq-orbit::before { content:""; position:absolute; inset:7px; border-radius:50%; border:1px dashed var(--purple); }
+    .dq-orbit b { font-family:var(--serif); font-size:34px; font-weight:500; color:var(--purple); line-height:1; }
+    .dq-orbit span { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.4; }
+    .dq-sec { padding:clamp(70px,8vw,110px) 0; }
+    .dq-head { display:flex; justify-content:space-between; align-items:flex-end; gap:40px; margin-bottom:48px; }
+    .dq-head h2 { font-size:clamp(32px,3.6vw,50px); letter-spacing:-1px; line-height:1.08; }
+    .dq-head h2 em { font-style:normal; color:var(--purple); }
+    .dq-head p { max-width:420px; color:var(--muted); font-size:14px; line-height:1.85; margin:0; }
+
+    /* Device cards */
+    .dq-dev-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:24px; }
+    .dq-dev-card { display:flex; flex-direction:column; background:#fff; border:1px solid var(--line-soft); border-radius:22px; padding:32px; transition:transform .35s, border-color .35s; }
+    .dq-dev-card:hover { transform:translateY(-6px); border-color:color-mix(in srgb, var(--c) 50%, white); }
+    .dq-dev-card-head { display:flex; gap:18px; align-items:flex-start; margin-bottom:18px; }
+    .dq-dev-num { width:50px; height:50px; border-radius:14px; background:color-mix(in srgb, var(--c) 12%, white); color:var(--c); display:grid; place-items:center; font-family:var(--serif); font-size:16px; flex-shrink:0; }
+    .dq-dev-sub { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--c); font-weight:600; margin:0 0 6px; }
+    .dq-dev-card h3 { font-size:22px; line-height:1.2; }
+    .dq-dev-desc { font-size:13.5px; line-height:1.75; color:var(--muted); margin:0 0 18px; }
+    .dq-dev-bens { list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:10px; }
+    .dq-dev-bens li { display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.6; color:var(--ink-soft); }
+    .dq-dev-bens svg { width:18px; height:18px; flex-shrink:0; margin-top:2px; }
+    .dq-dev-foot { margin-top:auto; }
+
+    /* CTA */
+    .dq-cta { display:grid; grid-template-columns:1.3fr auto; gap:40px; align-items:center; padding:clamp(36px,5vw,64px); border-radius:28px; background:var(--purple-dark); color:#fff; position:relative; overflow:hidden; }
+    .dq-cta::before { content:""; position:absolute; width:520px; height:520px; right:-160px; top:-240px; border-radius:50%; border:1px solid rgba(255,255,255,.1); box-shadow:0 0 0 80px rgba(255,255,255,.03); }
+    .dq-cta h2 { color:#fff !important; }
+    .dq-cta p { color:rgba(255,255,255,.7); font-size:14px; line-height:1.85; margin:14px 0 0; max-width:560px; }
+    .dq-cta .dq-eyebrow { color:#c9b6ec; }
+    .dq-cta .dq-btn { background:#fff; color:var(--purple); border:1px solid #fff; }
+    .dq-cta .dq-btn.ghost { background:transparent; color:#fff; border-color:rgba(255,255,255,.35); }
+
+    @media (max-width:900px) {
+      .dq-hero-grid, .dq-cta { grid-template-columns:1fr; }
+      .dq-hero-visual { max-width:480px; margin:0 auto; width:100%; }
+      .dq-orbit { left:0; }
+      .dq-head { flex-direction:column; align-items:flex-start; gap:16px; }
+      .dq-dev-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:640px) {
+      .dq-wrap { width:calc(100% - 40px); }
+    }
+  </style>
 </head>
 <body>
 
@@ -15,7 +85,7 @@
   <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="contact.html?inquiry=B2BPartnership">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -32,8 +102,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -65,7 +135,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -84,7 +154,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -106,6 +176,7 @@
         </div>
 
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -119,106 +190,106 @@
     </div>
   </header>
 
-<main id="main">
+<main id="main" class="dq">
 
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="sep">/</span>
-        <a href="products.html">Our Products</a>
-        <span class="sep">/</span>
-        <a href="devices.html">Devices</a>
-        <span class="sep">/</span>
-        <span class="current">CUTERA</span>
-      </nav>
-      <span class="brand-hero-logo">CUTERA · AESTHETIC PLATFORMS</span>
-      <h1>CUTERA — Precision Dermatology &<br><em>Breakthrough Medical Lasers.</em></h1>
-      <p class="page-hero-desc">Engineered in Silicon Valley, California. Setting the international clinical benchmark for vascular treatments, permanent acne suppression, and multi-layered skin remodeling.</p>
-      <div class="page-hero-actions">
-        <a href="contact.html" class="button primary">Request Platform Quotation ↗</a>
-        <a href="contact.html" class="button secondary" style="color:white;border-color:rgba(255,255,255,0.4)">Book In-Clinic Demonstration</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section container">
-    <div class="feature-split">
-      <div class="feature-copy">
-        <p class="eyebrow">The Vascular Gold Standard</p>
-        <h2>Excel V+ — The world's most advanced vascular and pigment platform</h2>
-        <p>CUTERA Excel V+ features dual wavelengths—532nm and 1064nm—with 50% more power than its predecessor. It treats over 20 unique clinical indications, including rosacea, facial telangiectasias, port-wine stains, leg veins, and benign pigmented lesions.</p>
-        <p>Equipped with the Dermastat 1mm and 2mm pencil handpieces, Green Genesis for global skin tone revitalisation, and sapphire contact cooling for complete patient comfort.</p>
-        <div class="spec-box">
-          <div class="spec-grid">
-            <div class="spec-item"><span class="spec-label">Wavelengths</span><span class="spec-val">532nm & 1064nm LBO / Nd:YAG</span></div>
-            <div class="spec-item"><span class="spec-label">Handpieces</span><span class="spec-val">CoolView, Dermastat, Green Genesis</span></div>
-            <div class="spec-item"><span class="spec-label">Cooling</span><span class="spec-val">Continuous Sapphire Contact (5-20°C)</span></div>
-            <div class="spec-item"><span class="spec-label">Clinical Scope</span><span class="spec-val">Rosacea, Veins, Pigment, Rejuvenation</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="feature-img-card">
-        <img src="images/device-cutera.png" alt="Cutera AviClear and Excel V Plus Systems" style="object-fit:contain;background:#f9f7fb;padding:20px;">
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:var(--lavender);">
-    <div class="container">
-      <div class="section-heading">
+  <section class="dq-hero">
+    <div class="dq-wrap">
+      <nav class="dq-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="products.html">Our Products</a><span>/</span><a href="devices.html">2. Devices</a><span>/</span><span class="cur">CUTERA</span></nav>
+      <div class="dq-hero-grid">
         <div>
-          <p class="eyebrow">Groundbreaking Innovations</p>
-          <h2>Featured Cutera Platforms</h2>
+          <p class="dq-eyebrow">2. Devices · Brand</p>
+          <h1>Cutera<small>Precision dermatology &amp; breakthrough medical lasers.</small></h1>
+          <p class="dq-lead"><em>Engineered in Silicon Valley, California.</em> Setting the international clinical benchmark for vascular treatments, permanent acne suppression, and multi-wavelength pigment clearance — distributed by NOVIRA to licensed clinics.</p>
+          <div class="dq-actions">
+            <a href="#devices" class="dq-btn">Browse Platforms <span aria-hidden="true">↓</span></a>
+            <a href="contact.html?inquiry=Cutera" class="dq-btn ghost">Request Quotation <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="dq-chips">
+            <span class="dq-chip" style="--c:#0e5a82"><i></i>FDA-Cleared</span>
+            <span class="dq-chip" style="--c:#16766d"><i></i>Vascular</span>
+            <span class="dq-chip" style="--c:#5d34a8"><i></i>Tattoo Removal</span>
+          </div>
+        </div>
+        <div class="dq-hero-visual reveal-on-scroll">
+          <div class="dq-hero-frame">
+            <img src="images/device-cutera.png" alt="Cutera AviClear laser platform">
+          </div>
+          <div class="dq-orbit"><b>03</b><span>Clinical<br>platforms</span></div>
         </div>
       </div>
-      <div class="subpage-grid">
-        <div class="card-item">
-          <div>
-            <span class="card-kicker">ACNE REVOLUTION</span>
-            <h3 class="card-title">AviClear (1726nm)</h3>
-            <p class="card-desc">The first and only FDA-cleared energy device for the treatment of mild to severe acne. Targets and suppresses sebaceous glands selectively with long-term remission.</p>
-            <div class="card-tags">
-              <span class="card-tag">1726nm Wavelength</span>
-              <span class="card-tag">Prescription-Free Acne</span>
-              <span class="card-tag">No Blood Draws / Drugs</span>
-            </div>
-          </div>
-          <div class="card-action">
-            <a href="contact.html" class="text-link">Request AviClear Details ↗</a>
-          </div>
-        </div>
+    </div>
+  </section>
 
-        <div class="card-item">
-          <div>
-            <span class="card-kicker">FRACTIONAL RF + CO2</span>
-            <h3 class="card-title">Secret PRO</h3>
-            <p class="card-desc">Unites fractional CO2 laser micro-ablation with deep RF microneedling in a single dual-technology platform for total dermal remodeling and scar revision.</p>
-            <div class="card-tags">
-              <span class="card-tag">CO2 + RF Microneedling</span>
-              <span class="card-tag">Scar Remodeling</span>
-              <span class="card-tag">Deep Dermal Coagulation</span>
-            </div>
-          </div>
-          <div class="card-action">
-            <a href="contact.html" class="text-link">Request Secret PRO Details ↗</a>
-          </div>
+  <section class="dq-sec" id="devices">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <div>
+          <p class="dq-eyebrow">Platform Lineup</p>
+          <h2>All Cutera systems<br><em>we distribute.</em></h2>
         </div>
+        <p>Each platform is backed by clinical training, technical support and genuine parts from NOVIRA.</p>
+      </div>
+      <div class="dq-dev-grid">
 
-        <div class="card-item">
-          <div>
-            <span class="card-kicker">BODY & MUSCLE SCULPTING</span>
-            <h3 class="card-title">truSculpt flex & iD</h3>
-            <p class="card-desc">Monopolar RF lipolysis paired with multi-directional electrical muscle stimulation (MDS) delivering comprehensive non-invasive body contouring.</p>
-            <div class="card-tags">
-              <span class="card-tag">Fat Reduction</span>
-              <span class="card-tag">Muscle Tone Enhancement</span>
-              <span class="card-tag">Clinically Proven</span>
-            </div>
-          </div>
-          <div class="card-action">
-            <a href="contact.html" class="text-link">Request truSculpt Details ↗</a>
-          </div>
+    <article class="dq-dev-card reveal-on-scroll" style="--c:#0e5a82">
+      <div class="dq-dev-card-head">
+        <span class="dq-dev-num">01</span>
+        <div>
+          <p class="dq-dev-sub">1726nm Acne Laser</p>
+          <h3>AVICLEAR</h3>
+        </div>
+      </div>
+      <p class="dq-dev-desc">The first FDA-cleared energy device for the treatment of mild to severe inflammatory acne. AviClear's 1726nm wavelength treats acne at the source by selectively targeting and suppressing the sebaceous gland safely and effectively.</p>
+      <ul class="dq-dev-bens"><li><svg viewBox="0 0 16 16" fill="none" stroke="#0e5a82" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>First FDA-cleared energy device for mild to severe acne</li><li><svg viewBox="0 0 16 16" fill="none" stroke="#0e5a82" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Treats acne at the source by targeting the sebaceous gland</li><li><svg viewBox="0 0 16 16" fill="none" stroke="#0e5a82" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Built-in AviCool™ contact cooling for comfort and safety</li></ul>
+      <div class="dq-dev-foot">
+        <a href="contact.html?inquiry=AVICLEAR" class="dq-btn" style="font-size:12px;padding:12px 20px;">Request Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="dq-dev-card reveal-on-scroll" style="--c:#5d34a8">
+      <div class="dq-dev-card-head">
+        <span class="dq-dev-num">02</span>
+        <div>
+          <p class="dq-dev-sub">Tri-Wavelength Pico/Nano</p>
+          <h3>ENLIGHTEN III</h3>
+        </div>
+      </div>
+      <p class="dq-dev-desc">Combines three highly effective wavelengths (532, 1064, and 670nm) and dual pulse durations (2ns and 660/750ps) to effectively remove multi-colour tattoos and improve pigment and overall skin quality.</p>
+      <ul class="dq-dev-bens"><li><svg viewBox="0 0 16 16" fill="none" stroke="#5d34a8" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Three wavelengths remove multi-colour tattoos, including difficult colours</li><li><svg viewBox="0 0 16 16" fill="none" stroke="#5d34a8" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Picosecond and nanosecond pulses in one platform</li><li><svg viewBox="0 0 16 16" fill="none" stroke="#5d34a8" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fewer sessions and quicker results than traditional Q-switched lasers</li></ul>
+      <div class="dq-dev-foot">
+        <a href="contact.html?inquiry=ENLIGHTEN-III" class="dq-btn" style="font-size:12px;padding:12px 20px;">Request Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <article class="dq-dev-card reveal-on-scroll" style="--c:#16766d">
+      <div class="dq-dev-card-head">
+        <span class="dq-dev-num">03</span>
+        <div>
+          <p class="dq-dev-sub">Vascular & Pigment Laser</p>
+          <h3>EXCEL V+</h3>
+        </div>
+      </div>
+      <p class="dq-dev-desc">Designed with input from leading dermatologists, excel V+ is an advanced medical aesthetic laser that delivers the power, precision, and performance for today's most in-demand vascular and pigmentary concerns.</p>
+      <ul class="dq-dev-bens"><li><svg viewBox="0 0 16 16" fill="none" stroke="#16766d" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Treats both vascular and pigment concerns in one device</li><li><svg viewBox="0 0 16 16" fill="none" stroke="#16766d" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>High power and precision designed with leading dermatologists</li><li><svg viewBox="0 0 16 16" fill="none" stroke="#16766d" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="m5.5 8 1.8 1.8 3.4-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Versatile platform for many high-demand clinic treatments</li></ul>
+      <div class="dq-dev-foot">
+        <a href="contact.html?inquiry=EXCEL-V+" class="dq-btn" style="font-size:12px;padding:12px 20px;">Request Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dq-sec" style="padding-top:0">
+    <div class="dq-wrap">
+      <div class="dq-cta reveal-on-scroll">
+        <div>
+          <p class="dq-eyebrow">For Licensed Clinics</p>
+          <h2>Ready to add Cutera to your clinic?</h2>
+          <p>Our partnership team provides platform quotations, clinical training and in-clinic demonstrations for every Cutera system.</p>
+        </div>
+        <div class="dq-actions" style="position:relative">
+          <a href="contact.html?inquiry=Cutera" class="dq-btn">Request Quotation <span aria-hidden="true">↗</span></a>
+          <a href="contact.html" class="dq-btn ghost">Book Demo</a>
         </div>
       </div>
     </div>
@@ -228,22 +299,8 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
-      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="products.html">Our products</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
-    </div>
-  </footer>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
   <script src="nav.js"></script>
 
 </body>

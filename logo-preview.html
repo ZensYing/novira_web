@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVIRA — Official Brand Logo & Identity Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .showcase-hero {
+      background: linear-gradient(180deg, #faf8fc 0%, #ffffff 100%);
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .showcase-hero h1 {
+      font-size: clamp(34px, 4vw, 52px);
+      color: var(--novira-purple);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .showcase-hero p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+    @media (max-width: 860px) {
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .logo-card {
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(46, 8, 111, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .logo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(46, 8, 111, 0.08);
+    }
+    .logo-display {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      position: relative;
+    }
+    .bg-light {
+      background: #ffffff;
+    }
+    .bg-purple {
+      background: #2E086F;
+    }
+    .bg-dark-purple {
+      background: #1d0548;
+    }
+    .bg-black {
+      background: #0f0a17;
+    }
+    .bg-ivory {
+      background: #fbf9f6;
+    }
+    .logo-img-sample {
+      max-height: 70px;
+      max-width: 85%;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-card-info {
+      padding: 22px 24px;
+      background: #ffffff;
+      border-top: 1px solid var(--line-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-family: var(--font-headline);
+    }
+    .logo-card-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .badge-variant {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .badge-purple {
+      background: #f2ecfa;
+      color: var(--novira-purple);
+    }
+    .badge-white {
+      background: #3c147d;
+      color: #ffffff;
+    }
+    .badge-silver {
+      background: #ededed;
+      color: #555555;
+    }
+    .simulation-section {
+      background: #f8f6fb;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 60px;
+      border: 1px solid var(--line);
+    }
+    .simulation-header {
+      background: #ffffff;
+      border: 1px solid #e5dde9;
+      border-radius: 8px;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    }
+    .simulation-footer {
+      background: #1d0548;
+      border-radius: 8px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 13px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+    .spec-table th {
+      background: #faf8fc;
+      color: var(--novira-purple);
+      font-weight: 600;
+      font-family: var(--font-headline);
+    }
+    .color-swatch {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 8px;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">
+    Official Brand Identity Showcase — Real Vector &amp; High-Resolution PNG Assets
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="about.html" class="nav-link">ABOUT US</a>
+        <a href="products.html" class="nav-link">OUR PRODUCTS</a>
+        <a href="media.html" class="nav-link">MEDIA</a>
+        <a href="contact.html" class="nav-link">CONTACT US</a>
+      </nav>
+      <div class="header-actions">
+        <a href="contact.html" class="button primary" style="min-height:38px;padding:8px 18px;font-size:11px;">Partner With Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="showcase-hero">
+      <div class="container">
+        <div class="eyebrow">NOVIRA BRAND ASSETS</div>
+        <h1>Official Brand Logo Gallery</h1>
+        <p>Using the official master high-resolution transparent assets from <code>NOVIRA_LOGO_FINAL_FILES/png</code> across the entire digital platform.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="showcase-grid">
+        <!-- 1. Main Logo -->
+        <div class="logo-card">
+          <div class="logo-display bg-light">
+            <img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA Logo Main" class="logo-img-sample">
+          </div>
+          <div class="logo-card-info">
+            <div>
+              <div class="logo-card-title">Main Brand Logo</div>
+              <p class="logo-card-desc">Royal Purple (#2E086F) &amp; Silver (#999999) — for light backgrounds</p>
+            </div>
+            <span class="badge-variant badge-purple">Light Background</span>
+          </div>
+        </div>
+
+        <!-- 2. White Logo -->
+        <div class="logo-card">
+          <div class="logo-display bg-dark-purple">
+            <img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA Logo White" class="logo-img-sample">
+          </div>
+          <div class="logo-card-info">
+            <div>
+              <div class="logo-card-title">White Brand Logo</div>
+              <p class="logo-card-desc">Pure White (#FFFFFF) — for dark purple footer &amp; dark campaigns</p>
+            </div>
+            <span class="badge-variant badge-white">Dark Background</span>
+          </div>
+        </div>
+
+        <!-- 3. Invert Logo -->
+        <div class="logo-card">
+          <div class="logo-display bg-black">
+            <img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-invert.png" alt="NOVIRA Logo Inverted" class="logo-img-sample">
+          </div>
+          <div class="logo-card-info">
+            <div>
+              <div class="logo-card-title">Inverted Accent Logo</div>
+              <p class="logo-card-desc">White Wordmark + Silver Tagline — for midnight black backgrounds</p>
+            </div>
+            <span class="badge-variant badge-silver">Contrast Master</span>
+          </div>
+        </div>
+
+        <!-- 4. Black Logo -->
+        <div class="logo-card">
+          <div class="logo-display bg-ivory">
+            <img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-black.png" alt="NOVIRA Logo Black" class="logo-img-sample">
+          </div>
+          <div class="logo-card-info">
+            <div>
+              <div class="logo-card-title">Monochrome Black Logo</div>
+              <p class="logo-card-desc">Solid Black (#000000) — for official monochrome print &amp; clinical stationery</p>
+            </div>
+            <span class="badge-variant badge-silver">Monochrome</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Header & Footer Simulation -->
+      <section class="simulation-section">
+        <div class="eyebrow">LIVE INTEGRATION PREVIEW</div>
+        <h2 style="font-size:26px;color:var(--novira-purple);margin-bottom:8px;">Header &amp; Footer Layout Simulation</h2>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:20px;">Direct representation of how the real logo seamlessly aligns with the navigation bar and footer across all pages.</p>
+
+        <!-- Navbar simulation -->
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:var(--muted);margin-top:16px;">1. SITE HEADER (WHITE / TRANSLUCENT BACKGROUND):</div>
+        <div class="simulation-header">
+          <a class="wordmark" href="index.html" aria-label="NOVIRA home">
+            <img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img">
+          </a>
+          <div style="display:flex;gap:20px;font-size:11.5px;font-weight:600;letter-spacing:1.5px;color:var(--ink);">
+            <span>HOME</span>
+            <span>ABOUT US</span>
+            <span>OUR PRODUCTS</span>
+            <span>MEDIA</span>
+            <span>CONTACT US</span>
+          </div>
+          <button class="button primary" style="min-height:36px;padding:6px 16px;font-size:11px;">Get in Touch</button>
+        </div>
+
+        <!-- Footer simulation -->
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:var(--muted);margin-top:30px;">2. SITE FOOTER (ROYAL PURPLE BACKGROUND #1D0548):</div>
+        <div class="simulation-footer">
+          <a class="wordmark" href="index.html" aria-label="NOVIRA home">
+            <img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img">
+          </a>
+          <div style="color:#ddd1e7;font-size:11px;">
+            Advancing Skin Innovation · Cambodia &amp; Southeast Asia
+          </div>
+          <div style="color:#b8a5c8;font-size:11px;display:flex;gap:18px;">
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Clinical Inquiries</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Guidelines Summary -->
+      <section style="margin-bottom:80px;">
+        <div class="eyebrow">IDENTITY SPECIFICATIONS</div>
+        <h2 style="font-size:26px;color:var(--novira-purple);margin-bottom:8px;">Brand Color &amp; Typography Standards</h2>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Asset / Element</th>
+              <th>Specification</th>
+              <th>Value / Code</th>
+              <th>Usage Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary Brand Color</strong></td>
+              <td>Royal Purple</td>
+              <td><span class="color-swatch" style="background:#2E086F;"></span>#2E086F / RGB(46, 8, 111)</td>
+              <td>Main Wordmark, Primary CTAs, Key Brand Highlights</td>
+            </tr>
+            <tr>
+              <td><strong>Secondary Color</strong></td>
+              <td>Silver Grey</td>
+              <td><span class="color-swatch" style="background:#999999;"></span>#999999 / RGB(153, 153, 153)</td>
+              <td>Tagline "ADVANCING SKIN INNOVATION", Subtitles, Borders</td>
+            </tr>
+            <tr>
+              <td><strong>Headline Typography</strong></td>
+              <td>Celine Peach Sans</td>
+              <td><code>fonts/Celine Peach Sans.otf</code></td>
+              <td>Logo typography, H1-H6 Headlines, Section Titles, Short Sub-Headlines</td>
+            </tr>
+            <tr>
+              <td><strong>Body &amp; UI Typography</strong></td>
+              <td>Switzer (Variable)</td>
+              <td><code>fonts/Switzer-Variable (2).ttf</code></td>
+              <td>Editorial paragraphs, navigation links, buttons, clinic forms</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home">
+        <img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img">
+      </a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="products.html">Our products</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact us</a>
+      </nav>
+      <a href="#" class="back-top" aria-label="Back to top">↑</a>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
+      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
+    </div>
+  </footer>
+</body>
+</html>

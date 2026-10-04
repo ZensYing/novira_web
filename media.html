@@ -3,19 +3,646 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NOVIRA media hub for conferences, workshops, and clinical press releases.">
-  <meta name="theme-color" content="#32106f">
-  <title>Media & Conferences — NOVIRA</title>
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
+  <meta name="description" content="Official NOVIRA media hub for CME-accredited dermatology conferences, physician masterclasses, clinical histology trials, and corporate press releases.">
+  <meta name="theme-color" content="#2E086F">
+  <title>Media, Conferences & Clinical News — NOVIRA</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzJFMDg2RiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ============================================================
+       NOVIRA CLEAN LUXURY MEDIA HUB DESIGN SYSTEM
+       Inspired by Products & Devices Clean Concept
+       Pure White Aesthetic · Strictly Celine Peach Sans & Switzer
+       Brand Colors: #2E086F (Royal Purple), #3d0e91, #999999
+       ============================================================ */
+    :root {
+      --md-purple: #2E086F;
+      --md-purple-mid: #3d0e91;
+      --md-purple-dark: #1d0548;
+      --md-silver: #999999;
+      --md-line: #ebe7f3;
+      --md-text-head: #120b24;
+      --md-text-body: #554d66;
+      --md-font-head: 'Celine Peach Sans', Georgia, serif;
+      --md-font-body: 'Switzer', -apple-system, sans-serif;
+    }
+
+    /* ALL SECTIONS PURE WHITE BACKGROUND */
+    body,
+    body.media-clean-theme,
+    main,
+    main#main,
+    section,
+    .md-hero-section,
+    .md-channels-section,
+    .md-highlights-section,
+    .md-cta-section,
+    .container {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    body.media-clean-theme {
+      color: var(--md-text-body);
+      font-family: var(--md-font-body);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* EXCLUSIVE FONT ENFORCEMENT */
+    h1, h2, h3, h4, h5, h6,
+    .md-hero-title,
+    .md-channel-title,
+    .md-highlight-title,
+    .md-sec-title,
+    .md-cta-box h2 {
+      font-family: var(--md-font-head) !important;
+      letter-spacing: -0.4px;
+    }
+
+    body, p, span, a, button, input, select, textarea, label, li,
+    .md-eyebrow,
+    .md-crumb,
+    .md-btn,
+    .md-channel-num,
+    .md-channel-tag,
+    .md-highlight-date,
+    .md-stat-num,
+    .md-stat-lbl {
+      font-family: var(--md-font-body) !important;
+    }
+
+    .md-container {
+      width: min(1280px, 92%);
+      margin: 0 auto;
+    }
+
+    /* BREADCRUMB */
+    .md-crumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8c8299;
+      margin-bottom: 24px;
+    }
+    .md-crumb a {
+      color: #8c8299;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .md-crumb a:hover {
+      color: var(--md-purple);
+    }
+    .md-crumb .sep {
+      color: #d1c7dd;
+    }
+    .md-crumb .cur {
+      color: var(--md-purple);
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       SECTION 1: HERO SECTION (PRODUCTS & DEVICES CONCEPT)
+       ============================================================ */
+    .md-hero-section {
+      padding: clamp(48px, 6vw, 76px) 0 clamp(54px, 7vw, 90px);
+      border-bottom: 1px solid var(--md-line);
+      background: #ffffff;
+      position: relative;
+    }
+    .md-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.9fr;
+      gap: clamp(36px, 5vw, 72px);
+      align-items: center;
+    }
+    .md-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--md-purple);
+      margin-bottom: 14px;
+    }
+    .md-eyebrow::after {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--md-purple);
+      display: inline-block;
+    }
+    .md-hero-title {
+      font-size: clamp(36px, 4.6vw, 62px);
+      font-weight: 400;
+      color: var(--md-text-head);
+      margin: 0 0 16px;
+      text-transform: uppercase;
+      letter-spacing: -1.2px;
+      line-height: 1.05;
+    }
+    .md-hero-title em {
+      display: block;
+      font-style: italic;
+      color: var(--md-purple);
+      font-size: clamp(28px, 3.8vw, 50px);
+      text-transform: none;
+      letter-spacing: -0.5px;
+      margin-top: 6px;
+    }
+    .md-lead-text {
+      font-size: clamp(15px, 1.25vw, 17px);
+      line-height: 1.8;
+      color: var(--md-text-body);
+      max-width: 600px;
+      margin: 0 0 32px;
+    }
+    .md-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .md-btn-purple {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #2E086F 0%, #3d0e91 100%);
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 99px;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(46, 8, 111, 0.28);
+      transition: all .25s ease;
+      letter-spacing: .3px;
+    }
+    .md-btn-purple:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(46, 8, 111, 0.38);
+      background: linear-gradient(135deg, #1d0548 0%, #2E086F 100%);
+    }
+    .md-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: var(--md-purple);
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 99px;
+      text-decoration: none;
+      border: 1.5px solid var(--md-purple);
+      transition: all .2s ease;
+    }
+    .md-btn-outline:hover {
+      background: var(--md-purple);
+      color: #ffffff;
+    }
+
+    /* HERO STATS BAR (PRODUCTS PATTERN) */
+    .md-hero-stats {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid var(--md-line);
+      padding-top: 24px;
+      max-width: 580px;
+    }
+    .md-stat-col {
+      flex: 1;
+      padding-right: 20px;
+    }
+    .md-stat-col + .md-stat-col {
+      padding-left: 20px;
+      border-left: 1px solid var(--md-line);
+    }
+    .md-stat-num {
+      display: block;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--md-purple);
+      line-height: 1;
+      margin-bottom: 6px;
+      font-family: var(--md-font-head) !important;
+    }
+    .md-stat-lbl {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--md-text-body);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* HERO VISUAL FRAME (CLEAN ARCH STYLE LIKE DEVICES/PRODUCTS) */
+    .md-hero-visual-frame {
+      position: relative;
+      aspect-ratio: 4/4.6;
+      border-radius: 180px 180px 28px 28px;
+      overflow: hidden;
+      border: 2px solid var(--md-line);
+      box-shadow: 0 20px 48px rgba(46, 8, 111, 0.1);
+      background: #ffffff;
+    }
+    .md-hero-visual-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s ease;
+    }
+    .md-hero-visual-frame:hover img {
+      transform: scale(1.04);
+    }
+    .md-floating-orbit-pill {
+      position: absolute;
+      left: -15px;
+      bottom: 40px;
+      background: #ffffff;
+      border: 1px solid var(--md-line);
+      padding: 12px 22px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(46, 8, 111, 0.14);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+    .md-orbit-icon {
+      font-size: 26px;
+    }
+    .md-orbit-num {
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--md-purple);
+      line-height: 1;
+      font-family: var(--md-font-head) !important;
+    }
+    .md-orbit-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--md-text-body);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* ============================================================
+       SECTION 2: 2 CORE MEDIA CHANNELS (PRODUCTS/DEVICES SHOWCASE)
+       ============================================================ */
+    .md-channels-section {
+      padding: clamp(70px, 8vw, 100px) 0;
+      background: #ffffff;
+      border-bottom: 1px solid var(--md-line);
+    }
+    .md-sec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .md-sec-title {
+      font-size: clamp(30px, 3.6vw, 46px);
+      font-weight: 500;
+      color: var(--md-text-head);
+      margin: 0;
+      line-height: 1.15;
+    }
+    .md-sec-desc {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--md-text-body);
+      max-width: 440px;
+      margin: 0;
+    }
+
+    .md-channels-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .md-channel-card {
+      background: #ffffff;
+      border: 1.5px solid var(--md-line);
+      border-radius: 26px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(46, 8, 111, 0.04);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      cursor: pointer;
+    }
+    .md-channel-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(46, 8, 111, 0.1);
+      border-color: rgba(46, 8, 111, 0.3);
+    }
+    .md-channel-media {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: #faf8fc;
+    }
+    .md-channel-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+    .md-channel-card:hover .md-channel-media img {
+      transform: scale(1.05);
+    }
+    .md-channel-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #ffffff;
+      color: var(--md-purple);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 99px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(46, 8, 111, 0.1);
+      z-index: 2;
+    }
+    .md-channel-body {
+      padding: clamp(26px, 3.5vw, 36px);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .md-channel-index {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--md-purple);
+      margin-bottom: 8px;
+    }
+    .md-channel-title {
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 600;
+      color: var(--md-text-head);
+      margin: 0 0 14px;
+      line-height: 1.25;
+    }
+    .md-channel-text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--md-text-body);
+      margin: 0 0 24px;
+      flex: 1;
+    }
+    .md-subtopic-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .md-subtopic-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--md-text-head);
+    }
+    .md-subtopic-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--md-purple);
+      flex-shrink: 0;
+    }
+    .md-channel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--md-line);
+      margin-top: auto;
+    }
+    .md-channel-go {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--md-purple);
+      text-decoration: none;
+      transition: transform .2s ease;
+    }
+    .md-channel-card:hover .md-channel-go {
+      color: var(--md-purple-mid);
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       SECTION 3: FEATURED RECENT MEDIA HIGHLIGHTS
+       ============================================================ */
+    .md-highlights-section {
+      padding: clamp(70px, 8vw, 100px) 0;
+      background: #ffffff;
+      border-bottom: 1px solid var(--md-line);
+    }
+    .md-highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .md-highlight-card {
+      background: #ffffff;
+      border: 1px solid var(--md-line);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 22px rgba(46, 8, 111, 0.04);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .md-highlight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(46, 8, 111, 0.1);
+      border-color: rgba(46, 8, 111, 0.28);
+    }
+    .md-highlight-media {
+      position: relative;
+      aspect-ratio: 16/10.5;
+      overflow: hidden;
+      background: #faf8fc;
+    }
+    .md-highlight-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+    .md-highlight-card:hover .md-highlight-media img {
+      transform: scale(1.06);
+    }
+    .md-highlight-body {
+      padding: 20px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .md-highlight-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--md-purple);
+      margin-bottom: 10px;
+    }
+    .md-highlight-title {
+      font-size: 16.5px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--md-text-head);
+      margin: 0 0 10px;
+      min-height: 44px;
+    }
+    .md-highlight-desc {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--md-text-body);
+      margin: 0 0 18px;
+      flex: 1;
+    }
+    .md-highlight-link {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--md-purple);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--md-line);
+    }
+    .md-highlight-card:hover .md-highlight-link {
+      color: var(--md-purple-mid);
+    }
+
+    /* ============================================================
+       SECTION 4: VIP MEDIA RELATIONS CONCIERGE BANNER (CLEAN WHITE)
+       ============================================================ */
+    .md-cta-section {
+      padding: clamp(60px, 7vw, 90px) 0;
+      background: #ffffff !important;
+    }
+    .md-cta-box {
+      background: #ffffff;
+      border: 1.5px solid var(--md-line);
+      border-radius: 26px;
+      padding: clamp(36px, 5vw, 60px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      box-shadow: 0 16px 40px rgba(46, 8, 111, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .md-cta-box::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 24px solid rgba(46, 8, 111, 0.04);
+      pointer-events: none;
+    }
+    .md-cta-copy h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 500;
+      color: var(--md-purple);
+      margin: 0 0 10px;
+    }
+    .md-cta-copy p {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--md-text-body);
+      max-width: 620px;
+      margin: 0;
+    }
+    .md-cta-contact-row {
+      margin-top: 14px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--md-purple);
+    }
+    .md-cta-contact-row a {
+      color: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .md-cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1080px) {
+      .md-hero-grid { grid-template-columns: 1fr; }
+      .md-hero-visual-frame { max-width: 480px; margin: 0 auto; aspect-ratio: 16/11; border-radius: 28px; }
+      .md-channels-grid { grid-template-columns: 1fr; }
+      .md-highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .md-highlights-grid { grid-template-columns: 1fr; }
+      .md-hero-stats { flex-direction: column; gap: 16px; }
+      .md-stat-col + .md-stat-col { border-left: none; padding-left: 0; border-top: 1px solid var(--md-line); padding-top: 16px; }
+      .md-floating-orbit-pill { left: 10px; bottom: 15px; }
+      .md-cta-box { padding: 28px 20px; }
+    }
+  </style>
 </head>
-<body>
+<body class="media-clean-theme">
 
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement">Authorized Medical Aesthetics &amp; Workstation Distributor. <a href="products.html">Explore our complete portfolio <span aria-hidden="true">↗</span></a></div>
+  <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="contact.html?inquiry=B2BPartnership">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
+  
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -32,8 +659,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -49,7 +676,7 @@
         </div>
 
         <div class="nav-item has-dropdown">
-          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false">
+          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false" style="color:var(--md-purple);font-weight:600;">
             MEDIA
             <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -65,7 +692,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="contact.html" class="header-contact">Let's talk <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -73,7 +700,6 @@
       <div class="mobile-nav-inner">
         <a href="index.html" class="mobile-nav-link">HOME</a>
         <a href="about.html" class="mobile-nav-link">ABOUT US</a>
-        
         <div class="mobile-accordion-item">
           <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-products-sub">
             <span>OUR PRODUCTS</span>
@@ -84,7 +710,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -93,7 +719,6 @@
             </div>
           </div>
         </div>
-
         <div class="mobile-accordion-item">
           <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-media-sub">
             <span>MEDIA</span>
@@ -104,8 +729,8 @@
             <a href="news.html" class="mobile-sublink"><span class="cat-idx">2.</span> News</a>
           </div>
         </div>
-
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -121,83 +746,278 @@
 
 <main id="main">
 
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
+  <!-- ============================================================
+       SECTION 1: HERO (CLEAN PRODUCTS & DEVICES CONCEPT)
+       ============================================================ -->
+  <section class="md-hero-section">
+    <div class="md-container">
+      <nav class="md-crumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
         <span class="sep">/</span>
-        <span class="current">Media</span>
+        <span class="cur">Media Hub</span>
       </nav>
-      <span class="brand-hero-logo">INSIGHTS & ANNOUNCEMENTS</span>
-      <h1>Media, Conferences &<br><em>Clinical News.</em></h1>
-      <p class="page-hero-desc">Stay informed on NOVIRA's upcoming clinical masterclasses, international dermatology symposiums, physician certifications, and corporate press releases.</p>
-    </div>
-  </section>
 
-  <section class="section container">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Select Category</p>
-        <h2>Explore Media Channels</h2>
-      </div>
-    </div>
-    <div class="collection-grid">
-      <a class="collection-card skincare-collection" href="conference.html">
-        <div class="collection-copy">
-          <span class="small-label">CHANNEL 01</span>
-          <h3>1. Conferences & Workshops</h3>
-          <p style="color:var(--muted);font-size:12.5px;margin-bottom:20px;">CME-accredited dermatology masterclasses, hands-on injection workshops, and global KOL symposiums.</p>
-          <span class="underlined">Browse Conferences <span>↗</span></span>
-        </div>
-        <div class="collection-art">
-          <img src="images/skincare.png" alt="Conferences" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-      </a>
-      <a class="collection-card device-collection" href="news.html">
-        <div class="collection-copy">
-          <span class="small-label">CHANNEL 02</span>
-          <h3>2. News & Press Releases</h3>
-          <p style="color:var(--muted);font-size:12.5px;margin-bottom:20px;">Clinical updates, new platform distribution announcements, scientific whitepapers, and regulatory updates.</p>
-          <span class="underlined">Read Latest News <span>↗</span></span>
-        </div>
-        <div class="collection-art">
-          <img src="images/hero.png" alt="News and Press" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="section" style="background:var(--lavender);">
-    <div class="container">
-      <div class="section-heading">
+      <div class="md-hero-grid">
+        <!-- Hero Left Info -->
         <div>
-          <p class="eyebrow">Recent Highlights</p>
-          <h2>Featured Media Updates</h2>
-        </div>
-      </div>
-      <div class="subpage-grid">
-        <div class="card-item">
-          <div>
-            <span class="card-kicker">CONFERENCE · 2026 MASTERCLASS</span>
-            <h3 class="card-title">Annual Aesthetic Dermatology & Injectables Masterclass</h3>
-            <p class="card-desc">Over 250 doctors gathered in Phnom Penh for live injection demonstrations with Juvelook and Danique, led by international aesthetic faculty.</p>
+          <div class="md-eyebrow">NOVIRA MEDIA &amp; EDITORIAL ARCHIVE</div>
+          <h1 class="md-hero-title">
+            Media, Conferences
+            <em>&amp; Clinical News.</em>
+          </h1>
+          <p class="md-lead-text">
+            Stay informed on Southeast Asia's benchmark medical aesthetics ecosystem. Discover upcoming international physician masterclasses, live surgical symposia, peer-reviewed histology trials, and strategic distribution announcements.
+          </p>
+
+          <div class="md-actions-row">
+            <a href="conference.html" class="md-btn-purple">
+              1. Browse Conferences <span aria-hidden="true">↗</span>
+            </a>
+            <a href="news.html" class="md-btn-outline">
+              2. Read Latest News <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div class="card-action">
-            <span style="font-size:11px;color:var(--muted);">Symposium Recap</span>
-            <a href="conference.html" class="text-link">View Event Coverage ↗</a>
+
+          <!-- Hero Metrics Bar (Mirroring Products Concept) -->
+          <div class="md-hero-stats">
+            <div class="md-stat-col">
+              <span class="md-stat-num">450+</span>
+              <span class="md-stat-lbl">Attending Physicians</span>
+            </div>
+            <div class="md-stat-col">
+              <span class="md-stat-num">16</span>
+              <span class="md-stat-lbl">CME Credit Hours</span>
+            </div>
+            <div class="md-stat-col">
+              <span class="md-stat-num">12+</span>
+              <span class="md-stat-lbl">International KOLs</span>
+            </div>
           </div>
         </div>
 
-        <div class="card-item">
-          <div>
-            <span class="card-kicker">NEWS · PARTNERSHIP</span>
-            <h3 class="card-title">NOVIRA Expands Exclusive Distribution of Cynosure Lutronic</h3>
-            <p class="card-desc">Strengthening regional clinical infrastructure with dedicated biomedical laser engineering facilities and direct manufacturer warranty programs.</p>
+        <!-- Hero Right Visual Frame (Clean Arch Style) -->
+        <div style="position:relative;">
+          <div class="md-hero-visual-frame">
+            <img src="images/conference-slide-1.jpg" alt="Aesthetic Leadership Symposium Grand Auditorium" loading="eager">
           </div>
-          <div class="card-action">
-            <span style="font-size:11px;color:var(--muted);">Corporate Release</span>
-            <a href="news.html" class="text-link">Read Full Story ↗</a>
+          <div class="md-floating-orbit-pill">
+            <span class="md-orbit-icon">🎙️</span>
+            <div>
+              <span class="md-orbit-num">2026</span>
+              <span class="md-orbit-lbl">Symposium Series</span>
+            </div>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: 2 CORE CHANNELS (PRODUCTS & DEVICES CATEGORY SHOWCASE)
+       ============================================================ -->
+  <section class="md-channels-section">
+    <div class="md-container">
+      <div class="md-sec-header">
+        <div>
+          <div class="md-eyebrow">MEDIA CHANNELS</div>
+          <h2 class="md-sec-title">Explore Our Two Media Portals</h2>
+        </div>
+        <p class="md-sec-desc">
+          Navigate between hands-on doctor education programs and formal corporate press releases across our aesthetic portfolio.
+        </p>
+      </div>
+
+      <div class="md-channels-grid">
+
+        <!-- CHANNEL 1: CONFERENCES & MASTERCLASSES -->
+        <article class="md-channel-card" onclick="window.location.href='conference.html'">
+          <div class="md-channel-media">
+            <img src="images/conference-slide-2.jpg" alt="Live Micro-Cannula Injection Masterclass" loading="lazy">
+            <span class="md-channel-badge">CME ACCREDITED</span>
+          </div>
+          <div class="md-channel-body">
+            <span class="md-channel-index">CHANNEL 01</span>
+            <h3 class="md-channel-title">1. Conferences &amp; Masterclasses</h3>
+            <p class="md-channel-text">
+              Annual medical symposia, cadaver vectoring demonstrations, and ultrasound-guided safety courses led by world-renowned Key Opinion Leaders at 5-star venues across Southeast Asia.
+            </p>
+
+            <ul class="md-subtopic-list">
+              <li class="md-subtopic-item">
+                <span class="md-subtopic-dot"></span>
+                <span>The Science of PDLLA &amp; Periorbital Vectoring</span>
+              </li>
+              <li class="md-subtopic-item">
+                <span class="md-subtopic-dot"></span>
+                <span>Picosecond Physics &amp; Melasma Clearance Summit</span>
+              </li>
+              <li class="md-subtopic-item">
+                <span class="md-subtopic-dot"></span>
+                <span>Cutera AviClear 1726nm Targeted Acne Forum</span>
+              </li>
+            </ul>
+
+            <div class="md-channel-footer">
+              <a href="conference.html" class="md-channel-go">
+                Explore Event Schedule <span aria-hidden="true">↗</span>
+              </a>
+              <span style="font-size:12px; color:#8c8299; font-weight:600;">Rosewood Hotel · Phnom Penh</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CHANNEL 2: NEWS & PRESS RELEASES -->
+        <article class="md-channel-card" onclick="window.location.href='news.html'">
+          <div class="md-channel-media">
+            <img src="images/news-grand-opening.jpg" alt="NOVIRA Grand Opening Ribbon Cutting" loading="lazy">
+            <span class="md-channel-badge">PRESS ARCHIVES</span>
+          </div>
+          <div class="md-channel-body">
+            <span class="md-channel-index">CHANNEL 02</span>
+            <h3 class="md-channel-title">2. News &amp; Clinical Press Releases</h3>
+            <p class="md-channel-text">
+              Official corporate announcements, Korea MFDS / CE approvals, peer-reviewed histology clinical trial data, and cold-chain logistics expansion updates.
+            </p>
+
+            <ul class="md-subtopic-list">
+              <li class="md-subtopic-item">
+                <span class="md-subtopic-dot"></span>
+                <span>Official Grand Opening of Clinical Innovation Academy</span>
+              </li>
+              <li class="md-subtopic-item">
+                <span class="md-subtopic-dot"></span>
+                <span>24-Month Clinical Trial: Neocollagenesis with Juvelook</span>
+              </li>
+              <li class="md-subtopic-item">
+                <span class="md-subtopic-dot"></span>
+                <span>Cynosure Lutronic Exclusive Distribution Partnership</span>
+              </li>
+            </ul>
+
+            <div class="md-channel-footer">
+              <a href="news.html" class="md-channel-go">
+                Read Latest Dispatches <span aria-hidden="true">↗</span>
+              </a>
+              <span style="font-size:12px; color:#8c8299; font-weight:600;">8 Verified Releases</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: RECENT MEDIA HIGHLIGHTS (4-COLUMN CARD GRID)
+       ============================================================ -->
+  <section class="md-highlights-section">
+    <div class="md-container">
+      <div class="md-sec-header">
+        <div>
+          <div class="md-eyebrow">CURATED HIGHLIGHTS</div>
+          <h2 class="md-sec-title">Recent Broadcasts &amp; Coverage</h2>
+        </div>
+        <p class="md-sec-desc">
+          Top stories and clinical milestones shaping modern medical aesthetics across regional practices.
+        </p>
+      </div>
+
+      <div class="md-highlights-grid">
+
+        <!-- HIGHLIGHT 1: CONFERENCE -->
+        <a href="conference.html" class="md-highlight-card">
+          <div class="md-highlight-media">
+            <img src="images/conference-slide-1.jpg" alt="Aesthetic Masterclasses 2026" loading="lazy">
+          </div>
+          <div class="md-highlight-body">
+            <div class="md-highlight-meta">
+              <span>CONFERENCE</span>
+              <span style="color:#8c8299;">MAY 22, 2026</span>
+            </div>
+            <h3 class="md-highlight-title">Aesthetic Clinical Masterclasses 2026 at Rosewood</h3>
+            <p class="md-highlight-desc">Over 450 certified clinicians gather for live cadaver dissection projection and hands-on vectoring mentorship.</p>
+            <span class="md-highlight-link">View Event Schedule ↗</span>
+          </div>
+        </a>
+
+        <!-- HIGHLIGHT 2: GRAND OPENING -->
+        <a href="news.html" class="md-highlight-card">
+          <div class="md-highlight-media">
+            <img src="images/news-grand-opening.jpg" alt="Grand Opening Ribbon Cutting" loading="lazy">
+          </div>
+          <div class="md-highlight-body">
+            <div class="md-highlight-meta">
+              <span>CORPORATE</span>
+              <span style="color:#8c8299;">MAR 31, 2026</span>
+            </div>
+            <h3 class="md-highlight-title">Grand Opening of NOVIRA Clinical Innovation Hub</h3>
+            <p class="md-highlight-desc">Flagship 4-story training facility featuring 12 hands-on anatomical demonstration suites officially commissioned.</p>
+            <span class="md-highlight-link">Read Press Release ↗</span>
+          </div>
+        </a>
+
+        <!-- HIGHLIGHT 3: JUVELOOK STUDY -->
+        <a href="news.html" class="md-highlight-card">
+          <div class="md-highlight-media">
+            <img src="images/juvelook-clinic.jpg" alt="Juvelook PDLLA Histology Study" loading="lazy">
+          </div>
+          <div class="md-highlight-body">
+            <div class="md-highlight-meta">
+              <span>CLINICAL STUDY</span>
+              <span style="color:#8c8299;">JUL 28, 2025</span>
+            </div>
+            <h3 class="md-highlight-title">24-Month Study: Neocollagenesis with Juvelook PDLLA</h3>
+            <p class="md-highlight-desc">Peer-reviewed histology confirms continuous Type I &amp; III collagen synthesis with a zero-granuloma safety profile.</p>
+            <span class="md-highlight-link">Read Clinical Findings ↗</span>
+          </div>
+        </a>
+
+        <!-- HIGHLIGHT 4: CYNOSURE PARTNERSHIP -->
+        <a href="news.html" class="md-highlight-card">
+          <div class="md-highlight-media">
+            <img src="images/device-lutronic.jpg" alt="Cynosure Lutronic Workstations" loading="lazy">
+          </div>
+          <div class="md-highlight-body">
+            <div class="md-highlight-meta">
+              <span>PARTNERSHIP</span>
+              <span style="color:#8c8299;">FEB 15, 2025</span>
+            </div>
+            <h3 class="md-highlight-title">Expanded Distribution with Cynosure Lutronic</h3>
+            <p class="md-highlight-desc">Direct manufacturer warranties, local biomedical engineering centers, and continuous replacement parts supply.</p>
+            <span class="md-highlight-link">Read Full Announcement ↗</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: VIP MEDIA RELATIONS CONCIERGE BANNER (CLEAN WHITE)
+       ============================================================ -->
+  <section class="md-cta-section">
+    <div class="md-container">
+      <div class="md-cta-box">
+        <div class="md-cta-copy">
+          <div class="md-eyebrow" style="margin-bottom:8px;">VIP MEDIA RELATIONS &amp; CLINIC CONCIERGE</div>
+          <h2>Journalist &amp; Aesthetic Clinic Inquiries</h2>
+          <p>
+            Accredited media outlets, medical journals, and clinic partners can request press packages, high-resolution workstation media, and KOL interview access directly from our communications office.
+          </p>
+          <div class="md-cta-contact-row">
+            <a href="mailto:info@noviracambodia.com">✉️ info@noviracambodia.com</a>
+            <a href="https://wa.me/85569811399" target="_blank" rel="noopener">💬 Telegram &amp; WhatsApp: +069 811 399</a>
+          </div>
+        </div>
+
+        <div class="md-cta-actions">
+          <a class="md-btn-purple" href="mailto:info@noviracambodia.com?subject=Press%20Inquiry">
+            Download Press Kit (ZIP) <span aria-hidden="true">↗</span>
+          </a>
+          <a class="md-btn-outline" href="contact.html">
+            Contact Media Relations
+          </a>
         </div>
       </div>
     </div>
@@ -205,24 +1025,34 @@
 
 </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
+    <div class="container footer-top" style="flex-wrap:wrap; gap:20px;">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
       <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
+      <div class="footer-social-row" style="display:flex; align-items:center; gap:14px; margin-left:auto; flex-wrap:wrap;">
+        <a href="mailto:info@noviracambodia.com" style="color:#ddd1e7; text-decoration:none; font-size:12px; display:inline-flex; align-items:center; gap:6px;">✉️ info@noviracambodia.com</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Facebook</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Instagram</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav aria-label="Footer navigation" style="display:flex; gap:20px; font-size:11px;">
         <a href="index.html">Home</a>
         <a href="about.html">About us</a>
         <a href="products.html">Our products</a>
         <a href="media.html">Media</a>
         <a href="contact.html">Contact us</a>
       </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
+      <span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span>
+      <a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a>
     </div>
   </footer>
+
   <script src="nav.js"></script>
 
 </body>

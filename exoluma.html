@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EXOLUMA by Genèse Labs — a two-step exosome skincare complex: Step 1 Lyophilized Powder (50mg) and Step 2 Active Solution (5ml). Distributed by NOVIRA for licensed clinics.">
+  <meta name="theme-color" content="#32106f">
+  <title>EXOLUMA — Genèse Labs Exosome Complex — NOVIRA</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dq { --teal:#1f8a82; --jade:#0f4a45; --gold:#c9a35e; --steel:#3b5560; }
+    .dq-wrap { width:min(1200px, calc(100% - 48px)); margin:0 auto; }
+    .dq-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); font-weight:600; margin:0 0 14px; }
+    .dq h1, .dq h2, .dq h3 { font-family:var(--serif); font-weight:500; color:var(--ink); margin:0; }
+    .dq-crumb { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:34px; }
+    .dq-crumb a { color:var(--muted); transition:color .2s; }
+    .dq-crumb a:hover { color:var(--purple); }
+    .dq-crumb .cur { color:var(--ink); font-weight:600; }
+
+    /* HERO */
+    .dq-hero { padding:48px 0 90px; background:radial-gradient(900px 500px at 85% 20%, #e6f3f1 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #f6efe2 0%, transparent 60%); }
+    .dq-hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; }
+    .dq-hero h1 { font-size:clamp(54px,8vw,104px); letter-spacing:-2px; line-height:.95; text-transform:uppercase; }
+    .dq-hero h1 small { display:block; font-size:clamp(18px,2vw,26px); letter-spacing:.5px; text-transform:none; color:var(--purple); margin-top:18px; line-height:1.3; }
+    .dq-lead { font-size:15px; line-height:1.85; color:var(--muted); max-width:540px; margin:26px 0 34px; }
+    .dq-lead em { color:var(--ink); font-style:normal; font-weight:600; }
+    .dq-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .dq-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.3px; background:var(--purple); color:#fff; transition:transform .25s, box-shadow .25s, background .25s; }
+    .dq-btn:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(46,8,111,.25); background:var(--purple-dark); }
+    .dq-btn.ghost { background:transparent; color:var(--purple); border:1px solid var(--line); }
+    .dq-btn.ghost:hover { background:#fff; box-shadow:0 12px 26px rgba(46,8,111,.1); }
+    .dq-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:34px; }
+    .dq-chip { font-size:11.5px; padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line-soft); color:var(--ink-soft); display:inline-flex; align-items:center; gap:8px; }
+    .dq-chip i { width:7px; height:7px; border-radius:50%; background:var(--c); display:block; }
+    .dq-hero-visual { position:relative; }
+    .dq-hero-frame { position:relative; aspect-ratio:4/5; border-radius:220px 220px 28px 28px; overflow:hidden; background:#f4f4f6; }
+    .dq-hero-frame img { width:100%; height:100%; object-fit:cover; object-position:50% 86%; transition:transform 1.2s ease; }
+    .dq-hero-visual:hover .dq-hero-frame img { transform:scale(1.04); }
+    .dq-orbit { position:absolute; width:150px; height:150px; border-radius:50%; background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; left:-44px; bottom:60px; }
+    .dq-orbit::before { content:""; position:absolute; inset:7px; border-radius:50%; border:1px dashed var(--teal); }
+    .dq-orbit b { font-family:var(--serif); font-size:34px; font-weight:500; color:var(--purple); line-height:1; }
+    .dq-orbit span { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.4; }
+
+    /* STORY */
+    .dq-story { padding:100px 0 80px; }
+    .dq-story-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(30px,6vw,90px); align-items:start; }
+    .dq-quote { font-size:clamp(28px,3.4vw,46px); line-height:1.18; letter-spacing:-1px; }
+    .dq-quote em { font-style:normal; color:var(--purple); }
+    .dq-story-text p { font-size:14.5px; line-height:1.95; color:var(--muted); margin:0 0 22px; }
+    .dq-story-text p strong { color:var(--ink); font-weight:600; }
+    .dq-story-text .big { font-size:17px; color:var(--ink-soft); line-height:1.8; }
+
+    /* BANNER */
+    .dq-banner { position:relative; height:clamp(320px,38vw,520px); overflow:hidden; }
+    .dq-banner img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+    .dq-banner::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(29,5,72,.78) 0%, rgba(29,5,72,.25) 55%, transparent 100%); }
+    .dq-banner-copy { position:absolute; z-index:2; left:max(24px, calc((100% - 1200px)/2)); top:50%; transform:translateY(-50%); color:#fff; max-width:420px; }
+    .dq-banner-copy p { font-size:11px; letter-spacing:3px; text-transform:uppercase; opacity:.8; margin:0 0 14px; }
+    .dq-banner-copy h2 { color:#fff; font-size:clamp(28px,3.6vw,50px); line-height:1.1; letter-spacing:-1px; }
+
+    /* FEATURES (capsules) */
+    .dq-feat { padding:110px 0 90px; }
+    .dq-head { text-align:center; max-width:680px; margin:0 auto; }
+    .dq-head h2 { font-size:clamp(30px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-head p { color:var(--muted); font-size:14px; line-height:1.8; margin:16px 0 0; }
+    .dq-caps { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:110px; }
+    .dq-cap { position:relative; border-radius:150px 150px 34px 34px; padding:100px 30px 42px; color:#fff; text-align:center; background:linear-gradient(180deg,var(--c) 0%, color-mix(in srgb,var(--c) 78%,#000) 100%); box-shadow:0 26px 46px color-mix(in srgb,var(--c) 28%,transparent); transition:transform .35s, box-shadow .35s; }
+    .dq-cap:hover { transform:translateY(-10px); box-shadow:0 38px 60px color-mix(in srgb,var(--c) 38%,transparent); }
+    .dq-cap-ico { position:absolute; top:-56px; left:50%; width:112px; height:112px; margin-left:-56px; border-radius:50%; background:#fff; color:var(--c); display:grid; place-items:center; box-shadow:0 12px 28px rgba(46,8,111,.14); transition:transform .5s; }
+    .dq-cap-ico::before { content:""; position:absolute; inset:6px; border-radius:50%; border:1px dashed color-mix(in srgb,var(--c) 60%,transparent); }
+    .dq-cap:hover .dq-cap-ico { transform:rotate(8deg) scale(1.05); }
+    .dq-cap-ico svg { width:46px; height:46px; stroke-width:1.6; }
+    .dq-cap-k { font-size:10.5px; letter-spacing:2.6px; text-transform:uppercase; opacity:.78; }
+    .dq-cap h3 { color:#fff; font-size:24px; margin:10px 0 18px; line-height:1.2; }
+    .dq-cap ul { list-style:none; padding:0; margin:0; text-align:left; display:grid; gap:12px; }
+    .dq-cap li { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:13px 16px; font-size:12.5px; line-height:1.6; backdrop-filter:blur(4px); }
+    .dq-cap li b { display:block; font-weight:700; font-size:13px; margin-bottom:2px; }
+    .dq-cap li span { opacity:.92; }
+
+    /* PRODUCTS */
+    .dq-prod { padding:90px 0 100px; background:var(--surface); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+    .dq-prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:60px; }
+    .dq-card { background:#fff; border:1px solid var(--line-soft); border-radius:26px; overflow:hidden; display:flex; flex-direction:column; transition:transform .35s, box-shadow .35s, border-color .35s; }
+    .dq-card:hover { transform:translateY(-8px); box-shadow:0 30px 56px rgba(46,8,111,.12); border-color:color-mix(in srgb,var(--c) 50%,white); }
+    .dq-card-media { position:relative; aspect-ratio:1/1; overflow:hidden; background:#fff; }
+    .dq-card-media img { width:100%; height:100%; object-fit:cover; transition:transform .8s ease; }
+    .dq-card:hover .dq-card-media img { transform:scale(1.06); }
+    .dq-card-tag { position:absolute; left:16px; top:16px; padding:6px 13px; border-radius:999px; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:700; background:var(--c); color:#fff; }
+    .dq-card-body { padding:26px 28px 30px; display:flex; flex-direction:column; flex:1; border-top:4px solid var(--c); }
+    .dq-card h3 { font-size:24px; letter-spacing:-.4px; margin-bottom:6px; }
+    .dq-card-sub { font-size:11.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--c); font-weight:700; margin-bottom:14px; }
+    .dq-card p { font-size:13.5px; line-height:1.8; color:var(--muted); margin:0 0 18px; }
+    .dq-card ul { list-style:none; margin:0 0 24px; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+    .dq-card li { font-size:11.5px; padding:6px 12px; border-radius:999px; background:color-mix(in srgb,var(--c) 10%,white); color:var(--ink-soft); }
+    .dq-card-link { margin-top:auto; display:inline-flex; align-items:center; justify-content:space-between; padding:14px 20px; border-radius:999px; border:1px solid var(--line); font-size:12.5px; font-weight:600; color:var(--purple); transition:background .25s,color .25s,border-color .25s; }
+    .dq-card:hover .dq-card-link { background:var(--c); color:#fff; border-color:var(--c); }
+
+    /* GALLERY */
+    .dq-gal { padding:100px 0; }
+    .dq-gal-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:56px; }
+    .dq-gal-grid figure { margin:0; position:relative; border-radius:24px; overflow:hidden; aspect-ratio:3/4; background:#eee; }
+    .dq-gal-grid figure:nth-child(even) { transform:translateY(34px); }
+    .dq-gal-grid img { width:100%; height:100%; object-fit:cover; object-position:50% 25%; transition:transform .9s ease; }
+    .dq-gal-grid figure:hover img { transform:scale(1.07); }
+
+    .dq-cta { margin:60px 0 100px; border-radius:30px; padding:clamp(34px,5vw,60px); background:linear-gradient(120deg,var(--purple-dark),var(--purple-mid)); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; position:relative; overflow:hidden; }
+    .dq-cta::after { content:""; position:absolute; right:-80px; top:-80px; width:300px; height:300px; border-radius:50%; border:1px dashed rgba(255,255,255,.3); }
+    .dq-cta h2 { color:#fff; font-size:clamp(26px,3vw,38px); letter-spacing:-.8px; }
+    .dq-cta p { color:rgba(255,255,255,.78); font-size:14px; max-width:520px; line-height:1.8; margin:10px 0 0; }
+    .dq-cta .dq-btn { background:#fff; color:var(--purple); position:relative; z-index:1; }
+
+
+    .dq-hero-frame.dark { background:radial-gradient(circle at 50% 38%, #1d6a62 0%, #0f4a45 55%, #0a2f2c 100%); }
+    .dq-hero-frame.dark img { object-fit:contain; object-position:50% 50%; padding:9%; }
+    .dq-orbit::before { border-color:var(--gold); }
+    .dq-vesicle { background:var(--vbg,linear-gradient(120deg,#0a2f2c,#0f4a45 60%,#14625a)); color:#fff; padding:100px 0; position:relative; overflow:hidden; }
+    .dq-vesicle-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,6vw,90px); align-items:center; }
+    .dq-vesicle-img { position:relative; max-width:440px; margin:0 auto; }
+    .dq-vesicle-img::before { content:""; position:absolute; inset:-26px; border-radius:50%; border:1px dashed rgba(201,163,94,.6); animation:dqspin 40s linear infinite; }
+    .dq-vesicle-img img { width:100%; border-radius:50%; box-shadow:0 30px 70px rgba(0,0,0,.4); }
+    @keyframes dqspin { to { transform:rotate(360deg); } }
+    .dq-vesicle h2 { color:#fff; font-size:clamp(28px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-vesicle .dq-eyebrow { color:var(--gold); }
+    .dq-vesicle p.lead { color:rgba(255,255,255,.78); line-height:1.9; font-size:14.5px; margin:20px 0 28px; max-width:520px; }
+    .dq-facts { display:grid; gap:12px; }
+    .dq-fact { display:flex; gap:16px; align-items:center; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:18px; padding:14px 18px; }
+    .dq-fact b { font-family:var(--serif); font-size:20px; color:var(--gold); font-weight:500; min-width:34px; }
+    .dq-fact span { font-size:13px; line-height:1.6; color:rgba(255,255,255,.88); }
+    .dq-set { display:grid; grid-template-columns:1.05fr 1fr; gap:0; background:#fff; border:1px solid var(--line-soft); border-radius:32px; overflow:hidden; margin-top:60px; box-shadow:0 30px 60px rgba(15,74,69,.08); }
+    .dq-set-media { background:radial-gradient(circle at 50% 45%, #f4f1ea 0%, #e8efed 100%); display:grid; place-items:center; padding:40px; }
+    .dq-set-media img { width:min(440px,100%); transition:transform .8s ease; }
+    .dq-set:hover .dq-set-media img { transform:scale(1.05) rotate(-2deg); }
+    .dq-set-body { padding:clamp(28px,4vw,56px); border-top:0; }
+    .dq-set-body h3 { font-size:34px; letter-spacing:-.8px; margin:6px 0 12px; }
+    .dq-set-body > p { color:var(--muted); font-size:14px; line-height:1.85; margin:0 0 24px; }
+    .dq-steps { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px; }
+    .dq-step { border-radius:20px; padding:20px; color:#fff; }
+    .dq-step.s1 { background:linear-gradient(160deg,#d4b06a,#a8803c); }
+    .dq-step.s2 { background:linear-gradient(160deg,#4b6874,#2d424b); }
+    .dq-step b { font-family:var(--serif); font-size:44px; font-weight:500; line-height:1; display:block; }
+    .dq-step strong { display:block; font-size:14px; margin:8px 0 2px; }
+    .dq-step span { font-size:12px; opacity:.88; }
+    @media (max-width:1000px) { .dq-vesicle-grid, .dq-set { grid-template-columns:1fr; } }
+    @media (max-width:1000px) {
+      .dq-hero-grid, .dq-story-grid { grid-template-columns:1fr; }
+      .dq-hero-visual { max-width:520px; margin:0 auto; width:100%; }
+      .dq-orbit { left:-10px; }
+      .dq-caps, .dq-prod-grid { grid-template-columns:1fr; max-width:460px; margin-left:auto; margin-right:auto; }
+      .dq-caps { row-gap:100px; }
+      .dq-gal-grid { grid-template-columns:repeat(2,1fr); }
+      .dq-gal-grid figure:nth-child(even) { transform:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="contact.html?inquiry=B2BPartnership">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="about.html" class="nav-link">ABOUT US</a>
+        
+        <div class="nav-item has-dropdown active">
+          <a href="products.html" class="nav-link dropdown-toggle" id="nav-products-btn" aria-haspopup="true" aria-expanded="false">
+            OUR PRODUCTS
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="dropdown-menu mega-menu" role="menu" aria-labelledby="nav-products-btn">
+            <div class="mega-grid">
+              <div class="dropdown-col">
+                <div class="dropdown-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
+                <ul class="dropdown-sublist">
+                  <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
+                  <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem active"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-divider-v" aria-hidden="true"></div>
+              <div class="dropdown-col">
+                <div class="dropdown-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
+                <ul class="dropdown-sublist">
+                  <li><a href="cynosure-lutronic.html" class="dropdown-subitem"><span class="dot">•</span> CYNOSURE LUTRONIC</a></li>
+                  <li><a href="cutera.html" class="dropdown-subitem"><span class="dot">•</span> CUTERA</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item has-dropdown">
+          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false">
+            MEDIA
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="dropdown-menu single-menu" role="menu" aria-labelledby="nav-media-btn">
+            <ul class="dropdown-sublist">
+              <li><a href="conference.html" class="dropdown-subitem"><span class="cat-idx">1.</span> Conference</a></li>
+              <li><a href="news.html" class="dropdown-subitem"><span class="cat-idx">2.</span> News</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="contact.html" class="nav-link">CONTACT US</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <div class="mobile-nav-inner">
+        <a href="index.html" class="mobile-nav-link">HOME</a>
+        <a href="about.html" class="mobile-nav-link">ABOUT US</a>
+        
+        <div class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-products-sub">
+            <span>OUR PRODUCTS</span>
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="mobile-products-sub" class="mobile-accordion-content" hidden>
+            <div class="mobile-subgroup">
+              <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
+              <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
+              <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
+            </div>
+            <div class="mobile-subgroup">
+              <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
+              <a href="cynosure-lutronic.html" class="mobile-sublink"><span class="dot">•</span> CYNOSURE LUTRONIC</a>
+              <a href="cutera.html" class="mobile-sublink"><span class="dot">•</span> CUTERA</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-media-sub">
+            <span>MEDIA</span>
+            <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="mobile-media-sub" class="mobile-accordion-content" hidden>
+            <a href="conference.html" class="mobile-sublink"><span class="cat-idx">1.</span> Conference</a>
+            <a href="news.html" class="mobile-sublink"><span class="cat-idx">2.</span> News</a>
+          </div>
+        </div>
+
+        <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
+      </div>
+    </nav>
+    <div id="search-panel" class="search-panel" hidden>
+      <div class="container">
+        <label for="header-search">Search clinical portfolio</label>
+        <div class="search-input-wrap">
+          <input id="header-search" type="search" placeholder="Search serum, injectables, devices…" autocomplete="off">
+          <button class="text-button" id="search-close">Close ✕</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<main id="main" class="dq">
+
+  <section class="dq-hero">
+    <div class="dq-wrap dq-hero-grid">
+      <div>
+        <nav class="dq-crumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span>/</span><a href="products.html">Our Products</a><span>/</span><a href="injectables.html">1. Injectables</a><span>/</span><span class="cur">EXOLUMA</span>
+        </nav>
+        <p class="dq-eyebrow">Genèse Labs · Exosome Complex</p>
+        <h1>Exoluma<small>Next-generation skincare complex.</small></h1>
+        <p class="dq-lead">
+          <em>A two-step exosome system.</em> Step 1 is a Lyophilized Powder (50mg) and Step 2 is an Active Solution (5ml), designed to be used together as one clinical set. Distributed exclusively by NOVIRA to licensed clinics and medical professionals.
+        </p>
+        <div class="dq-actions">
+          <a class="dq-btn" href="#dq-set">View the Set <span aria-hidden="true">↓</span></a>
+          <a class="dq-btn ghost" href="contact.html?inquiry=ProductInfo&amp;product=Exoluma">Request Information <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="dq-chips">
+          <span class="dq-chip" style="--c:var(--gold)"><i></i>1 · Lyophilized Powder 50mg</span>
+          <span class="dq-chip" style="--c:var(--steel)"><i></i>2 · Active Solution 5ml</span>
+          <span class="dq-chip" style="--c:var(--teal)"><i></i>Genèse Labs</span>
+        </div>
+      </div>
+      <div class="dq-hero-visual">
+        <div class="dq-hero-frame dark"><img src="images/exoluma/set.png" alt="EXOLUMA vial 1 Lyophilized Powder 50mg and vial 2 Active Solution 5ml"></div>
+        <div class="dq-orbit"><b>2</b><span>Step<br>System</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dq-vesicle">
+    <div class="dq-wrap dq-vesicle-grid">
+      <div class="dq-vesicle-img reveal-on-scroll"><img src="images/exoluma/exosome.png" alt="Cross-section illustration of an exosome vesicle carrying DNA and RNA strands" loading="lazy"></div>
+      <div class="reveal-on-scroll">
+        <p class="dq-eyebrow">The Science</p>
+        <h2>Tiny vesicles. Big cellular messages.</h2>
+        <p class="lead">Exosomes are nano-sized vesicles that carry biological signals between cells — proteins, lipids and genetic material wrapped in a protective membrane. EXOLUMA supplies them in a freeze-dried powder, paired with an active solution.</p>
+        <div class="dq-facts">
+          <div class="dq-fact"><b>01</b><span>Lipid bilayer vesicle that protects its cargo</span></div>
+          <div class="dq-fact"><b>02</b><span>Carries DNA / RNA, proteins and lipids between cells</span></div>
+          <div class="dq-fact"><b>03</b><span>Lyophilized (freeze-dried) powder, paired with an active solution</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dq-feat">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">Inside the EXOLUMA Set</p>
+        <h2>One system, three details.</h2>
+        <p>The vials, the formats and the product line.</p>
+      </div>
+      <div class="dq-caps">
+        <article class="dq-cap reveal-on-scroll" style="--c:#b8923f">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4h12M12 4v7l-6 12a3 3 0 0 0 2.7 4.3h14.6A3 3 0 0 0 26 23l-6-12V4"/><path d="M9 20h14"/></svg></span>
+          <span class="dq-cap-k">Step 1</span>
+          <h3>Lyophilized Powder</h3>
+          <ul>
+            <li><b>Format</b><span>50mg vial</span></li>
+            <li><b>Presentation</b><span>Freeze-dried powder with gold-seal cap</span></li>
+          </ul>
+        </article>
+        <article class="dq-cap reveal-on-scroll" style="--c:#3f5b67">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4c4 6 8 9.5 8 14a8 8 0 0 1-16 0c0-4.500 4-8 8-14z"/><path d="M12 19a4 4 0 0 0 4 4"/></svg></span>
+          <span class="dq-cap-k">Step 2</span>
+          <h3>Active Solution</h3>
+          <ul>
+            <li><b>Format</b><span>5ml vial</span></li>
+            <li><b>Presentation</b><span>Clear solution paired with Step 1</span></li>
+          </ul>
+        </article>
+        <article class="dq-cap reveal-on-scroll" style="--c:#16766d">
+          <span class="dq-cap-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5c0 8 14 8 14 16M9 27c0-8 14-8 14-16M11 9h10M11 23h10M10 16h12"/></svg></span>
+          <span class="dq-cap-k">Product Line</span>
+          <h3>Exoluma &amp; Exoluma Exo-PDRN</h3>
+          <ul>
+            <li><b>Exoluma</b><span>Next-generation skincare complex</span></li>
+            <li><b>Exoluma Exo-PDRN</b><span>Exosome line with PDRN</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dq-prod" id="dq-set">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">Genèse Labs</p>
+        <h2>The EXOLUMA clinical set.</h2>
+        <p>Packaged as two boxed vials, ready for professional use.</p>
+      </div>
+      <div class="dq-set reveal-on-scroll">
+        <div class="dq-set-media"><img src="images/exoluma/boxes.webp" alt="EXOLUMA boxes and vials: 1 Lyophilized Powder, 2 Active Solution" loading="lazy"></div>
+        <div class="dq-set-body">
+          <p class="dq-eyebrow">2-Step Set</p>
+          <h3>EXOLUMA</h3>
+          <p>Next-generation skincare complex from Genèse Labs, supplied as a lyophilized powder and an active solution.</p>
+          <div class="dq-steps">
+            <div class="dq-step s1"><b>1</b><strong>Lyophilized Powder</strong><span>50mg</span></div>
+            <div class="dq-step s2"><b>2</b><strong>Active Solution</strong><span>5ml</span></div>
+          </div>
+          <div class="dq-actions">
+            <a class="dq-btn" href="contact.html?inquiry=ProductInfo&amp;product=Exoluma">Request a Quote <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dq-gal" style="padding-bottom:0">
+    <div class="dq-wrap">
+      <div class="dq-cta reveal-on-scroll" style="margin-top:0">
+        <div>
+          <h2>Bring EXOLUMA to your clinic.</h2>
+          <p>Speak with our partnership team about supply, samples and clinical guidance for Genèse Labs.</p>
+        </div>
+        <a class="dq-btn" href="contact.html?inquiry=ProductInfo&amp;product=Exoluma">Contact Us <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
+
+  <script src="nav.js"></script>
+
+</body>
+</html>

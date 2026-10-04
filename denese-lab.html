@@ -3,11 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DENESE LAB — Epigenetic bio-cellular skincare, lyophilized exosomes (EXOLUMA), and pharmaceutical salmon DNA polynucleotides (PROLUMA). Distributed exclusively by NOVIRA.">
+  <meta name="description" content="Genèse Labs by NOVIRA — Citrus Bottle, Exoluma, Exoluma Exo-PDRN and Exo MASK Rose Exosome for licensed clinics.">
   <meta name="theme-color" content="#32106f">
-  <title>DENESE LAB — Cellular Bio-Regeneration &amp; Exosomes — NOVIRA</title>
+  <title>GENÈSE LABS — Citrus Bottle, Exoluma &amp; Exo MASK — NOVIRA</title>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .dq { --teal:#16766d; --lemon:#e3b91c; --rose:#d9608a; --gold:#c9a35e; }
+    .dq-wrap { width:min(1200px, calc(100% - 48px)); margin:0 auto; }
+    .dq-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); font-weight:600; margin:0 0 14px; }
+    .dq h1, .dq h2, .dq h3 { font-family:var(--serif); font-weight:500; color:var(--ink); margin:0; }
+    .dq-crumb { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:34px; }
+    .dq-crumb a { color:var(--muted); transition:color .2s; }
+    .dq-crumb a:hover { color:var(--purple); }
+    .dq-crumb .cur { color:var(--ink); font-weight:600; }
+
+    /* HERO */
+    .dq-hero { padding:48px 0 90px; background:radial-gradient(900px 500px at 85% 20%, #e6f3f1 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #f6efe2 0%, transparent 60%); }
+    .dq-hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; }
+    .dq-hero h1 { font-size:clamp(54px,8vw,104px); letter-spacing:-2px; line-height:.95; text-transform:uppercase; }
+    .dq-hero h1 small { display:block; font-size:clamp(18px,2vw,26px); letter-spacing:.5px; text-transform:none; color:var(--purple); margin-top:18px; line-height:1.3; }
+    .dq-lead { font-size:15px; line-height:1.85; color:var(--muted); max-width:540px; margin:26px 0 34px; }
+    .dq-lead em { color:var(--ink); font-style:normal; font-weight:600; }
+    .dq-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .dq-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.3px; background:var(--purple); color:#fff; transition:transform .25s, box-shadow .25s, background .25s; }
+    .dq-btn:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(46,8,111,.25); background:var(--purple-dark); }
+    .dq-btn.ghost { background:transparent; color:var(--purple); border:1px solid var(--line); }
+    .dq-btn.ghost:hover { background:#fff; box-shadow:0 12px 26px rgba(46,8,111,.1); }
+    .dq-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:34px; }
+    .dq-chip { font-size:11.5px; padding:8px 14px; border-radius:999px; background:#fff; border:1px solid var(--line-soft); color:var(--ink-soft); display:inline-flex; align-items:center; gap:8px; }
+    .dq-chip i { width:7px; height:7px; border-radius:50%; background:var(--c); display:block; }
+    .dq-hero-visual { position:relative; }
+    .dq-hero-frame { position:relative; aspect-ratio:4/5; border-radius:220px 220px 28px 28px; overflow:hidden; background:#f4f4f6; }
+    .dq-hero-frame img { width:100%; height:100%; object-fit:cover; object-position:50% 86%; transition:transform 1.2s ease; }
+    .dq-hero-visual:hover .dq-hero-frame img { transform:scale(1.04); }
+    .dq-orbit { position:absolute; width:150px; height:150px; border-radius:50%; background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; left:-44px; bottom:60px; }
+    .dq-orbit::before { content:""; position:absolute; inset:7px; border-radius:50%; border:1px dashed var(--teal); }
+    .dq-orbit b { font-family:var(--serif); font-size:34px; font-weight:500; color:var(--purple); line-height:1; }
+    .dq-orbit span { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.4; }
+
+    /* STORY */
+    .dq-story { padding:100px 0 80px; }
+    .dq-story-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(30px,6vw,90px); align-items:start; }
+    .dq-quote { font-size:clamp(28px,3.4vw,46px); line-height:1.18; letter-spacing:-1px; }
+    .dq-quote em { font-style:normal; color:var(--purple); }
+    .dq-story-text p { font-size:14.5px; line-height:1.95; color:var(--muted); margin:0 0 22px; }
+    .dq-story-text p strong { color:var(--ink); font-weight:600; }
+    .dq-story-text .big { font-size:17px; color:var(--ink-soft); line-height:1.8; }
+
+    /* BANNER */
+    .dq-banner { position:relative; height:clamp(320px,38vw,520px); overflow:hidden; }
+    .dq-banner img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+    .dq-banner::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(29,5,72,.78) 0%, rgba(29,5,72,.25) 55%, transparent 100%); }
+    .dq-banner-copy { position:absolute; z-index:2; left:max(24px, calc((100% - 1200px)/2)); top:50%; transform:translateY(-50%); color:#fff; max-width:420px; }
+    .dq-banner-copy p { font-size:11px; letter-spacing:3px; text-transform:uppercase; opacity:.8; margin:0 0 14px; }
+    .dq-banner-copy h2 { color:#fff; font-size:clamp(28px,3.6vw,50px); line-height:1.1; letter-spacing:-1px; }
+
+    /* FEATURES (capsules) */
+    .dq-feat { padding:110px 0 90px; }
+    .dq-head { text-align:center; max-width:680px; margin:0 auto; }
+    .dq-head h2 { font-size:clamp(30px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-head p { color:var(--muted); font-size:14px; line-height:1.8; margin:16px 0 0; }
+    .dq-caps { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:110px; }
+    .dq-cap { position:relative; border-radius:150px 150px 34px 34px; padding:100px 30px 42px; color:#fff; text-align:center; background:linear-gradient(180deg,var(--c) 0%, color-mix(in srgb,var(--c) 78%,#000) 100%); box-shadow:0 26px 46px color-mix(in srgb,var(--c) 28%,transparent); transition:transform .35s, box-shadow .35s; }
+    .dq-cap:hover { transform:translateY(-10px); box-shadow:0 38px 60px color-mix(in srgb,var(--c) 38%,transparent); }
+    .dq-cap-ico { position:absolute; top:-56px; left:50%; width:112px; height:112px; margin-left:-56px; border-radius:50%; background:#fff; color:var(--c); display:grid; place-items:center; box-shadow:0 12px 28px rgba(46,8,111,.14); transition:transform .5s; }
+    .dq-cap-ico::before { content:""; position:absolute; inset:6px; border-radius:50%; border:1px dashed color-mix(in srgb,var(--c) 60%,transparent); }
+    .dq-cap:hover .dq-cap-ico { transform:rotate(8deg) scale(1.05); }
+    .dq-cap-ico svg { width:46px; height:46px; stroke-width:1.6; }
+    .dq-cap-k { font-size:10.5px; letter-spacing:2.6px; text-transform:uppercase; opacity:.78; }
+    .dq-cap h3 { color:#fff; font-size:24px; margin:10px 0 18px; line-height:1.2; }
+    .dq-cap ul { list-style:none; padding:0; margin:0; text-align:left; display:grid; gap:12px; }
+    .dq-cap li { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:13px 16px; font-size:12.5px; line-height:1.6; backdrop-filter:blur(4px); }
+    .dq-cap li b { display:block; font-weight:700; font-size:13px; margin-bottom:2px; }
+    .dq-cap li span { opacity:.92; }
+
+    /* PRODUCTS */
+    .dq-prod { padding:90px 0 100px; background:var(--surface); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+    .dq-prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:60px; }
+    .dq-card { background:#fff; border:1px solid var(--line-soft); border-radius:26px; overflow:hidden; display:flex; flex-direction:column; transition:transform .35s, box-shadow .35s, border-color .35s; }
+    .dq-card:hover { transform:translateY(-8px); box-shadow:0 30px 56px rgba(46,8,111,.12); border-color:color-mix(in srgb,var(--c) 50%,white); }
+    .dq-card-media { position:relative; aspect-ratio:1/1; overflow:hidden; background:#fff; }
+    .dq-card-media img { width:100%; height:100%; object-fit:cover; transition:transform .8s ease; }
+    .dq-card:hover .dq-card-media img { transform:scale(1.06); }
+    .dq-card-tag { position:absolute; left:16px; top:16px; padding:6px 13px; border-radius:999px; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:700; background:var(--c); color:#fff; }
+    .dq-card-body { padding:26px 28px 30px; display:flex; flex-direction:column; flex:1; border-top:4px solid var(--c); }
+    .dq-card h3 { font-size:24px; letter-spacing:-.4px; margin-bottom:6px; }
+    .dq-card-sub { font-size:11.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--c); font-weight:700; margin-bottom:14px; }
+    .dq-card p { font-size:13.5px; line-height:1.8; color:var(--muted); margin:0 0 18px; }
+    .dq-card ul { list-style:none; margin:0 0 24px; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+    .dq-card li { font-size:11.5px; padding:6px 12px; border-radius:999px; background:color-mix(in srgb,var(--c) 10%,white); color:var(--ink-soft); }
+    .dq-card-link { margin-top:auto; display:inline-flex; align-items:center; justify-content:space-between; padding:14px 20px; border-radius:999px; border:1px solid var(--line); font-size:12.5px; font-weight:600; color:var(--purple); transition:background .25s,color .25s,border-color .25s; }
+    .dq-card:hover .dq-card-link { background:var(--c); color:#fff; border-color:var(--c); }
+
+    /* GALLERY */
+    .dq-gal { padding:100px 0; }
+    .dq-gal-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:56px; }
+    .dq-gal-grid figure { margin:0; position:relative; border-radius:24px; overflow:hidden; aspect-ratio:3/4; background:#eee; }
+    .dq-gal-grid figure:nth-child(even) { transform:translateY(34px); }
+    .dq-gal-grid img { width:100%; height:100%; object-fit:cover; object-position:50% 25%; transition:transform .9s ease; }
+    .dq-gal-grid figure:hover img { transform:scale(1.07); }
+
+    .dq-cta { margin:60px 0 100px; border-radius:30px; padding:clamp(34px,5vw,60px); background:linear-gradient(120deg,var(--purple-dark),var(--purple-mid)); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; position:relative; overflow:hidden; }
+    .dq-cta::after { content:""; position:absolute; right:-80px; top:-80px; width:300px; height:300px; border-radius:50%; border:1px dashed rgba(255,255,255,.3); }
+    .dq-cta h2 { color:#fff; font-size:clamp(26px,3vw,38px); letter-spacing:-.8px; }
+    .dq-cta p { color:rgba(255,255,255,.78); font-size:14px; max-width:520px; line-height:1.8; margin:10px 0 0; }
+    .dq-cta .dq-btn { background:#fff; color:var(--purple); position:relative; z-index:1; }
+
+
+    .dq-hero-frame.dark { background:radial-gradient(circle at 50% 38%, #1d6a62 0%, #0f4a45 55%, #0a2f2c 100%); }
+    .dq-hero-frame.dark img { object-fit:contain; object-position:50% 50%; padding:9%; }
+    .dq-orbit::before { border-color:var(--gold); }
+    .dq-vesicle { background:var(--vbg,linear-gradient(120deg,#0a2f2c,#0f4a45 60%,#14625a)); color:#fff; padding:100px 0; position:relative; overflow:hidden; }
+    .dq-vesicle-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,6vw,90px); align-items:center; }
+    .dq-vesicle-img { position:relative; max-width:440px; margin:0 auto; }
+    .dq-vesicle-img::before { content:""; position:absolute; inset:-26px; border-radius:50%; border:1px dashed rgba(201,163,94,.6); animation:dqspin 40s linear infinite; }
+    .dq-vesicle-img img { width:100%; border-radius:50%; box-shadow:0 30px 70px rgba(0,0,0,.4); }
+    @keyframes dqspin { to { transform:rotate(360deg); } }
+    .dq-vesicle h2 { color:#fff; font-size:clamp(28px,3.4vw,46px); letter-spacing:-1px; line-height:1.15; }
+    .dq-vesicle .dq-eyebrow { color:var(--gold); }
+    .dq-vesicle p.lead { color:rgba(255,255,255,.78); line-height:1.9; font-size:14.5px; margin:20px 0 28px; max-width:520px; }
+    .dq-facts { display:grid; gap:12px; }
+    .dq-fact { display:flex; gap:16px; align-items:center; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:18px; padding:14px 18px; }
+    .dq-fact b { font-family:var(--serif); font-size:20px; color:var(--gold); font-weight:500; min-width:34px; }
+    .dq-fact span { font-size:13px; line-height:1.6; color:rgba(255,255,255,.88); }
+    .dq-set { display:grid; grid-template-columns:1.05fr 1fr; gap:0; background:#fff; border:1px solid var(--line-soft); border-radius:32px; overflow:hidden; margin-top:60px; box-shadow:0 30px 60px rgba(15,74,69,.08); }
+    .dq-set-media { background:radial-gradient(circle at 50% 45%, #f4f1ea 0%, #e8efed 100%); display:grid; place-items:center; padding:40px; }
+    .dq-set-media img { width:min(440px,100%); transition:transform .8s ease; }
+    .dq-set:hover .dq-set-media img { transform:scale(1.05) rotate(-2deg); }
+    .dq-set-body { padding:clamp(28px,4vw,56px); border-top:0; }
+    .dq-set-body h3 { font-size:34px; letter-spacing:-.8px; margin:6px 0 12px; }
+    .dq-set-body > p { color:var(--muted); font-size:14px; line-height:1.85; margin:0 0 24px; }
+    .dq-steps { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px; }
+    .dq-step { border-radius:20px; padding:20px; color:#fff; }
+    .dq-step.s1 { background:linear-gradient(160deg,#d4b06a,#a8803c); }
+    .dq-step.s2 { background:linear-gradient(160deg,#4b6874,#2d424b); }
+    .dq-step b { font-family:var(--serif); font-size:44px; font-weight:500; line-height:1; display:block; }
+    .dq-step strong { display:block; font-size:14px; margin:8px 0 2px; }
+    .dq-step span { font-size:12px; opacity:.88; }
+    @media (max-width:1000px) { .dq-vesicle-grid, .dq-set { grid-template-columns:1fr; } }
+
+    .dq-hero-frame.photo img { object-fit:cover; padding:0; filter:none; }
+    .dq-hero-frame.duo { background:radial-gradient(circle at 50% 40%, #fff 0%, #f1f3ee 100%); display:grid; grid-template-columns:1fr 1fr; align-items:end; padding:0 4% 12%; gap:0; }
+    .dq-hero-frame.duo img { object-fit:contain; height:62%; align-self:end; padding:0; }
+    .dq-hero-frame.duo img:first-child { transform:translateX(8%); }
+    .dq-hero-frame.duo img:last-child { transform:translateX(-4%) scale(1.15); }
+    .dq-card-media img.contain { object-fit:contain; padding:6%; }
+    .dq-card-media.tint { background:radial-gradient(circle at 50% 45%, #fff 0%, var(--tint,#f3f1f7) 100%); }
+    .dq-prod-grid.four { grid-template-columns:repeat(4,1fr); gap:20px; }
+    .dq-prod-grid.two { grid-template-columns:repeat(2,1fr); }
+    .dq-card-art { aspect-ratio:1/1; display:grid; place-items:center; text-align:center; color:#fff; padding:24px; position:relative; overflow:hidden; background:radial-gradient(circle at 30% 25%, #f6a6c0 0%, #d9608a 55%, #a53b66 100%); }
+    .dq-card-art::before { content:""; position:absolute; width:120%; aspect-ratio:1; border-radius:50%; border:1px dashed rgba(255,255,255,.45); }
+    .dq-card-art::after { content:""; position:absolute; width:78%; aspect-ratio:1; border-radius:50%; border:1px solid rgba(255,255,255,.35); }
+    .dq-card-art b { position:relative; z-index:1; font-family:var(--serif); font-size:34px; font-weight:500; line-height:1.05; letter-spacing:-.5px; }
+    .dq-card-art span { position:relative; z-index:1; display:block; font-size:11px; letter-spacing:3px; text-transform:uppercase; margin-top:10px; opacity:.9; }
+    .dq-card-art.mask-art-label { }
+    @media (max-width:1100px) { .dq-prod-grid.four { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:700px) { .dq-prod-grid.four, .dq-prod-grid.two { grid-template-columns:1fr; } }
+    @media (max-width:1000px) {
+      .dq-hero-grid, .dq-story-grid { grid-template-columns:1fr; }
+      .dq-hero-visual { max-width:520px; margin:0 auto; width:100%; }
+      .dq-orbit { left:-10px; }
+      .dq-caps, .dq-prod-grid { grid-template-columns:1fr; max-width:460px; margin-left:auto; margin-right:auto; }
+      .dq-caps { row-gap:100px; }
+      .dq-gal-grid { grid-template-columns:repeat(2,1fr); }
+      .dq-gal-grid figure:nth-child(even) { transform:none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +178,7 @@
   
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -33,8 +195,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem active"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem active"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -66,7 +228,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -85,8 +247,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink active"><span class="dot">•</span> DENESE LAB</a>
-              <a href="product-detail.html?product=exoluma" class="mobile-sublink"><span class="dot">•</span> EXOLUMA EXO-PDRN</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -108,6 +269,7 @@
         </div>
 
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -121,633 +283,112 @@
     </div>
   </header>
 
-<main id="main">
 
-  <!-- LUXURY HERO SECTION WITH MULTI-IMAGE SHOWROOM -->
-  <section class="danique-hero-luxury">
-    <div class="container">
-      <div class="danique-hero-grid">
-        <!-- Left: Brand Philosophy & Clinical Accreditations -->
-        <div class="danique-hero-left">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="products.html">Our Products</a>
-            <span class="sep">/</span>
-            <a href="injectables.html">1. Injectables</a>
-            <span class="sep">/</span>
-            <span class="current">DENESE LAB</span>
-          </nav>
+<main id="main" class="dq">
 
-          <div class="danique-hero-kicker">
-            <span class="star-pulse">✦</span>
-            <span>BRAND: DENESE LAB · CELLULAR BIO-REGENERATION &amp; EXOSOMES · KOREA</span>
-          </div>
-
-          <h1 class="danique-hero-h1">
-            DENESE LAB — Cellular Health &amp;<br>
-            <em>Skin Barrier Restoration.</em>
-          </h1>
-
-          <p class="danique-hero-lead">
-            <em>“Targeting cellular senescence at the molecular and epigenetic level.”</em> DENESE LAB is formulated by biomedical dermatologists specializing in regenerative skin medicine. By coupling pure lyophilized exosomes (EXOLUMA) and pharmaceutical salmon DNA polynucleotides (PROLUMA) with biomimetic barrier lipids, DENESE LAB optimizes tissue recovery, accelerates post-laser re-epithelialization, and prolongs aesthetic injectable longevity.
-          </p>
-
-          <div class="danique-hero-badges-grid">
-            <div class="danique-hero-badge-pill">
-              <span>🧬</span> <strong>Lyophilized Exosome Complex</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>🐟</span> <strong>Pharmaceutical Salmon PDRN</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>🛡️</span> <strong>Biomimetic Ceramide Shield</strong>
-            </div>
-            <div class="danique-hero-badge-pill">
-              <span>⚡</span> <strong>Post-Laser &amp; Post-RF Recovery</strong>
-            </div>
-          </div>
-
-          <div class="danique-hero-actions-row">
-            <a href="#denese-catalog" class="danique-hero-btn">
-              <span>Request Clinic Supply</span>
-              <span aria-hidden="true">📋</span>
-            </a>
-            <a href="#denese-science" class="danique-hero-btn-outline">
-              <span>Epigenetic Science</span>
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a href="contact.html?inquiry=DeneseLab" class="danique-hero-btn-ghost">
-              <span>Clinic Protocol Guide ↗</span>
-            </a>
-          </div>
-
-          <!-- Trust Metric Bar -->
-          <div class="danique-hero-stats">
-            <div class="danique-stat-card">
-              <strong>10B+</strong>
-              <span>Active Exosomes</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>5,000ppm</strong>
-              <span>Pure Salmon PDRN</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>5 Complex</strong>
-              <span>Biomimetic Lipids</span>
-            </div>
-            <div class="danique-stat-card">
-              <strong>0%</strong>
-              <span>Fragrance &amp; Irritants</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Interactive Multi-Image Product Showroom -->
-        <div class="danique-gallery-wrap">
-          <div class="danique-gallery-stage" id="denese-gallery-stage">
-            <img id="denese-main-photo" class="danique-gallery-main-img" src="images/denese-exoluma-box.jpg" alt="DENESE LAB EXOLUMA Lyophilized Exosome and Hyaluronic Acid Activator Set">
-            <div class="danique-gallery-overlay"></div>
-            
-            <div class="danique-gallery-top-badge" id="denese-gallery-tag">
-              ⭐ 1. EXOLUMA DUAL-VIAL EXOSOME SET
-            </div>
-
-            <div class="danique-gallery-arrows">
-              <button class="danique-gallery-arrow" onclick="prevDeneseHeroImage()" aria-label="Previous product image">‹</button>
-              <button class="danique-gallery-arrow" onclick="nextDeneseHeroImage()" aria-label="Next product image">›</button>
-            </div>
-
-            <div class="danique-gallery-caption-bar">
-              <div class="gallery-caption-title" id="denese-gallery-title">EXOLUMA Lyophilized Exosome Powder &amp; HA Activator</div>
-              <div class="gallery-caption-sub" id="denese-gallery-desc">15mg Lyophilized Exosome + 5ml HA Activator · Intensive Cellular Regeneration</div>
-            </div>
-          </div>
-
-          <!-- 4-Image Interactive Thumbnails Switcher -->
-          <div class="danique-thumbs-strip" role="tablist" aria-label="DENESE LAB Product Perspectives">
-            <button type="button" class="danique-thumb-item is-active" onclick="switchDeneseHeroImage(0)" id="dthumb-btn-0" role="tab" aria-selected="true">
-              <div class="danique-thumb-img-box">
-                <img src="images/denese-exoluma-box.jpg" alt="DENESE LAB EXOLUMA Box Set">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">1. Exosomes</span>
-                <span class="danique-thumb-desc">Dual-Vial Box</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchDeneseHeroImage(1)" id="dthumb-btn-1" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/proluma.jpg" alt="PROLUMA PDRN Salmon DNA Syringe">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">2. PROLUMA</span>
-                <span class="danique-thumb-desc">PDRN Salmon DNA</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchDeneseHeroImage(2)" id="dthumb-btn-2" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/exoluma.jpg" alt="EXOLUMA Active Formula">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">3. Bio-Active</span>
-                <span class="danique-thumb-desc">Pure Exosomes</span>
-              </div>
-            </button>
-
-            <button type="button" class="danique-thumb-item" onclick="switchDeneseHeroImage(3)" id="dthumb-btn-3" role="tab" aria-selected="false">
-              <div class="danique-thumb-img-box">
-                <img src="images/danique-cream.jpg" alt="DENESE LAB Cellular Recovery Cream">
-              </div>
-              <div class="danique-thumb-info">
-                <span class="danique-thumb-label">4. Barrier Cream</span>
-                <span class="danique-thumb-desc">Ceramide Lipid Jar</span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 1: EPIGENETIC LONGEVITY & DNA REPAIR -->
-  <section id="denese-science" class="section container">
-    <div class="section-heading">
+  <section class="dq-hero">
+    <div class="dq-wrap dq-hero-grid">
       <div>
-        <p class="eyebrow">Epigenetic Formulation</p>
-        <h2>Cellular Longevity &amp; DNA Protection Engineered by Dermatologists</h2>
-      </div>
-      <p style="max-width: 480px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-        Counteracting oxidative DNA stress and replenishing the stratum corneum with biomimetic ceramides and pharmaceutical-grade PDRN to maximize clinic treatment longevity.
-      </p>
-    </div>
-
-    <div class="danique-split-grid">
-      <!-- Card 1: Salmon DNA PDRN & Angiogenesis -->
-      <div class="danique-philosophy-card">
-        <div class="danique-card-icon-wrap">🐟</div>
-        <h3 class="danique-card-title">Pure Pharmaceutical Salmon DNA (PDRN)</h3>
-        <div class="danique-card-quote">
-          “Extracted and purified from oncorhynchus keta reproductive cells, <strong>PDRN acts on the Adenosine A2A receptor</strong> to trigger an immediate cascade of capillary micro-angiogenesis, tissue remodeling, and accelerated collagen synthesis without cytotoxic irritation.”
+        <nav class="dq-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="products.html">Our Products</a><span>/</span><a href="injectables.html">1. Injectables</a><span>/</span><span class="cur">GENÈSE LABS</span></nav>
+        <p class="dq-eyebrow">1. Injectables · Brand</p>
+        <h1>Genèse<br>Labs<small>Next-generation skin solutions.</small></h1>
+        <p class="dq-lead">
+          <em>Exosome science, slim solutions and skin-care masks.</em> The Genèse Labs range brings together Citrus Bottle, Exoluma, Exoluma Exo-PDRN and the Exo MASK Rose Exosome — distributed by NOVIRA to licensed clinics and medical professionals.
+        </p>
+        <div class="dq-actions">
+          <a class="dq-btn" href="#dq-products">View Products <span aria-hidden="true">↓</span></a>
+          <a class="dq-btn ghost" href="contact.html?inquiry=GeneseLabs">Request Information <span aria-hidden="true">↗</span></a>
         </div>
-        <ul class="danique-card-bullets">
-          <li><span class="check">✓</span> <span><strong>Post-Laser Wound Remodeling:</strong> Shortens erythema downtime by up to 60% following fractional CO2 and picosecond lasers.</span></li>
-          <li><span class="check">✓</span> <span><strong>Adenosine A2A Stimulation:</strong> Safely reduces acute inflammatory cytokines (TNF-α, IL-6) while boosting VEGF secretion.</span></li>
-          <li><span class="check">✓</span> <span><strong>Fibroblast DNA Salvage Pathway:</strong> Directly donates purine/pyrimidine nucleotides to repair damaged cellular genetic sequences.</span></li>
-        </ul>
-      </div>
-
-      <!-- Card 2: Lyophilized Exosome Intercellular Signaling -->
-      <div class="danique-philosophy-card">
-        <div class="danique-card-icon-wrap">🧬</div>
-        <h3 class="danique-card-title">Lyophilized Exosomes &amp; Biomimetic Lipids</h3>
-        <div class="danique-card-quote">
-          “By freeze-drying pristine exosomal nano-vesicles, EXOLUMA preserves over <strong>10 billion intact biological messenger vesicles</strong> containing microRNA and growth proteins that command aged dermal cells to reignite youthful protein synthesis.”
+        <div class="dq-chips">
+          <span class="dq-chip" style="--c:var(--lemon)"><i></i>Citrus Bottle</span>
+          <span class="dq-chip" style="--c:var(--teal)"><i></i>Exoluma</span>
+          <span class="dq-chip" style="--c:var(--rose)"><i></i>Exo MASK Rose Exosome</span>
         </div>
-        <ul class="danique-card-bullets">
-          <li><span class="check">✓</span> <span><strong>Intact Vesicular Cargo:</strong> 30–150nm nano-vesicles easily traverse micropores created by MTS and RF devices.</span></li>
-          <li><span class="check">✓</span> <span><strong>5 Biomimetic Ceramides:</strong> Reconstructs the lamellar intercellular lipid bilayer to lock in moisture and prevent TEWL.</span></li>
-          <li><span class="check">✓</span> <span><strong>Zero Fragrance &amp; Hypoallergenic:</strong> Formulated strictly without parabens, artificial fragrance, or harsh chemical additives.</span></li>
-        </ul>
+      </div>
+      <div class="dq-hero-visual">
+        <div class="dq-hero-frame duo"><img src="images/citrus-bottle.png" alt="Genèse Labs Citrus Bottle vial"><img src="images/exoluma/set.png" alt="Genèse Labs EXOLUMA two-vial set"></div>
+        <div class="dq-orbit"><b>4</b><span>Product<br>Lines</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: CLINICAL ACCREDITATION BANNER -->
-  <section class="section" style="padding-top:0;">
-    <div class="container danique-fda-banner">
-      <div class="danique-fda-content">
-        <span class="danique-fda-kicker">BIOMEDICAL DERMATOLOGY STANDARD</span>
-        <h3>Clinically Certified Cellular Skin Restoration</h3>
-        <p>
-          Formulated in certified CGMP pharmaceutical cleanrooms in South Korea under ISO 22716 standards. Specifically validated for post-procedure safety on sensitized, post-ablative, and compromised skin barriers.
-        </p>
+  <section class="dq-prod" id="dq-products" style="border-top:0">
+    <div class="dq-wrap">
+      <div class="dq-head">
+        <p class="dq-eyebrow">Genèse Labs</p>
+        <h2>The Genèse Labs collection.</h2>
+        <p>Four product lines, one laboratory.</p>
       </div>
-      <div class="danique-fda-badges">
-        <div class="danique-fda-badge-item">
-          <span class="icon">🔬</span>
-          <strong>Pure PDRN</strong>
-          <small>5,000 ppm Pharmaceutical</small>
-        </div>
-        <div class="danique-fda-badge-item">
-          <span class="icon">🇰🇷</span>
-          <strong>Korea MFDS</strong>
-          <small>Functional Certified</small>
-        </div>
-        <div class="danique-fda-badge-item">
-          <span class="icon">🛡️</span>
-          <strong>ISO 22716</strong>
-          <small>CGMP Cleanroom Standard</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: PRODUCT CATALOG & LINEUP -->
-  <section id="denese-catalog" class="section" style="background: #faf7fc;">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Clinical Formulations</p>
-          <h2>DENESE LAB Product Portfolio</h2>
-        </div>
-        <p style="max-width: 480px; color: var(--muted); font-size: 13.5px; line-height: 1.6;">
-          Epigenetic solutions for in-clinic mesotherapy infusion and essential post-procedure barrier homecare regimens.
-        </p>
-      </div>
-
-      <div class="danique-product-grid">
-        
-        <!-- Product 1: EXOLUMA -->
-        <article class="danique-item-card" id="card-denese-exoluma">
-          <div class="danique-item-media" onclick="openDeneseModal('exoluma')">
-            <span class="danique-item-badge">EXOSOME MESO</span>
-            <img src="images/denese-exoluma-box.jpg" alt="DENESE LAB EXOLUMA Dual-Vial Exosomes" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">LYOPHILIZED EXOSOMES · DUAL-VIAL ACTIVATION</span>
-            <h3 class="danique-item-title">EXOLUMA Dual-Vial Exosome Complex</h3>
-            <p class="danique-item-desc">
-              High-purity lyophilized exosome powder paired with hyaluronic acid solvent activator. Preserves over 10 billion active exosome particles to trigger intense cellular repair and collagenesis.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> 15mg Lyophilized Exosome + 5ml HA Activator<br>
-              <strong>Indications:</strong> Microneedling (MTS), RF micro-needling, post-laser infusion
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openDeneseModal('exoluma')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addDeneseToCart('exoluma')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
+      <div class="dq-prod-grid four">
+        <article class="dq-card reveal-on-scroll" style="--c:#c99a0a">
+          <div class="dq-card-media tint" style="--tint:#fbf3c9"><span class="dq-card-tag">Slim</span><img class="contain" src="images/citrus-bottle.png" alt="Citrus Bottle Next Generation Slim Solution vial" loading="lazy"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">Lipolysis treatment</span>
+            <h3>Citrus Bottle</h3>
+            <p>Next Generation Slim Solution for lipolysis treatment.</p>
+            <a class="dq-card-link" href="contact.html?inquiry=Citrus%20Bottle"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
           </div>
         </article>
-
-        <!-- Product 2: PROLUMA -->
-        <article class="danique-item-card" id="card-denese-proluma">
-          <div class="danique-item-media" onclick="openDeneseModal('proluma')">
-            <span class="danique-item-badge">SALMON DNA PDRN</span>
-            <img src="images/proluma.jpg" alt="PROLUMA Derma Revitalizer PDRN" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">EPIGENETIC BIO-REVITALIZER · 5,000 PPM PDRN</span>
-            <h3 class="danique-item-title">PROLUMA Derma Revitalizer</h3>
-            <p class="danique-item-desc">
-              Clinical-grade Polydeoxyribonucleotide (PDRN) derived from wild salmon DNA. Promotes tissue angiogenesis, rapid post-treatment re-epithelialization, and long-term dermal thickening.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> 5 × 3ml Sterile Ampoules / Syringes<br>
-              <strong>Indications:</strong> Skin laxity, thin crepey skin, post-inflammatory scarring
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openDeneseModal('proluma')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addDeneseToCart('proluma')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
+        <article class="dq-card reveal-on-scroll" style="--c:#16766d">
+          <div class="dq-card-media tint" style="--tint:#dfeeea"><span class="dq-card-tag">Exosome</span><img class="contain" src="images/exoluma/set.png" alt="EXOLUMA vial 1 and vial 2" loading="lazy"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">2-step set · 50mg + 5ml</span>
+            <h3>Exoluma</h3>
+            <p>Next-generation skincare complex: Lyophilized Powder and Active Solution.</p>
+            <a class="dq-card-link" href="exoluma.html"><span>View Exoluma</span><span aria-hidden="true">→</span></a>
           </div>
         </article>
-
-        <!-- Product 3: Recovery Cream -->
-        <article class="danique-item-card" id="card-denese-cream">
-          <div class="danique-item-media" onclick="openDeneseModal('cream')">
-            <span class="danique-item-badge">BARRIER DEFENSE</span>
-            <img src="images/danique-cream.jpg" alt="Cellular Renewal Barrier Recovery Cream" loading="lazy">
-          </div>
-          <div class="danique-item-body">
-            <span class="danique-item-kicker">POST-PROCEDURE BARRIER SEAL · 5 CERAMIDES</span>
-            <h3 class="danique-item-title">Cellular Renewal Barrier Recovery Cream</h3>
-            <p class="danique-item-desc">
-              Intensive restorative clinical balm formulated with 5 biomimetic ceramides, squalane, and Copper Tripeptide-1. Creates an invisible second-skin breathable shield to lock in hydration.
-            </p>
-            <div class="danique-item-specs">
-              <strong>Format:</strong> 50g Airless Hygienic Jar<br>
-              <strong>Indications:</strong> Post-laser, post-chemical peel, severe barrier compromise
-            </div>
-            <div class="danique-item-footer">
-              <span class="danique-item-price" style="font-size:13px; font-weight:700; color:var(--purple);"><span class="b2b-badge-tier">CLINIC TIER</span> Official Quote</span>
-              <div class="danique-item-actions">
-                <button class="danique-quickview-btn" onclick="openDeneseModal('cream')" title="Quick View">👁</button>
-                <button class="danique-addcart-btn" onclick="addDeneseToCart('cream')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                  + Add to RFQ
-                </button>
-              </div>
-            </div>
+        <article class="dq-card reveal-on-scroll" style="--c:#3f5b67">
+          <div class="dq-card-media tint" style="--tint:#e5ecef"><span class="dq-card-tag">Exo-PDRN</span><img class="contain" src="images/exoluma/boxes.webp" alt="Exoluma boxes and vials" loading="lazy"></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">Exosome line</span>
+            <h3>Exoluma Exo-PDRN</h3>
+            <p>The Exoluma exosome line with PDRN, presented in the Exoluma two-box format.</p>
+            <a class="dq-card-link" href="contact.html?inquiry=Exoluma%20Exo-PDRN"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
           </div>
         </article>
-
+        <article class="dq-card reveal-on-scroll" style="--c:#d9608a">
+          <div class="dq-card-art"><b>Exo<br>MASK</b><span>Rose Exosome</span></div>
+          <div class="dq-card-body">
+            <span class="dq-card-sub">Mask · Rose exosome</span>
+            <h3>Exo MASK Rose Exosome</h3>
+            <p>A skin-care mask from the Genèse Labs exosome range, featuring rose exosome.</p>
+            <a class="dq-card-link" href="contact.html?inquiry=Exo%20MASK%20Rose%20Exosome"><span>Request a quote</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: TECHNICAL & CLINICAL SPECIFICATIONS -->
-  <section class="section container">
-    <div class="spec-box">
-      <h3>DENESE LAB Technical &amp; Clinical Summary</h3>
-      <div class="spec-grid">
-        <div class="spec-item"><span class="spec-label">Core Biotechnology</span><span class="spec-val">Lyophilized Exosomes + Pharmaceutical Salmon PDRN</span></div>
-        <div class="spec-item"><span class="spec-label">Exosome Density</span><span class="spec-val">&gt; 10 Billion Intact Bio-Vesicles / Vial</span></div>
-        <div class="spec-item"><span class="spec-label">Active PDRN Concentration</span><span class="spec-val">5,000 ppm Pure Polydeoxyribonucleotide</span></div>
-        <div class="spec-item"><span class="spec-label">Lipid Barrier Matrix</span><span class="spec-val">5 Biomimetic Ceramides (EOP, NP, AP, AS, NS)</span></div>
-        <div class="spec-item"><span class="spec-label">Regulatory Certifications</span><span class="spec-val">Korea MFDS Functional Cosmetic · ISO 22716 CGMP</span></div>
-        <div class="spec-item"><span class="spec-label">Approved Indications</span><span class="spec-val">Post-laser downtime, cellular rejuvenation, micro-needling</span></div>
-        <div class="spec-item"><span class="spec-label">Safety Profile</span><span class="spec-val">Hypoallergenic Tested · Fragrance-Free · Paraben-Free</span></div>
-        <div class="spec-item"><span class="spec-label">Official Distribution</span><span class="spec-val">Authorized Partner: NOVIRA CO., LTD.</span></div>
+  <section class="dq-vesicle" style="--vbg:linear-gradient(120deg,#0a2f2c,#0f4a45 60%,#14625a)">
+    <div class="dq-wrap dq-vesicle-grid">
+      <div class="dq-vesicle-img reveal-on-scroll"><img src="images/exoluma/exosome.png" alt="Cross-section illustration of an exosome vesicle" loading="lazy"></div>
+      <div class="reveal-on-scroll">
+        <p class="dq-eyebrow">Featured · Exosome Science</p>
+        <h2>Meet Exoluma.</h2>
+        <p class="lead">Exosomes are nano-sized vesicles that carry biological signals between cells. Exoluma pairs a Lyophilized Powder (Step 1, 50mg) with an Active Solution (Step 2, 5ml) as one clinical set.</p>
+        <div class="dq-actions"><a class="dq-btn" style="background:#fff;color:#0f4a45" href="exoluma.html">Explore Exoluma <span aria-hidden="true">→</span></a></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 5: CLINIC PROTOCOL REQUEST BANNER -->
-  <section class="section container" style="padding-top:0;">
-    <div style="background: linear-gradient(135deg, var(--purple-dark) 0%, #200845 100%); border-radius: 18px; padding: clamp(32px, 4vw, 48px); color: #ffffff; display: flex; flex-direction: column; md:flex-row; gap: 28px; justify-content: space-between; align-items: flex-start; box-shadow: 0 16px 40px rgba(37, 16, 65, 0.2);">
-      <div style="max-width: 650px;">
-        <span style="display:inline-block; font-size: 11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#c796ef; margin-bottom:8px;">PHYSICIAN TREATMENT PROTOCOLS</span>
-        <h2 style="font-family: var(--serif); font-size: clamp(26px, 3vw, 36px); margin:0 0 12px; color:#ffffff;">Request the DENESE LAB Clinic Protocol Guide</h2>
-        <p style="font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,0.85); margin:0;">
-          Access clinical treatment pathways integrating EXOLUMA and PROLUMA with fractional lasers, RF microneedling (Secret PRO), and post-peel recovery regimens for accelerated healing and optimal patient outcomes.
-        </p>
-      </div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; align-self:center;">
-        <a href="contact.html?inquiry=DeneseProtocol" class="danique-hero-btn" style="background:#ffffff; color:var(--purple-dark); box-shadow:none;">
-          <span>Request Protocol PDF</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a href="products.html" class="danique-hero-btn-outline" style="background:transparent; border-color:rgba(255,255,255,0.4); color:#ffffff;">
-          <span>View All Products</span>
-        </a>
+  <section class="dq-gal" style="padding-bottom:0">
+    <div class="dq-wrap">
+      <div class="dq-cta reveal-on-scroll" style="margin-top:0">
+        <div><h2>Bring Genèse Labs to your clinic.</h2><p>Speak with our partnership team about supply, samples and clinical guidance.</p></div>
+        <a class="dq-btn" href="contact.html?inquiry=GeneseLabs">Contact Us <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 
 </main>
 
-  <!-- DENESE LAB QUICK VIEW MODAL -->
-  <div id="denese-modal" class="luxury-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="luxury-modal-backdrop" onclick="closeDeneseModal()"></div>
-    <div class="luxury-modal-container">
-      <button class="luxury-modal-close" onclick="closeDeneseModal()" aria-label="Close dialog">✕</button>
-      <div class="luxury-modal-grid">
-        <div class="luxury-modal-visual">
-          <img id="dmodal-img" src="images/denese-exoluma-box.jpg" alt="DENESE LAB Product Detail">
-          <span class="luxury-card-badge" id="dmodal-badge">EXOSOME MESO</span>
-        </div>
-        <div class="luxury-modal-content">
-          <span class="luxury-modal-kicker" id="dmodal-kicker">1. INJECTABLES · DENESE LAB</span>
-          <h2 class="luxury-modal-title" id="dmodal-title">EXOLUMA Dual-Vial Exosome Complex</h2>
-          <p class="luxury-modal-desc" id="dmodal-desc">
-            High-purity lyophilized exosome powder paired with hyaluronic acid solvent activator. Preserves over 10 billion active exosome particles to trigger intense cellular repair and collagenesis.
-          </p>
-          
-          <div class="luxury-detail-list">
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Active Formulation</span>
-              <span class="luxury-detail-value" id="dmodal-actives">15mg Lyophilized Exosome + 5ml HA Activator</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Packaging / Volume</span>
-              <span class="luxury-detail-value" id="dmodal-format">Dual Sterile Glass Vial Kit</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Clinical Indications</span>
-              <span class="luxury-detail-value" id="dmodal-indications">Microneedling (MTS), RF micro-needling, post-laser infusion</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Regulatory Certs</span>
-              <span class="luxury-detail-value" id="dmodal-certs">Korea MFDS Functional Approved, ISO 22716 CGMP</span>
-            </div>
-            <div class="luxury-detail-row">
-              <span class="luxury-detail-label">Pricing Status</span>
-              <span class="luxury-detail-value" id="dmodal-price" style="font-size:13.5px;font-weight:700;color:var(--purple);"><span class="b2b-badge-tier">B2B TIER</span> Verified Clinics Only</span>
-            </div>
-          </div>
-
-          <div class="luxury-modal-actions" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
-            <button id="dmodal-addcart-btn" class="button primary" style="cursor:pointer;">+ Add to Clinic RFQ 📋</button>
-            <a id="dmodal-enquire-btn" href="contact.html?inquiry=DeneseLab" class="button secondary">Request Official Quotation ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
-      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="products.html">Our products</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
-    </div>
-  </footer>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
 
   <script src="nav.js"></script>
-
-  <script>
-    // DENESE LAB 4-IMAGE INTERACTIVE SHOWROOM SYSTEM
-    const DENESE_GALLERY = [
-      {
-        src: "images/denese-exoluma-box.jpg",
-        tag: "⭐ 1. EXOLUMA DUAL-VIAL EXOSOME SET",
-        title: "EXOLUMA Lyophilized Exosome Powder & HA Activator",
-        desc: "15mg Lyophilized Exosome + 5ml HA Activator · Intensive Cellular Regeneration"
-      },
-      {
-        src: "images/proluma.jpg",
-        tag: "🐟 2. PROLUMA DERMA REVITALIZER (PDRN)",
-        title: "5,000 ppm Pure Pharmaceutical Salmon DNA (PDRN)",
-        desc: "Angiogenesis stimulator for rapid post-treatment tissue repair & dermal thickening"
-      },
-      {
-        src: "images/exoluma.jpg",
-        tag: "🔬 3. PURE CELLULAR EXOSOME FORMULA",
-        title: "Over 10 Billion Intact Bioactive Messenger Vesicles",
-        desc: "Precision mRNA & regenerative proteins to counteract cellular senescence"
-      },
-      {
-        src: "images/danique-cream.jpg",
-        tag: "🛡️ 4. CELLULAR BARRIER RECOVERY CREAM",
-        title: "5 Biomimetic Ceramides + Copper Tripeptide-1 Balm",
-        desc: "Constructs an invisible lipid seal stopping TEWL on post-laser skin"
-      }
-    ];
-
-    let currentDeneseIndex = 0;
-
-    function switchDeneseHeroImage(index) {
-      if (index < 0 || index >= DENESE_GALLERY.length) return;
-      currentDeneseIndex = index;
-      const item = DENESE_GALLERY[index];
-
-      const mainImg = document.getElementById('denese-main-photo');
-      if (mainImg) {
-        mainImg.style.opacity = '0.3';
-        mainImg.style.transform = 'scale(0.98)';
-        setTimeout(() => {
-          mainImg.src = item.src;
-          mainImg.alt = item.title;
-          mainImg.style.opacity = '1';
-          mainImg.style.transform = 'scale(1)';
-        }, 150);
-      }
-
-      const tagEl = document.getElementById('denese-gallery-tag');
-      if (tagEl) tagEl.textContent = item.tag;
-
-      const titleEl = document.getElementById('denese-gallery-title');
-      if (titleEl) titleEl.textContent = item.title;
-
-      const descEl = document.getElementById('denese-gallery-desc');
-      if (descEl) descEl.textContent = item.desc;
-
-      // Update thumbnail active states
-      for (let i = 0; i < DENESE_GALLERY.length; i++) {
-        const btn = document.getElementById('dthumb-btn-' + i);
-        if (btn) {
-          if (i === index) {
-            btn.classList.add('is-active');
-            btn.setAttribute('aria-selected', 'true');
-          } else {
-            btn.classList.remove('is-active');
-            btn.setAttribute('aria-selected', 'false');
-          }
-        }
-      }
-    }
-
-    function prevDeneseHeroImage() {
-      let prevIndex = currentDeneseIndex - 1;
-      if (prevIndex < 0) prevIndex = DENESE_GALLERY.length - 1;
-      switchDeneseHeroImage(prevIndex);
-    }
-
-    function nextDeneseHeroImage() {
-      let nextIndex = (currentDeneseIndex + 1) % DENESE_GALLERY.length;
-      switchDeneseHeroImage(nextIndex);
-    }
-
-    // DENESE LAB DATA SYSTEM
-    const DENESE_DATA = {
-      exoluma: {
-        id: "exoluma",
-        name: "EXOLUMA Dual-Vial Exosomes",
-        badge: "Exosome Meso",
-        kicker: "1. INJECTABLES · DENESE LAB",
-        title: "EXOLUMA Dual-Vial Exosome Complex",
-        desc: "High-purity lyophilized exosome powder paired with hyaluronic acid solvent activator. Preserves over 10 billion active exosome particles to trigger intense cellular repair, accelerated re-epithelialization, and long-term neocollagenesis.",
-        img: "images/denese-exoluma-box.jpg",
-        actives: "10 Billion+ Lyophilized Exosome Nano-Vesicles, High-Purity Hyaluronic Acid",
-        format: "Dual-Vial Box Set (15mg Lyophilized Powder + 5ml HA Solvent)",
-        indications: "Clinical microneedling (MTS), RF micro-needling, post-laser infusion, anti-aging",
-        certs: "Korea MFDS Functional Cosmetic Approved, ISO 22716 CGMP",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 160
-      },
-      proluma: {
-        id: "proluma",
-        name: "PROLUMA Derma Revitalizer PDRN",
-        badge: "Salmon DNA",
-        kicker: "1. INJECTABLES · DENESE LAB",
-        title: "PROLUMA Derma Revitalizer (PDRN)",
-        desc: "Concentrated pharmaceutical salmon DNA PDRN solution engineered for clinical electroporation, microneedling, and post-laser rejuvenation. Stimulates Adenosine A2A receptors for capillary angiogenesis and tissue matrix repair.",
-        img: "images/proluma.jpg",
-        actives: "PDRN 5,000 ppm (Salmon DNA Polydeoxyribonucleotide), Multi-Peptides",
-        format: "Box of 5 × 3ml Sterile Ampoules",
-        indications: "Skin thinning, micro-circulation repair, post-acne scarring, laxity",
-        certs: "Korea MFDS Approved, Hypoallergenic Tested",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 110
-      },
-      cream: {
-        id: "denese-cream",
-        name: "Cellular Renewal Barrier Recovery Cream",
-        badge: "Barrier Seal",
-        kicker: "1. INJECTABLES · DENESE LAB",
-        title: "Cellular Renewal Barrier Recovery Cream",
-        desc: "Deep barrier restorative cream formulated with 5 biomimetic ceramides, squalane, and Copper Tripeptide-1 to reconstruct the lipid barrier, seal in hydration, and protect sensitized post-procedure skin.",
-        img: "images/danique-cream.jpg",
-        actives: "5 Biomimetic Ceramides (EOP, NP, AP, AS, NS), Squalane, Copper Tripeptide-1",
-        format: "50g Airless Vacuum Dispenser",
-        indications: "Post-laser resurfacing, post-chemical peels, severe dryness, barrier compromise",
-        certs: "Dermatologist Tested, Fragrance-Free, ISO 22716",
-        price: "Clinic Tier · Inquire for Quote",
-        rawPrice: 78
-      }
-    };
-
-    let activeDeneseModalKey = 'exoluma';
-
-    function openDeneseModal(key) {
-      const data = DENESE_DATA[key];
-      if (!data) return;
-      activeDeneseModalKey = key;
-
-      document.getElementById('dmodal-img').src = data.img;
-      document.getElementById('dmodal-img').alt = data.name;
-      document.getElementById('dmodal-badge').textContent = data.badge;
-      document.getElementById('dmodal-kicker').textContent = data.kicker;
-      document.getElementById('dmodal-title').textContent = data.title;
-      document.getElementById('dmodal-desc').textContent = data.desc;
-      document.getElementById('dmodal-actives').textContent = data.actives;
-      document.getElementById('dmodal-format').textContent = data.format;
-      document.getElementById('dmodal-indications').textContent = data.indications;
-      document.getElementById('dmodal-certs').textContent = data.certs;
-              <span class="luxury-detail-value" id="dmodal-price" style="font-size:13.5px;font-weight:700;color:var(--purple);"><span class="b2b-badge-tier">B2B TIER</span> Verified Clinics Only</span>
-
-      document.getElementById('dmodal-enquire-btn').href = "contact.html?inquiry=" + encodeURIComponent(data.name);
-
-      const addBtn = document.getElementById('dmodal-addcart-btn');
-      addBtn.onclick = () => {
-        addDeneseToCart(key);
-      };
-
-      const modal = document.getElementById('denese-modal');
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeDeneseModal() {
-      const modal = document.getElementById('denese-modal');
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    function addDeneseToCart(key) {
-      const data = DENESE_DATA[key];
-      if (!data || !window.NoviraCart) return;
-      window.NoviraCart.addItem({
-        id: data.id,
-        name: data.name,
-        category: 'Injectables',
-        price: data.rawPrice,
-        img: data.img
-      });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDeneseModal();
-    });
-  </script>
 
 </body>
 </html>

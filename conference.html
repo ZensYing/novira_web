@@ -4,19 +4,1161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Official NOVIRA medical aesthetic conferences, anatomical injection masterclasses, and hands-on energy-device symposiums for licensed practitioners.">
-  <meta name="theme-color" content="#32106f">
+  <meta name="theme-color" content="#2E086F">
   <title>1. Conference & Physician Masterclasses — NOVIRA</title>
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzJFMDg2RiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ============================================================
+       NOVIRA MODERN EVENT CONFERENCE DESIGN SYSTEM (LIGHT WHITE MODE)
+       Inspired by Kagont Conference Theme with Medical B2B Precision
+       ============================================================ */
+    :root {
+      --cf-primary: #2E086F;
+      --cf-primary-dark: #1e054b;
+      --cf-accent-purple: #2E086F;
+      --cf-accent-mid: #3d0e91;
+      --cf-accent-gold: #c99a2c;
+      --cf-accent-hover: #1d0548;
+      --cf-accent-silver: #999999;
+      --cf-accent-gold: #f59e0b;
+      --cf-bg-white: #ffffff;
+      --cf-bg-light: #ffffff;
+      --cf-bg-soft: #ffffff;
+      --cf-line: #ebe7f3;
+      --cf-text-heading: #120b24;
+      --cf-text-body: #554d66;
+      --cf-font-head: 'Celine Peach Sans', sans-serif;
+      --cf-font-body: 'Switzer', sans-serif;
+      --cf-font-title: 'Celine Peach Sans', sans-serif;
+    }
+
+    
+    /* ALL SECTIONS PURE WHITE BACKGROUND */
+    body,
+    body.cf-light-theme,
+    main,
+    main#main,
+    section,
+    .cf-hero-light,
+    .cf-video-section,
+    .cf-reasons-section,
+    .cf-schedule-section,
+    .cf-speakers-section,
+    .cf-cta-section,
+    .cf-container {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+    body.cf-light-theme {
+      background: #ffffff !important;
+      color: var(--cf-text-body);
+      font-family: 'Switzer', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    /* EXCLUSIVE FONT ENFORCEMENT: Celine Peach Sans (Headings) & Switzer (Body) */
+    h1, h2, h3, h4, h5, h6, 
+    .cf-hero-heading, 
+    .cf-video-title, 
+    .cf-section-heading-bold, 
+    .cf-schedule-title, 
+    .cf-plan-title, 
+    .cf-speaker-featured-info h3, 
+    .cf-speaker-floating-name-pill strong, 
+    .cf-cta-box-modern h2 {
+      font-family: 'Celine Peach Sans', sans-serif !important;
+      letter-spacing: -0.5px;
+    }
+
+    body, p, span, a, button, input, select, textarea, label, li, 
+    .cf-time-num, .cf-time-lbl, .cf-eyebrow-accent, .cf-eyebrow-center, 
+    .cf-pill-btn-purple, .cf-pill-btn-outline, .cf-plan-btn, .cf-day-btn,
+    .cf-support-text, .cf-plan-meta-item, .cf-speaker-featured-role,
+    .cf-speaker-floating-name-pill span {
+      font-family: 'Switzer', sans-serif !important;
+    }
+
+
+    .cf-container {
+      width: min(1280px, 92%);
+      margin: 0 auto;
+    }
+
+    /* SECTION 1: HERO (WHITE MODE WITH LIVE COUNTDOWN & SPEAKER CIRCLES) */
+    .cf-hero-light {
+      position: relative;
+      background: #ffffff;
+      padding: clamp(48px, 6vw, 84px) 0 clamp(60px, 7vw, 100px);
+      overflow: hidden;
+      border-bottom: 1px solid var(--cf-line);
+    }
+    .cf-hero-bg-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .cf-circle-ring-1 {
+      position: absolute;
+      right: 4%;
+      top: 15%;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(46, 8, 111, 0.25);
+      animation: spinSlow 50s linear infinite;
+    }
+    .cf-circle-ring-2 {
+      position: absolute;
+      right: 8%;
+      top: 22%;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      border: 2px solid rgba(46, 8, 111, 0.12);
+    }
+    .cf-circle-dot-decor {
+      position: absolute;
+      right: 32%;
+      top: 12%;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--cf-accent-purple);
+      box-shadow: 0 0 15px rgba(46, 8, 111, 0.6);
+    }
+    .cf-circle-dot-decor-2 {
+      position: absolute;
+      right: 18%;
+      bottom: 15%;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--cf-accent-silver);
+      box-shadow: 0 0 18px rgba(6, 182, 212, 0.5);
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .cf-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* COUNTDOWN TIMER BOXES (KAGONT SIGNATURE ELEMENT) */
+    .cf-countdown-bar {
+      display: inline-flex;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .cf-time-unit {
+      background: #ffffff;
+      border: 1px solid rgba(46, 8, 111, 0.2);
+      box-shadow: 0 8px 24px rgba(46, 8, 111, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 68px;
+      text-align: center;
+    }
+    .cf-time-num {
+      display: block;
+      background: linear-gradient(135deg, #2E086F 0%, #3d0e91 100%);
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 8px 6px;
+      letter-spacing: .5px;
+      font-family: 'Switzer', sans-serif;
+    }
+    .cf-time-lbl {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--cf-primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 6px 6px;
+      background: #fff;
+    }
+
+    .cf-hero-heading {
+      font-family: var(--cf-font-title);
+      font-size: clamp(36px, 4.8vw, 64px);
+      line-height: 1.05;
+      font-weight: 400;
+      color: var(--cf-text-heading);
+      letter-spacing: -1.2px;
+      margin: 0 0 16px;
+      text-transform: uppercase;
+    }
+    .cf-hero-heading em {
+      display: block;
+      font-family: var(--cf-font-title);
+      font-style: italic;
+      color: var(--cf-accent-purple);
+      font-size: clamp(28px, 3.8vw, 50px);
+      text-transform: none;
+      letter-spacing: -0.5px;
+      margin-top: 6px;
+    }
+
+    .cf-hero-subtitle {
+      font-size: clamp(15px, 1.25vw, 17.5px);
+      line-height: 1.8;
+      color: var(--cf-text-body);
+      margin: 0 0 32px;
+      max-width: 580px;
+    }
+
+    .cf-hero-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .cf-pill-btn-purple {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #2E086F 0%, #3d0e91 100%);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 99px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(46, 8, 111, 0.35);
+      transition: all .25s ease;
+      letter-spacing: .3px;
+    }
+    .cf-pill-btn-purple:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(46, 8, 111, 0.45);
+      background: linear-gradient(135deg, #1d0548 0%, #2E086F 100%);
+    }
+    .cf-pill-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: var(--cf-primary);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 99px;
+      text-decoration: none;
+      border: 1.5px solid var(--cf-primary);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .cf-pill-btn-outline:hover {
+      background: var(--cf-primary);
+      color: #ffffff;
+    }
+
+    /* SPONSOR / ACCREDITATION LOGOS LINE */
+    .cf-hero-sponsors {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px solid var(--cf-line);
+    }
+    .cf-sponsors-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--cf-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cf-sponsor-chips {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .cf-sponsor-chip {
+      background: #ffffff;
+      border: 1px solid var(--cf-line);
+      color: #3b2b54;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 6px;
+      letter-spacing: .5px;
+    }
+
+    /* HERO RIGHT: MULTI-SPEAKER OVERLAPPING CIRCLES COMPOSITION (KAGONT STYLE) */
+    .cf-hero-visual-stage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 440px;
+    }
+    .cf-visual-center-circle {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px dashed rgba(46, 8, 111, 0.25);
+      position: absolute;
+      display: grid;
+      place-items: center;
+    }
+    .cf-speaker-card-1 {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #ffffff;
+      box-shadow: 0 20px 40px rgba(46, 8, 111, 0.18);
+      z-index: 2;
+    }
+    .cf-speaker-card-1 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cf-speaker-card-2 {
+      position: absolute;
+      left: 10px;
+      bottom: 20px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      box-shadow: 0 16px 32px rgba(46, 8, 111, 0.15);
+      z-index: 3;
+    }
+    .cf-speaker-card-2 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cf-speaker-card-3 {
+      position: absolute;
+      right: 15px;
+      bottom: 40px;
+      width: 155px;
+      height: 155px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      box-shadow: 0 16px 32px rgba(46, 8, 111, 0.15);
+      z-index: 3;
+    }
+    .cf-speaker-card-3 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* FLOATING PILLS ON HERO VISUAL */
+    .cf-hero-floating-pill {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #ffffff;
+      border: 1px solid rgba(46, 8, 111, 0.25);
+      padding: 8px 18px;
+      border-radius: 99px;
+      box-shadow: 0 10px 25px rgba(46, 8, 111, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--cf-accent-purple);
+      z-index: 4;
+    }
+    .cf-hero-floating-pill-2 {
+      position: absolute;
+      bottom: 5px;
+      right: 35px;
+      background: var(--cf-primary);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 20px rgba(46, 8, 111, 0.3);
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* SECTION 2: VIDEO / CONFERENCE EXPERIENCE PREVIEW (SCREENSHOT 2 INSPIRED) */
+    .cf-video-section {
+      padding: clamp(60px, 7vw, 90px) 0;
+      background: #ffffff;
+      position: relative;
+    }
+    .cf-video-banner-wrap {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid var(--cf-line);
+      box-shadow: 0 25px 50px -10px rgba(46, 8, 111, 0.12);
+      max-height: 520px;
+    }
+    .cf-video-banner-wrap img {
+      width: 100%;
+      height: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s ease;
+    }
+    .cf-video-banner-wrap:hover img {
+      transform: scale(1.03);
+    }
+    .cf-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20, 6, 44, 0.25) 0%, rgba(20, 6, 44, 0.7) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+    }
+    .cf-play-btn {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 0 0 12px rgba(46, 8, 111, 0.25), 0 15px 30px rgba(0, 0, 0, 0.3);
+      transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      margin-bottom: 22px;
+    }
+    .cf-play-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 20px rgba(46, 8, 111, 0.35), 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .cf-play-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--cf-accent-purple);
+      margin-left: 4px;
+    }
+    .cf-video-title {
+      font-family: var(--cf-font-title);
+      font-size: clamp(24px, 3vw, 38px);
+      color: #ffffff;
+      font-weight: 500;
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .cf-video-sub {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 15px;
+      max-width: 600px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* SECTION 3: REASONS TO PARTICIPATE (SCREENSHOT 3 INSPIRED ASYMMETRIC COLLAGE) */
+    .cf-reasons-section {
+      padding: clamp(70px, 8vw, 100px) 0;
+      background: var(--cf-bg-light);
+      border-top: 1px solid var(--cf-line);
+      border-bottom: 1px solid var(--cf-line);
+    }
+    .cf-reasons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+
+    /* ASYMMETRIC IMAGE COLLAGE */
+    .cf-collage-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: center;
+      position: relative;
+    }
+    .cf-collage-arch {
+      position: relative;
+      border-radius: 140px 140px 24px 24px;
+      overflow: hidden;
+      aspect-ratio: 4/5.2;
+      box-shadow: 0 20px 40px -10px rgba(46, 8, 111, 0.12);
+      border: 3px solid #ffffff;
+    }
+    .cf-collage-arch::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 144px 144px 28px 28px;
+      border: 2px dashed rgba(46, 8, 111, 0.35);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .cf-collage-arch img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cf-collage-stacked {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .cf-collage-sm {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 16/11;
+      border: 3px solid #ffffff;
+      box-shadow: 0 14px 28px rgba(46, 8, 111, 0.08);
+    }
+    .cf-collage-sm img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* FLOATING METRIC BADGE BELOW ARCH */
+    .cf-collage-floating-stat {
+      position: absolute;
+      left: 10px;
+      bottom: -15px;
+      background: #ffffff;
+      padding: 12px 20px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(46, 8, 111, 0.14);
+      border: 1px solid var(--cf-line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+    .cf-floating-stat-icon {
+      font-size: 24px;
+    }
+    .cf-floating-stat-num {
+      display: block;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--cf-primary);
+      line-height: 1;
+    }
+    .cf-floating-stat-lbl {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--cf-text-body);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* REASONS COPY ON RIGHT */
+    .cf-reasons-copy {
+      padding-left: 10px;
+    }
+    .cf-eyebrow-accent {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cf-accent-purple);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cf-eyebrow-accent::after {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: var(--cf-accent-purple);
+      display: inline-block;
+    }
+
+    .cf-section-heading-bold {
+      font-family: var(--cf-font-title);
+      font-size: clamp(30px, 3.6vw, 46px);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--cf-text-heading);
+      margin: 0 0 18px;
+    }
+
+    .cf-reasons-lead {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--cf-text-body);
+      margin: 0 0 28px;
+    }
+
+    /* 2 FEATURE HIGHLIGHT BOXES */
+    .cf-reasons-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .cf-feature-item-box {
+      background: #ffffff;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--cf-line);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+    .cf-feature-item-box:hover {
+      transform: translateY(-2px);
+      border-color: rgba(46, 8, 111, 0.3);
+    }
+    .cf-feature-box-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1.5px solid var(--cf-line);
+      color: var(--cf-accent-purple);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .cf-feature-box-text strong {
+      display: block;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--cf-text-heading);
+      line-height: 1.3;
+    }
+    .cf-feature-box-text span {
+      font-size: 12px;
+      color: var(--cf-text-body);
+    }
+
+    .cf-reasons-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .cf-support-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cf-support-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--cf-accent-purple);
+    }
+    .cf-support-text span {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--cf-text-body);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .cf-support-text a {
+      color: var(--cf-primary);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .cf-support-text a:hover {
+      color: var(--cf-accent-purple);
+    }
+
+    /* SECTION 4: EVENTS SCHEDULE PLAN (SCREENSHOT 4 INSPIRED 4-COLUMN CARDS) */
+    .cf-schedule-section {
+      padding: clamp(70px, 8vw, 100px) 0;
+      background: #ffffff;
+    }
+    .cf-schedule-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+    .cf-eyebrow-center {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cf-accent-purple);
+      margin-bottom: 10px;
+    }
+    .cf-eyebrow-center::before,
+    .cf-eyebrow-center::after {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--cf-accent-purple);
+      display: inline-block;
+    }
+    .cf-schedule-title {
+      font-family: var(--cf-font-title);
+      font-size: clamp(30px, 3.6vw, 44px);
+      font-weight: 500;
+      color: var(--cf-text-heading);
+      margin: 0 0 12px;
+      position: relative;
+      display: inline-block;
+    }
+    .cf-schedule-title::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cf-accent-purple);
+      position: absolute;
+      top: 8px;
+      right: -14px;
+    }
+    .cf-schedule-desc {
+      font-size: 15px;
+      color: var(--cf-text-body);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* DAY FILTER PILLS (DAY 01, DAY 02, DAY 03) */
+    .cf-day-filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 32px 0 44px;
+    }
+    .cf-day-btn {
+      padding: 10px 24px;
+      border-radius: 99px;
+      font-size: 13.5px;
+      font-weight: 700;
+      background: #ffffff;
+      border: 1.5px solid var(--cf-line);
+      color: var(--cf-primary);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .cf-day-btn:hover {
+      border-color: var(--cf-accent-purple);
+      color: var(--cf-accent-purple);
+    }
+    .cf-day-btn.is-active {
+      background: linear-gradient(135deg, #2E086F 0%, #3d0e91 100%);
+      border-color: var(--cf-accent-purple);
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(46, 8, 111, 0.3);
+    }
+
+    /* 4-COLUMN CARDS GRID (SCREENSHOT 4) */
+    .cf-schedule-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .cf-plan-card {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid var(--cf-line);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 25px rgba(46, 8, 111, 0.04);
+      transition: all .3s ease;
+    }
+    .cf-plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px rgba(46, 8, 111, 0.1);
+      border-color: rgba(46, 8, 111, 0.3);
+    }
+    .cf-plan-media {
+      position: relative;
+      height: 170px;
+      overflow: hidden;
+      background: #190533;
+    }
+    .cf-plan-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+    .cf-plan-card:hover .cf-plan-media img {
+      transform: scale(1.06);
+    }
+    .cf-plan-date-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #ffffff;
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--cf-primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .cf-plan-body {
+      padding: 22px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .cf-plan-title {
+      font-family: var(--cf-font-title);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--cf-text-heading);
+      margin: 0 0 16px;
+      min-height: 46px;
+    }
+    .cf-plan-meta-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      display: grid;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--cf-text-body);
+      flex: 1;
+    }
+    .cf-plan-meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .cf-plan-meta-item i {
+      font-style: normal;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .cf-plan-meta-item strong {
+      color: var(--cf-text-heading);
+      font-weight: 600;
+    }
+    .cf-plan-btn {
+      width: 100%;
+      background: #ffffff;
+      border: 1.5px solid var(--cf-line);
+      color: var(--cf-primary);
+      padding: 10px;
+      border-radius: 99px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s ease;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+    .cf-plan-card:hover .cf-plan-btn {
+      background: var(--cf-primary);
+      color: #ffffff;
+      border-color: var(--cf-primary);
+    }
+
+    /* SECTION 5: OUR SPEAKERS (SCREENSHOT 5 INSPIRED) */
+    .cf-speakers-section {
+      padding: clamp(70px, 8vw, 100px) 0;
+      background: var(--cf-bg-light);
+      border-top: 1px solid var(--cf-line);
+    }
+    .cf-speakers-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .cf-speakers-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 26px;
+    }
+
+    /* FEATURED SPEAKER CARD ON LEFT (SCREENSHOT 5) */
+    .cf-speaker-featured-card {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid var(--cf-line);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 22px;
+      align-items: center;
+      box-shadow: 0 12px 30px rgba(46, 8, 111, 0.05);
+      transition: transform .25s ease;
+    }
+    .cf-speaker-featured-card:hover {
+      transform: translateY(-4px);
+    }
+    .cf-speaker-featured-photo-wrap {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      border: 2px solid var(--cf-accent-purple);
+    }
+    .cf-speaker-featured-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cf-speaker-featured-info h3 {
+      font-family: var(--cf-font-title);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--cf-text-heading);
+      margin: 0 0 6px;
+    }
+    .cf-speaker-featured-role {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cf-accent-purple);
+      margin-bottom: 12px;
+    }
+    .cf-speaker-featured-phone {
+      font-size: 12.5px;
+      color: var(--cf-text-body);
+      margin-bottom: 18px;
+      display: block;
+    }
+    .cf-speaker-socials {
+      display: flex;
+      gap: 8px;
+    }
+    .cf-social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--cf-primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      transition: transform .2s ease;
+    }
+    .cf-social-btn:hover {
+      transform: scale(1.1);
+      background: var(--cf-accent-purple);
+    }
+
+    /* PORTRAIT CARDS WITH FLOATING NAME PILL AT BOTTOM (SCREENSHOT 5) */
+    .cf-speaker-portrait-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--cf-line);
+      box-shadow: 0 12px 30px rgba(46, 8, 111, 0.05);
+      aspect-ratio: 3/3.8;
+      transition: transform .25s ease;
+    }
+    .cf-speaker-portrait-card:hover {
+      transform: translateY(-4px);
+    }
+    .cf-speaker-portrait-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cf-speaker-floating-name-pill {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: #ffffff;
+      padding: 12px 18px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      transition: all .2s ease;
+    }
+    .cf-speaker-floating-name-pill strong {
+      display: block;
+      font-family: var(--cf-font-title);
+      font-size: 16px;
+      color: var(--cf-text-heading);
+      font-weight: 600;
+    }
+    .cf-speaker-floating-name-pill span {
+      display: block;
+      font-size: 11.5px;
+      color: var(--cf-accent-purple);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* SECTION 6: IN-CLINIC MASTERCLASS CTA BANNER (PURE WHITE BACKGROUND) */
+    .cf-cta-section {
+      padding: 0 0 clamp(60px, 7vw, 90px);
+      background: #ffffff !important;
+    }
+    .cf-cta-box-modern {
+      background: #ffffff;
+      color: var(--cf-text-body);
+      border: 1.5px solid var(--cf-line);
+      border-radius: 26px;
+      padding: clamp(36px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(46, 8, 111, 0.06);
+    }
+    .cf-cta-box-modern::before {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 24px solid rgba(46, 8, 111, 0.05);
+      pointer-events: none;
+    }
+    .cf-cta-box-modern h2 {
+      font-family: var(--cf-font-title);
+      font-size: clamp(26px, 3.2vw, 40px);
+      font-weight: 400;
+      margin: 0 0 12px;
+      color: var(--cf-primary);
+    }
+    .cf-cta-box-modern p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--cf-text-body);
+      max-width: 600px;
+      margin: 0;
+    }
+
+    /* MODAL POPUP */
+    .media-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 7, 34, 0.7);
+      backdrop-filter: blur(8px);
+      display: grid;
+      place-items: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+      padding: 20px;
+    }
+    .media-modal-overlay.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .media-modal-card {
+      background: #ffffff;
+      border-radius: 22px;
+      max-width: 540px;
+      width: 100%;
+      padding: clamp(28px, 4vw, 38px);
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: translateY(20px);
+      transition: transform .3s ease;
+    }
+    .media-modal-overlay.is-active .media-modal-card {
+      transform: translateY(0);
+    }
+    .media-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f4f1f8;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: var(--cf-text-body);
+      transition: all .2s;
+    }
+    .media-modal-close:hover {
+      background: var(--cf-accent-purple);
+      color: #ffffff;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1080px) {
+      .cf-hero-grid { grid-template-columns: 1fr; }
+      .cf-hero-visual-stage { min-height: 380px; margin-top: 20px; }
+      .cf-reasons-grid { grid-template-columns: 1fr; }
+      .cf-schedule-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .cf-speakers-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .cf-speaker-portrait-card { aspect-ratio: 4/5; }
+    }
+    @media (max-width: 680px) {
+      .cf-schedule-grid-4 { grid-template-columns: 1fr; }
+      .cf-reasons-feature-grid { grid-template-columns: 1fr; }
+      .cf-speaker-featured-card { grid-template-columns: 1fr; }
+      .cf-hero-visual-stage { transform: scale(0.9); }
+      .cf-countdown-bar { gap: 8px; }
+      .cf-time-unit { min-width: 58px; }
+    }
+  </style>
 </head>
-<body>
+<body class="cf-light-theme">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="announcement">Official Medical Aesthetics &amp; Workstation Distributor · Exclusively for Licensed Clinics &amp; Medical Professionals · <a href="contact.html?inquiry=B2BPartnership">Apply for Clinic Partnership <span aria-hidden="true">↗</span></a></div>
   
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -33,8 +1175,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -50,13 +1192,13 @@
         </div>
 
         <div class="nav-item has-dropdown">
-          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false">
+          <a href="media.html" class="nav-link dropdown-toggle" id="nav-media-btn" aria-haspopup="true" aria-expanded="false" style="color:var(--cf-primary);font-weight:600;">
             MEDIA
             <svg class="nav-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <div class="dropdown-menu single-menu" role="menu" aria-labelledby="nav-media-btn">
             <ul class="dropdown-sublist">
-              <li><a href="conference.html" class="dropdown-subitem"><span class="cat-idx">1.</span> Conference</a></li>
+              <li><a href="conference.html" class="dropdown-subitem" style="color:var(--cf-accent-purple);font-weight:600;"><span class="cat-idx">1.</span> Conference</a></li>
               <li><a href="news.html" class="dropdown-subitem"><span class="cat-idx">2.</span> News</a></li>
             </ul>
           </div>
@@ -66,10 +1208,11 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
+    
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
       <div class="mobile-nav-inner">
         <a href="index.html" class="mobile-nav-link">HOME</a>
@@ -84,7 +1227,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -104,6 +1247,7 @@
           </div>
         </div>
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -119,246 +1263,422 @@
 
 <main id="main">
 
-  <!-- LUXURY HERO BANNER (CLEAN & BEAUTIFUL) -->
-  <section class="media-hero">
-    <div class="container">
-      <div class="conf-hero-grid">
-        <div class="conf-hero-left">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="media.html">Media</a>
-            <span class="sep">/</span>
-            <span class="current">Conference</span>
-          </nav>
+  <!-- ============================================================
+       SECTION 1: HERO (WHITE MODE WITH LIVE COUNTDOWN & SPEAKERS STAGE)
+       Inspired by Screenshot 1 with Light White B2B Aesthetic
+       ============================================================ -->
+  <section class="cf-hero-light">
+    <!-- Decorative Floating Rings -->
+    <div class="cf-hero-bg-shapes">
+      <div class="cf-circle-ring-1"></div>
+      <div class="cf-circle-ring-2"></div>
+      <div class="cf-circle-dot-decor"></div>
+      <div class="cf-circle-dot-decor-2"></div>
+    </div>
 
-          <div class="conf-hero-badge">
-            <span class="conf-badge-dot"></span>
-            <span>1. CONFERENCE · CME SYMPOSIUMS &amp; HANDS-ON WORKSHOPS</span>
+    <div class="cf-container">
+      <div class="cf-hero-grid">
+        <!-- Hero Left Info -->
+        <div>
+          <!-- Countdown Timer (Screenshot 1 Signature) -->
+          <div class="cf-countdown-bar" id="countdown-timer" aria-label="Conference Countdown">
+            <div class="cf-time-unit">
+              <span class="cf-time-num" id="cd-days">48</span>
+              <span class="cf-time-lbl">Days</span>
+            </div>
+            <div class="cf-time-unit">
+              <span class="cf-time-num" id="cd-hours">16</span>
+              <span class="cf-time-lbl">Hour</span>
+            </div>
+            <div class="cf-time-unit">
+              <span class="cf-time-num" id="cd-mins">42</span>
+              <span class="cf-time-lbl">Min</span>
+            </div>
+            <div class="cf-time-unit">
+              <span class="cf-time-num" id="cd-secs">19</span>
+              <span class="cf-time-lbl">Sec</span>
+            </div>
           </div>
 
-          <h1 class="conf-hero-title">
-            Clinical Conferences &amp;<br><em>Physician Masterclasses.</em>
+          <h1 class="cf-hero-heading">
+            Aesthetic Clinical
+            <em>Masterclasses 2026</em>
           </h1>
 
-          <p class="conf-hero-desc">
-            Elevating clinical standards through peer-to-peer education. NOVIRA hosts anatomical facial dissection symposiums, live micro-cannula injection masterclasses, and laser workstation physics certifications led by international Key Opinion Leaders (KOLs).
+          <p class="cf-hero-subtitle">
+            Join Southeast Asia's foremost aesthetic physicians, dermatologists, and plastic surgeons. Master live micro-cannula vectoring, periorbital safety, and laser workstation physics led by international Key Opinion Leaders.
           </p>
 
-          <div class="conf-hero-actions">
-            <button class="conf-hero-btn" onclick="openRegModal('2026 Academic Masterclass Series')">
-              <span>Reserve Masterclass Seat</span>
-              <span class="arrow" aria-hidden="true">↗</span>
+          <div class="cf-hero-actions-row">
+            <button class="cf-pill-btn-purple" onclick="openRegModal('2026 Academic Masterclass Series')">
+              Register Now <span aria-hidden="true">↗</span>
             </button>
-            <a href="#conf-grid" class="conf-hero-btn-outline">
-              <span>View 2026 Scheduled Events</span>
-              <span class="arrow" aria-hidden="true">↓</span>
+            <a href="#schedule-plan" class="cf-pill-btn-outline">
+              View Schedule Plan ↓
             </a>
           </div>
 
-          <div class="conf-hero-stats">
-            <div class="conf-stat-card">
-              <strong class="stat-number">450+</strong>
-              <span class="stat-label">Certified Clinicians</span>
-            </div>
-            <div class="conf-stat-card">
-              <strong class="stat-number">16</strong>
-              <span class="stat-label">CME Credit Hours</span>
-            </div>
-            <div class="conf-stat-card">
-              <strong class="stat-number">12</strong>
-              <span class="stat-label">International Faculty</span>
-            </div>
-            <div class="conf-stat-card">
-              <strong class="stat-number">100%</strong>
-              <span class="stat-label">Live Clinical Demonstrations</span>
+          <!-- Event Sponsored / Certified By Line -->
+          <div class="cf-hero-sponsors">
+            <span class="cf-sponsors-label">Accreditation By:</span>
+            <div class="cf-sponsor-chips">
+              <span class="cf-sponsor-chip">CYNOSURE LUTRONIC</span>
+              <span class="cf-sponsor-chip">CUTERA USA</span>
+              <span class="cf-sponsor-chip">JUVELOOK KOREA</span>
+              <span class="cf-sponsor-chip">CANFIELD 3D</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Side: Clean Featured Masterclass Spotlight Card -->
-        <div class="conf-hero-spotlight">
-          <div class="conf-spotlight-card">
-            <div class="conf-spotlight-header">
-              <span class="spotlight-tag">2026 FLAGSHIP MASTERCLASS</span>
-              <span class="spotlight-status">
-                <span class="status-pulse"></span>
-                <span>8 SEATS REMAINING</span>
-              </span>
-            </div>
-            <div class="conf-spotlight-image-wrap">
-              <img src="images/media-conference.jpg" alt="Aesthetic Injection Demonstration" loading="lazy">
-              <div class="conf-spotlight-overlay"></div>
-              <div class="conf-spotlight-badges">
-                <span class="spotlight-pill">⭐ CME ACCREDITED · 6 CREDITS</span>
-                <span class="spotlight-pill">📍 ROSEWOOD PHNOM PENH</span>
-              </div>
-            </div>
-            <div class="conf-spotlight-body">
-              <div class="conf-spotlight-date">📅 MAY 22–24, 2026 · 09:00 AM – 05:30 PM</div>
-              <h3 class="conf-spotlight-title">The Science of PDLLA: Micro-Cannula Vectoring &amp; Periorbital Safety</h3>
-              <p class="conf-spotlight-desc">Comprehensive anatomical deep dive into JUVELOOK PDLLA and hybrid biostimulator protocols. Master delicate tear trough re-contouring and zero-nodule vectoring.</p>
-              <div class="conf-spotlight-footer">
-                <div class="conf-spotlight-faculty">
-                  <span class="faculty-avatar">AV</span>
-                  <span>Led by Dr. Alexandre Vance &amp; Dr. Sophia Kim</span>
-                </div>
-                <button class="button primary conf-spotlight-btn" onclick="openRegModal('Advanced Biostimulator Masterclass (Juvelook)')">
-                  Reserve Seat ↗
-                </button>
-              </div>
-            </div>
+        <!-- Hero Right: Overlapping Speaker Cutout Circles (Screenshot 1 Pattern) -->
+        <div class="cf-hero-visual-stage">
+          <div class="cf-visual-center-circle"></div>
+          
+          <!-- Top Floating Pill -->
+          <div class="cf-hero-floating-pill">
+            <span>⭐ CME ACCREDITED · 16 CREDITS</span>
+          </div>
+
+          <!-- Main Speaker (Dr. Alexandre Vance) -->
+          <div class="cf-speaker-card-1">
+            <img src="images/faculty-vance.jpg" alt="Dr. Alexandre Vance, MD, PhD" loading="eager">
+          </div>
+
+          <!-- Left Speaker (Dr. Sophia Kim) -->
+          <div class="cf-speaker-card-2">
+            <img src="images/faculty-kim.jpg" alt="Dr. Sophia Kim, MD" loading="eager">
+          </div>
+
+          <!-- Right Speaker (Prof. Marcus Thorne) -->
+          <div class="cf-speaker-card-3">
+            <img src="images/faculty-thorne.jpg" alt="Prof. Marcus Thorne, MD, FAAD" loading="eager">
+          </div>
+
+          <!-- Bottom Floating Pill -->
+          <div class="cf-hero-floating-pill-2">
+            <span>📍 Rosewood Phnom Penh</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- UPCOMING MASTERCLASSES & WORKSHOPS -->
-  <section class="section container">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Academic &amp; Clinical Calendar</p>
-        <h2 style="font-size:clamp(26px, 3.2vw, 40px);">2026 Scheduled Symposiums</h2>
+  <!-- ============================================================
+       SECTION 2: VIDEO / CONFERENCE EXPERIENCE BANNER
+       Inspired by Screenshot 2 with Central Play Button
+       ============================================================ -->
+  <section class="cf-video-section">
+    <div class="cf-container">
+      <div class="cf-video-banner-wrap">
+        <img src="images/conference-slide-1.jpg" alt="Aesthetic Leadership Symposium Grand Auditorium Live Demonstration" loading="lazy">
+        <div class="cf-video-overlay">
+          <button class="cf-play-btn" onclick="openVideoModal()" aria-label="Watch Symposium Video Highlights">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <h2 class="cf-video-title">Big Aesthetic Symposium 2026</h2>
+          <p class="cf-video-sub">
+            Watch the 2025 Clinical Highlights: 450+ doctors, live cadaver dissection projection, and real-time micro-cannula periorbital demonstrations at Rosewood Hotel.
+          </p>
+        </div>
       </div>
-    </div>
-
-    <!-- Filter Tabs -->
-    <div class="media-filter-bar">
-      <button class="media-tab-btn is-active" data-filter="all" onclick="filterEvents('all', this)">All Masterclasses (4)</button>
-      <button class="media-tab-btn" data-filter="biostimulators" onclick="filterEvents('biostimulators', this)">Biostimulators &amp; PDLLA</button>
-      <button class="media-tab-btn" data-filter="lasers" onclick="filterEvents('lasers', this)">Lasers &amp; Energy Platforms</button>
-      <button class="media-tab-btn" data-filter="stemcell" onclick="filterEvents('stemcell', this)">Stem Cell &amp; Biologics</button>
-    </div>
-
-    <div class="conf-cards-grid" id="conf-grid">
-      
-      <!-- EVENT 1: JUVELOOK -->
-      <article class="conf-card" data-category="biostimulators">
-        <div class="conf-card-media">
-          <img src="images/juvelook.png" alt="Juvelook PDLLA Masterclass" style="object-position:center; background:#1b0833; padding:15px;" loading="lazy">
-          <span class="conf-media-badge">CME ACCREDITED · 6 CREDITS</span>
-          <span class="conf-date-pill">📅 MAY 22–24, 2026</span>
-        </div>
-        <div class="conf-card-body">
-          <div class="conf-card-kicker">ADVANCED INJECTABLE WORKSHOP · PHNOM PENH</div>
-          <h3 class="conf-card-title">The Science of PDLLA: Micro-Cannula Vectoring &amp; Periorbital Safety</h3>
-          <p class="conf-card-desc">Comprehensive anatomical deep dive into JUVELOOK poly-D,L-lactic acid and uncrosslinked HA hybrid chemistry. Master delicate tear trough re-contouring, neck laxity vectoring, and zero-nodule protocols.</p>
-          <div class="conf-meta-chips">
-            <span class="conf-meta-chip">📍 Rosewood Hotel Ballroom</span>
-            <span class="conf-meta-chip">💉 Live Patient Injections</span>
-            <span class="conf-meta-chip">👨‍⚕️ Hands-On Ratio 1:4</span>
-          </div>
-          <div class="conf-card-footer">
-            <div class="conf-seats-indicator">Seats Limited (8 Remaining)</div>
-            <button class="button primary" style="padding:9px 18px; font-size:12.5px;" onclick="openRegModal('Advanced Biostimulator Masterclass (Juvelook)')">Reserve Seat ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- EVENT 2: CYNOSURE LUTRONIC -->
-      <article class="conf-card" data-category="lasers">
-        <div class="conf-card-media">
-          <img src="images/device-lutronic.png" alt="Cynosure Lutronic Symposium" style="object-position:center; background:#110424; padding:10px;" loading="lazy">
-          <span class="conf-media-badge">ENERGY WORKSTATION SUMMIT</span>
-          <span class="conf-date-pill">📅 JULY 15–17, 2026</span>
-        </div>
-        <div class="conf-card-body">
-          <div class="conf-card-kicker">REGIONAL LASER SYMPOSIUM · SOUTHEAST ASIA</div>
-          <h3 class="conf-card-title">Cynosure Lutronic Energy Summit: Picosecond Physics &amp; Melasma Clearance</h3>
-          <p class="conf-card-desc">Advanced clinical parameters for Hollywood Spectra™ 1064/532nm and dual-wave acoustic remodeling. Learn customized fluence calibration for Asian Fitzpatrick skin types III–V to prevent rebound hyperpigmentation.</p>
-          <div class="conf-meta-chips">
-            <span class="conf-meta-chip">📍 Sofitel Grand Ballroom</span>
-            <span class="conf-meta-chip">⚡ Workstation Calibration</span>
-            <span class="conf-meta-chip">🛡️ Laser Safety Officer (LSO)</span>
-          </div>
-          <div class="conf-card-footer">
-            <div class="conf-seats-indicator" style="color:var(--purple);">Early Bird Registration Open</div>
-            <button class="button primary" style="padding:9px 18px; font-size:12.5px;" onclick="openRegModal('Cynosure Lutronic Laser & Energy Symposium')">Reserve Seat ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- EVENT 3: CUTERA AVICLEAR -->
-      <article class="conf-card" data-category="lasers">
-        <div class="conf-card-media">
-          <img src="images/device-cutera.png" alt="Cutera AviClear Forum" style="object-position:center; background:#1c0734; padding:10px;" loading="lazy">
-          <span class="conf-media-badge">VASCULAR &amp; SEBACEOUS ACNE</span>
-          <span class="conf-date-pill">📅 OCTOBER 10–12, 2026</span>
-        </div>
-        <div class="conf-card-body">
-          <div class="conf-card-kicker">CLINICAL FORUM · CUTERA ACADEMY</div>
-          <h3 class="conf-card-title">Targeted Sebaceous Laser: Eliminating Oral Isotretinoin with 1726nm AviClear</h3>
-          <p class="conf-card-desc">Clinical case study presentations and patient selection criteria for long-term acne remission. Understand sapphire contact cooling mechanisms, pain modulation, and pediatric/young-adult protocols.</p>
-          <div class="conf-meta-chips">
-            <span class="conf-meta-chip">📍 NOVIRA Clinical HQ</span>
-            <span class="conf-meta-chip">🎯 1726nm Protocols</span>
-            <span class="conf-meta-chip">🔬 Patient Histology</span>
-          </div>
-          <div class="conf-card-footer">
-            <div class="conf-seats-indicator" style="color:var(--purple);">Advance Registration</div>
-            <button class="button primary" style="padding:9px 18px; font-size:12.5px;" onclick="openRegModal('Cutera Vascular & Acne Clinical Forum')">Reserve Seat ↗</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- EVENT 4: DANIQUE STEM CELL -->
-      <article class="conf-card" data-category="stemcell">
-        <div class="conf-card-media">
-          <img src="images/danique.png" alt="DANIQUE Stem Cell Symposium" style="object-position:center; background:#15062a; padding:15px;" loading="lazy">
-          <span class="conf-media-badge">KOREA MFDS REGENERATIVE BIOLOGY</span>
-          <span class="conf-date-pill">📅 NOVEMBER 28, 2026</span>
-        </div>
-        <div class="conf-card-body">
-          <div class="conf-card-kicker">CELLULAR RECOVERY CONGRESS · SEOUL / PHNOM PENH</div>
-          <h3 class="conf-card-title">DANIQUE Stem Cell Synergy: STeMiN™ 50+ Growth Factors in Clinical Practice</h3>
-          <p class="conf-card-desc">Translating conditioned media cellular biology into practical clinic revenue. Synergy protocols between PhytoG Edelweiss stem cells, 11+ patented actives, and immediate post-laser fractional re-epithelialization.</p>
-          <div class="conf-meta-chips">
-            <span class="conf-meta-chip">📍 Hybrid (In-Person &amp; Live Stream)</span>
-            <span class="conf-meta-chip">🧬 50+ Growth Factors</span>
-            <span class="conf-meta-chip">📜 Korea FDA Approved</span>
-          </div>
-          <div class="conf-card-footer">
-            <div class="conf-seats-indicator" style="color:var(--purple);">Registration Open</div>
-            <button class="button primary" style="padding:9px 18px; font-size:12.5px;" onclick="openRegModal('DANIQUE Stem Cell & Regenerative Congress')">Reserve Seat ↗</button>
-          </div>
-        </div>
-      </article>
-
     </div>
   </section>
 
-  <!-- DISTINGUISHED FACULTY SPEAKERS -->
-  <section class="section" style="background:#f9f5fd;">
-    <div class="container">
-      <div class="section-heading">
+  <!-- ============================================================
+       SECTION 3: REASONS TO PARTICIPATE (ASYMMETRIC COLLAGE)
+       Inspired by Screenshot 3 with Arch Image & Feature Boxes
+       ============================================================ -->
+  <section class="cf-reasons-section">
+    <div class="cf-container">
+      <div class="cf-reasons-grid">
+        
+        <!-- Left: Asymmetric Image Collage (Screenshot 3 Pattern) -->
+        <div class="cf-collage-wrap">
+          <div class="cf-collage-arch">
+            <img src="images/conference-slide-2.jpg" alt="Live Micro-Cannula Facial Vectoring" loading="lazy">
+          </div>
+          <div class="cf-collage-stacked">
+            <div class="cf-collage-sm">
+              <img src="images/conference-slide-1.jpg" alt="Auditorium Masterclass Lecture" loading="lazy">
+            </div>
+            <div class="cf-collage-sm">
+              <img src="images/conference-slide-3.jpg" alt="Doctors Reviewing 3D Case Data" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Floating Stat Badge (Screenshot 3 Signature) -->
+          <div class="cf-collage-floating-stat">
+            <span class="cf-floating-stat-icon">🎙️</span>
+            <div>
+              <span class="cf-floating-stat-num">12+</span>
+              <span class="cf-floating-stat-lbl">Iconic KOL Speakers</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content & Reasons to Participate -->
+        <div class="cf-reasons-copy">
+          <div class="cf-eyebrow-accent">WHAT IS EVENT CONFERENCE</div>
+          <h2 class="cf-section-heading-bold">Reasons to Participate in Our Event Program</h2>
+          <p class="cf-reasons-lead">
+            Attend Southeast Asia's benchmark medical aesthetics symposium in Phnom Penh. Connect with over 450 certified clinicians, dermatologists, and clinic owners for two full days of high-yield clinical lectures, live patient injections, and peer networking.
+          </p>
+
+          <!-- 2 Icon Feature Boxes (Screenshot 3) -->
+          <div class="cf-reasons-feature-grid">
+            <div class="cf-feature-item-box">
+              <div class="cf-feature-box-icon">👨‍⚕️</div>
+              <div class="cf-feature-box-text">
+                <strong>450+ Clinicians</strong>
+                <span>In-Person Masterclass</span>
+              </div>
+            </div>
+            <div class="cf-feature-item-box">
+              <div class="cf-feature-box-icon">🔬</div>
+              <div class="cf-feature-box-text">
+                <strong>1:4 Doctor Ratio</strong>
+                <span>Direct Hands-On Mentorship</span>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size:13.5px; line-height:1.7; color:#726b82; margin:0 0 24px;">
+            Every attending doctor receives an individual sterile procedure tray, real-time ultrasound Doppler vessel mapping, and an official CME certificate recognized across Southeast Asia.
+          </p>
+
+          <!-- Action Button + Call Support -->
+          <div class="cf-reasons-cta-row">
+            <button class="cf-pill-btn-purple" onclick="openRegModal('2026 Academic Masterclass Series')">
+              BUY TICKET ↗
+            </button>
+            <div class="cf-support-badge">
+              <img class="cf-support-avatar" src="images/faculty-kim.jpg" alt="Medical Education Coordinator">
+              <div class="cf-support-text">
+                <span>Telegram &amp; WhatsApp:</span>
+                <a href="https://wa.me/85569811399" target="_blank" rel="noopener">+069 811 399</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: EVENTS SCHEDULE PLAN (4-COLUMN CARDS)
+       Inspired by Screenshot 4 with Day Filters & Card Details
+       ============================================================ -->
+  <section class="cf-schedule-section" id="schedule-plan">
+    <div class="cf-container">
+      <div class="cf-schedule-header">
+        <div class="cf-eyebrow-center">SCHEDULE FOR EVENT</div>
+        <h2 class="cf-schedule-title">Our Events Schedule Plan</h2>
+        <p class="cf-schedule-desc">
+          We are hosting the 2026 Southeast Asia Medical Aesthetics Summit with dedicated symposium tracks for injectables, laser workstations, and regenerative stem cell biology.
+        </p>
+
+        <!-- Day Filter Tabs (Day 01, Day 02, Day 03) -->
+        <div class="cf-day-filters">
+          <button class="cf-day-btn is-active" data-day="all" onclick="filterSchedule('all', this)">All Days (4)</button>
+          <button class="cf-day-btn" data-day="day1" onclick="filterSchedule('day1', this)">Day 01 · May 22</button>
+          <button class="cf-day-btn" data-day="day2" onclick="filterSchedule('day2', this)">Day 02 · July 15</button>
+          <button class="cf-day-btn" data-day="day3" onclick="filterSchedule('day3', this)">Day 03 · Oct 10</button>
+        </div>
+      </div>
+
+      <!-- 4-Column Cards Grid (Screenshot 4 Pattern) -->
+      <div class="cf-schedule-grid-4" id="schedule-cards-grid">
+        
+        <!-- CARD 1: JUVELOOK -->
+        <article class="cf-plan-card" data-day="day1">
+          <div class="cf-plan-media">
+            <img src="images/conference-slide-2.jpg" alt="The Science of PDLLA" loading="lazy">
+            <span class="cf-plan-date-badge">📅 22, May 2026</span>
+          </div>
+          <div class="cf-plan-body">
+            <h3 class="cf-plan-title">The Science of PDLLA &amp; Periorbital Vectoring</h3>
+            <ul class="cf-plan-meta-list">
+              <li class="cf-plan-meta-item">
+                <i>🎟️</i>
+                <div><strong>CME Credits:</strong> 6 Credit Hours</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>⏰</i>
+                <div><strong>Timing:</strong> 09:00 AM – 05:30 PM</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>📍</i>
+                <div><strong>Location:</strong> Rosewood Hotel Ballroom</div>
+              </li>
+            </ul>
+            <button class="cf-plan-btn" onclick="openRegModal('The Science of PDLLA Masterclass')">
+              Register Seat ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 2: CYNOSURE LUTRONIC -->
+        <article class="cf-plan-card" data-day="day2">
+          <div class="cf-plan-media">
+            <img src="images/conference-slide-1.jpg" alt="Picosecond Laser Physics" loading="lazy">
+            <span class="cf-plan-date-badge">📅 15, July 2026</span>
+          </div>
+          <div class="cf-plan-body">
+            <h3 class="cf-plan-title">Picosecond Physics &amp; Melasma Clearance</h3>
+            <ul class="cf-plan-meta-list">
+              <li class="cf-plan-meta-item">
+                <i>🎟️</i>
+                <div><strong>CME Credits:</strong> 8 Credit Hours</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>⏰</i>
+                <div><strong>Timing:</strong> 09:00 AM – 05:30 PM</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>📍</i>
+                <div><strong>Location:</strong> Sofitel Grand Ballroom</div>
+              </li>
+            </ul>
+            <button class="cf-plan-btn" onclick="openRegModal('Cynosure Lutronic Laser Summit')">
+              Register Seat ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 3: CUTERA AVICLEAR -->
+        <article class="cf-plan-card" data-day="day3">
+          <div class="cf-plan-media">
+            <img src="images/conference-slide-3.jpg" alt="1726nm Targeted Acne Laser" loading="lazy">
+            <span class="cf-plan-date-badge">📅 10, Oct 2026</span>
+          </div>
+          <div class="cf-plan-body">
+            <h3 class="cf-plan-title">Targeted Sebaceous Laser: 1726nm AviClear</h3>
+            <ul class="cf-plan-meta-list">
+              <li class="cf-plan-meta-item">
+                <i>🎟️</i>
+                <div><strong>CME Credits:</strong> 6 Credit Hours</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>⏰</i>
+                <div><strong>Timing:</strong> 10:00 AM – 04:00 PM</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>📍</i>
+                <div><strong>Location:</strong> NOVIRA Clinical HQ</div>
+              </li>
+            </ul>
+            <button class="cf-plan-btn" onclick="openRegModal('Cutera AviClear Clinical Forum')">
+              Register Seat ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 4: DANIQUE STEM CELL -->
+        <article class="cf-plan-card" data-day="day1">
+          <div class="cf-plan-media">
+            <img src="images/danique/lineup.jpg" alt="STeMiN Growth Factors" style="object-position:50% 80%;" loading="lazy">
+            <span class="cf-plan-date-badge">📅 28, Nov 2026</span>
+          </div>
+          <div class="cf-plan-body">
+            <h3 class="cf-plan-title">STeMiN™ 50+ Growth Factors in Practice</h3>
+            <ul class="cf-plan-meta-list">
+              <li class="cf-plan-meta-item">
+                <i>🎟️</i>
+                <div><strong>CME Credits:</strong> 4 Credit Hours</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>⏰</i>
+                <div><strong>Timing:</strong> 01:00 PM – 06:00 PM</div>
+              </li>
+              <li class="cf-plan-meta-item">
+                <i>📍</i>
+                <div><strong>Location:</strong> Hybrid Seoul / Phnom Penh</div>
+              </li>
+            </ul>
+            <button class="cf-plan-btn" onclick="openRegModal('DANIQUE Stem Cell Congress')">
+              Register Seat ↗
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: OUR SPEAKERS (SCREENSHOT 5 INSPIRED)
+       Featured Speaker on Left + Portrait Cards with Floating Name Pill
+       ============================================================ -->
+  <section class="cf-speakers-section">
+    <div class="cf-container">
+      <div class="cf-speakers-header-row">
         <div>
-          <p class="eyebrow">World-Renowned Educators</p>
-          <h2 style="font-size:clamp(26px, 3.2vw, 38px);">International Faculty &amp; Medical Advisory Board</h2>
+          <div class="cf-eyebrow-accent">OUR SPEAKERS</div>
+          <h2 class="cf-section-heading-bold" style="margin:0;">Our Amazing &amp; Learned Event Speakers</h2>
+        </div>
+        <div>
+          <button class="cf-pill-btn-purple" onclick="openRegModal('Faculty & Advisory Inquiries')">
+            REGISTRATION NOW <span aria-hidden="true">↗</span>
+          </button>
         </div>
       </div>
 
-      <div class="faculty-grid">
-        <div class="faculty-card">
-          <img class="faculty-photo" src="images/about-team-1.jpg" alt="Dr. Alexandre Vance, MD">
-          <h3 class="faculty-name">Dr. Alexandre Vance, MD, PhD</h3>
-          <div class="faculty-title">Senior Clinical Director · Paris &amp; Seoul</div>
-          <p class="faculty-bio">Specialist in facial anatomical vectoring and biostimulator rheology. Over 18 years training dermatologists across Europe and Southeast Asia in vascular occlusion prevention and micro-cannula precision.</p>
+      <div class="cf-speakers-grid">
+        
+        <!-- FEATURED SPEAKER 1 (SCREENSHOT 5) -->
+        <div class="cf-speaker-featured-card">
+          <div class="cf-speaker-featured-photo-wrap">
+            <img src="images/faculty-vance.jpg" alt="Dr. Alexandre Vance" loading="lazy">
+          </div>
+          <div class="cf-speaker-featured-info">
+            <h3>Dr. Alexandre Vance</h3>
+            <div class="cf-speaker-featured-role">Senior Clinical Director</div>
+            <span class="cf-speaker-featured-phone">+33 (0) 1 45 28 90 00</span>
+            <div class="cf-speaker-socials">
+              <a href="#" class="cf-social-btn" aria-label="LinkedIn">in</a>
+              <a href="#" class="cf-social-btn" aria-label="Medical Faculty">MD</a>
+            </div>
+          </div>
         </div>
 
-        <div class="faculty-card">
-          <img class="faculty-photo" src="images/about-team-2.jpg" alt="Dr. Sophia Kim, MD">
-          <h3 class="faculty-name">Dr. Sophia Kim, MD</h3>
-          <div class="faculty-title">Head of Clinical Protocols · Seoul National University</div>
-          <p class="faculty-bio">Key Opinion Leader for Korean stem cell biotechnology and exosome therapies. Principal investigator in clinical trials comparing uncrosslinked HA hybrid biostimulators with traditional poly-L-lactic acid.</p>
+        <!-- SPEAKER 2 (PORTRAIT WITH FLOATING NAME PILL) -->
+        <div class="cf-speaker-portrait-card">
+          <img src="images/faculty-kim.jpg" alt="Dr. Sophia Kim" loading="lazy">
+          <div class="cf-speaker-floating-name-pill">
+            <strong>Dr. Sophia Kim</strong>
+            <span>Seoul National University</span>
+          </div>
         </div>
 
-        <div class="faculty-card">
-          <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg, #32106f, #6d34b8);color:white;display:grid;place-items:center;font-size:32px;font-family:var(--serif);margin:0 auto 16px;box-shadow:0 6px 16px rgba(50, 16, 111, 0.2);">MT</div>
-          <h3 class="faculty-name">Prof. Marcus Thorne, MD, FAAD</h3>
-          <div class="faculty-title">Laser Physics Consultant · Harvard Medical Alum</div>
-          <p class="faculty-bio">Pioneer in picosecond acoustic photomechanical destruction of melasma pigments and fractional RF needle impedance monitoring for safe dermal remodeling in dark Fitzpatrick skin types.</p>
+        <!-- SPEAKER 3 (PORTRAIT WITH FLOATING NAME PILL) -->
+        <div class="cf-speaker-portrait-card">
+          <img src="images/faculty-thorne.jpg" alt="Prof. Marcus Thorne" loading="lazy">
+          <div class="cf-speaker-floating-name-pill">
+            <strong>Prof. Marcus Thorne</strong>
+            <span>Harvard Medical Alum</span>
+          </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6: IN-CLINIC MASTERCLASS CTA BANNER
+       ============================================================ -->
+  <section class="cf-cta-section">
+    <div class="cf-container">
+      <div class="cf-cta-box-modern">
+        <div>
+          <h2>Host an In-Clinic Masterclass for Your Medical Team</h2>
+          <p>
+            NOVIRA provides tailored in-clinic training modules, device commissioning, and KOL physician shadowing directly at your aesthetic clinic or hospital facility.
+          </p>
+        </div>
+        <a class="cf-pill-btn-purple" href="contact.html?inquiry=ClinicalTraining">
+          Schedule Clinic Training <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </div>
   </section>
@@ -369,75 +1689,137 @@
   <div class="media-modal-overlay" id="conf-reg-modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="media-modal-card">
       <button class="media-modal-close" onclick="closeRegModal()" aria-label="Close modal">✕</button>
-      <span class="conf-card-kicker">PHYSICIAN REGISTRATION</span>
-      <h3 id="modal-event-title" style="font-size:22px; color:var(--purple-dark); margin:4px 0 16px;">Biostimulator Masterclass</h3>
-      <p style="font-size:13px; color:#635277; line-height:1.6; margin-bottom:20px;">
-        Please provide your clinical credentials to reserve attendance. Seats are limited to certified medical practitioners and plastic surgeons.
+      <div style="font-size:11px; font-weight:700; letter-spacing:1.5px; color:var(--cf-accent-purple); text-transform:uppercase; margin-bottom:4px;">
+        PHYSICIAN CME REGISTRATION
+      </div>
+      <h3 id="modal-event-title" style="font-family:var(--cf-font-title); font-size:22px; color:var(--cf-primary); margin:0 0 12px; line-height:1.3;">
+        Biostimulator Masterclass
+      </h3>
+      <p style="font-size:13.5px; color:var(--cf-text-body); line-height:1.6; margin-bottom:20px;">
+        Please provide your medical credentials to reserve attendance. Masterclass registration is reserved exclusively for certified medical practitioners, dermatologists, and plastic surgeons.
       </p>
 
       <form onsubmit="handleConfSubmit(event)">
-        <div class="checkout-form-group">
-          <label for="reg-dr-name">Doctor Full Name <span style="color:#c0392b;">*</span></label>
-          <input class="checkout-input" type="text" id="reg-dr-name" placeholder="Dr. Sarah Lin, MD" required>
+        <div class="checkout-form-group" style="margin-bottom:14px;">
+          <label for="reg-dr-name" style="font-size:12.5px; font-weight:600; display:block; margin-bottom:6px; color:#3b2b54;">Doctor Full Name <span style="color:#c0392b;">*</span></label>
+          <input class="checkout-input" type="text" id="reg-dr-name" placeholder="Dr. Sarah Lin, MD" required style="width:100%; padding:11px 14px; border:1px solid #dcd7e6; border-radius:8px; font-size:14px;">
         </div>
 
-        <div class="checkout-form-row">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
           <div class="checkout-form-group">
-            <label for="reg-clinic-name">Clinic / Hospital <span style="color:#c0392b;">*</span></label>
-            <input class="checkout-input" type="text" id="reg-clinic-name" placeholder="Apex Dermatology" required>
+            <label for="reg-clinic-name" style="font-size:12.5px; font-weight:600; display:block; margin-bottom:6px; color:#3b2b54;">Clinic / Hospital <span style="color:#c0392b;">*</span></label>
+            <input class="checkout-input" type="text" id="reg-clinic-name" placeholder="Apex Dermatology" required style="width:100%; padding:11px 14px; border:1px solid #dcd7e6; border-radius:8px; font-size:14px;">
           </div>
           <div class="checkout-form-group">
-            <label for="reg-license-id">Medical License ID <span style="color:#c0392b;">*</span></label>
-            <input class="checkout-input" type="text" id="reg-license-id" placeholder="MED-994821" required>
-          </div>
-        </div>
-
-        <div class="checkout-form-row">
-          <div class="checkout-form-group">
-            <label for="reg-email">Official Email <span style="color:#c0392b;">*</span></label>
-            <input class="checkout-input" type="email" id="reg-email" placeholder="doctor@clinic.com" required>
-          </div>
-          <div class="checkout-form-group">
-            <label for="reg-phone">WhatsApp / Phone <span style="color:#c0392b;">*</span></label>
-            <input class="checkout-input" type="tel" id="reg-phone" placeholder="+855 23 888 999" required>
+            <label for="reg-license-id" style="font-size:12.5px; font-weight:600; display:block; margin-bottom:6px; color:#3b2b54;">Medical License ID <span style="color:#c0392b;">*</span></label>
+            <input class="checkout-input" type="text" id="reg-license-id" placeholder="MED-994821" required style="width:100%; padding:11px 14px; border:1px solid #dcd7e6; border-radius:8px; font-size:14px;">
           </div>
         </div>
 
-        <button type="submit" class="button primary" style="width:100%; padding:14px; margin-top:10px; cursor:pointer;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px;">
+          <div class="checkout-form-group">
+            <label for="reg-email" style="font-size:12.5px; font-weight:600; display:block; margin-bottom:6px; color:#3b2b54;">Official Email <span style="color:#c0392b;">*</span></label>
+            <input class="checkout-input" type="email" id="reg-email" placeholder="doctor@clinic.com" required style="width:100%; padding:11px 14px; border:1px solid #dcd7e6; border-radius:8px; font-size:14px;">
+          </div>
+          <div class="checkout-form-group">
+            <label for="reg-phone" style="font-size:12.5px; font-weight:600; display:block; margin-bottom:6px; color:#3b2b54;">WhatsApp / Phone <span style="color:#c0392b;">*</span></label>
+            <input class="checkout-input" type="tel" id="reg-phone" placeholder="+855 23 888 999" required style="width:100%; padding:11px 14px; border:1px solid #dcd7e6; border-radius:8px; font-size:14px;">
+          </div>
+        </div>
+
+        <button type="submit" class="cf-pill-btn-purple" style="width:100%; justify-content:center; padding:13px; font-size:14px;">
           Submit Masterclass Registration ↗
         </button>
       </form>
     </div>
   </div>
 
+  <!-- VIDEO MODAL -->
+  <div class="media-modal-overlay" id="conf-video-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="media-modal-card" style="max-width:760px; padding:20px;">
+      <button class="media-modal-close" onclick="closeVideoModal()" aria-label="Close video">✕</button>
+      <div style="position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000;">
+        <img src="images/conference-slide-1.jpg" alt="Video preview" style="width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px;">
+          <h3 style="color:#fff; font-family:var(--cf-font-title); font-size:24px; margin-bottom:10px;">2025 Clinical Masterclass In Session</h3>
+          <p style="color:rgba(255,255,255,0.85); font-size:14px; max-width:500px; margin:0 0 20px;">Live surgical demonstration stream available exclusively during active conference broadcast hours.</p>
+          <button class="cf-pill-btn-purple" onclick="closeVideoModal()">Back to Masterclass Overview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
+    <div class="container footer-top" style="flex-wrap:wrap; gap:20px;">
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
       <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
+      <div class="footer-social-row" style="display:flex; align-items:center; gap:14px; margin-left:auto; flex-wrap:wrap;">
+        <a href="mailto:info@noviracambodia.com" style="color:#ddd1e7; text-decoration:none; font-size:12px; display:inline-flex; align-items:center; gap:6px;">✉️ info@noviracambodia.com</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Facebook</a>
+        <span style="color:#604774;">·</span>
+        <a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7; text-decoration:none; font-size:12px; font-weight:700;">Instagram</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <nav aria-label="Footer navigation" style="display:flex; gap:20px; font-size:11px;">
         <a href="index.html">Home</a>
         <a href="about.html">About us</a>
         <a href="products.html">Our products</a>
         <a href="media.html">Media</a>
         <a href="contact.html">Contact us</a>
       </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
+      <span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span>
+      <a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a>
     </div>
   </footer>
 
   <script src="nav.js"></script>
 
   <script>
-    function filterEvents(category, btn) {
-      document.querySelectorAll('.media-tab-btn').forEach(b => b.classList.remove('is-active'));
+    // Live Countdown Timer
+    function startCountdown() {
+      // Set target to 48 days from now
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 48);
+      targetDate.setHours(targetDate.getHours() + 16);
+
+      function update() {
+        const now = new Date().getTime();
+        const diff = targetDate.getTime() - now;
+        if (diff <= 0) return;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const pad = n => String(n).padStart(2, '0');
+        const elDays = document.getElementById('cd-days');
+        const elHours = document.getElementById('cd-hours');
+        const elMins = document.getElementById('cd-mins');
+        const elSecs = document.getElementById('cd-secs');
+
+        if (elDays) elDays.textContent = pad(d);
+        if (elHours) elHours.textContent = pad(h);
+        if (elMins) elMins.textContent = pad(m);
+        if (elSecs) elSecs.textContent = pad(s);
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
+    startCountdown();
+
+    // Schedule Day Filter (Screenshot 4)
+    function filterSchedule(day, btn) {
+      document.querySelectorAll('.cf-day-btn').forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
-      const cards = document.querySelectorAll('.conf-card');
+      const cards = document.querySelectorAll('.cf-plan-card');
       cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
+        if (day === 'all' || card.dataset.day === day) {
           card.style.display = '';
         } else {
           card.style.display = 'none';
@@ -445,6 +1827,7 @@
       });
     }
 
+    // Modal Handlers
     function openRegModal(eventName) {
       document.getElementById('modal-event-title').textContent = eventName;
       const modal = document.getElementById('conf-reg-modal');
@@ -454,6 +1837,18 @@
 
     function closeRegModal() {
       const modal = document.getElementById('conf-reg-modal');
+      modal.classList.remove('is-active');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    function openVideoModal() {
+      const modal = document.getElementById('conf-video-modal');
+      modal.classList.add('is-active');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('conf-video-modal');
       modal.classList.remove('is-active');
       modal.setAttribute('aria-hidden', 'true');
     }

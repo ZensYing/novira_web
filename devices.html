@@ -8,6 +8,74 @@
   <title>Aesthetic &amp; Energy Devices — NOVIRA</title>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOSIgZmlsbD0iIzMyMTA2ZiIvPjx0ZXh0IHg9IjIwIiB5PSIyOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI4Ij5OPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .dq { --teal:#16766d; --gold:#c9a35e; --rose:#d9608a; }
+    .dq-wrap { width:min(1200px, calc(100% - 48px)); margin:0 auto; }
+    .dq-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); font-weight:600; margin:0 0 14px; }
+    .dq h1, .dq h2, .dq h3 { font-family:var(--serif); font-weight:500; color:var(--ink); margin:0; }
+    .dq-crumb { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:34px; }
+    .dq-crumb a { color:var(--muted); transition:color .2s; } .dq-crumb a:hover { color:var(--purple); }
+    .dq-crumb .cur { color:var(--ink); font-weight:600; }
+
+    /* Hero */
+    .dq-hero.simple { padding:48px 0 70px; background:radial-gradient(900px 500px at 85% 20%, #ede8f6 0%, transparent 60%), radial-gradient(700px 420px at 0% 100%, #e9f4f3 0%, transparent 60%); }
+    .dq-hero.simple h1 { font-size:clamp(48px,7vw,92px); letter-spacing:-2px; line-height:.95; text-transform:uppercase; }
+    .dq-hero.simple h1 small { display:block; font-size:clamp(18px,2vw,26px); letter-spacing:.5px; text-transform:none; color:var(--purple); margin-top:18px; line-height:1.3; }
+    .dq-lead { font-size:15px; line-height:1.85; color:var(--muted); max-width:640px; margin:26px 0 34px; }
+    .dq-lead em { color:var(--ink); font-style:normal; font-weight:600; }
+    .dq-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:999px; font-size:13px; font-weight:600; letter-spacing:.3px; background:var(--purple); color:#fff; transition:transform .25s, box-shadow .25s, background .25s; }
+    .dq-btn:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(46,8,111,.25); background:var(--purple-dark); }
+    .dq-btn.ghost { background:transparent; color:var(--purple); border:1px solid var(--line); }
+    .dq-btn.ghost:hover { background:#fff; box-shadow:0 12px 26px rgba(46,8,111,.1); }
+
+    /* Jump nav */
+    .dq-jump { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .dq-jump a { display:inline-flex; align-items:center; gap:10px; padding:11px 20px; border-radius:999px; background:#fff; border:1px solid var(--line-soft); font-size:12.5px; font-weight:600; color:var(--ink-soft); letter-spacing:.8px; text-transform:uppercase; transition:all .25s; }
+    .dq-jump a:hover { background:var(--c); color:#fff; border-color:var(--c); transform:translateY(-3px); }
+    .dq-jump a i { width:8px; height:8px; border-radius:50%; background:var(--c); display:block; }
+    .dq-jump a:hover i { background:#fff; }
+
+    /* Brand sections */
+    .dq-brand { padding:90px 0; }
+    .dq-brand + .dq-brand { border-top:1px solid var(--line-soft); }
+    .dq-brand-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,6vw,90px); align-items:center; }
+    .dq-brand.flip .dq-brand-media { order:2; }
+    .dq-brand-media { position:relative; }
+    .dq-brand-frame { aspect-ratio:5/4; border-radius:200px 200px 28px 28px; overflow:hidden; background:var(--bgf,radial-gradient(circle at 50% 38%, #fff 0%, #f1edf8 70%, #e8e1f4 100%)); position:relative; display:grid; place-items:center; }
+    .dq-brand.flip .dq-brand-frame { border-radius:28px 28px 200px 200px; }
+    .dq-brand-frame > img { width:70%; height:70%; object-fit:contain; filter:drop-shadow(0 30px 40px rgba(0,0,0,.18)); transition:transform 1.2s ease; }
+    .dq-brand-media:hover .dq-brand-frame > img { transform:scale(1.05); }
+    .dq-brand-num { position:absolute; right:-14px; top:-18px; width:84px; height:84px; border-radius:50%; background:var(--c); color:#fff; display:grid; place-items:center; font-family:var(--serif); font-size:26px; box-shadow:0 14px 30px color-mix(in srgb,var(--c) 40%,transparent); z-index:2; }
+    .dq-brand-num::before { content:""; position:absolute; inset:5px; border-radius:50%; border:1px dashed rgba(255,255,255,.6); }
+    .dq-brand-copy h2 { font-size:clamp(40px,5vw,66px); letter-spacing:-1.5px; line-height:1; text-transform:uppercase; }
+    .dq-brand-copy .tag { font-family:var(--serif); font-size:20px; color:var(--c); margin:12px 0 18px; line-height:1.3; }
+    .dq-brand-copy p.d { color:var(--muted); font-size:14.5px; line-height:1.9; margin:0 0 24px; max-width:520px; }
+    .dq-plist { list-style:none; margin:0 0 28px; padding:0; display:grid; gap:10px; max-width:520px; }
+    .dq-plist a { display:flex; align-items:center; gap:14px; padding:12px 18px 12px 12px; border-radius:999px; border:1px solid var(--line-soft); background:#fff; transition:transform .25s, box-shadow .25s, border-color .25s; }
+    .dq-plist a:hover { transform:translateX(6px); border-color:var(--c); box-shadow:0 14px 28px color-mix(in srgb,var(--c) 16%,transparent); }
+    .dq-plist .th { width:48px; height:48px; border-radius:50%; background:color-mix(in srgb,var(--c) 12%,#fff); display:grid; place-items:center; overflow:hidden; flex-shrink:0; font-family:var(--serif); font-size:11px; color:var(--c); }
+    .dq-plist .th img { width:100%; height:100%; object-fit:contain; }
+    .dq-plist b { display:block; font-size:14px; color:var(--ink); font-weight:600; }
+    .dq-plist em { display:block; font-style:normal; font-size:11.5px; color:var(--muted); margin-top:2px; }
+    .dq-plist i { margin-left:auto; color:var(--c); font-style:normal; }
+
+    /* CTA */
+    .dq-cta { display:grid; grid-template-columns:1.3fr auto; gap:40px; align-items:center; padding:clamp(36px,5vw,64px); border-radius:28px; background:var(--purple-dark); color:#fff; position:relative; overflow:hidden; }
+    .dq-cta::before { content:""; position:absolute; width:520px; height:520px; right:-160px; top:-240px; border-radius:50%; border:1px solid rgba(255,255,255,.1); box-shadow:0 0 0 80px rgba(255,255,255,.03); }
+    .dq-cta h2 { color:#fff !important; font-size:clamp(28px,3vw,40px); }
+    .dq-cta p { color:rgba(255,255,255,.7); font-size:14px; line-height:1.85; margin:14px 0 0; max-width:560px; }
+    .dq-cta .dq-btn { background:#fff; color:var(--purple); border:1px solid #fff; }
+
+    @media (max-width:1000px) {
+      .dq-brand-grid, .dq-cta { grid-template-columns:1fr; }
+      .dq-brand.flip .dq-brand-media { order:0; }
+      .dq-brand-media { max-width:560px; margin:0 auto; width:100%; }
+      .dq-brand-num { right:0; }
+    }
+    @media (max-width:640px) {
+      .dq-wrap { width:calc(100% - 40px); }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +84,7 @@
   
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="NOVIRA home">NOVIRA<span>CO., LTD.</span></a>
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-main"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="nav-logo-img logo-white"></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" class="nav-link">HOME</a>
         <a href="about.html" class="nav-link">ABOUT US</a>
@@ -33,8 +101,8 @@
                 <ul class="dropdown-sublist">
                   <li><a href="danique.html" class="dropdown-subitem"><span class="dot">•</span> DANIQUE</a></li>
                   <li><a href="juvelook.html" class="dropdown-subitem"><span class="dot">•</span> JUVELOOK</a></li>
-                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> DENESE LAB</a></li>
-                  <li><a href="product-detail.html?product=exoluma" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
+                  <li><a href="denese-lab.html" class="dropdown-subitem"><span class="dot">•</span> GENÈSE LABS</a></li>
+                  <li><a href="exoluma.html" class="dropdown-subitem"><span class="dot">•</span> EXOLUMA EXO-PDRN</a></li>
                 </ul>
               </div>
               <div class="dropdown-divider-v" aria-hidden="true"></div>
@@ -66,7 +134,7 @@
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-        <a href="checkout.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
+        <a href="partnership.html" class="header-contact">Apply for Partnership <span aria-hidden="true">↗</span></a>
         <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -86,7 +154,7 @@
               <div class="mobile-category-title"><a href="injectables.html" style="color:inherit;"><span class="cat-idx">1.</span> Injectables</a></div>
               <a href="danique.html" class="mobile-sublink"><span class="dot">•</span> DANIQUE</a>
               <a href="juvelook.html" class="mobile-sublink"><span class="dot">•</span> JUVELOOK</a>
-              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> DENESE LAB</a>
+              <a href="denese-lab.html" class="mobile-sublink"><span class="dot">•</span> GENÈSE LABS</a>
             </div>
             <div class="mobile-subgroup">
               <div class="mobile-category-title"><a href="devices.html" style="color:inherit;"><span class="cat-idx">2.</span> Devices</a></div>
@@ -108,6 +176,7 @@
         </div>
 
         <a href="contact.html" class="mobile-nav-link">CONTACT US</a>
+        <a href="partnership.html" class="mobile-nav-link" style="color:var(--novira-purple);font-weight:700;">PARTNERSHIP ↗</a>
       </div>
     </nav>
     <div id="search-panel" class="search-panel" hidden>
@@ -121,487 +190,231 @@
     </div>
   </header>
 
-  <main id="main">
-    <!-- Luxury Devices Hero -->
-    <section class="catalog-hero-luxury">
-      <div class="container catalog-hero-inner">
-        <nav class="catalog-breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <a href="products.html">Our Products</a>
-          <span>/</span>
-          <span>Energy Devices</span>
-        </nav>
-        <div class="catalog-hero-badge">Division 2 · Aesthetic &amp; Energy Devices</div>
-        <h1 class="catalog-hero-title">State-of-the-Art Aesthetic &amp;<br><em>Medical Laser Platforms.</em></h1>
-        <p class="catalog-hero-desc">Representing the world leaders in clinical energy systems: CYNOSURE LUTRONIC, CUTERA, CANFIELD, WONDER, and SINCLAIR. Advanced picosecond lasers, targeted acne clearance, multi-spectral diagnostics, and non-invasive body contouring.</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="contact.html?inquiry=Device-Demo" class="luxury-enquire-btn" style="padding:14px 30px;font-size:13.5px;">Book In-Clinic Demonstration ↗</a>
-          <a href="#device-stage" class="luxury-detail-btn" style="padding:14px 24px;font-size:13.5px;">Explore Systems Showcase ↓</a>
-        </div>
-      </div>
-    </section>
+  <main id="main" class="dq">
 
-    <!-- ========================================================
-         INTERACTIVE DEVICE 3D SHOWCASE STAGE (HOME-INSPIRED)
-         ======================================================== -->
-    <section id="device-stage" class="device-stage-section">
-      <div class="container device-stage-container">
-        <div class="device-stage-header">
-          <p class="eyebrow">Interactive Flagship Workstations</p>
-          <h2 style="font-size:clamp(28px, 3.4vw, 42px);margin-bottom:12px;">Engineering Clinical Excellence</h2>
-          <p style="color:var(--muted);font-size:14px;">Select any medical workstation below to explore optical architecture, wavelengths, and clinical indications in real time.</p>
-        </div>
-
-        <!-- Switcher Nav Pills -->
-        <div class="device-switcher-nav" role="tablist">
-          <button class="device-nav-pill is-active" data-device="hollywood-spectra" role="tab" aria-selected="true">Hollywood Spectra™</button>
-          <button class="device-nav-pill" data-device="cutera-aviclear" role="tab" aria-selected="false">AviClear™ Acne Laser</button>
-          <button class="device-nav-pill" data-device="canfield-visia" role="tab" aria-selected="false">VISIA® 7th Gen Booth</button>
-          <button class="device-nav-pill" data-device="wonder-face" role="tab" aria-selected="false">Wonder Face &amp; Prestige</button>
-          <button class="device-nav-pill" data-device="sinclair-cooltech" role="tab" aria-selected="false">Cooltech® Cryo</button>
-        </div>
-
-        <!-- Dynamic Display Box -->
-        <div class="device-showcase-display">
-          <div class="device-display-visual">
-            <img id="stage-img" src="images/device-lutronic.png" alt="Featured Medical Device" />
-          </div>
-
-          <div class="device-display-info">
-            <span class="device-display-kicker" id="stage-kicker">CYNOSURE LUTRONIC · USA / KOREA</span>
-            <h3 class="device-display-title" id="stage-title">Hollywood Spectra™ Laser</h3>
-            <p class="device-display-desc" id="stage-desc">Industry-leading Q-switched Nd:YAG laser platform delivering the official Hollywood Laser Peel® with unrivaled melasma clearance and minimal downtime.</p>
-
-            <div class="device-specs-chips">
-              <div class="device-spec-chip">
-                <span id="stage-spec1-label">Wavelengths</span>
-                <strong id="stage-spec1-val">1064nm / 532nm / Dye</strong>
-              </div>
-              <div class="device-spec-chip">
-                <span id="stage-spec2-label">Pulse Duration</span>
-                <strong id="stage-spec2-val">5ns &amp; 300µs Spectra</strong>
-              </div>
-              <div class="device-spec-chip">
-                <span id="stage-spec3-label">Primary Indication</span>
-                <strong id="stage-spec3-val">Melasma &amp; Pigment</strong>
-              </div>
-              <div class="device-spec-chip">
-                <span id="stage-spec4-label">Regulatory</span>
-                <strong id="stage-spec4-val">FDA 510(k), CE Medical</strong>
-              </div>
-            </div>
-
-            <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <button class="luxury-detail-btn" id="stage-modal-btn" onclick="openDeviceModal('hollywood-spectra')" style="padding:12px 22px;font-size:13px;">View Full Engineering Specs 👁</button>
-              <a id="stage-cta-btn" href="contact.html?inquiry=Hollywood-Spectra" class="luxury-enquire-btn" style="padding:12px 24px;font-size:13px;">Request Clinical Demonstration ↗</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Comprehensive Device Grid -->
-    <section class="container section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Device Portfolio</p>
-          <h2 style="font-size:clamp(26px, 3vw, 38px);">World-Leading Manufacturers</h2>
-        </div>
-      </div>
-
-      <div class="luxury-catalog-grid">
-        <!-- HOLLYWOOD-SPECTRA -->
-        <article class="luxury-card" onclick="openDeviceModal('hollywood-spectra')">
-          <div class="luxury-card-media">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Q-Switched Nd:YAG</span>
-            
-            <img src="images/device-lutronic.png" alt="Hollywood Spectra™" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">System Specs 👁</span>
-            </div>
-          </div>
-          <div class="luxury-card-body">
-            <div class="luxury-card-kicker">
-              <span>CYNOSURE LUTRONIC · USA / KOREA</span>
-              <span>Workstation</span>
-            </div>
-            <h3 class="luxury-card-title">Hollywood Spectra™</h3>
-            
-            <p class="luxury-card-desc">Unified global powerhouse delivering Hollywood Laser Peel®, melasma pigment clearance, and dermal collagen remodeling.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">1064nm / 532nm</span><span class="luxury-chip">5ns Q-Switched</span><span class="luxury-chip">FDA Cleared</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
-            </div>
-          </div>
-        </article>
-        <!-- CUTERA-AVICLEAR -->
-        <article class="luxury-card" onclick="openDeviceModal('cutera-aviclear')">
-          <div class="luxury-card-media">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Acne Laser</span>
-            
-            <img src="images/device-cutera.png" alt="AviClear™ &amp; Excel V+" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">System Specs 👁</span>
-            </div>
-          </div>
-          <div class="luxury-card-body">
-            <div class="luxury-card-kicker">
-              <span>CUTERA · SILICON VALLEY USA</span>
-              <span>1726nm Targeted</span>
-            </div>
-            <h3 class="luxury-card-title">AviClear™ &amp; Excel V+</h3>
-            
-            <p class="luxury-card-desc">Silicon Valley engineering pioneering long-term drug-free acne clearance and gold-standard dual-wavelength vascular treatment.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">1726nm Sebaceous</span><span class="luxury-chip">AviCool™ Sapphire</span><span class="luxury-chip">FDA Cleared</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
-            </div>
-          </div>
-        </article>
-        <!-- CANFIELD-VISIA -->
-        <article class="luxury-card" onclick="openDeviceModal('canfield-visia')">
-          <div class="luxury-card-media">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">3D Skin Analysis</span>
-            
-            <img src="images/device-canfield.png" alt="VISIA® 7th Gen Booth" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">System Specs 👁</span>
-            </div>
-          </div>
-          <div class="luxury-card-body">
-            <div class="luxury-card-kicker">
-              <span>CANFIELD SCIENTIFIC · USA</span>
-              <span>IntelliStudio® 3D</span>
-            </div>
-            <h3 class="luxury-card-title">VISIA® 7th Gen Booth</h3>
-            
-            <p class="luxury-card-desc">Multi-spectral imaging booth capturing subsurface pigmentation, UV damage, and vascular health with patented RBX® technology.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">RBX® Technology</span><span class="luxury-chip">TruSkin Age® Score</span><span class="luxury-chip">3D Surface Rendering</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
-            </div>
-          </div>
-        </article>
-        <!-- WONDER-FACE -->
-        <article class="luxury-card" onclick="openDeviceModal('wonder-face')">
-          <div class="luxury-card-media">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Neuromuscular EMS</span>
-            
-            <img src="images/device-wonder.png" alt="Wonder Face &amp; Prestige" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">System Specs 👁</span>
-            </div>
-          </div>
-          <div class="luxury-card-body">
-            <div class="luxury-card-kicker">
-              <span>WONDER MEDICAL · SPAIN</span>
-              <span>60,000 Contractions / 25min</span>
-            </div>
-            <h3 class="luxury-card-title">Wonder Face &amp; Prestige</h3>
-            
-            <p class="luxury-card-desc">Breakthrough facial neuromuscular toning delivering 60,000 deep supramaximal contractions per session for non-invasive structural lifting.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">Zygomaticus Lifting</span><span class="luxury-chip">Simultaneous Radiofrequency</span><span class="luxury-chip">Zero Consumables</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
-            </div>
-          </div>
-        </article>
-        <!-- SINCLAIR-COOLTECH -->
-        <article class="luxury-card" onclick="openDeviceModal('sinclair-cooltech')">
-          <div class="luxury-card-media">
-            <div class="media-aura"></div>
-            <span class="luxury-badge">Cryo-Lipolysis</span>
-            
-            <img src="images/device-sinclair.png" alt="Cooltech® Cryo Platform" loading="lazy" />
-            <div class="quick-view-reveal">
-              <span class="quick-view-chip">System Specs 👁</span>
-            </div>
-          </div>
-          <div class="luxury-card-body">
-            <div class="luxury-card-kicker">
-              <span>SINCLAIR · EUROPE</span>
-              <span>Dual Handpieces to -8°C</span>
-            </div>
-            <h3 class="luxury-card-title">Cooltech® Cryo Platform</h3>
-            
-            <p class="luxury-card-desc">Medical cryo-lipolysis fat freezing system with dual simultaneous applicators reaching controlled -8°C for permanent adipocyte apoptosis.</p>
-            <div class="luxury-chip-list">
-              <span class="luxury-chip">Dual Applicators</span><span class="luxury-chip">Controlled -8°C Cryo</span><span class="luxury-chip">European CE Medical</span>
-            </div>
-            <div class="luxury-card-footer" onclick="event.stopPropagation()">
-              
-              <a href="contact.html?inquiry=ProductInfo" class="b2b-request-btn">Request Information →</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- ========================================================
-       LUXURY DEVICE DETAIL MODAL (INLINE POPUP)
-       ======================================================== -->
-  <div id="luxury-device-modal" class="luxury-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-dev-title">
-    <div class="luxury-modal-backdrop" onclick="closeDeviceModal()"></div>
-    <div class="luxury-modal-container">
-      <button class="luxury-modal-close" onclick="closeDeviceModal()" aria-label="Close modal">✕</button>
-      <div class="luxury-modal-grid">
-        <!-- Modal Left Visual -->
-        <div class="luxury-modal-visual">
-          <span class="luxury-badge" id="modal-dev-badge">Medical Laser</span>
-          <img id="modal-dev-img" src="images/device-lutronic.png" alt="Device Visual" />
-        </div>
-
-        <!-- Modal Right Content -->
-        <div class="luxury-modal-content">
-          <div class="modal-kicker">
-            <span id="modal-dev-kicker">CYNOSURE LUTRONIC · USA</span>
-          </div>
-          <h2 class="modal-title" id="modal-dev-title">Hollywood Spectra™ Platform</h2>
-          <p class="modal-subtitle" id="modal-dev-desc">Industry-leading Q-switched Nd:YAG laser platform delivering the official Hollywood Laser Peel® with unrivaled melasma and pigment clearance.</p>
-
-          <table class="modal-specs-table">
-            <tbody>
-              <tr>
-                <td class="modal-specs-label">Laser / Energy Type</td>
-                <td class="modal-specs-val" id="modal-dev-type">Q-Switched Nd:YAG (1064nm / 532nm)</td>
-              </tr>
-              <tr>
-                <td class="modal-specs-label">Pulse Duration</td>
-                <td class="modal-specs-val" id="modal-dev-pulse">5ns (Q-Switched) &amp; 300µs (Spectra Mode)</td>
-              </tr>
-              <tr>
-                <td class="modal-specs-label">Spot Sizes</td>
-                <td class="modal-specs-val" id="modal-dev-spots">Zoom 2–10mm, Collimated 8mm, Fractional Handpiece</td>
-              </tr>
-              <tr>
-                <td class="modal-specs-label">Clinical Indications</td>
-                <td class="modal-specs-val" id="modal-dev-indications">Melasma, Tattoo Removal, Hollywood Laser Peel®, Pores</td>
-              </tr>
-              <tr>
-                <td class="modal-specs-label">Certifications</td>
-                <td class="modal-specs-val" id="modal-dev-certs">FDA 510(k) Cleared, CE Medical Class IIb</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="modal-actions">
-            <a id="modal-dev-cta" href="contact.html?inquiry=Device" class="luxury-enquire-btn" style="padding:12px 26px;font-size:13.5px;">Book In-Clinic Demonstration ↗</a>
-            <button onclick="closeDeviceModal()" class="luxury-detail-btn" style="padding:12px 22px;">Close</button>
-          </div>
-        </div>
+  <section class="dq-hero simple">
+    <div class="dq-wrap">
+      <nav class="dq-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="products.html">Our Products</a><span>/</span><span class="cur">2. Devices</span></nav>
+      <p class="dq-eyebrow">Division 2 · Our Products</p>
+      <h1>Energy-Based Devices<small>State-of-the-art aesthetic &amp; medical laser platforms.</small></h1>
+      <p class="dq-lead"><em>9 world-leading manufacturers, one trusted distributor.</em> From picosecond lasers and RF microneedling to 3D skin imaging, cryolipolysis and advanced facial devices — all backed by NOVIRA clinical training and genuine parts.</p>
+      <div class="dq-jump">
+        <a href="#cynosure" style="--c:#2E086F"><i></i>Cynosure Lutronic</a>
+        <a href="#cutera" style="--c:#0e5a82"><i></i>Cutera</a>
+        <a href="#canfield" style="--c:#16766d"><i></i>Canfield</a>
+        <a href="#hydrafacial" style="--c:#0ca0c4"><i></i>HydraFacial</a>
+        <a href="#preime" style="--c:#b0567a"><i></i>Preime</a>
+        <a href="#sinclair" style="--c:#5d34a8"><i></i>Sinclair</a>
+        <a href="#solta" style="--c:#d89a12"><i></i>Solta Medical</a>
+        <a href="#wonder" style="--c:#c9a35e"><i></i>Wonder</a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- CYNOSURE LUTRONIC -->
+  <section class="dq-brand" id="cynosure" style="--c:#2E086F">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">01</span>
+        <div class="dq-brand-frame"><img src="images/device-lutronic.png" alt="Cynosure Lutronic laser workstation"></div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>Cynosure Lutronic</h2>
+        <p class="tag">Global leaders in aesthetic energy.</p>
+        <p class="d">10 clinical platforms from picosecond lasers and fractional CO2 to RF microneedling and LED therapy — the world's most comprehensive aesthetic energy portfolio.</p>
+        <ul class="dq-plist">
+          <li><a href="cynosure-lutronic.html"><span class="th">PS</span><span><b>PicoSure Plus / Pro</b><em>Picosecond laser · Pigment & skin revitalisation</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="cynosure-lutronic.html"><span class="th">HS</span><span><b>Hollywood Spectra</b><em>Nano-acoustic laser · Melasma & tattoo</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="cynosure-lutronic.html"><span class="th">GN</span><span><b>Genius RF Microneedling</b><em>Real-time tissue sensing RF</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="cynosure-lutronic.html"><span class="th">+7</span><span><b>7 more platforms</b><em>Healite II, Derma V, ECO2 3D, Lase MD Ultra, Mosaic 3D, XERF</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="cynosure-lutronic.html" style="background:#2E086F">View All 10 Systems <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUTERA -->
+  <section class="dq-brand flip" id="cutera" style="--c:#0e5a82">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">02</span>
+        <div class="dq-brand-frame"><img src="images/device-cutera.png" alt="Cutera AviClear laser platform"></div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>Cutera</h2>
+        <p class="tag">Precision dermatology &amp; breakthrough medical lasers.</p>
+        <p class="d">Engineered in Silicon Valley, California. Setting the clinical benchmark for vascular treatments, permanent acne suppression, and multi-wavelength pigment clearance.</p>
+        <ul class="dq-plist">
+          <li><a href="cutera.html"><span class="th">AC</span><span><b>AviClear</b><em>1726nm · FDA-cleared acne laser</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="cutera.html"><span class="th">EN</span><span><b>Enlighten III</b><em>Tri-wavelength · Pico/Nano tattoo & pigment</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="cutera.html"><span class="th">EV</span><span><b>Excel V+</b><em>Vascular & pigment laser</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="cutera.html" style="background:#0e5a82">Explore Cutera <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANFIELD -->
+  <section class="dq-brand" id="canfield" style="--c:#16766d">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">03</span>
+        <div class="dq-brand-frame"><img src="images/device-canfield.png" alt="Canfield VISIA 3D skin analysis system"></div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>Canfield</h2>
+        <p class="tag">Clinical skin analysis &amp; 3D imaging.</p>
+        <p class="d">Multi-spectral imaging systems that move skincare consultations from subjective visual assessments into objective, digitised data — with ultra-high resolution 3D simulation for face, breast, and body.</p>
+        <ul class="dq-plist">
+          <li><a href="contact.html?inquiry=VECTRA-XT"><span class="th">XT</span><span><b>VECTRA XT</b><em>3D face, breast & body imaging · 360° body</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="contact.html?inquiry=VECTRA-H2"><span class="th">H2</span><span><b>VECTRA H2</b><em>Hand-held 3D imaging · Wi-Fi capture</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="contact.html?inquiry=VISIA"><span class="th">V1</span><span><b>VISIA 1</b><em>Objective skin analysis · 7 metrics</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="contact.html?inquiry=VISIA-3D"><span class="th">3D</span><span><b>VISIA 3D</b><em>Enhanced subsurface imaging · Brand counters</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="contact.html?inquiry=Canfield" style="background:#16766d">Request Canfield Info <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HYDRAFACIAL -->
+  <section class="dq-brand flip" id="hydrafacial" style="--c:#0ca0c4">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">04</span>
+        <div class="dq-brand-frame" style="--bgf:radial-gradient(circle at 50% 38%, #e4f8fc 0%, #cdeef5 70%, #b8e4ee 100%)">
+          <div style="text-align:center;padding:40px">
+            <div style="font-family:var(--serif);font-size:clamp(42px,5vw,62px);color:#0ca0c4;font-weight:500;letter-spacing:-1px;line-height:1">HYDRA<br>FACIAL</div>
+            <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#0890ab;margin-top:16px">Medical-Grade Skin Treatment</div>
+          </div>
+        </div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>HydraFacial</h2>
+        <p class="tag">Patented Vortex-Fusion skin treatment.</p>
+        <p class="d">Medical-grade treatment that cleanses, peels, extracts impurities, and hydrates the skin. Suitable for all skin types with no downtime — the world's most in-demand facial treatment.</p>
+        <ul class="dq-plist">
+          <li><a href="contact.html?inquiry=HydraFacial-MD"><span class="th">MD</span><span><b>HydraFacial MD</b><em>Vortex-Fusion technology · Immediate glow</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="contact.html?inquiry=HydraFacial-Syndeo"><span class="th">SY</span><span><b>HydraFacial Syndeo</b><em>Most advanced system · Personalised treatments</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="contact.html?inquiry=HydraFacial" style="background:#0ca0c4">Request HydraFacial Info <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREIME -->
+  <section class="dq-brand" id="preime" style="--c:#b0567a">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">05</span>
+        <div class="dq-brand-frame" style="--bgf:radial-gradient(circle at 50% 38%, #fdf0f4 0%, #f4dfe7 70%, #ecd0da 100%)">
+          <div style="text-align:center;padding:40px">
+            <div style="font-family:var(--serif);font-size:clamp(38px,4.5vw,56px);color:#b0567a;font-weight:500;letter-spacing:-1px;line-height:1">PRÉIME</div>
+            <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#96466b;margin-top:16px">IoT-Powered Aesthetic Facial</div>
+          </div>
+        </div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>Preime Aesthetics</h2>
+        <p class="tag">The world's most advanced aesthetic facial device.</p>
+        <p class="d">The Préime DermaFacial is a SMART device, powered by IoT technology, designed to ensure consistent results and client satisfaction — combining multiple facial functions in one device.</p>
+        <ul class="dq-plist">
+          <li><a href="contact.html?inquiry=Preime-DermaFacial"><span class="th">DF</span><span><b>Preime DermaFacial</b><em>IoT-powered · Consistent results</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="contact.html?inquiry=Preime" style="background:#b0567a">Request Preime Info <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINCLAIR -->
+  <section class="dq-brand flip" id="sinclair" style="--c:#5d34a8">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">06</span>
+        <div class="dq-brand-frame"><img src="images/device-sinclair.png" alt="Sinclair Cooltech cryolipolysis system"></div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>Sinclair</h2>
+        <p class="tag">Non-invasive fat reduction &amp; body contouring.</p>
+        <p class="d">The most cutting-edge cryolipolysis technology available for full-body contouring. Cooltech operates at -10°C and treats four locations simultaneously, permanently eliminating fat cells from treated areas.</p>
+        <ul class="dq-plist">
+          <li><a href="contact.html?inquiry=Cooltech"><span class="th">CT</span><span><b>Cooltech</b><em>Cryolipolysis · 4 areas simultaneously · -10°C</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="contact.html?inquiry=Sinclair" style="background:#5d34a8">Request Sinclair Info <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLTA MEDICAL -->
+  <section class="dq-brand" id="solta" style="--c:#d89a12">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">07</span>
+        <div class="dq-brand-frame" style="--bgf:radial-gradient(circle at 50% 38%, #fdf8ec 0%, #f6efd6 70%, #efe7c8 100%)">
+          <div style="text-align:center;padding:40px">
+            <div style="font-family:var(--serif);font-size:clamp(42px,5vw,62px);color:#d89a12;font-weight:500;letter-spacing:-1px;line-height:1">VASER</div>
+            <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b88510;margin-top:16px">Ultrasound Body Contouring</div>
+          </div>
+        </div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>Solta Medical</h2>
+        <p class="tag">Ultrasound-assisted body contouring.</p>
+        <p class="d">VASERlipo® utilises ultrasound energy for minimally invasive aesthetic body contouring that yields dramatic results with less pain and downtime than traditional liposuction — protecting surrounding tissue for smoother contours.</p>
+        <ul class="dq-plist">
+          <li><a href="contact.html?inquiry=VASER"><span class="th">VL</span><span><b>VASER</b><em>Ultrasound lipolysis · Precise body sculpting</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="contact.html?inquiry=SoltaMedical" style="background:#d89a12">Request Solta Info <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WONDER -->
+  <section class="dq-brand flip" id="wonder" style="--c:#c9a35e">
+    <div class="dq-wrap dq-brand-grid">
+      <div class="dq-brand-media reveal-on-scroll">
+        <span class="dq-brand-num">08</span>
+        <div class="dq-brand-frame"><img src="images/device-wonder.png" alt="Wonder Face and Axon platforms"></div>
+      </div>
+      <div class="dq-brand-copy reveal-on-scroll">
+        <p class="dq-eyebrow">Brand</p>
+        <h2>Wonder</h2>
+        <p class="tag">Multi-energy face &amp; body remodeling.</p>
+        <p class="d">Wonder (Iskra Medical) delivers independent energy selection with separate generators and protocols — from targeted facial treatments to system-level body remodeling with Tri-Tech Synergy.</p>
+        <ul class="dq-plist">
+          <li><a href="contact.html?inquiry=Wonder-Face"><span class="th">WF</span><span><b>Wonder Face</b><em>Independent mode selection · Facial lifting & tightening</em></span><i aria-hidden="true">→</i></a></li>
+          <li><a href="contact.html?inquiry=Wonder-Axon"><span class="th">WA</span><span><b>Wonder Axon</b><em>Tri-Tech Synergy · NMS + EMF + RF body remodeling</em></span><i aria-hidden="true">→</i></a></li>
+        </ul>
+        <a class="dq-btn" href="contact.html?inquiry=Wonder" style="background:#c9a35e">Request Wonder Info <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:30px 0 90px">
+    <div class="dq-wrap">
+      <div class="dq-cta reveal-on-scroll">
+        <div>
+          <h2>Find the right device for your clinic.</h2>
+          <p>Our partnership team provides platform quotations, clinical training and in-clinic demonstrations for every system across all 9 brands.</p>
+        </div>
+        <a class="dq-btn" href="contact.html?inquiry=Devices">Contact Us <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="wordmark" href="index.html">NOVIRA<span>CO., LTD.</span></a>
-      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="products.html">Our products</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-      <a href="#" class="back-top" aria-label="Back to top">↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> NOVIRA CO., LTD.</span>
-      <span>Professional Medical Aesthetics Distributor · Cambodia &amp; Southeast Asia</span>
-    </div>
-  </footer>
-
+      <a class="wordmark" href="index.html" aria-label="NOVIRA home"><img src="NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png" alt="NOVIRA — Advancing Skin Innovation" class="footer-logo-img"></a>
+      <p>Advancing Skin Innovation · Cambodia &amp; Southeast Asia</p><div class="footer-social-row" style="display:flex;align-items:center;gap:14px;margin-left:auto;flex-wrap:wrap;"><a href="mailto:info@noviracambodia.com" style="color:#ddd1e7;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:6px;">✉️ info@noviracambodia.com</a><span style="color:#604774;">·</span><a href="https://wa.me/85569811399" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;">Telegram &amp; WhatsApp: +069 811 399</a><span style="color:#604774;">·</span><a href="https://www.facebook.com/novira.cambodia" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Facebook</a><span style="color:#604774;">·</span><a href="https://www.instagram.com/novira.cambodia/" target="_blank" rel="noopener" style="color:#ddd1e7;text-decoration:none;font-size:12px;font-weight:700;">Instagram</a></div></div><div class="container footer-bottom"><nav aria-label="Footer navigation" style="display:flex;gap:20px;font-size:11px;"><a href="index.html">Home</a><a href="about.html">About us</a><a href="products.html">Our products</a><a href="media.html">Media</a><a href="contact.html">Contact us</a></nav><span>© <span id="year">2026</span> NOVIRA CO., LTD. · Professional Medical Aesthetics Distributor</span><a href="#" class="back-top" aria-label="Back to top" style="margin-left:auto;">↑</a></div></footer>
   <script src="nav.js"></script>
-
-  <!-- Interactive Device Showcase & Detail Modal Script -->
-  <script>
-    const DEVICES_DATA = {
-      "hollywood-spectra": {
-        badge: "Q-Switched Laser",
-        kicker: "CYNOSURE LUTRONIC · USA / KOREA",
-        title: "Hollywood Spectra™ Workstation",
-        desc: "Industry-leading Q-switched Nd:YAG laser platform delivering the official Hollywood Laser Peel® with unrivaled melasma and pigment clearance.",
-        img: "images/device-lutronic.png",
-        type: "Q-Switched Nd:YAG (1064nm & 532nm)",
-        pulse: "5ns (Q-Switched) & 300µs (Spectra Mode)",
-        spots: "Zoom 2–10mm, Collimated 8mm, Fractional Handpiece",
-        indications: "Hollywood Laser Peel®, Melasma, Tattoo Removal, Post-Acne Pigmentation, Pore Shrinkage",
-        certs: "FDA 510(k) Cleared, CE Medical Class IIb, Korea MFDS",
-        inquiry: "Hollywood-Spectra-Demo",
-        spec1: { label: "Wavelengths", val: "1064nm / 532nm / Dye" },
-        spec2: { label: "Pulse Duration", val: "5ns & 300µs Spectra" },
-        spec3: { label: "Primary Indication", val: "Melasma & Pigment" },
-        spec4: { label: "Regulatory", val: "FDA 510(k), CE Medical" }
-      },
-      "cutera-aviclear": {
-        badge: "1726nm Acne Laser",
-        kicker: "CUTERA · SILICON VALLEY USA",
-        title: "AviClear™ 1726nm Platform",
-        desc: "First and only FDA-cleared laser for mild, moderate, and severe acne. Suppresses sebaceous gland hyperactivity permanently without pharmaceuticals.",
-        img: "images/device-cutera.png",
-        type: "1726nm Targeted Diode Laser",
-        pulse: "Continuous AviCool™ Sapphire Contact Cooling",
-        spots: "Precision Ergonomic Acne Handpiece",
-        indications: "Mild, Moderate, and Severe Inflammatory & Cystic Acne",
-        certs: "FDA Cleared, Health Canada Approved, CE Marked",
-        inquiry: "AviClear-Cutera-Demo",
-        spec1: { label: "Wavelength", val: "1726nm Targeted" },
-        spec2: { label: "Cooling System", val: "AviCool™ Sapphire" },
-        spec3: { label: "Clinical Scope", val: "Permanent Acne Clearance" },
-        spec4: { label: "Regulatory", val: "FDA Cleared, CE Mark" }
-      },
-      "canfield-visia": {
-        badge: "3D Skin Diagnostics",
-        kicker: "CANFIELD SCIENTIFIC · USA",
-        title: "VISIA® 7th Gen Booth",
-        desc: "Multi-spectral facial imaging booth capturing subsurface pigment, UV damage, pore architecture, and vascular pathology with RBX® technology.",
-        img: "images/device-canfield.png",
-        type: "Multi-Spectral 3D Optical Imaging",
-        pulse: "Instant Multi-Mode Flashing Sequence",
-        spots: "Full Facial Automatic Position Capture",
-        indications: "Objective Skin Analysis, Treatment Efficacy Tracking, Pigment Mapping",
-        certs: "ISO 13485, Global Clinical Research Benchmark",
-        inquiry: "Canfield-VISIA-Demo",
-        spec1: { label: "Imaging Modes", val: "Cross/Parallel Polarized + UV" },
-        spec2: { label: "Key Technology", val: "RBX® Subsurface Mapping" },
-        spec3: { label: "Application", val: "Clinical Consultation" },
-        spec4: { label: "Standards", val: "ISO 13485 Research Grade" }
-      },
-      "wonder-face": {
-        badge: "Neuromuscular EMS",
-        kicker: "WONDER MEDICAL · SPAIN",
-        title: "Wonder Face & Prestige",
-        desc: "Breakthrough facial neuromuscular toning delivering 60,000 deep supramaximal contractions per session for non-invasive structural lifting.",
-        img: "images/device-wonder.png",
-        type: "High-Intensity Focused EMS + Synchronized RF",
-        pulse: "Up to 60,000 contractions per session",
-        spots: "Dual Zygomaticus, Frontalis & Submental Applicators",
-        indications: "Non-Surgical Facial Contouring, Muscle Architecture Rebuilding, Jawline Firming",
-        certs: "CE Medical Class IIa, ISO Certified",
-        inquiry: "Wonder-Face-Demo",
-        spec1: { label: "Contraction Power", val: "60,000 Contractions / Session" },
-        spec2: { label: "Dual Energy", val: "Focused EMS + RF Synergy" },
-        spec3: { label: "Primary Effect", val: "Non-Invasive Structural Lift" },
-        spec4: { label: "Certifications", val: "CE Medical Class IIa" }
-      },
-      "sinclair-cooltech": {
-        badge: "Cryo-Lipolysis",
-        kicker: "SINCLAIR · SPAIN",
-        title: "Cooltech® Cryo Platform",
-        desc: "Medical cryo-lipolysis fat freezing system with dual simultaneous applicators reaching controlled -8°C for permanent adipocyte apoptosis.",
-        img: "images/device-sinclair.png",
-        type: "Controlled Medical Cryo-Lipolysis (-8°C)",
-        pulse: "Continuous Monitored Vacuum Tissue Draw",
-        spots: "6 Specialized Anatomical Curved Applicators",
-        indications: "Submental Fat, Abdomen, Flanks, Thighs, Localized Adiposity",
-        certs: "CE Medical, Global Health Authorities Clearance",
-        inquiry: "Sinclair-Cooltech-Demo",
-        spec1: { label: "Cooling Temp", val: "Controlled -8°C" },
-        spec2: { label: "Applicators", val: "Dual Simultaneous Ports" },
-        spec3: { label: "Target Tissue", val: "Permanent Fat Apoptosis" },
-        spec4: { label: "Compliance", val: "CE Medical Workstation" }
-      }
-    };
-
-    // Showcase Stage Controller
-    const navPills = document.querySelectorAll('.device-nav-pill');
-    let currentDeviceKey = 'hollywood-spectra';
-
-    function updateStageDisplay(key) {
-      const dev = DEVICES_DATA[key];
-      if (!dev) return;
-      currentDeviceKey = key;
-
-      const img = document.getElementById('stage-img');
-      img.style.opacity = '0';
-      img.style.transform = 'scale(0.95)';
-
-      setTimeout(() => {
-        img.src = dev.img;
-        document.getElementById('stage-kicker').textContent = dev.kicker;
-        document.getElementById('stage-title').textContent = dev.title;
-        document.getElementById('stage-desc').textContent = dev.desc;
-        document.getElementById('stage-spec1-label').textContent = dev.spec1.label;
-        document.getElementById('stage-spec1-val').textContent = dev.spec1.val;
-        document.getElementById('stage-spec2-label').textContent = dev.spec2.label;
-        document.getElementById('stage-spec2-val').textContent = dev.spec2.val;
-        document.getElementById('stage-spec3-label').textContent = dev.spec3.label;
-        document.getElementById('stage-spec3-val').textContent = dev.spec3.val;
-        document.getElementById('stage-spec4-label').textContent = dev.spec4.label;
-        document.getElementById('stage-spec4-val').textContent = dev.spec4.val;
-        document.getElementById('stage-cta-btn').href = 'contact.html?inquiry=' + dev.inquiry;
-        document.getElementById('stage-modal-btn').onclick = () => openDeviceModal(key);
-
-        img.style.opacity = '1';
-        img.style.transform = 'scale(1)';
-      }, 200);
-    }
-
-    navPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        navPills.forEach(p => {
-          p.classList.remove('is-active');
-          p.setAttribute('aria-selected', 'false');
-        });
-        pill.classList.add('is-active');
-        pill.setAttribute('aria-selected', 'true');
-        updateStageDisplay(pill.dataset.device);
-      });
-    });
-
-    // Device Detail Modal Controller
-    function openDeviceModal(key) {
-      const dev = DEVICES_DATA[key];
-      if (!dev) return;
-
-      document.getElementById('modal-dev-badge').textContent = dev.badge;
-      document.getElementById('modal-dev-kicker').textContent = dev.kicker;
-      document.getElementById('modal-dev-title').textContent = dev.title;
-      document.getElementById('modal-dev-desc').textContent = dev.desc;
-      document.getElementById('modal-dev-img').src = dev.img;
-      document.getElementById('modal-dev-type').textContent = dev.type;
-      document.getElementById('modal-dev-pulse').textContent = dev.pulse;
-      document.getElementById('modal-dev-spots').textContent = dev.spots;
-      document.getElementById('modal-dev-indications').textContent = dev.indications;
-      document.getElementById('modal-dev-certs').textContent = dev.certs;
-      document.getElementById('modal-dev-cta').href = 'contact.html?inquiry=' + dev.inquiry;
-
-      const modal = document.getElementById('luxury-device-modal');
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeDeviceModal() {
-      const modal = document.getElementById('luxury-device-modal');
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    // Keyboard Escape to close modal
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDeviceModal();
-    });
-  </script>
 </body>
 </html>

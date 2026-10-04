@@ -255,7 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
           header.classList.remove('header-hidden');
         }
       }
-      header.classList.toggle('header-scrolled', currentScrollY > 20);
+      const isScrolled = currentScrollY > 20;
+      header.classList.toggle('header-scrolled', isScrolled);
+      if (isOverlayHeader) {
+        const singleLogo = header.querySelector('.nav-logo-img:not(.logo-main):not(.logo-white)');
+        if (singleLogo) {
+          singleLogo.src = isScrolled
+            ? 'NOVIRA_LOGO_FINAL_FILES/png/novira-logo-main.png'
+            : 'NOVIRA_LOGO_FINAL_FILES/png/novira-logo-white.png';
+        }
+      }
       lastScrollY = currentScrollY;
     };
     window.addEventListener('scroll', updateHeaderState, { passive: true });
